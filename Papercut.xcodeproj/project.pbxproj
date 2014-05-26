@@ -12,15 +12,23 @@
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED14193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED12193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED16193235A20055C5E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED15193235A20055C5E2 /* main.m */; };
-		8C82ED1A193235A20055C5E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED19193235A20055C5E2 /* AppDelegate.m */; };
+		8C82ED1A193235A20055C5E2 /* PaperCutAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */; };
 		8C82ED1D193235A20055C5E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED1B193235A20055C5E2 /* Main.storyboard */; };
-		8C82ED20193235A20055C5E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED1F193235A20055C5E2 /* ViewController.m */; };
+		8C82ED20193235A20055C5E2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED1F193235A20055C5E2 /* RootViewController.m */; };
 		8C82ED22193235A20055C5E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED21193235A20055C5E2 /* Images.xcassets */; };
 		8C82ED29193235A20055C5E2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED28193235A20055C5E2 /* XCTest.framework */; };
 		8C82ED2A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
+		8CDF16CF1932E7FD00112023 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16CE1932E7FD00112023 /* CameraViewController.m */; };
+		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
+		8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D31933262700112023 /* CoreVideo.framework */; };
+		8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D51933262F00112023 /* OpenGLES.framework */; };
+		8CDF16D81933263500112023 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D71933263500112023 /* AVFoundation.framework */; };
+		8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D91933263E00112023 /* QuartzCore.framework */; };
+		8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16E81933305A00112023 /* ShowCameraViewController.m */; };
+		8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16FB1933328700112023 /* libGPUImage.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +38,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8C82ED05193235A20055C5E2;
 			remoteInfo = Papercut;
+		};
+		8CDF16FA1933328700112023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CDF16F41933328600112023 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		8CDF16FC1933328700112023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CDF16F41933328600112023 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -42,17 +64,27 @@
 		8C82ED13193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED15193235A20055C5E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C82ED17193235A20055C5E2 /* Papercut-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Papercut-Prefix.pch"; sourceTree = "<group>"; };
-		8C82ED18193235A20055C5E2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		8C82ED19193235A20055C5E2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8C82ED18193235A20055C5E2 /* PaperCutAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaperCutAppDelegate.h; sourceTree = "<group>"; };
+		8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaperCutAppDelegate.m; sourceTree = "<group>"; };
 		8C82ED1C193235A20055C5E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C82ED1E193235A20055C5E2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8C82ED1F193235A20055C5E2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8C82ED1E193235A20055C5E2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		8C82ED1F193235A20055C5E2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8C82ED21193235A20055C5E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8C82ED27193235A20055C5E2 /* PapercutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PapercutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED28193235A20055C5E2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
+		8CDF16CD1932E7FD00112023 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		8CDF16CE1932E7FD00112023 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		8CDF16D11933261D00112023 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		8CDF16D31933262700112023 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		8CDF16D51933262F00112023 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8CDF16D71933263500112023 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8CDF16D91933263E00112023 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8CDF16E71933305A00112023 /* ShowCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCameraViewController.h; sourceTree = "<group>"; };
+		8CDF16E81933305A00112023 /* ShowCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCameraViewController.m; sourceTree = "<group>"; };
+		8CDF16F41933328600112023 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +92,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */,
+				8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */,
+				8CDF16D81933263500112023 /* AVFoundation.framework in Frameworks */,
+				8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */,
+				8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */,
+				8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */,
 				8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */,
 				8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */,
 				8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */,
@@ -101,6 +139,12 @@
 		8C82ED08193235A20055C5E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CDF16F41933328600112023 /* GPUImage.xcodeproj */,
+				8CDF16D91933263E00112023 /* QuartzCore.framework */,
+				8CDF16D71933263500112023 /* AVFoundation.framework */,
+				8CDF16D51933262F00112023 /* OpenGLES.framework */,
+				8CDF16D31933262700112023 /* CoreVideo.framework */,
+				8CDF16D11933261D00112023 /* CoreMedia.framework */,
 				8C82ED09193235A20055C5E2 /* Foundation.framework */,
 				8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */,
 				8C82ED0D193235A20055C5E2 /* UIKit.framework */,
@@ -112,11 +156,15 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
-				8C82ED18193235A20055C5E2 /* AppDelegate.h */,
-				8C82ED19193235A20055C5E2 /* AppDelegate.m */,
+				8C82ED18193235A20055C5E2 /* PaperCutAppDelegate.h */,
+				8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */,
 				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
-				8C82ED1E193235A20055C5E2 /* ViewController.h */,
-				8C82ED1F193235A20055C5E2 /* ViewController.m */,
+				8C82ED1E193235A20055C5E2 /* RootViewController.h */,
+				8C82ED1F193235A20055C5E2 /* RootViewController.m */,
+				8CDF16CD1932E7FD00112023 /* CameraViewController.h */,
+				8CDF16CE1932E7FD00112023 /* CameraViewController.m */,
+				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
+				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
 				8C82ED21193235A20055C5E2 /* Images.xcassets */,
 				8C82ED10193235A20055C5E2 /* Supporting Files */,
 			);
@@ -150,6 +198,15 @@
 				8C82ED31193235A20055C5E2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CDF16F51933328600112023 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CDF16FB1933328700112023 /* libGPUImage.a */,
+				8CDF16FD1933328700112023 /* GPUImageTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +272,12 @@
 			mainGroup = 8C82ECFD193235A10055C5E2;
 			productRefGroup = 8C82ED07193235A20055C5E2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8CDF16F51933328600112023 /* Products */;
+					ProjectRef = 8CDF16F41933328600112023 /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8C82ED05193235A20055C5E2 /* Papercut */,
@@ -222,6 +285,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8CDF16FB1933328700112023 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 8CDF16FA1933328700112023 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8CDF16FD1933328700112023 /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 8CDF16FC1933328700112023 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8C82ED04193235A20055C5E2 /* Resources */ = {
@@ -249,8 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C82ED20193235A20055C5E2 /* ViewController.m in Sources */,
-				8C82ED1A193235A20055C5E2 /* AppDelegate.m in Sources */,
+				8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */,
+				8C82ED20193235A20055C5E2 /* RootViewController.m in Sources */,
+				8CDF16CF1932E7FD00112023 /* CameraViewController.m in Sources */,
+				8C82ED1A193235A20055C5E2 /* PaperCutAppDelegate.m in Sources */,
 				8C82ED16193235A20055C5E2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,9 +415,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Users/jackie/Documents/Developer/Papercut/framework/**";
 			};
 			name = Debug;
 		};
@@ -365,8 +448,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Users/jackie/Documents/Developer/Papercut/framework/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -379,6 +463,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papercut/Papercut-Prefix.pch";
 				INFOPLIST_FILE = "Papercut/Papercut-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +477,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papercut/Papercut-Prefix.pch";
 				INFOPLIST_FILE = "Papercut/Papercut-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +542,7 @@
 				8C82ED3A193235A20055C5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8C82ED3B193235A20055C5E2 /* Build configuration list for PBXNativeTarget "PapercutTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +551,7 @@
 				8C82ED3D193235A20055C5E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
