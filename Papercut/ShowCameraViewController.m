@@ -10,9 +10,12 @@
 
 @interface ShowCameraViewController()
 
-@property (strong, nonatomic)GPUImageVideoCamera *videoCamera;
+//@property (strong, nonatomic)GPUImagestillImageCamera *stillImageCamera;
 @property (strong, nonatomic)GPUImageView *cameraImageView;
 @property (strong, nonatomic)GPUImageFilter *filter;
+@property (strong, nonatomic)GPUImageStillCamera *stillImageCamera;
+@property (weak, nonatomic) IBOutlet UIImageView *resultImage;
+
 @end
 
 @implementation ShowCameraViewController
@@ -30,19 +33,33 @@
 
 - (void)awakeFromNib
 {
-    self.cameraImageView = [[GPUImageView alloc]initWithFrame:CGRectMake(0, 64, 320, 380)];
-    self.videoCamera = [[GPUImageVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
-    self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+
+    self.cameraImageView = [[GPUImageView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 380)];
+    self.stillImageCamera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront];
+    self.stillImageCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     [self.view addSubview:self.cameraImageView];
-    
     self.filter = [[GPUImageFilter alloc]initWithFragmentShaderFromFile:@"Shader1"];
+    
     [_filter forceProcessingAtSize:self.cameraImageView.sizeInPixels];
-   
-    [self.videoCamera addTarget:_filter];
+    [self.stillImageCamera addTarget:_filter];
     [_filter addTarget:self.cameraImageView];
     
-    [self.videoCamera startCameraCapture];
-    
+    [self.stillImageCamera startCameraCapture];
+
+}
+
+/**
+ * 按下拍照键
+ */
+- (IBAction)shootButtonPressed:(id)sender
+{
+    [self.stillImageCamera capturePhotoAsImageProcessedUpToFilter:self.filter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
+        //self.cameraImageView = processedImage;
+        [self.view bringSubviewToFront:self.resultImage];
+        self.cameraImageView.hidden = YES;
+        self.resultImage.hidden = NO;
+        self.resultImage.image = processedImage;
+    }];
 }
 
 @end
