@@ -29,6 +29,7 @@
 		8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D91933263E00112023 /* QuartzCore.framework */; };
 		8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16E81933305A00112023 /* ShowCameraViewController.m */; };
 		8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16FB1933328700112023 /* libGPUImage.a */; };
+		8CDF170D193390B500112023 /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8CDF170C193390B500112023 /* Shader1.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		8CDF16E71933305A00112023 /* ShowCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCameraViewController.h; sourceTree = "<group>"; };
 		8CDF16E81933305A00112023 /* ShowCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCameraViewController.m; sourceTree = "<group>"; };
 		8CDF16F41933328600112023 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		8CDF170C193390B500112023 /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				8CDF16CD1932E7FD00112023 /* CameraViewController.h */,
 				8CDF16CE1932E7FD00112023 /* CameraViewController.m */,
 				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
+				8CDF170C193390B500112023 /* Shader1.fsh */,
 				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
 				8C82ED21193235A20055C5E2 /* Images.xcassets */,
 				8C82ED10193235A20055C5E2 /* Supporting Files */,
@@ -310,6 +313,7 @@
 			files = (
 				8C82ED22193235A20055C5E2 /* Images.xcassets in Resources */,
 				8C82ED14193235A20055C5E2 /* InfoPlist.strings in Resources */,
+				8CDF170D193390B500112023 /* Shader1.fsh in Resources */,
 				8C82ED1D193235A20055C5E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

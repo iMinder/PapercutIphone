@@ -11,6 +11,4 @@
 
 @interface ShowCameraViewController : UIViewController
 
-@property (strong, nonatomic) GPUImageVideoCamera *videoCamera;
-
 @end
