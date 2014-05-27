@@ -119,6 +119,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C250CB91934CA3A0089945F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				8CDF16CD1932E7FD00112023 /* CameraViewController.h */,
+				8CDF16CE1932E7FD00112023 /* CameraViewController.m */,
+				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
+				8CDF170C193390B500112023 /* Shader1.fsh */,
+				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		8C250CBB1934CA670089945F /* Scrawl */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scrawl;
+			sourceTree = "<group>";
+		};
+		8C250CBC1934CA790089945F /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		8C250CBD1934CA820089945F /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		8C250CBE1934CAC10089945F /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Learn;
+			sourceTree = "<group>";
+		};
 		8C82ECFD193235A10055C5E2 = {
 			isa = PBXGroup;
 			children = (
@@ -158,16 +198,16 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
+				8C250CBE1934CAC10089945F /* Learn */,
+				8C250CBD1934CA820089945F /* Gallery */,
+				8C250CBC1934CA790089945F /* Welcome */,
+				8C250CBB1934CA670089945F /* Scrawl */,
+				8C250CB91934CA3A0089945F /* Camera */,
 				8C82ED18193235A20055C5E2 /* PaperCutAppDelegate.h */,
 				8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */,
 				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
 				8C82ED1E193235A20055C5E2 /* RootViewController.h */,
 				8C82ED1F193235A20055C5E2 /* RootViewController.m */,
-				8CDF16CD1932E7FD00112023 /* CameraViewController.h */,
-				8CDF16CE1932E7FD00112023 /* CameraViewController.m */,
-				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
-				8CDF170C193390B500112023 /* Shader1.fsh */,
-				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
 				8C82ED21193235A20055C5E2 /* Images.xcassets */,
 				8C82ED10193235A20055C5E2 /* Supporting Files */,
 			);
@@ -422,7 +462,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "/Users/jackie/Documents/Developer/Papercut/framework/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/framework/**";
 			};
 			name = Debug;
 		};
@@ -454,7 +494,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "/Users/jackie/Documents/Developer/Papercut/framework/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/framework/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -17,13 +17,13 @@
 
 @implementation CameraViewController
 
-- (IBAction)showImagePickerForCamera:(id)sender
-{
-   // [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
-    ShowCameraViewController *cameraViewController = [[ShowCameraViewController alloc]init];
-    cameraViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [self presentViewController:cameraViewController animated:YES completion:nil];
-}
+//- (IBAction)showImagePickerForCamera:(id)sender
+//{
+//   // [self showImagePickerForSourceType:UIImagePickerControllerSourceTypeCamera];
+//    ShowCameraViewController *cameraViewController = [[ShowCameraViewController alloc]init];
+//    cameraViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+//    [self presentViewController:cameraViewController animated:YES completion:nil];
+//}
 
 - (IBAction)showImagePickerForPhotoPicker:(id)sender
 {
