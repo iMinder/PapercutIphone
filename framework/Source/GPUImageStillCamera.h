@@ -5,7 +5,8 @@ void GPUImageCreateResizedSampleBuffer(CVPixelBufferRef cameraFrame, CGSize fina
 
 @interface GPUImageStillCamera : GPUImageVideoCamera
 
-/** The JPEG compression quality to use when capturing a photo as a JPEG.
+/** 
+ * The JPEG compression quality to use when capturing a photo as a JPEG.
  */
 @property CGFloat jpegCompressionQuality;
 

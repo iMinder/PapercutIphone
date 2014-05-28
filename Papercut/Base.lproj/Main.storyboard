@@ -37,6 +37,9 @@
                                 <state key="normal" title="阳刻">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showYangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="kVj-o1-XLn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
                                 <rect key="frame" x="83" y="448" width="69" height="32"/>
@@ -44,6 +47,9 @@
                                 <state key="normal" title="阴刻">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showYinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="aWd-oV-Vez"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwo-Ty-c26">
                                 <rect key="frame" x="167" y="448" width="69" height="32"/>
@@ -70,7 +76,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-3L-zgf">
-                                <rect key="frame" x="231" y="506" width="30" height="30"/>
+                                <rect key="frame" x="193" y="506" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="取消">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,20 +85,33 @@
                                     <action selector="dismissModalView:" destination="O4V-YF-znb" eventType="touchUpInside" id="5ca-L1-0lI"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Up2-vh-QeT">
-                                <rect key="frame" x="0.0" y="57" width="320" height="357"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz8-bo-mY4">
+                                <rect key="frame" x="26" y="506" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="相册选取">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showImagePickerForPhotoPicker:" destination="O4V-YF-znb" eventType="touchUpInside" id="mmn-Z1-QqU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
+                                <rect key="frame" x="244" y="422" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="前后置">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCameraBackOrFront:" destination="O4V-YF-znb" eventType="touchUpInside" id="Vow-LI-kYv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="resultImage" destination="Up2-vh-QeT" id="uYZ-1M-DRQ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-28"/>
+            <point key="canvasLocation" x="787" y="-35"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="ZbI-zQ-Ouw">
@@ -133,7 +152,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DA7-jc-xDJ" kind="push" identifier="papercamera" id="B64-kA-WH5"/>
+                                    <segue destination="O4V-YF-znb" kind="modal" id="Slp-bU-Ydu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-d7-2aJ">
@@ -218,47 +237,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4A-M9-MSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="775" y="634"/>
-        </scene>
-        <!--Camera View Controller - 剪纸相机-->
-        <scene sceneID="Qo4-O5-5LO">
-            <objects>
-                <viewController id="DA7-jc-xDJ" customClass="CameraViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tNh-y1-6ug"/>
-                        <viewControllerLayoutGuide type="bottom" id="GAi-jJ-ALQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Jg0-6b-2KA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tix-oG-YoY">
-                                <rect key="frame" x="59" y="242" width="72" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="拍照">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="O4V-YF-znb" kind="modal" modalTransitionStyle="flipHorizontal" id="Mvu-nm-Ed0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eG8-bY-RU7">
-                                <rect key="frame" x="211" y="242" width="72" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="相册">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showImagePickerForPhotoPicker:" destination="DA7-jc-xDJ" eventType="touchUpInside" id="xjj-FL-cpE"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="剪纸相机" id="5Rf-g6-Htz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Id6-E6-mXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="775" y="-28"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

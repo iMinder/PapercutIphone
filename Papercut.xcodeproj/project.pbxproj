@@ -21,7 +21,9 @@
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
-		8CDF16CF1932E7FD00112023 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16CE1932E7FD00112023 /* CameraViewController.m */; };
+		8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PCVideoCamera.m */; };
+		8C8446421935F512004F4184 /* yinke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C8446411935F512004F4184 /* yinke.fsh */; };
+		8C8446441935F519004F4184 /* yangke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C8446431935F519004F4184 /* yangke.fsh */; };
 		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
 		8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D31933262700112023 /* CoreVideo.framework */; };
 		8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D51933262F00112023 /* OpenGLES.framework */; };
@@ -29,7 +31,6 @@
 		8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D91933263E00112023 /* QuartzCore.framework */; };
 		8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16E81933305A00112023 /* ShowCameraViewController.m */; };
 		8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16FB1933328700112023 /* libGPUImage.a */; };
-		8CDF170D193390B500112023 /* Shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8CDF170C193390B500112023 /* Shader1.fsh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,8 +77,11 @@
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
-		8CDF16CD1932E7FD00112023 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		8CDF16CE1932E7FD00112023 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		8C84463A193587A5004F4184 /* PCVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCVideoCamera.h; sourceTree = "<group>"; };
+		8C84463B193587A5004F4184 /* PCVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCVideoCamera.m; sourceTree = "<group>"; };
+		8C84464019358A4E004F4184 /* PapercutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutFilter.h; sourceTree = "<group>"; };
+		8C8446411935F512004F4184 /* yinke.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = yinke.fsh; sourceTree = "<group>"; };
+		8C8446431935F519004F4184 /* yangke.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = yangke.fsh; sourceTree = "<group>"; };
 		8CDF16D11933261D00112023 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8CDF16D31933262700112023 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8CDF16D51933262F00112023 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -86,7 +90,6 @@
 		8CDF16E71933305A00112023 /* ShowCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCameraViewController.h; sourceTree = "<group>"; };
 		8CDF16E81933305A00112023 /* ShowCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCameraViewController.m; sourceTree = "<group>"; };
 		8CDF16F41933328600112023 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
-		8CDF170C193390B500112023 /* Shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader1.fsh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +125,13 @@
 		8C250CB91934CA3A0089945F /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				8CDF16CD1932E7FD00112023 /* CameraViewController.h */,
-				8CDF16CE1932E7FD00112023 /* CameraViewController.m */,
+				8C8446431935F519004F4184 /* yangke.fsh */,
+				8C8446411935F512004F4184 /* yinke.fsh */,
 				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
-				8CDF170C193390B500112023 /* Shader1.fsh */,
 				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
+				8C84463A193587A5004F4184 /* PCVideoCamera.h */,
+				8C84463B193587A5004F4184 /* PCVideoCamera.m */,
+				8C84464019358A4E004F4184 /* PapercutFilter.h */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -351,9 +356,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8446421935F512004F4184 /* yinke.fsh in Resources */,
 				8C82ED22193235A20055C5E2 /* Images.xcassets in Resources */,
 				8C82ED14193235A20055C5E2 /* InfoPlist.strings in Resources */,
-				8CDF170D193390B500112023 /* Shader1.fsh in Resources */,
+				8C8446441935F519004F4184 /* yangke.fsh in Resources */,
 				8C82ED1D193235A20055C5E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,7 +381,7 @@
 			files = (
 				8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */,
 				8C82ED20193235A20055C5E2 /* RootViewController.m in Sources */,
-				8CDF16CF1932E7FD00112023 /* CameraViewController.m in Sources */,
+				8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */,
 				8C82ED1A193235A20055C5E2 /* PaperCutAppDelegate.m in Sources */,
 				8C82ED16193235A20055C5E2 /* main.m in Sources */,
 			);
