@@ -64,6 +64,9 @@
                                 <state key="normal" title="原图">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="showNormal:" destination="O4V-YF-znb" eventType="touchUpInside" id="8CJ-KT-spI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
                                 <rect key="frame" x="145" y="506" width="33" height="30"/>
@@ -105,9 +108,25 @@
                                     <action selector="changeCameraBackOrFront:" destination="O4V-YF-znb" eventType="touchUpInside" id="Vow-LI-kYv"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOn-cL-x6X">
+                                <rect key="frame" x="139" y="506" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="使用">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="usePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="eM0-Sj-rFF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="albumChooseButton" destination="Nz8-bo-mY4" id="Wpc-aH-bVU"/>
+                        <outlet property="backFrontButton" destination="WXU-mk-Kf7" id="DPN-3q-FTS"/>
+                        <outlet property="takePhotoButton" destination="gqJ-FS-dWH" id="9Ez-eg-IJI"/>
+                        <outlet property="usePhotoButton" destination="KOn-cL-x6X" id="ivK-Ae-vOu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
