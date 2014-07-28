@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
+		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
+		8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC991980ED2800A94FED /* ImageEditViewController.m */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -22,8 +25,11 @@
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
 		8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PCVideoCamera.m */; };
-		8C8446421935F512004F4184 /* yinke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C8446411935F512004F4184 /* yinke.fsh */; };
-		8C8446441935F519004F4184 /* yangke.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C8446431935F519004F4184 /* yangke.fsh */; };
+		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
+		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
+		8CD33EA8198291E8005B0569 /* EditManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA7198291E8005B0569 /* EditManager.m */; };
+		8CD33EAA1984BB35005B0569 /* JotUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD33EA91984BB35005B0569 /* JotUI.framework */; };
+		8CD33EAC1984BB3F005B0569 /* JotTouchSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD33EAB1984BB3F005B0569 /* JotTouchSDK.framework */; };
 		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
 		8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D31933262700112023 /* CoreVideo.framework */; };
 		8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D51933262F00112023 /* OpenGLES.framework */; };
@@ -31,6 +37,7 @@
 		8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D91933263E00112023 /* QuartzCore.framework */; };
 		8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16E81933305A00112023 /* ShowCameraViewController.m */; };
 		8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16FB1933328700112023 /* libGPUImage.a */; };
+		8CFC41571939CE82006EFC6B /* YangKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC41561939CE82006EFC6B /* YangKeFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C33EC91197FAAA800A94FED /* YinKeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YinKeFilter.h; sourceTree = "<group>"; };
+		8C33EC92197FAAA800A94FED /* YinKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YinKeFilter.m; sourceTree = "<group>"; };
+		8C33EC951980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
+		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
+		8C33EC981980ED2800A94FED /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
+		8C33EC991980ED2800A94FED /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,8 +93,15 @@
 		8C84463A193587A5004F4184 /* PCVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCVideoCamera.h; sourceTree = "<group>"; };
 		8C84463B193587A5004F4184 /* PCVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCVideoCamera.m; sourceTree = "<group>"; };
 		8C84464019358A4E004F4184 /* PapercutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutFilter.h; sourceTree = "<group>"; };
-		8C8446411935F512004F4184 /* yinke.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = yinke.fsh; sourceTree = "<group>"; };
-		8C8446431935F519004F4184 /* yangke.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = yangke.fsh; sourceTree = "<group>"; };
+		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
+		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
+		8CD33EA31981FD80005B0569 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
+		8CD33EA41981FD80005B0569 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
+		8CD33EA6198291E8005B0569 /* EditManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditManager.h; sourceTree = "<group>"; };
+		8CD33EA7198291E8005B0569 /* EditManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditManager.m; sourceTree = "<group>"; };
+		8CD33EA91984BB35005B0569 /* JotUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JotUI.framework; sourceTree = "<group>"; };
+		8CD33EAB1984BB3F005B0569 /* JotTouchSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JotTouchSDK.framework; sourceTree = "<group>"; };
+		8CD33EAD1984BBBA005B0569 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8CDF16D11933261D00112023 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8CDF16D31933262700112023 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8CDF16D51933262F00112023 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -90,6 +110,8 @@
 		8CDF16E71933305A00112023 /* ShowCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCameraViewController.h; sourceTree = "<group>"; };
 		8CDF16E81933305A00112023 /* ShowCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCameraViewController.m; sourceTree = "<group>"; };
 		8CDF16F41933328600112023 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		8CFC41551939CE82006EFC6B /* YangKeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YangKeFilter.h; sourceTree = "<group>"; };
+		8CFC41561939CE82006EFC6B /* YangKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YangKeFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +119,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */,
+				8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */,
 				8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */,
 				8CDF16DA1933263E00112023 /* QuartzCore.framework in Frameworks */,
 				8CDF16D81933263500112023 /* AVFoundation.framework in Frameworks */,
-				8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */,
 				8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */,
 				8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */,
-				8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */,
 				8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */,
+				8CD33EAC1984BB3F005B0569 /* JotTouchSDK.framework in Frameworks */,
+				8CD33EAA1984BB35005B0569 /* JotUI.framework in Frameworks */,
 				8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,13 +149,19 @@
 		8C250CB91934CA3A0089945F /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				8C8446431935F519004F4184 /* yangke.fsh */,
-				8C8446411935F512004F4184 /* yinke.fsh */,
+				8CD33EA21981FD80005B0569 /* UIImage+blend */,
+				8CD33E9E1981FD0D005B0569 /* UIImage+vImage */,
+				8C33EC941980B23B00A94FED /* custom_album */,
+				8C33EC90197FA7F000A94FED /* filters */,
 				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
 				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
+				8C33EC981980ED2800A94FED /* ImageEditViewController.h */,
+				8C33EC991980ED2800A94FED /* ImageEditViewController.m */,
 				8C84463A193587A5004F4184 /* PCVideoCamera.h */,
 				8C84463B193587A5004F4184 /* PCVideoCamera.m */,
 				8C84464019358A4E004F4184 /* PapercutFilter.h */,
+				8CD33EA6198291E8005B0569 /* EditManager.h */,
+				8CD33EA7198291E8005B0569 /* EditManager.m */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -164,6 +194,26 @@
 			name = Learn;
 			sourceTree = "<group>";
 		};
+		8C33EC90197FA7F000A94FED /* filters */ = {
+			isa = PBXGroup;
+			children = (
+				8CFC41551939CE82006EFC6B /* YangKeFilter.h */,
+				8CFC41561939CE82006EFC6B /* YangKeFilter.m */,
+				8C33EC91197FAAA800A94FED /* YinKeFilter.h */,
+				8C33EC92197FAAA800A94FED /* YinKeFilter.m */,
+			);
+			name = filters;
+			sourceTree = "<group>";
+		};
+		8C33EC941980B23B00A94FED /* custom_album */ = {
+			isa = PBXGroup;
+			children = (
+				8C33EC951980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.h */,
+				8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */,
+			);
+			name = custom_album;
+			sourceTree = "<group>";
+		};
 		8C82ECFD193235A10055C5E2 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +236,9 @@
 		8C82ED08193235A20055C5E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CD33EAD1984BBBA005B0569 /* AudioToolbox.framework */,
+				8CD33EAB1984BB3F005B0569 /* JotTouchSDK.framework */,
+				8CD33EA91984BB35005B0569 /* JotUI.framework */,
 				8CDF16F41933328600112023 /* GPUImage.xcodeproj */,
 				8CDF16D91933263E00112023 /* QuartzCore.framework */,
 				8CDF16D71933263500112023 /* AVFoundation.framework */,
@@ -203,11 +256,11 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
+				8C250CB91934CA3A0089945F /* Camera */,
 				8C250CBE1934CAC10089945F /* Learn */,
 				8C250CBD1934CA820089945F /* Gallery */,
 				8C250CBC1934CA790089945F /* Welcome */,
 				8C250CBB1934CA670089945F /* Scrawl */,
-				8C250CB91934CA3A0089945F /* Camera */,
 				8C82ED18193235A20055C5E2 /* PaperCutAppDelegate.h */,
 				8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */,
 				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
@@ -246,6 +299,24 @@
 				8C82ED31193235A20055C5E2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8CD33E9E1981FD0D005B0569 /* UIImage+vImage */ = {
+			isa = PBXGroup;
+			children = (
+				8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */,
+				8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */,
+			);
+			path = "UIImage+vImage";
+			sourceTree = "<group>";
+		};
+		8CD33EA21981FD80005B0569 /* UIImage+blend */ = {
+			isa = PBXGroup;
+			children = (
+				8CD33EA31981FD80005B0569 /* UIImage+Blend.h */,
+				8CD33EA41981FD80005B0569 /* UIImage+Blend.m */,
+			);
+			path = "UIImage+blend";
 			sourceTree = "<group>";
 		};
 		8CDF16F51933328600112023 /* Products */ = {
@@ -356,10 +427,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C8446421935F512004F4184 /* yinke.fsh in Resources */,
 				8C82ED22193235A20055C5E2 /* Images.xcassets in Resources */,
 				8C82ED14193235A20055C5E2 /* InfoPlist.strings in Resources */,
-				8C8446441935F519004F4184 /* yangke.fsh in Resources */,
 				8C82ED1D193235A20055C5E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,11 +448,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */,
 				8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */,
+				8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */,
 				8C82ED20193235A20055C5E2 /* RootViewController.m in Sources */,
 				8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */,
+				8CD33EA8198291E8005B0569 /* EditManager.m in Sources */,
+				8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */,
 				8C82ED1A193235A20055C5E2 /* PaperCutAppDelegate.m in Sources */,
+				8CFC41571939CE82006EFC6B /* YangKeFilter.m in Sources */,
 				8C82ED16193235A20055C5E2 /* main.m in Sources */,
+				8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */,
+				8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,10 +586,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papercut/Papercut-Prefix.pch";
 				INFOPLIST_FILE = "Papercut/Papercut-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-fobjc-arc",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -524,10 +609,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papercut/Papercut-Prefix.pch";
 				INFOPLIST_FILE = "Papercut/Papercut-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-fobjc-arc",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

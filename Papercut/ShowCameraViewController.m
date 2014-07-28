@@ -7,13 +7,13 @@
 //
 
 #import "ShowCameraViewController.h"
+#import "ImageEditViewController.h"
 
 
 @interface ShowCameraViewController()
 
 //@property (strong, nonatomic)GPUImagestillImageCamera *stillImageCamera;
 @property (strong, nonatomic)GPUImageView *cameraImageView;
-@property (strong, nonatomic)GPUImageFilter *filter;
 @property (strong, nonatomic)GPUImageStillCamera *stillImageCamera;
 @property (assign, nonatomic)BOOL isBackCamera;
 @property (strong, nonatomic) PCVideoCamera *pcVideoCamera;
@@ -58,7 +58,7 @@
     }
     else
     {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 
 }
@@ -71,9 +71,25 @@
 
 - (void)awakeFromNib
 {
-    self.isBackCamera = YES;
+    
+    self.navigationItem.hidesBackButton = YES;
+    self.isBackCamera = NO;
     self.isPhotoDisplayed = NO;
-    [self changeCameraBackOrFront:nil];
+    //[self changeCameraBackOrFront:nil];
+    self.pcVideoCamera = [[PCVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront highImageQuality:YES];
+    
+//    if ([self.pcVideoCamera.captureSession canSetSessionPreset:AVAssetExportPreset1280x720])
+//    {
+//        [self.pcVideoCamera.captureSession setSessionPreset:AVAssetExportPreset1280x720];
+//    }
+    
+    //设置以防前置摄像头的偏转，默认是有偏转的
+    _pcVideoCamera.delegate = self;
+    _pcVideoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    [self.view addSubview:self.pcVideoCamera.gpuImageView];
+    
+    [_pcVideoCamera startCameraCapture];
+    [self.pcVideoCamera rotateCamera];
 }
 
 /**
@@ -133,28 +149,26 @@
 {
     UIButton *changeButton = (UIButton *)sender;
     changeButton.enabled = NO;
-    if (_isBackCamera)
-    {
-        self.isBackCamera = NO;
-        self.pcVideoCamera = [[PCVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionBack highImageQuality:YES];
-    }
-    else
-    {
-        self.isBackCamera  = YES;
-        self.pcVideoCamera = [[PCVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront highImageQuality:YES];
-        
-    }
-    //设置以防前置摄像头的偏转，默认是有偏转的
-    _pcVideoCamera.delegate = self;
-    _pcVideoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    [self.view addSubview:self.pcVideoCamera.gpuImageView];
-    [_pcVideoCamera startCameraCapture];
+    [self.pcVideoCamera rotateCamera];
     changeButton.enabled = YES;
 }
 
 - (IBAction)usePhoto:(id)sender
 {
+    //跳转到下一页
+    //[self.pcVideoCamera saveCurrentStillImage];
+    [self performSegueWithIdentifier:@"EditImageIdentifier" sender:self];
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditImageIdentifier"]) {
+       // UIViewController *VC = segue.destinationViewController;
+        //[self.navigationController pushViewController:VC animated:YES];
+        ImageEditViewController *VC = (ImageEditViewController*)segue.destinationViewController;
+        VC.editImage = [self.pcVideoCamera editImage];
+    }
 }
 #pragma mark -- PCVideoCameraDelegate Method
 
@@ -169,9 +183,27 @@
     
 }
 
-- (void)PCVideCameraDidSaveCaptureStillImage:(PCVideoCamera *)videoCamera
+- (void)PCVideCameraDidSaveCaptureStillImage:(PCVideoCamera *)videoCamera withError:(NSError *)error
 {
-    
+    if (error) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+    }
+    else
+    {//跳转到下一页
+        
+    }
+}
+
+- (IBAction)updateFilterFromSlider:(id)sender {
+    switch (self.pcVideoCamera.currentFilterType) {
+        case PC_YANGKE_FILTER:
+        case PC_YINKE_FILTER:
+            self.pcVideoCamera.sketchFilter.threshold = ((UISlider *)sender).value;
+            break;
+        default:
+            break;
+    }
 }
 
 @end

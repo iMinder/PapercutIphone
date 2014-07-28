@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oPW-Gd-7Ao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oPW-Gd-7Ao">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-280" y="-232"/>
         </scene>
-        <!--Show Camera View Controller-->
+        <!--Show Camera View Controller - 剪纸相机-->
         <scene sceneID="CQG-A8-MEh">
             <objects>
-                <viewController id="O4V-YF-znb" customClass="ShowCameraViewController" sceneMemberID="viewController">
+                <viewController title="剪纸相机" id="O4V-YF-znb" customClass="ShowCameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exv-Ic-72F"/>
                         <viewControllerLayoutGuide type="bottom" id="LwI-KX-dGJ"/>
@@ -59,7 +59,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
-                                <rect key="frame" x="244" y="448" width="69" height="32"/>
+                                <rect key="frame" x="238" y="448" width="69" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="原图">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
-                                <rect key="frame" x="244" y="422" width="45" height="30"/>
+                                <rect key="frame" x="244" y="506" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="前后置">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,21 +118,136 @@
                                     <action selector="usePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="eM0-Sj-rFF"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-Jf-dg9">
+                                <rect key="frame" x="18" y="476" width="273" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="updateFilterFromSlider:" destination="O4V-YF-znb" eventType="valueChanged" id="ldf-h8-hQX"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="albumChooseButton" destination="Nz8-bo-mY4" id="Wpc-aH-bVU"/>
                         <outlet property="backFrontButton" destination="WXU-mk-Kf7" id="DPN-3q-FTS"/>
                         <outlet property="takePhotoButton" destination="gqJ-FS-dWH" id="9Ez-eg-IJI"/>
                         <outlet property="usePhotoButton" destination="KOn-cL-x6X" id="ivK-Ae-vOu"/>
+                        <segue destination="ckc-lN-4El" kind="push" identifier="EditImageIdentifier" id="TZW-s2-yv7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="-35"/>
+            <point key="canvasLocation" x="755" y="-22"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Image Edit View Controller - 处理-->
+        <scene sceneID="rqK-D6-mOG">
+            <objects>
+                <viewController id="ckc-lN-4El" customClass="ImageEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GcB-tS-dM5"/>
+                        <viewControllerLayoutGuide type="bottom" id="J39-fc-PlC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Qi-f9-sxw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-gl-ecZ">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" id="3YR-fa-Bc7">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sv0-MC-ZBB">
+                                            <rect key="frame" x="16" y="6" width="59" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="膨胀">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="dilate:" destination="ckc-lN-4El" eventType="touchUpInside" id="yVB-mY-ibh"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="HkD-Df-wRq">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4CF-Dy-OwI">
+                                            <rect key="frame" x="85" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="腐蚀">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="erosion:" destination="ckc-lN-4El" eventType="touchUpInside" id="Zay-CZ-5gr"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="IZc-wN-DQV">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Mb2-Zw-l84">
+                                            <rect key="frame" x="168" y="6" width="73" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="画笔">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="brush:" destination="ckc-lN-4El" eventType="touchUpInside" id="o4T-Zt-BaJ"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="jH5-hb-hIT">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="21G-Tr-puy">
+                                            <rect key="frame" x="251" y="6" width="53" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="橡皮">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="rubber:" destination="ckc-lN-4El" eventType="touchUpInside" id="JwS-Hz-X4Q"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6a-km-unX">
+                                <rect key="frame" x="98" y="487" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="重做">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="redo:" destination="ckc-lN-4El" eventType="touchUpInside" id="mnu-Qx-bAs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-rr-Wv1">
+                                <rect key="frame" x="164" y="487" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="撤销">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undo:" destination="ckc-lN-4El" eventType="touchUpInside" id="zGk-Ah-s8T"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-wa-Dn5" customClass="JotView">
+                                <rect key="frame" x="15" y="77" width="290" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="处理" id="ZZP-FI-AhX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="jotView" destination="PTU-wa-Dn5" id="ZmW-xf-hEV"/>
+                        <outlet property="redoButton" destination="e6a-km-unX" id="iOx-jN-LRr"/>
+                        <outlet property="undoButton" destination="UqD-rr-Wv1" id="4C5-WC-o8k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvW-s9-viJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1143" y="-48"/>
+        </scene>
+        <!--Root View Controller - 妙趣剪纸-->
         <scene sceneID="ZbI-zQ-Ouw">
             <objects>
                 <viewController id="MIS-lZ-1m2" customClass="RootViewController" sceneMemberID="viewController">
@@ -171,7 +286,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="O4V-YF-znb" kind="modal" id="Slp-bU-Ydu"/>
+                                    <segue destination="O4V-YF-znb" kind="push" identifier="cameraIdentifier" id="Slp-bU-Ydu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-d7-2aJ">
@@ -194,7 +309,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VEB-JK-HHX"/>
+                    <navigationItem key="navigationItem" title="妙趣剪纸" id="VEB-JK-HHX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CG-RM-kUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +345,18 @@
                     <view key="view" contentMode="scaleToFill" id="Fv3-H0-bri">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-Ti-5j6">
+                                <rect key="frame" x="137" y="264" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="o6b-b7-es9" kind="push" id="cgE-te-8eE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="乐学剪纸" id="8SL-bR-GrF"/>
@@ -237,6 +364,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wI-71-QVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="775" y="-681"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H0K-QZ-scK">
+            <objects>
+                <viewController id="o6b-b7-es9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6LH-jI-0f4"/>
+                        <viewControllerLayoutGuide type="bottom" id="IdU-Xt-0HI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fqa-AY-X87">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sok-Rb-WW1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nto-OT-8JQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196" y="-681"/>
         </scene>
         <!--View Controller - 我的作品-->
         <scene sceneID="cqg-tV-Rdq">
