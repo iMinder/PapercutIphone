@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) UIImage *editImage;
 
-@property (weak, nonatomic) IBOutlet JotView *jotView;
+@property (weak, nonatomic) IBOutlet UIImageView *jotView;
 @property (weak, nonatomic) IBOutlet UIButton *redoButton;
 @property (weak, nonatomic) IBOutlet UIButton *undoButton;
 

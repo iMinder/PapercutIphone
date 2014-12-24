@@ -9,8 +9,6 @@
 #import "ImageEditViewController.h"
 #import "GPUImage.h"
 #import "UIImage+vImage.h"
-#import "EditManager.h"
-#import <JotUI/JotUI.h>
 
 @interface ImageEditViewController ()
 
@@ -35,7 +33,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.jotView loadImage:self.editImage];
+    //[self.jotView loadImage:self.editImage];
+    [self.jotView setImage:self.editImage];
     [super viewDidAppear:animated];
 }
 - (void)didReceiveMemoryWarning
@@ -64,16 +63,16 @@
     //先保存快照，再进行变化
     
     //id __weak weakSelf = self;
-    [self.jotView exportToImageWithBackgroundColor:nil
-                                andBackgroundImage:nil
-                                        onComplete:^(UIImage * image) {
-                                           // [weakSelf addUndoWithImage:image];
-                                            [self addUndoWithImage:image];
-                                        }];
+//    [self.jotView exportToImageWithBackgroundColor:nil
+//                                andBackgroundImage:nil
+//                                        onComplete:^(UIImage * image) {
+//                                           // [weakSelf addUndoWithImage:image];
+//                                            [self addUndoWithImage:image];
+//                                        }];
     
     
     self.editImage = [self.editImage dilate];
-    [self.jotView loadImage:self.editImage];
+    //[self.jotView loadImage:self.editImage];
 }
 
 /**
@@ -84,17 +83,19 @@
     //对比发现，使用GPU滤镜进行处理，内存上升很快
 //    GPUImageRGBErosionFilter *erosionFilter = [[GPUImageRGBErosionFilter alloc]init];
 //    self.editImage = [erosionFilter imageByFilteringImage:self.editImage];
-    id __weak weakSelf = self;
-    [self.jotView exportToImageWithBackgroundColor:nil
-                                andBackgroundImage:nil
-                                        onComplete:^(UIImage * image) {
-                                            //[weakSelf addUndoWithImage:image];
-                                            [self addUndoWithImage:image];
-                                        }];
+//    id __weak weakSelf = self;
+//    [self.jotView exportToImageWithBackgroundColor:nil
+//                                andBackgroundImage:nil
+//                                        onComplete:^(UIImage * image) {
+//                                            //[weakSelf addUndoWithImage:image];
+//                                            [self addUndoWithImage:image];
+//                                        }];
+    [self addUndoWithImage:self.editImage];
     
     self.editImage = [self.editImage erode];
     
-    [self.jotView loadImage:self.editImage];
+    [self.jotView setImage:self.editImage];
+  //  [self.jotView loadImage:self.editImage];
 }
 
 /**
@@ -114,7 +115,8 @@
     UIImage *image = [self.editManager undoWithImage:self.editImage];
     if (image) {
         self.editImage = image;
-         [self.jotView loadImage:self.editImage];
+         //[self.jotView loadImage:self.editImage];
+        [self.jotView setImage:self.editImage];
         [self.redoButton setEnabled:YES];
     }
     else
@@ -128,7 +130,8 @@
     UIImage *image = [self.editManager redoWithImage:self.editImage];
     if (image) {
         self.editImage = image;
-         [self.jotView loadImage:self.editImage];
+        // [self.jotView loadImage:self.editImage];
+            [self.jotView setImage:self.editImage];
         [self.undoButton setEnabled:YES];
     }
     else{
@@ -144,10 +147,4 @@
     
 }
 
-- (void)dealloc
-{
-    [self.jotView clear];
-    self.editImage = nil;
-    self.jotView = nil;
-}
 @end

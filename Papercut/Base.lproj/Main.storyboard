@@ -227,7 +227,7 @@
                                     <action selector="undo:" destination="ckc-lN-4El" eventType="touchUpInside" id="zGk-Ah-s8T"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-wa-Dn5" customClass="JotView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTU-wa-Dn5" customClass="UIImageView">
                                 <rect key="frame" x="15" y="77" width="290" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
