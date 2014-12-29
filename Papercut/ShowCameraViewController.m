@@ -8,7 +8,8 @@
 
 #import "ShowCameraViewController.h"
 #import "ImageEditViewController.h"
-
+#import "WDCanvasController.h"
+#import "WDPaintingManager.h"
 
 @interface ShowCameraViewController()
 
@@ -157,8 +158,18 @@
 {
     //跳转到下一页
     //[self.pcVideoCamera saveCurrentStillImage];
-    [self performSegueWithIdentifier:@"EditImageIdentifier" sender:self];
+    //[self performSegueWithIdentifier:@"EditImageIdentifier" sender:self];
     
+    WDCanvasController *canvasController = [[WDCanvasController alloc] init];
+    [self.navigationController pushViewController:canvasController animated:YES];
+    
+    CGSize size = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+    [[WDPaintingManager sharedInstance] createNewPaintingWithSize:size afterSave:^(WDDocument *document) {
+        // set the document before setting the editing flag
+        canvasController.document = document;
+        canvasController.editing = YES;
+        [canvasController insertImageToCavas:[self.pcVideoCamera editImage]];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

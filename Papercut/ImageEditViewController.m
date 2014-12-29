@@ -9,17 +9,25 @@
 #import "ImageEditViewController.h"
 #import "GPUImage.h"
 #import "UIImage+vImage.h"
+#import "EditManager.h"
+
+#import "WDPaintingManager.h"
+#import "WDCanvas.h"
+#import "WDDocument.h"
+#import "WDPainting.h"
 
 @interface ImageEditViewController ()
+@property (nonatomic, strong) WDCanvas* canvas;
+@property (nonatomic, strong) WDDocument *document;
+@property (nonatomic, strong) WDPainting *painting;
 
 @property (strong, nonatomic) EditManager *editManager;
-
 - (void)addUndoWithImage:(UIImage *)image;
 
 @end
 
 @implementation ImageEditViewController
-
+@synthesize canvas = canvas_;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,12 +37,15 @@
     [self.undoButton setEnabled:NO];
     [self.redoButton setEnabled:NO];
     
+
+
+  
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     //[self.jotView loadImage:self.editImage];
-    [self.jotView setImage:self.editImage];
+    //[self.jotView setImage:self.editImage];
     [super viewDidAppear:animated];
 }
 - (void)didReceiveMemoryWarning
