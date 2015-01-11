@@ -23,7 +23,7 @@
 
 @interface PCVideoCamera : GPUImageStillCamera
 
-@property (strong, nonatomic) GPUImageThresholdSketchFilter *sketchFilter;
+@property (strong, nonatomic) GPUImageAdaptiveThresholdFilter *sketchFilter;
 @property (assign, nonatomic) GPUImageFilter *lineFirstFilter;
 @property (assign, nonatomic) GPUImageFilter *lineLastFilter;
 @property (strong, nonatomic) GPUImageFilter *dilationFilter;

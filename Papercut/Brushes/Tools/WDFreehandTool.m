@@ -23,7 +23,6 @@
 #import "WDPanGestureRecognizer.h"
 #import "WDRandom.h"
 #import "WDUtilities.h"
-#import "WDStylusManager.h"
 
 #define kMaxError                   10.0f
 #define kSpeedFactor                3
@@ -143,7 +142,7 @@
     self.realPressure = NO;
     if ([recognizer isKindOfClass:[WDPanGestureRecognizer class]]) {
         UITouch *touch = [recognizer.touches anyObject];
-        pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:&realPressure];
+        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:&realPressure];
     }
     
     WDBezierNode *node = [WDBezierNode bezierNodeWithAnchorPoint:[WD3DPoint pointWithX:location.x y:location.y z:pressure]];
@@ -182,7 +181,7 @@
         }
     } else {
         UITouch *touch = [recognizer.touches anyObject];
-        pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:nil];
+        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:nil];
     }
         
     if (firstEver_) {

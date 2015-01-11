@@ -11,7 +11,6 @@
 
 #import <Twitter/Twitter.h>
 #import <MessageUI/MessageUI.h>
-
 #import "UIImage+Resize.h"
 #import "UIImage+Additions.h"
 #import "UIView+Additions.h"
@@ -39,8 +38,6 @@
 #import "WDPaintingManager.h"
 #import "WDProgressView.h"
 #import "WDRedoChange.h"
-#import "WDStylusManager.h"
-#import "WDStylusController.h"
 #import "WDToolButton.h"
 #import "WDUndoChange.h"
 #import "WDUtilities.h"
@@ -72,18 +69,18 @@
 @synthesize replayScale;
 @synthesize wasPlayingBeforeRotation;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
-    if (!self) {
-        return nil;
-    }
-    
-    [self setWantsFullScreenLayout:YES];
-    
-    return self;
-}
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    
+//    if (!self) {
+//        return nil;
+//    }
+//    
+//    [self setWantsFullScreenLayout:YES];
+//    
+//    return self;
+//}
 
 - (WDPainting *) painting
 {
@@ -180,18 +177,6 @@
 #pragma mark -
 #pragma mark Show Controllers
 
-- (void) showBlueToothPanel:(id)sender
-{
-    if ([self shouldDismissPopoverForClassController:[WDStylusController class] insideNavController:YES]) {
-        [self hidePopovers];
-        return;
-    }
-    
-    WDStylusController *stylusController = [[WDStylusController alloc] initWithNibName:@"Stylus" bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:stylusController];
-    
-    [self showController:navController fromBarButtonItem:sender animated:YES];
-}
 
 - (BOOL) shouldDismissPopoverForClassController:(Class)controllerClass insideNavController:(BOOL)insideNav
 {
@@ -333,21 +318,22 @@
      
     [shareSheet addButtonWithTitle:NSLocalizedString(@"Copy to Pasteboard", @"Copy to Pasteboard")
                              action:^(id sender) { [canvasController copyPainting:sender]; }];
+    //隐藏掉
+//    if (self.document) {
+//        [shareSheet addButtonWithTitle:NSLocalizedString(@"Duplicate", @"Duplicate")
+//                                action:^(id sender) { [canvasController duplicatePainting:sender]; }];
+//    }
     
-    if (self.document) {
-        [shareSheet addButtonWithTitle:NSLocalizedString(@"Duplicate", @"Duplicate")
-                                action:^(id sender) { [canvasController duplicatePainting:sender]; }];
-    }
-    
-    if (NSClassFromString(@"SLComposeViewController")) { // if we can facebook
-        [shareSheet addButtonWithTitle:NSLocalizedString(@"Post on Facebook", @"Post on Facebook")
-                                action:^(id sender) { [canvasController postOnFacebook:sender]; }];
-    }
+    //隐藏掉
+//    if (NSClassFromString(@"SLComposeViewController")) { // if we can facebook
+//        [shareSheet addButtonWithTitle:NSLocalizedString(@"Post on Facebook", @"Post on Facebook")
+//                                action:^(id sender) { [canvasController postOnFacebook:sender]; }];
+//    }
     
     // could check this with [TWTweetComposeViewController canSendTweet], but the behavior seems okay without the check
-    [shareSheet addButtonWithTitle:NSLocalizedString(@"Tweet", @"Tweet")
-                             action:^(id sender) { [canvasController tweetPainting:sender]; }];
-    
+//    [shareSheet addButtonWithTitle:NSLocalizedString(@"Tweet", @"Tweet")
+//                             action:^(id sender) { [canvasController tweetPainting:sender]; }];
+//    
     if (self.document && [MFMailComposeViewController canSendMail]) {
         [shareSheet addButtonWithTitle:NSLocalizedString(@"Email", @"Email")
                                  action:^(id sender) { [canvasController emailPNG:sender]; }];
@@ -1006,28 +992,21 @@
                                          landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
                                                  target:self
                                                  action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
-        WDBarItem *bluetooth = [WDBarItem barItemWithImage:[UIImage imageNamed:@"BlueTooth.png"]
-                                            landscapeImage:[UIImage imageNamed:@"BlueToothLandscape.png"]
-                                                    target:self
-                                                    action:@selector(showBlueToothPanel:)];
+//        WDBarItem *bluetooth = [WDBarItem barItemWithImage:[UIImage imageNamed:@"BlueTooth.png"]
+//                                            landscapeImage:[UIImage imageNamed:@"BlueToothLandscape.png"]
+//                                                    target:self
+//                                                    action:@selector(showBlueToothPanel:)];
         
         NSMutableArray *items = [NSMutableArray arrayWithObjects:fixed, backButton, [WDBarItem flexibleItem], nil];
         
         if (self.runningOnPhone) {
             [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
             
-            if ([WDStylusManager sharedStylusManager].isBlueToothEnabled) {
-                [items addObject:fixed];
-                [items addObject:bluetooth];
-                [items addObject:fixed];
-            } else {
-                [items addObject:[WDBarItem fixedItemWithWidth:15]];
-            }
+        
+            [items addObject:[WDBarItem fixedItemWithWidth:15]];
+        
         } else {
-            if ([WDStylusManager sharedStylusManager].isBlueToothEnabled) {
-                [items addObject:bluetooth];
-                [items addObject:fixed];
-            }
+           
             
             album_ = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"album.png"]
                                           target:self
@@ -1140,6 +1119,7 @@
     CGRect wellFrame = self.runningOnPhone ? CGRectMake(0, 0, 44, 44) : CGRectMake(0, 0, 66, 44);
     colorWell_ = [[WDColorWell alloc] initWithFrame:wellFrame];
     WDBarItem *colorItem = [WDBarItem barItemWithView:colorWell_];
+    
     colorWell_.color = [WDActiveState sharedInstance].paintColor;
     [colorWell_ addTarget:self action:@selector(showColorPicker:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -1152,12 +1132,14 @@
     
     NSMutableArray *items;
     if (self.runningOnPhone) {
+        //做一定改动，只留三个显示
         items = [NSMutableArray arrayWithObjects:
                  colorItem, [WDBarItem flexibleItem],
+                 //[WDBarItem flexibleItem],
                  brushItem, [WDBarItem flexibleItem],
                  undo_, [WDBarItem flexibleItem],
                  redo_, [WDBarItem flexibleItem],
-                 gear_, [WDBarItem flexibleItem],
+                 //gear_, [WDBarItem flexibleItem],
                  nil];
     } else {
         items = [NSMutableArray arrayWithObjects:
@@ -1167,12 +1149,13 @@
         
         [items addObjectsFromArray:@[[WDBarItem flexibleItem],
                                     brushItem, [WDBarItem flexibleItem],
-                                    brushSizeItem, 
+                                    brushSizeItem,
                                     [WDBarItem flexibleItem],
                                     undo_, fixed,
                                     redo_, fixed,
-                                    gear_, fixed,
-                                    layer_]];
+                                    //gear_, fixed,
+                                   // layer_
+                                     ]];
     }
     
     return items;
@@ -1255,6 +1238,8 @@
         
         [background addSubview:canvas_];
         
+        //设置当前画笔颜色为红色
+        [WDActiveState sharedInstance].paintColor = [WDColor redColor];
         if (self.canvasSettings) {
             [canvas_ updateFromSettings:self.canvasSettings];
             self.canvasSettings = nil;
@@ -1541,20 +1526,6 @@
                                                      name:NSUndoManagerWillCloseUndoGroupNotification object:undoManager];
     }
     
-    // listen for stylus buttons too
-    [nc addObserver:self selector:@selector(primaryStylusButtonPressed:)
-               name:WDStylusPrimaryButtonPressedNotification object:nil];
-    
-    [nc addObserver:self selector:@selector(secondaryStylusButtonPressed:)
-               name:WDStylusSecondaryButtonPressedNotification object:nil];
-    
-    // and stylus connections
-    [nc addObserver:self selector:@selector(stylusConnected:)
-               name:WDStylusDidConnectNotification object:nil];
-    [nc addObserver:self selector:@selector(stylusDisconnected:)
-               name:WDStylusDidDisconnectNotification object:nil];
-    
-    [nc addObserver:self selector:@selector(blueToothStatusChanged:) name:WDBlueToothStateChangedNotification object:nil];
 }
 
 - (void) fadingOutActionNameView:(WDActionNameView *)inActionNameView

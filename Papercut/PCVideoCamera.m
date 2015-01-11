@@ -11,7 +11,7 @@
 #import "YangKeFilter.h"
 #import "YinKeFilter.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
-
+#import "SketchFilter.h"
 
 @interface PCVideoCamera()
 
@@ -23,7 +23,8 @@
 @property (strong, nonatomic) AVMutableComposition *mutableComposition;
 @property (strong, nonatomic) AVAssetExportSession *assetExportSession;
 @property (strong, nonatomic) ALAssetsLibrary *library;
-
+@property (strong, nonatomic) SketchFilter *customSketchFilter;
+@property (strong, nonatomic) GPUImageColorDodgeBlendFilter * dodgeFilter;
 - (void)forceSwitchToNewFilter:(PCFilterType)newFilterType;
 
 @end
@@ -38,16 +39,41 @@
     return _library;
 }
 
-- (GPUImageThresholdSketchFilter *)sketchFilter
+- (GPUImageColorDodgeBlendFilter*)dodgeFilter
+{
+    if (!_dodgeFilter) {
+        _dodgeFilter = [[GPUImageColorDodgeBlendFilter alloc]init];
+    }
+    return _dodgeFilter;
+}
+- (SketchFilter *)customSketchFilter
+{
+    if (!_customSketchFilter) {
+        _customSketchFilter = [[SketchFilter alloc]init];
+        
+    }
+    return _customSketchFilter;
+}
+
+//- (GPUImageThresholdSketchFilter *)sketchFilter
+//{
+//    if (!_sketchFilter) {
+//        _sketchFilter = [[GPUImageThresholdSketchFilter alloc]init];
+//        [_sketchFilter setThreshold:0.5];
+//        
+//    }
+//    return _sketchFilter;
+//}
+
+- (GPUImageAdaptiveThresholdFilter *)sketchFilter
 {
     if (!_sketchFilter) {
-        _sketchFilter = [[GPUImageThresholdSketchFilter alloc]init];
-        [_sketchFilter setThreshold:0.5];
+        _sketchFilter = [[GPUImageAdaptiveThresholdFilter alloc]init];
+        //[_sketchFilter setThreshold:0.5];
         
     }
     return _sketchFilter;
 }
-
 - (YangKeFilter *)yangKeFilter
 {
     if (!_yangKeFilter) {
@@ -149,6 +175,7 @@
             {
                 //无处理效
                 _lineLastFilter = self.normalFilter;
+                //
                 break;
             }
             case PC_YANGKE_FILTER:
@@ -182,6 +209,7 @@
                
             case PC_SIDEFACE_FILTER:
             {
+
                 break;
             }
             default:

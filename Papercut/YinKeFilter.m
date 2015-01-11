@@ -10,7 +10,7 @@
 
 NSString *const kPCYinKeFilterString = SHADER_STRING
 (
- precision lowp float;
+ precision highp float;
  
  varying highp vec2 textureCoordinate;
  

@@ -210,7 +210,8 @@
     switch (self.pcVideoCamera.currentFilterType) {
         case PC_YANGKE_FILTER:
         case PC_YINKE_FILTER:
-            self.pcVideoCamera.sketchFilter.threshold = ((UISlider *)sender).value;
+            //self.pcVideoCamera.sketchFilter.threshold = ((UISlider *)sender).value;
+            self.pcVideoCamera.sketchFilter.blurRadiusInPixels = ((UISlider *)sender).value * 20.0;
             break;
         default:
             break;

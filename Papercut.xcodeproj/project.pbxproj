@@ -7,38 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C2E065D1A4AFEF70042C98B /* blend.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A41A4AFEF70042C98B /* blend.vsh */; };
-		8C2E065E1A4AFEF70042C98B /* colorburn.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A51A4AFEF70042C98B /* colorburn.fsh */; };
-		8C2E065F1A4AFEF70042C98B /* colordodge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A61A4AFEF70042C98B /* colordodge.fsh */; };
-		8C2E06601A4AFEF70042C98B /* darken.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A71A4AFEF70042C98B /* darken.fsh */; };
-		8C2E06611A4AFEF70042C98B /* difference.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A81A4AFEF70042C98B /* difference.fsh */; };
-		8C2E06621A4AFEF70042C98B /* exclusion.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05A91A4AFEF70042C98B /* exclusion.fsh */; };
-		8C2E06631A4AFEF70042C98B /* lighten.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AA1A4AFEF70042C98B /* lighten.fsh */; };
-		8C2E06641A4AFEF70042C98B /* multiply.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AB1A4AFEF70042C98B /* multiply.fsh */; };
-		8C2E06651A4AFEF70042C98B /* normal.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AC1A4AFEF70042C98B /* normal.fsh */; };
-		8C2E06661A4AFEF70042C98B /* overlay.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AD1A4AFEF70042C98B /* overlay.fsh */; };
-		8C2E06671A4AFEF70042C98B /* screen.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AE1A4AFEF70042C98B /* screen.fsh */; };
-		8C2E06681A4AFEF70042C98B /* blit.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05AF1A4AFEF70042C98B /* blit.fsh */; };
-		8C2E06691A4AFEF70042C98B /* blit.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B01A4AFEF70042C98B /* blit.vsh */; };
-		8C2E066A1A4AFEF70042C98B /* blitFromHueChromaLuma.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B11A4AFEF70042C98B /* blitFromHueChromaLuma.fsh */; };
-		8C2E066B1A4AFEF70042C98B /* blitWithEraseMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B21A4AFEF70042C98B /* blitWithEraseMask.fsh */; };
-		8C2E066C1A4AFEF70042C98B /* blitWithMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B31A4AFEF70042C98B /* blitWithMask.fsh */; };
-		8C2E066D1A4AFEF70042C98B /* brush.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B41A4AFEF70042C98B /* brush.fsh */; };
-		8C2E066E1A4AFEF70042C98B /* brush.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B51A4AFEF70042C98B /* brush.vsh */; };
-		8C2E066F1A4AFEF70042C98B /* colorBalanceBlit.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B61A4AFEF70042C98B /* colorBalanceBlit.fsh */; };
-		8C2E06701A4AFEF70042C98B /* colorPicker.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B71A4AFEF70042C98B /* colorPicker.fsh */; };
-		8C2E06711A4AFEF70042C98B /* compositeWithEraseMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B81A4AFEF70042C98B /* compositeWithEraseMask.fsh */; };
-		8C2E06721A4AFEF70042C98B /* compositeWithMask.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05B91A4AFEF70042C98B /* compositeWithMask.fsh */; };
-		8C2E06731A4AFEF70042C98B /* desaturate.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BA1A4AFEF70042C98B /* desaturate.fsh */; };
-		8C2E06741A4AFEF70042C98B /* fill.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BB1A4AFEF70042C98B /* fill.fsh */; };
-		8C2E06751A4AFEF70042C98B /* invert.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BC1A4AFEF70042C98B /* invert.fsh */; };
-		8C2E06761A4AFEF70042C98B /* merge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BD1A4AFEF70042C98B /* merge.fsh */; };
-		8C2E06771A4AFEF70042C98B /* nonPremultipliedBlit.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BE1A4AFEF70042C98B /* nonPremultipliedBlit.fsh */; };
-		8C2E06781A4AFEF70042C98B /* simple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05BF1A4AFEF70042C98B /* simple.fsh */; };
-		8C2E06791A4AFEF70042C98B /* simple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05C01A4AFEF70042C98B /* simple.vsh */; };
-		8C2E067A1A4AFEF70042C98B /* straightBlit.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05C11A4AFEF70042C98B /* straightBlit.fsh */; };
-		8C2E067B1A4AFEF70042C98B /* toHueChromaLuma.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05C21A4AFEF70042C98B /* toHueChromaLuma.fsh */; };
-		8C2E067C1A4AFEF70042C98B /* unPremultipliedBlit.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E05C31A4AFEF70042C98B /* unPremultipliedBlit.fsh */; };
 		8C2E06811A4AFF2E0042C98B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06801A4AFF2E0042C98B /* AudioToolbox.framework */; };
 		8C2E06831A4AFF3A0042C98B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06821A4AFF3A0042C98B /* MobileCoreServices.framework */; };
 		8C2E06851A4AFF460042C98B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06841A4AFF460042C98B /* Accelerate.framework */; };
@@ -80,7 +48,6 @@
 		8C2E07CE1A4B04640042C98B /* WDPaintingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06D31A4B04640042C98B /* WDPaintingManager.m */; };
 		8C2E07CF1A4B04640042C98B /* WDReplayUndoAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06D51A4B04640042C98B /* WDReplayUndoAnalyzer.m */; };
 		8C2E07D01A4B04640042C98B /* WDSleepTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06D71A4B04640042C98B /* WDSleepTimer.m */; };
-		8C2E07D11A4B04640042C98B /* WDStylusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06D91A4B04640042C98B /* WDStylusManager.m */; };
 		8C2E07D21A4B04640042C98B /* WD3DPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06DC1A4B04640042C98B /* WD3DPoint.m */; };
 		8C2E07D31A4B04640042C98B /* WDActiveState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06DE1A4B04640042C98B /* WDActiveState.m */; };
 		8C2E07D41A4B04640042C98B /* WDBezierNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E06E01A4B04640042C98B /* WDBezierNode.m */; };
@@ -173,7 +140,6 @@
 		8C2E082B1A4B04640042C98B /* WDScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E07971A4B04640042C98B /* WDScrollView.m */; };
 		8C2E082C1A4B04640042C98B /* WDShadowQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E07991A4B04640042C98B /* WDShadowQuad.m */; };
 		8C2E082D1A4B04640042C98B /* WDStampPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E079B1A4B04640042C98B /* WDStampPicker.m */; };
-		8C2E082E1A4B04640042C98B /* WDStylusTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E079D1A4B04640042C98B /* WDStylusTableCell.m */; };
 		8C2E082F1A4B04640042C98B /* WDSwatches.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E079F1A4B04640042C98B /* WDSwatches.m */; };
 		8C2E08301A4B04640042C98B /* WDThumbButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E07A11A4B04640042C98B /* WDThumbButton.m */; };
 		8C2E08311A4B04640042C98B /* WDThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E07A31A4B04640042C98B /* WDThumbnailView.m */; };
@@ -191,7 +157,6 @@
 		8C2E085C1A4B06E60042C98B /* WDHueSaturationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E084A1A4B06E60042C98B /* WDHueSaturationController.m */; };
 		8C2E085E1A4B06E60042C98B /* WDLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E084E1A4B06E60042C98B /* WDLayerController.m */; };
 		8C2E085F1A4B06E60042C98B /* WDPaintingSizeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E08501A4B06E60042C98B /* WDPaintingSizeController.m */; };
-		8C2E08601A4B06E60042C98B /* WDStylusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2E08521A4B06E60042C98B /* WDStylusController.m */; };
 		8C2E08831A5057D10042C98B /* blend.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E08631A5057D10042C98B /* blend.vsh */; };
 		8C2E08841A5057D10042C98B /* colorburn.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E08641A5057D10042C98B /* colorburn.fsh */; };
 		8C2E08851A5057D10042C98B /* colordodge.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E08651A5057D10042C98B /* colordodge.fsh */; };
@@ -383,9 +348,31 @@
 		8C2E09E11A5058D40042C98B /* unlockFade@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09481A5058D40042C98B /* unlockFade@2x.png */; };
 		8C2E09E21A5058D40042C98B /* visible.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09491A5058D40042C98B /* visible.png */; };
 		8C2E09E31A5058D40042C98B /* visible@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E094A1A5058D40042C98B /* visible@2x.png */; };
+		8C2E09F91A51B4FA0042C98B /* Brush.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09E51A51B4F90042C98B /* Brush.xib */; };
+		8C2E09FA1A51B4FA0042C98B /* BrushCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09E61A51B4F90042C98B /* BrushCell.xib */; };
+		8C2E09FB1A51B4FA0042C98B /* Brushes.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09E71A51B4F90042C98B /* Brushes.xib */; };
+		8C2E09FC1A51B4FA0042C98B /* ColorBalance.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09E81A51B4F90042C98B /* ColorBalance.xib */; };
+		8C2E09FD1A51B4FA0042C98B /* ColorPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09E91A51B4F90042C98B /* ColorPicker.xib */; };
+		8C2E09FE1A51B4FA0042C98B /* ColorPicker~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09EA1A51B4F90042C98B /* ColorPicker~iphone.xib */; };
+		8C2E09FF1A51B4FA0042C98B /* ColorPicker~iphone5.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09EB1A51B4F90042C98B /* ColorPicker~iphone5.xib */; };
+		8C2E0A001A51B4FA0042C98B /* Export.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09EC1A51B4F90042C98B /* Export.xib */; };
+		8C2E0A011A51B4FA0042C98B /* HueSaturation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09ED1A51B4F90042C98B /* HueSaturation.xib */; };
+		8C2E0A021A51B4FA0042C98B /* Import.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09EE1A51B4F90042C98B /* Import.xib */; };
+		8C2E0A031A51B4FA0042C98B /* LayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09EF1A51B4F90042C98B /* LayerCell.xib */; };
+		8C2E0A041A51B4FA0042C98B /* LayerCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F01A51B4F90042C98B /* LayerCell~iphone.xib */; };
+		8C2E0A051A51B4FA0042C98B /* Layers.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F11A51B4F90042C98B /* Layers.xib */; };
+		8C2E0A061A51B4FA0042C98B /* Layers~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F21A51B4F90042C98B /* Layers~iphone.xib */; };
+		8C2E0A071A51B4FA0042C98B /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F31A51B4F90042C98B /* MainWindow.xib */; };
+		8C2E0A081A51B4FA0042C98B /* MainWindow~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F41A51B4F90042C98B /* MainWindow~iphone.xib */; };
+		8C2E0A091A51B4FA0042C98B /* PropertyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F51A51B4FA0042C98B /* PropertyCell.xib */; };
+		8C2E0A0A1A51B4FA0042C98B /* PropertyCell~iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F61A51B4FA0042C98B /* PropertyCell~iOS7.xib */; };
+		8C2E0A0B1A51B4FA0042C98B /* SizeChooser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F71A51B4FA0042C98B /* SizeChooser.xib */; };
+		8C2E0A0C1A51B4FA0042C98B /* Stylus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F81A51B4FA0042C98B /* Stylus.xib */; };
 		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
 		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC991980ED2800A94FED /* ImageEditViewController.m */; };
+		8C4327B71A62B44800AA0226 /* SketchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4327B61A62B44800AA0226 /* SketchFilter.m */; };
+		8C4327BC1A62BAC700AA0226 /* sketchfilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -439,38 +426,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8C2E05A41A4AFEF70042C98B /* blend.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blend.vsh; sourceTree = "<group>"; };
-		8C2E05A51A4AFEF70042C98B /* colorburn.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorburn.fsh; sourceTree = "<group>"; };
-		8C2E05A61A4AFEF70042C98B /* colordodge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colordodge.fsh; sourceTree = "<group>"; };
-		8C2E05A71A4AFEF70042C98B /* darken.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = darken.fsh; sourceTree = "<group>"; };
-		8C2E05A81A4AFEF70042C98B /* difference.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = difference.fsh; sourceTree = "<group>"; };
-		8C2E05A91A4AFEF70042C98B /* exclusion.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = exclusion.fsh; sourceTree = "<group>"; };
-		8C2E05AA1A4AFEF70042C98B /* lighten.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = lighten.fsh; sourceTree = "<group>"; };
-		8C2E05AB1A4AFEF70042C98B /* multiply.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = multiply.fsh; sourceTree = "<group>"; };
-		8C2E05AC1A4AFEF70042C98B /* normal.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = normal.fsh; sourceTree = "<group>"; };
-		8C2E05AD1A4AFEF70042C98B /* overlay.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = overlay.fsh; sourceTree = "<group>"; };
-		8C2E05AE1A4AFEF70042C98B /* screen.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = screen.fsh; sourceTree = "<group>"; };
-		8C2E05AF1A4AFEF70042C98B /* blit.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blit.fsh; sourceTree = "<group>"; };
-		8C2E05B01A4AFEF70042C98B /* blit.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blit.vsh; sourceTree = "<group>"; };
-		8C2E05B11A4AFEF70042C98B /* blitFromHueChromaLuma.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blitFromHueChromaLuma.fsh; sourceTree = "<group>"; };
-		8C2E05B21A4AFEF70042C98B /* blitWithEraseMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blitWithEraseMask.fsh; sourceTree = "<group>"; };
-		8C2E05B31A4AFEF70042C98B /* blitWithMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blitWithMask.fsh; sourceTree = "<group>"; };
-		8C2E05B41A4AFEF70042C98B /* brush.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = brush.fsh; sourceTree = "<group>"; };
-		8C2E05B51A4AFEF70042C98B /* brush.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = brush.vsh; sourceTree = "<group>"; };
-		8C2E05B61A4AFEF70042C98B /* colorBalanceBlit.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorBalanceBlit.fsh; sourceTree = "<group>"; };
-		8C2E05B71A4AFEF70042C98B /* colorPicker.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorPicker.fsh; sourceTree = "<group>"; };
-		8C2E05B81A4AFEF70042C98B /* compositeWithEraseMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = compositeWithEraseMask.fsh; sourceTree = "<group>"; };
-		8C2E05B91A4AFEF70042C98B /* compositeWithMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = compositeWithMask.fsh; sourceTree = "<group>"; };
-		8C2E05BA1A4AFEF70042C98B /* desaturate.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = desaturate.fsh; sourceTree = "<group>"; };
-		8C2E05BB1A4AFEF70042C98B /* fill.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fill.fsh; sourceTree = "<group>"; };
-		8C2E05BC1A4AFEF70042C98B /* invert.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = invert.fsh; sourceTree = "<group>"; };
-		8C2E05BD1A4AFEF70042C98B /* merge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = merge.fsh; sourceTree = "<group>"; };
-		8C2E05BE1A4AFEF70042C98B /* nonPremultipliedBlit.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = nonPremultipliedBlit.fsh; sourceTree = "<group>"; };
-		8C2E05BF1A4AFEF70042C98B /* simple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.fsh; sourceTree = "<group>"; };
-		8C2E05C01A4AFEF70042C98B /* simple.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = simple.vsh; sourceTree = "<group>"; };
-		8C2E05C11A4AFEF70042C98B /* straightBlit.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = straightBlit.fsh; sourceTree = "<group>"; };
-		8C2E05C21A4AFEF70042C98B /* toHueChromaLuma.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = toHueChromaLuma.fsh; sourceTree = "<group>"; };
-		8C2E05C31A4AFEF70042C98B /* unPremultipliedBlit.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = unPremultipliedBlit.fsh; sourceTree = "<group>"; };
 		8C2E06801A4AFF2E0042C98B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8C2E06821A4AFF3A0042C98B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8C2E06841A4AFF460042C98B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -549,8 +504,6 @@
 		8C2E06D51A4B04640042C98B /* WDReplayUndoAnalyzer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDReplayUndoAnalyzer.m; sourceTree = "<group>"; };
 		8C2E06D61A4B04640042C98B /* WDSleepTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSleepTimer.h; sourceTree = "<group>"; };
 		8C2E06D71A4B04640042C98B /* WDSleepTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSleepTimer.m; sourceTree = "<group>"; };
-		8C2E06D81A4B04640042C98B /* WDStylusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStylusManager.h; sourceTree = "<group>"; };
-		8C2E06D91A4B04640042C98B /* WDStylusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStylusManager.m; sourceTree = "<group>"; };
 		8C2E06DB1A4B04640042C98B /* WD3DPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WD3DPoint.h; sourceTree = "<group>"; };
 		8C2E06DC1A4B04640042C98B /* WD3DPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WD3DPoint.m; sourceTree = "<group>"; };
 		8C2E06DD1A4B04640042C98B /* WDActiveState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDActiveState.h; sourceTree = "<group>"; };
@@ -739,8 +692,6 @@
 		8C2E07991A4B04640042C98B /* WDShadowQuad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDShadowQuad.m; sourceTree = "<group>"; };
 		8C2E079A1A4B04640042C98B /* WDStampPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStampPicker.h; sourceTree = "<group>"; };
 		8C2E079B1A4B04640042C98B /* WDStampPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStampPicker.m; sourceTree = "<group>"; };
-		8C2E079C1A4B04640042C98B /* WDStylusTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStylusTableCell.h; sourceTree = "<group>"; };
-		8C2E079D1A4B04640042C98B /* WDStylusTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStylusTableCell.m; sourceTree = "<group>"; };
 		8C2E079E1A4B04640042C98B /* WDSwatches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSwatches.h; sourceTree = "<group>"; };
 		8C2E079F1A4B04640042C98B /* WDSwatches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSwatches.m; sourceTree = "<group>"; };
 		8C2E07A01A4B04640042C98B /* WDThumbButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDThumbButton.h; sourceTree = "<group>"; };
@@ -775,8 +726,6 @@
 		8C2E084E1A4B06E60042C98B /* WDLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLayerController.m; sourceTree = "<group>"; };
 		8C2E084F1A4B06E60042C98B /* WDPaintingSizeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDPaintingSizeController.h; sourceTree = "<group>"; };
 		8C2E08501A4B06E60042C98B /* WDPaintingSizeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDPaintingSizeController.m; sourceTree = "<group>"; };
-		8C2E08511A4B06E60042C98B /* WDStylusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDStylusController.h; sourceTree = "<group>"; };
-		8C2E08521A4B06E60042C98B /* WDStylusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDStylusController.m; sourceTree = "<group>"; };
 		8C2E08631A5057D10042C98B /* blend.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = blend.vsh; sourceTree = "<group>"; };
 		8C2E08641A5057D10042C98B /* colorburn.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colorburn.fsh; sourceTree = "<group>"; };
 		8C2E08651A5057D10042C98B /* colordodge.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = colordodge.fsh; sourceTree = "<group>"; };
@@ -968,12 +917,35 @@
 		8C2E09481A5058D40042C98B /* unlockFade@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlockFade@2x.png"; sourceTree = "<group>"; };
 		8C2E09491A5058D40042C98B /* visible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = visible.png; sourceTree = "<group>"; };
 		8C2E094A1A5058D40042C98B /* visible@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visible@2x.png"; sourceTree = "<group>"; };
+		8C2E09E51A51B4F90042C98B /* Brush.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Brush.xib; sourceTree = "<group>"; };
+		8C2E09E61A51B4F90042C98B /* BrushCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrushCell.xib; sourceTree = "<group>"; };
+		8C2E09E71A51B4F90042C98B /* Brushes.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Brushes.xib; sourceTree = "<group>"; };
+		8C2E09E81A51B4F90042C98B /* ColorBalance.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorBalance.xib; sourceTree = "<group>"; };
+		8C2E09E91A51B4F90042C98B /* ColorPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorPicker.xib; sourceTree = "<group>"; };
+		8C2E09EA1A51B4F90042C98B /* ColorPicker~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPicker~iphone.xib"; sourceTree = "<group>"; };
+		8C2E09EB1A51B4F90042C98B /* ColorPicker~iphone5.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "ColorPicker~iphone5.xib"; sourceTree = "<group>"; };
+		8C2E09EC1A51B4F90042C98B /* Export.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Export.xib; sourceTree = "<group>"; };
+		8C2E09ED1A51B4F90042C98B /* HueSaturation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HueSaturation.xib; sourceTree = "<group>"; };
+		8C2E09EE1A51B4F90042C98B /* Import.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Import.xib; sourceTree = "<group>"; };
+		8C2E09EF1A51B4F90042C98B /* LayerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayerCell.xib; sourceTree = "<group>"; };
+		8C2E09F01A51B4F90042C98B /* LayerCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "LayerCell~iphone.xib"; sourceTree = "<group>"; };
+		8C2E09F11A51B4F90042C98B /* Layers.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Layers.xib; sourceTree = "<group>"; };
+		8C2E09F21A51B4F90042C98B /* Layers~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Layers~iphone.xib"; sourceTree = "<group>"; };
+		8C2E09F31A51B4F90042C98B /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		8C2E09F41A51B4F90042C98B /* MainWindow~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow~iphone.xib"; sourceTree = "<group>"; };
+		8C2E09F51A51B4FA0042C98B /* PropertyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PropertyCell.xib; sourceTree = "<group>"; };
+		8C2E09F61A51B4FA0042C98B /* PropertyCell~iOS7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PropertyCell~iOS7.xib"; sourceTree = "<group>"; };
+		8C2E09F71A51B4FA0042C98B /* SizeChooser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SizeChooser.xib; sourceTree = "<group>"; };
+		8C2E09F81A51B4FA0042C98B /* Stylus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Stylus.xib; sourceTree = "<group>"; };
 		8C33EC91197FAAA800A94FED /* YinKeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YinKeFilter.h; sourceTree = "<group>"; };
 		8C33EC92197FAAA800A94FED /* YinKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YinKeFilter.m; sourceTree = "<group>"; };
 		8C33EC951980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		8C33EC981980ED2800A94FED /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
 		8C33EC991980ED2800A94FED /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
+		8C4327B51A62B44800AA0226 /* SketchFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchFilter.h; sourceTree = "<group>"; };
+		8C4327B61A62B44800AA0226 /* SketchFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchFilter.m; sourceTree = "<group>"; };
+		8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sketchfilter.fsh; sourceTree = "<group>"; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1100,6 +1072,7 @@
 		8C2E04691A4AFEF60042C98B /* Brushes */ = {
 			isa = PBXGroup;
 			children = (
+				8C2E09E41A51B4F90042C98B /* XIB */,
 				8C2E08B01A5058D40042C98B /* Images */,
 				8C2E08A31A5058540042C98B /* PLists */,
 				8C2E08611A5057D10042C98B /* Shaders */,
@@ -1113,56 +1086,8 @@
 				8C2E07391A4B04640042C98B /* Tools */,
 				8C2E07401A4B04640042C98B /* Utilities */,
 				8C2E07471A4B04640042C98B /* WDBrushesView */,
-				8C2E05A21A4AFEF70042C98B /* Shaders */,
 			);
 			path = Brushes;
-			sourceTree = "<group>";
-		};
-		8C2E05A21A4AFEF70042C98B /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				8C2E05A31A4AFEF70042C98B /* Blend */,
-				8C2E05AF1A4AFEF70042C98B /* blit.fsh */,
-				8C2E05B01A4AFEF70042C98B /* blit.vsh */,
-				8C2E05B11A4AFEF70042C98B /* blitFromHueChromaLuma.fsh */,
-				8C2E05B21A4AFEF70042C98B /* blitWithEraseMask.fsh */,
-				8C2E05B31A4AFEF70042C98B /* blitWithMask.fsh */,
-				8C2E05B41A4AFEF70042C98B /* brush.fsh */,
-				8C2E05B51A4AFEF70042C98B /* brush.vsh */,
-				8C2E05B61A4AFEF70042C98B /* colorBalanceBlit.fsh */,
-				8C2E05B71A4AFEF70042C98B /* colorPicker.fsh */,
-				8C2E05B81A4AFEF70042C98B /* compositeWithEraseMask.fsh */,
-				8C2E05B91A4AFEF70042C98B /* compositeWithMask.fsh */,
-				8C2E05BA1A4AFEF70042C98B /* desaturate.fsh */,
-				8C2E05BB1A4AFEF70042C98B /* fill.fsh */,
-				8C2E05BC1A4AFEF70042C98B /* invert.fsh */,
-				8C2E05BD1A4AFEF70042C98B /* merge.fsh */,
-				8C2E05BE1A4AFEF70042C98B /* nonPremultipliedBlit.fsh */,
-				8C2E05BF1A4AFEF70042C98B /* simple.fsh */,
-				8C2E05C01A4AFEF70042C98B /* simple.vsh */,
-				8C2E05C11A4AFEF70042C98B /* straightBlit.fsh */,
-				8C2E05C21A4AFEF70042C98B /* toHueChromaLuma.fsh */,
-				8C2E05C31A4AFEF70042C98B /* unPremultipliedBlit.fsh */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
-		8C2E05A31A4AFEF70042C98B /* Blend */ = {
-			isa = PBXGroup;
-			children = (
-				8C2E05A41A4AFEF70042C98B /* blend.vsh */,
-				8C2E05A51A4AFEF70042C98B /* colorburn.fsh */,
-				8C2E05A61A4AFEF70042C98B /* colordodge.fsh */,
-				8C2E05A71A4AFEF70042C98B /* darken.fsh */,
-				8C2E05A81A4AFEF70042C98B /* difference.fsh */,
-				8C2E05A91A4AFEF70042C98B /* exclusion.fsh */,
-				8C2E05AA1A4AFEF70042C98B /* lighten.fsh */,
-				8C2E05AB1A4AFEF70042C98B /* multiply.fsh */,
-				8C2E05AC1A4AFEF70042C98B /* normal.fsh */,
-				8C2E05AD1A4AFEF70042C98B /* overlay.fsh */,
-				8C2E05AE1A4AFEF70042C98B /* screen.fsh */,
-			);
-			path = Blend;
 			sourceTree = "<group>";
 		};
 		8C2E068A1A4B04640042C98B /* Additions */ = {
@@ -1255,8 +1180,6 @@
 				8C2E06D51A4B04640042C98B /* WDReplayUndoAnalyzer.m */,
 				8C2E06D61A4B04640042C98B /* WDSleepTimer.h */,
 				8C2E06D71A4B04640042C98B /* WDSleepTimer.m */,
-				8C2E06D81A4B04640042C98B /* WDStylusManager.h */,
-				8C2E06D91A4B04640042C98B /* WDStylusManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1487,8 +1410,6 @@
 				8C2E07991A4B04640042C98B /* WDShadowQuad.m */,
 				8C2E079A1A4B04640042C98B /* WDStampPicker.h */,
 				8C2E079B1A4B04640042C98B /* WDStampPicker.m */,
-				8C2E079C1A4B04640042C98B /* WDStylusTableCell.h */,
-				8C2E079D1A4B04640042C98B /* WDStylusTableCell.m */,
 				8C2E079E1A4B04640042C98B /* WDSwatches.h */,
 				8C2E079F1A4B04640042C98B /* WDSwatches.m */,
 				8C2E07A01A4B04640042C98B /* WDThumbButton.h */,
@@ -1530,8 +1451,6 @@
 				8C2E084E1A4B06E60042C98B /* WDLayerController.m */,
 				8C2E084F1A4B06E60042C98B /* WDPaintingSizeController.h */,
 				8C2E08501A4B06E60042C98B /* WDPaintingSizeController.m */,
-				8C2E08511A4B06E60042C98B /* WDStylusController.h */,
-				8C2E08521A4B06E60042C98B /* WDStylusController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1764,13 +1683,43 @@
 			path = tools;
 			sourceTree = "<group>";
 		};
+		8C2E09E41A51B4F90042C98B /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				8C2E09E51A51B4F90042C98B /* Brush.xib */,
+				8C2E09E61A51B4F90042C98B /* BrushCell.xib */,
+				8C2E09E71A51B4F90042C98B /* Brushes.xib */,
+				8C2E09E81A51B4F90042C98B /* ColorBalance.xib */,
+				8C2E09E91A51B4F90042C98B /* ColorPicker.xib */,
+				8C2E09EA1A51B4F90042C98B /* ColorPicker~iphone.xib */,
+				8C2E09EB1A51B4F90042C98B /* ColorPicker~iphone5.xib */,
+				8C2E09EC1A51B4F90042C98B /* Export.xib */,
+				8C2E09ED1A51B4F90042C98B /* HueSaturation.xib */,
+				8C2E09EE1A51B4F90042C98B /* Import.xib */,
+				8C2E09EF1A51B4F90042C98B /* LayerCell.xib */,
+				8C2E09F01A51B4F90042C98B /* LayerCell~iphone.xib */,
+				8C2E09F11A51B4F90042C98B /* Layers.xib */,
+				8C2E09F21A51B4F90042C98B /* Layers~iphone.xib */,
+				8C2E09F31A51B4F90042C98B /* MainWindow.xib */,
+				8C2E09F41A51B4F90042C98B /* MainWindow~iphone.xib */,
+				8C2E09F51A51B4FA0042C98B /* PropertyCell.xib */,
+				8C2E09F61A51B4FA0042C98B /* PropertyCell~iOS7.xib */,
+				8C2E09F71A51B4FA0042C98B /* SizeChooser.xib */,
+				8C2E09F81A51B4FA0042C98B /* Stylus.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
 		8C33EC90197FA7F000A94FED /* filters */ = {
 			isa = PBXGroup;
 			children = (
+				8C4327B51A62B44800AA0226 /* SketchFilter.h */,
+				8C4327B61A62B44800AA0226 /* SketchFilter.m */,
 				8CFC41551939CE82006EFC6B /* YangKeFilter.h */,
 				8CFC41561939CE82006EFC6B /* YangKeFilter.m */,
 				8C33EC91197FAAA800A94FED /* YinKeFilter.h */,
 				8C33EC92197FAAA800A94FED /* YinKeFilter.m */,
+				8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */,
 			);
 			name = filters;
 			sourceTree = "<group>";
@@ -2003,20 +1952,15 @@
 				8C2E09A41A5058D40042C98B /* merge.png in Resources */,
 				8C2E09D21A5058D40042C98B /* eraser.png in Resources */,
 				8C2E095E1A5058D40042C98B /* bar_minus.png in Resources */,
-				8C2E06701A4AFEF70042C98B /* colorPicker.fsh in Resources */,
 				8C2E089A1A5057D10042C98B /* fill.fsh in Resources */,
 				8C2E09BE1A5058D40042C98B /* slider_border.png in Resources */,
-				8C2E06611A4AFEF70042C98B /* difference.fsh in Resources */,
 				8C2E09DC1A5058D40042C98B /* unlock.png in Resources */,
-				8C2E066C1A4AFEF70042C98B /* blitWithMask.fsh in Resources */,
 				8C2E099F1A5058D40042C98B /* lock@2x.png in Resources */,
 				8C2E099E1A5058D40042C98B /* lock.png in Resources */,
-				8C2E06641A4AFEF70042C98B /* multiply.fsh in Resources */,
 				8C2E09D81A5058D40042C98B /* undo.png in Resources */,
 				8C2E09921A5058D40042C98B /* gear.png in Resources */,
 				8C2E09B41A5058D40042C98B /* rotate.png in Resources */,
 				8C2E098A1A5058D40042C98B /* export_photoshop_icon-modern.png in Resources */,
-				8C2E066F1A4AFEF70042C98B /* colorBalanceBlit.fsh in Resources */,
 				8C2E09981A5058D40042C98B /* hiddenMessage.png in Resources */,
 				8C2E09BF1A5058D40042C98B /* slider_border@2x.png in Resources */,
 				8C2E09A81A5058D40042C98B /* mergeLandscape@2x.png in Resources */,
@@ -2026,10 +1970,11 @@
 				8C2E09521A5058D40042C98B /* actionLandscape@2x.png in Resources */,
 				8C2E09691A5058D40042C98B /* checkmark.png in Resources */,
 				8C2E09841A5058D40042C98B /* export_brushes_icon.png in Resources */,
+				8C2E09FB1A51B4FA0042C98B /* Brushes.xib in Resources */,
 				8C2E09AB1A5058D40042C98B /* play@2x.png in Resources */,
 				8C2E088D1A5057D10042C98B /* screen.fsh in Resources */,
+				8C2E0A091A51B4FA0042C98B /* PropertyCell.xib in Resources */,
 				8C2E08AD1A5058540042C98B /* DocSizes_LowRes.plist in Resources */,
-				8C2E06691A4AFEF70042C98B /* blit.vsh in Resources */,
 				8C2E09D51A5058D40042C98B /* eraser_landscape@2x.png in Resources */,
 				8C2E08981A5057D10042C98B /* compositeWithMask.fsh in Resources */,
 				8C2E09781A5058D40042C98B /* dropbox_icon_brushes@2x.png in Resources */,
@@ -2038,28 +1983,28 @@
 				8C2E08961A5057D10042C98B /* colorPicker.fsh in Resources */,
 				8C2E09761A5058D40042C98B /* dismissLandscape@2x.png in Resources */,
 				8C2E09831A5058D40042C98B /* export_brushes_icon-modern@2x.png in Resources */,
+				8C2E0A041A51B4FA0042C98B /* LayerCell~iphone.xib in Resources */,
 				8C2E089E1A5057D10042C98B /* simple.fsh in Resources */,
-				8C2E066A1A4AFEF70042C98B /* blitFromHueChromaLuma.fsh in Resources */,
 				8C2E09CD1A5058D40042C98B /* swoosh.png in Resources */,
 				8C2E098E1A5058D40042C98B /* export_png_icon-modern.png in Resources */,
 				8C2E09611A5058D40042C98B /* blend_button@2x.png in Resources */,
 				8C2E09C01A5058D40042C98B /* style.png in Resources */,
 				8C2E09551A5058D40042C98B /* album-modern@2x.png in Resources */,
 				8C2E09B51A5058D40042C98B /* rotate@2x.png in Resources */,
-				8C2E06761A4AFEF70042C98B /* merge.fsh in Resources */,
-				8C2E06731A4AFEF70042C98B /* desaturate.fsh in Resources */,
 				8C2E08891A5057D10042C98B /* lighten.fsh in Resources */,
 				8C2E09D61A5058D40042C98B /* trash.png in Resources */,
 				8C2E096F1A5058D40042C98B /* Default-568h@2x.png in Resources */,
 				8C2E09621A5058D40042C98B /* BlueTooth.png in Resources */,
 				8C2E08AF1A5058540042C98B /* Shaders.json in Resources */,
+				8C2E0A021A51B4FA0042C98B /* Import.xib in Resources */,
 				8C2E094E1A5058D40042C98B /* action@2x.png in Resources */,
 				8C2E09D11A5058D40042C98B /* brush_landscape@2x.png in Resources */,
+				8C2E0A031A51B4FA0042C98B /* LayerCell.xib in Resources */,
 				8C2E09AE1A5058D40042C98B /* redoLandscape.png in Resources */,
 				8C2E09AD1A5058D40042C98B /* redo@2x.png in Resources */,
-				8C2E066E1A4AFEF70042C98B /* brush.vsh in Resources */,
 				8C2E09DA1A5058D40042C98B /* undoLandscape.png in Resources */,
 				8C2E09B61A5058D40042C98B /* shadow_bottom.png in Resources */,
+				8C2E0A001A51B4FA0042C98B /* Export.xib in Resources */,
 				8C2E08931A5057D10042C98B /* brush.fsh in Resources */,
 				8C2E08921A5057D10042C98B /* blitWithMask.fsh in Resources */,
 				8C2E08AE1A5058540042C98B /* ImportFormats.plist in Resources */,
@@ -2067,18 +2012,19 @@
 				8C2E09D91A5058D40042C98B /* undo@2x.png in Resources */,
 				8C2E09BB1A5058D40042C98B /* shadow_top.png in Resources */,
 				8C2E08861A5057D10042C98B /* darken.fsh in Resources */,
+				8C2E09F91A51B4FA0042C98B /* Brush.xib in Resources */,
 				8C2E09CF1A5058D40042C98B /* brush@2x.png in Resources */,
 				8C2E09871A5058D40042C98B /* export_jpeg_icon-modern@2x.png in Resources */,
-				8C2E06651A4AFEF70042C98B /* normal.fsh in Resources */,
+				8C2E09FA1A51B4FA0042C98B /* BrushCell.xib in Resources */,
 				8C2E09641A5058D40042C98B /* BlueToothLandscape.png in Resources */,
 				8C2E096A1A5058D40042C98B /* checkmark@2x.png in Resources */,
 				8C2E097C1A5058D40042C98B /* dropbox_icon_generic@2x.png in Resources */,
 				8C2E09961A5058D40042C98B /* hidden.png in Resources */,
-				8C2E06601A4AFEF70042C98B /* darken.fsh in Resources */,
 				8C2E09561A5058D40042C98B /* album.png in Resources */,
 				8C2E095C1A5058D40042C98B /* backButtonLandscape.png in Resources */,
 				8C2E09911A5058D40042C98B /* export_png_icon@2x.png in Resources */,
 				8C2E09A71A5058D40042C98B /* mergeLandscape.png in Resources */,
+				8C2E0A081A51B4FA0042C98B /* MainWindow~iphone.xib in Resources */,
 				8C2E09CC1A5058D40042C98B /* swatch_add.png in Resources */,
 				8C2E08991A5057D10042C98B /* desaturate.fsh in Resources */,
 				8C2E09E01A5058D40042C98B /* unlockFade.png in Resources */,
@@ -2086,10 +2032,10 @@
 				8C82ED22193235A20055C5E2 /* Images.xcassets in Resources */,
 				8C2E09CB1A5058D40042C98B /* stylus_unselected@2x.png in Resources */,
 				8C2E09741A5058D40042C98B /* dismiss@2x.png in Resources */,
-				8C2E066D1A4AFEF70042C98B /* brush.fsh in Resources */,
 				8C2E08AB1A5058540042C98B /* Defaults.plist in Resources */,
 				8C2E09A21A5058D40042C98B /* merge-modern.png in Resources */,
 				8C2E09791A5058D40042C98B /* dropbox_icon_directory.png in Resources */,
+				8C2E09FE1A51B4FA0042C98B /* ColorPicker~iphone.xib in Resources */,
 				8C2E09C61A5058D40042C98B /* stylus_selected.png in Resources */,
 				8C2E09701A5058D40042C98B /* Default-Landscape.png in Resources */,
 				8C2E097F1A5058D40042C98B /* duplicate-modern.png in Resources */,
@@ -2100,11 +2046,12 @@
 				8C2E09951A5058D40042C98B /* gearLandscape@2x.png in Resources */,
 				8C2E099B1A5058D40042C98B /* hue_shifter_overlay@2x.png in Resources */,
 				8C2E09B71A5058D40042C98B /* shadow_bottomleft.png in Resources */,
+				8C2E09FD1A51B4FA0042C98B /* ColorPicker.xib in Resources */,
 				8C2E09DE1A5058D40042C98B /* unlock_thumb.png in Resources */,
 				8C2E08971A5057D10042C98B /* compositeWithEraseMask.fsh in Resources */,
+				8C2E0A0C1A51B4FA0042C98B /* Stylus.xib in Resources */,
 				8C2E098C1A5058D40042C98B /* export_photoshop_icon.png in Resources */,
 				8C2E09E31A5058D40042C98B /* visible@2x.png in Resources */,
-				8C2E065D1A4AFEF70042C98B /* blend.vsh in Resources */,
 				8C2E095B1A5058D40042C98B /* backButton@2x.png in Resources */,
 				8C2E09D71A5058D40042C98B /* trash@2x.png in Resources */,
 				8C2E09721A5058D40042C98B /* Default.png in Resources */,
@@ -2126,6 +2073,8 @@
 				8C2E09C81A5058D40042C98B /* stylus_unselected-modern.png in Resources */,
 				8C2E089D1A5057D10042C98B /* nonPremultipliedBlit.fsh in Resources */,
 				8C2E09DD1A5058D40042C98B /* unlock@2x.png in Resources */,
+				8C4327BC1A62BAC700AA0226 /* sketchfilter.fsh in Resources */,
+				8C2E0A011A51B4FA0042C98B /* HueSaturation.xib in Resources */,
 				8C2E088B1A5057D10042C98B /* normal.fsh in Resources */,
 				8C2E09B01A5058D40042C98B /* refresh.png in Resources */,
 				8C2E09821A5058D40042C98B /* export_brushes_icon-modern.png in Resources */,
@@ -2133,12 +2082,12 @@
 				8C2E09BD1A5058D40042C98B /* shadow_topright.png in Resources */,
 				8C2E09A01A5058D40042C98B /* lockMessage.png in Resources */,
 				8C2E09991A5058D40042C98B /* hiddenMessage@2x.png in Resources */,
-				8C2E06621A4AFEF70042C98B /* exclusion.fsh in Resources */,
 				8C2E095F1A5058D40042C98B /* bar_plus.png in Resources */,
 				8C2E096B1A5058D40042C98B /* color_wheel.png in Resources */,
 				8C2E09731A5058D40042C98B /* dismiss.png in Resources */,
-				8C2E065E1A4AFEF70042C98B /* colorburn.fsh in Resources */,
 				8C2E09A11A5058D40042C98B /* lockMessage@2x.png in Resources */,
+				8C2E0A051A51B4FA0042C98B /* Layers.xib in Resources */,
+				8C2E09FC1A51B4FA0042C98B /* ColorBalance.xib in Resources */,
 				8C2E09D01A5058D40042C98B /* brush_landscape.png in Resources */,
 				8C2E09711A5058D40042C98B /* Default-Portrait.png in Resources */,
 				8C2E096D1A5058D40042C98B /* decrement.png in Resources */,
@@ -2146,31 +2095,24 @@
 				8C2E08951A5057D10042C98B /* colorBalanceBlit.fsh in Resources */,
 				8C2E09B91A5058D40042C98B /* shadow_left.png in Resources */,
 				8C2E094F1A5058D40042C98B /* actionLandscape-modern.png in Resources */,
-				8C2E06741A4AFEF70042C98B /* fill.fsh in Resources */,
 				8C2E09C91A5058D40042C98B /* stylus_unselected-modern@2x.png in Resources */,
-				8C2E06751A4AFEF70042C98B /* invert.fsh in Resources */,
 				8C2E088A1A5057D10042C98B /* multiply.fsh in Resources */,
-				8C2E067A1A4AFEF70042C98B /* straightBlit.fsh in Resources */,
-				8C2E06791A4AFEF70042C98B /* simple.vsh in Resources */,
+				8C2E0A061A51B4FA0042C98B /* Layers~iphone.xib in Resources */,
 				8C2E094B1A5058D40042C98B /* action-modern.png in Resources */,
 				8C2E098B1A5058D40042C98B /* export_photoshop_icon-modern@2x.png in Resources */,
 				8C2E08911A5057D10042C98B /* blitWithEraseMask.fsh in Resources */,
 				8C2E09A51A5058D40042C98B /* merge@2x.png in Resources */,
-				8C2E06661A4AFEF70042C98B /* overlay.fsh in Resources */,
 				8C2E097B1A5058D40042C98B /* dropbox_icon_generic.png in Resources */,
 				8C2E099A1A5058D40042C98B /* hue_shifter_overlay.png in Resources */,
 				8C2E09DF1A5058D40042C98B /* unlock_thumb@2x.png in Resources */,
 				8C2E09C71A5058D40042C98B /* stylus_selected@2x.png in Resources */,
 				8C2E09891A5058D40042C98B /* export_jpeg_icon@2x.png in Resources */,
-				8C2E06721A4AFEF70042C98B /* compositeWithMask.fsh in Resources */,
-				8C2E065F1A4AFEF70042C98B /* colordodge.fsh in Resources */,
+				8C2E0A0B1A51B4FA0042C98B /* SizeChooser.xib in Resources */,
 				8C2E09581A5058D40042C98B /* alpha_lock.png in Resources */,
 				8C2E09851A5058D40042C98B /* export_brushes_icon@2x.png in Resources */,
 				8C2E09771A5058D40042C98B /* dropbox_icon_brushes.png in Resources */,
+				8C2E0A071A51B4FA0042C98B /* MainWindow.xib in Resources */,
 				8C2E09B31A5058D40042C98B /* refreshLandscape@2x.png in Resources */,
-				8C2E067C1A4AFEF70042C98B /* unPremultipliedBlit.fsh in Resources */,
-				8C2E06631A4AFEF70042C98B /* lighten.fsh in Resources */,
-				8C2E06671A4AFEF70042C98B /* screen.fsh in Resources */,
 				8C2E09E11A5058D40042C98B /* unlockFade@2x.png in Resources */,
 				8C2E09501A5058D40042C98B /* actionLandscape-modern@2x.png in Resources */,
 				8C2E09D41A5058D40042C98B /* eraser_landscape.png in Resources */,
@@ -2179,8 +2121,8 @@
 				8C2E08AC1A5058540042C98B /* DocSizes.plist in Resources */,
 				8C2E09C41A5058D40042C98B /* stylus_selected-modern.png in Resources */,
 				8C2E08841A5057D10042C98B /* colorburn.fsh in Resources */,
-				8C2E067B1A4AFEF70042C98B /* toHueChromaLuma.fsh in Resources */,
 				8C2E09601A5058D40042C98B /* blend_button.png in Resources */,
+				8C2E09FF1A51B4FA0042C98B /* ColorPicker~iphone5.xib in Resources */,
 				8C2E09C51A5058D40042C98B /* stylus_selected-modern@2x.png in Resources */,
 				8C2E09B21A5058D40042C98B /* refreshLandscape.png in Resources */,
 				8C2E097E1A5058D40042C98B /* dropbox_icon_unsupported@2x.png in Resources */,
@@ -2189,7 +2131,7 @@
 				8C2E08881A5057D10042C98B /* exclusion.fsh in Resources */,
 				8C2E09C11A5058D40042C98B /* style@2x.png in Resources */,
 				8C2E095A1A5058D40042C98B /* backButton.png in Resources */,
-				8C2E06781A4AFEF70042C98B /* simple.fsh in Resources */,
+				8C2E0A0A1A51B4FA0042C98B /* PropertyCell~iOS7.xib in Resources */,
 				8C2E08831A5057D10042C98B /* blend.vsh in Resources */,
 				8C2E09971A5058D40042C98B /* hidden@2x.png in Resources */,
 				8C2E09C21A5058D40042C98B /* styleLandscape.png in Resources */,
@@ -2200,16 +2142,12 @@
 				8C2E09681A5058D40042C98B /* checkmark-modern@2x.png in Resources */,
 				8C82ED14193235A20055C5E2 /* InfoPlist.strings in Resources */,
 				8C2E088C1A5057D10042C98B /* overlay.fsh in Resources */,
-				8C2E06771A4AFEF70042C98B /* nonPremultipliedBlit.fsh in Resources */,
 				8C2E09591A5058D40042C98B /* alpha_unlock.png in Resources */,
 				8C2E097D1A5058D40042C98B /* dropbox_icon_unsupported.png in Resources */,
 				8C2E09941A5058D40042C98B /* gearLandscape.png in Resources */,
 				8C2E096C1A5058D40042C98B /* color_wheel@2x.png in Resources */,
 				8C2E089C1A5057D10042C98B /* merge.fsh in Resources */,
-				8C2E06711A4AFEF70042C98B /* compositeWithEraseMask.fsh in Resources */,
-				8C2E066B1A4AFEF70042C98B /* blitWithEraseMask.fsh in Resources */,
 				8C2E095D1A5058D40042C98B /* backButtonLandscape@2x.png in Resources */,
-				8C2E06681A4AFEF70042C98B /* blit.fsh in Resources */,
 				8C82ED1D193235A20055C5E2 /* Main.storyboard in Resources */,
 				8C2E09BA1A5058D40042C98B /* shadow_right.png in Resources */,
 				8C2E09571A5058D40042C98B /* album@2x.png in Resources */,
@@ -2248,7 +2186,6 @@
 				8C2E085C1A4B06E60042C98B /* WDHueSaturationController.m in Sources */,
 				8C2E08341A4B04640042C98B /* WDUnlockSlider.m in Sources */,
 				8C2E07FF1A4B04640042C98B /* WDFreehandTool.m in Sources */,
-				8C2E07D11A4B04640042C98B /* WDStylusManager.m in Sources */,
 				8C2E07F41A4B04640042C98B /* WDDeferredImage.m in Sources */,
 				8C2E08551A4B06E60042C98B /* WDBrushController.m in Sources */,
 				8C2E080D1A4B04640042C98B /* WDCanvas.m in Sources */,
@@ -2264,6 +2201,7 @@
 				8C2E08351A4B04640042C98B /* WDUnlockView.m in Sources */,
 				8C2E08161A4B04640042C98B /* WDColorWheel.m in Sources */,
 				8C2E07CF1A4B04640042C98B /* WDReplayUndoAnalyzer.m in Sources */,
+				8C4327B71A62B44800AA0226 /* SketchFilter.m in Sources */,
 				8C2E08591A4B06E60042C98B /* WDColorBalanceController.m in Sources */,
 				8C2E07C71A4B04640042C98B /* WDUpdateLayer.m in Sources */,
 				8C2E080F1A4B04640042C98B /* WDColorComparator.m in Sources */,
@@ -2289,8 +2227,6 @@
 				8C2E07C31A4B04640042C98B /* WDStartEditing.m in Sources */,
 				8C2E07D01A4B04640042C98B /* WDSleepTimer.m in Sources */,
 				8C2E07BD1A4B04640042C98B /* WDDuplicateLayer.m in Sources */,
-				8C2E08601A4B06E60042C98B /* WDStylusController.m in Sources */,
-				8C2E082E1A4B04640042C98B /* WDStylusTableCell.m in Sources */,
 				8C2E082D1A4B04640042C98B /* WDStampPicker.m in Sources */,
 				8C2E07DC1A4B04640042C98B /* WDCrossHatchGenerator.m in Sources */,
 				8C2E08011A4B04640042C98B /* UIDeviceHardware.m in Sources */,

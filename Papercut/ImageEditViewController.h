@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class JotView;
 @interface ImageEditViewController : UIViewController
 
 @property (strong, nonatomic) UIImage *editImage;

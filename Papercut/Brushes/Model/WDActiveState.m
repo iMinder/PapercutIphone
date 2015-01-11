@@ -17,9 +17,7 @@
 #import "WDColor.h"
 #import "WDEraserTool.h"
 #import "WDJSONCoder.h"
-#import "WDStylusManager.h"
 #import "WDUtilities.h"
-
 #import "WDBristleGenerator.h"
 #import "WDCirclesGenerator.h"
 #import "WDCrossHatchGenerator.h"
@@ -145,6 +143,7 @@ static NSString *WDSwatchKey = @"WDSwatchKey";
 - (WDColor *) defaultPaintColor
 {
     return [WDColor colorWithHue:(138.0f / 360) saturation:0.36f brightness:0.71f alpha:1];
+    //return [WDColor redColor];
 }
 
 - (void) setPaintColor:(WDColor *)paintColor
@@ -154,7 +153,7 @@ static NSString *WDSwatchKey = @"WDSwatchKey";
     [[NSUserDefaults standardUserDefaults] setObject:[paintColor_ dictionary] forKey:WDPaintColorKey];
     [[NSNotificationCenter defaultCenter] postNotificationName:WDActivePaintColorDidChange object:nil userInfo:nil];
     
-    [[WDStylusManager sharedStylusManager] setPaintColor:paintColor.UIColor];
+    //[[WDStylusManager sharedStylusManager] setPaintColor:paintColor.UIColor];
     
     [self setActiveTool:tools_[0]];
 }
