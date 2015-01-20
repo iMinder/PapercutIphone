@@ -8,20 +8,20 @@
 
 #import "PapercutFilter.h"
 
-@class  PCVideoCamera;
+@class  PapercutVideoCamera;
 
 @protocol PCVideoCameraDelegate <NSObject>
 
-- (void)PCVideCameraWillStartCaptureStillImage:(PCVideoCamera *)videoCamera;
-- (void)PCVideCameraDidFinishCaptureStillImage:(PCVideoCamera *)videoCamera;
-- (void)PCVideCameraDidSaveCaptureStillImage:(PCVideoCamera *)videoCamera withError:(NSError *)error;
+- (void)PCVideCameraWillStartCaptureStillImage:(PapercutVideoCamera *)videoCamera;
+- (void)PCVideCameraDidFinishCaptureStillImage:(PapercutVideoCamera *)videoCamera;
+- (void)PCVideCameraDidSaveCaptureStillImage:(PapercutVideoCamera *)videoCamera withError:(NSError *)error;
 
 @end
 
 @class YinKeFilter;
 @class YangKeFilter;
 
-@interface PCVideoCamera : GPUImageStillCamera
+@interface PapercutVideoCamera : GPUImageStillCamera
 
 @property (strong, nonatomic) GPUImageAdaptiveThresholdFilter *sketchFilter;
 @property (assign, nonatomic) GPUImageFilter *lineFirstFilter;
@@ -46,4 +46,7 @@
 - (void)cancelAlbumPhotoAndGoBackToNormal;
 - (void)saveCurrentStillImage;
 - (UIImage *)editImage;
+- (void)updateFilterDepth:(float)depth;
+- (void)hideInterfaces;
+- (void)showInterfaces;
 @end

@@ -25,13 +25,13 @@ const highp vec3 W = vec3(0.299, 0.587, 0.114);
      
      float gray = dot(colorTexture.rgb, W);
      
-     if (gray < 245.0 / 255.0)
+     if (gray < 200.0 / 255.0)
      {
-         colorTexture = vec4(1.0, 0, 0, colorTexture.a);
+         colorTexture = vec4(1.0, 0, 0, 1.0);
      }
      else
      {
-         colorTexture = vec4(1.0, 1.0, 1.0,colorTexture.a);
+         colorTexture = vec4(1.0, 1.0, 1.0,1.0);
      }
      gl_FragColor = colorTexture;
  }

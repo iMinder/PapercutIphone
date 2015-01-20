@@ -371,8 +371,6 @@
 		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
 		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC991980ED2800A94FED /* ImageEditViewController.m */; };
-		8C4327B71A62B44800AA0226 /* SketchFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4327B61A62B44800AA0226 /* SketchFilter.m */; };
-		8C4327BC1A62BAC700AA0226 /* sketchfilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -387,7 +385,7 @@
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
-		8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PCVideoCamera.m */; };
+		8C84463C193587A5004F4184 /* PapercutVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PapercutVideoCamera.m */; };
 		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
 		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
 		8CD33EA8198291E8005B0569 /* EditManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA7198291E8005B0569 /* EditManager.m */; };
@@ -943,9 +941,6 @@
 		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		8C33EC981980ED2800A94FED /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
 		8C33EC991980ED2800A94FED /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
-		8C4327B51A62B44800AA0226 /* SketchFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchFilter.h; sourceTree = "<group>"; };
-		8C4327B61A62B44800AA0226 /* SketchFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchFilter.m; sourceTree = "<group>"; };
-		8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = sketchfilter.fsh; sourceTree = "<group>"; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -965,8 +960,8 @@
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
-		8C84463A193587A5004F4184 /* PCVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCVideoCamera.h; sourceTree = "<group>"; };
-		8C84463B193587A5004F4184 /* PCVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCVideoCamera.m; sourceTree = "<group>"; };
+		8C84463A193587A5004F4184 /* PapercutVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutVideoCamera.h; sourceTree = "<group>"; };
+		8C84463B193587A5004F4184 /* PapercutVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutVideoCamera.m; sourceTree = "<group>"; };
 		8C84464019358A4E004F4184 /* PapercutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutFilter.h; sourceTree = "<group>"; };
 		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
 		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
@@ -1032,8 +1027,8 @@
 				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
 				8C33EC981980ED2800A94FED /* ImageEditViewController.h */,
 				8C33EC991980ED2800A94FED /* ImageEditViewController.m */,
-				8C84463A193587A5004F4184 /* PCVideoCamera.h */,
-				8C84463B193587A5004F4184 /* PCVideoCamera.m */,
+				8C84463A193587A5004F4184 /* PapercutVideoCamera.h */,
+				8C84463B193587A5004F4184 /* PapercutVideoCamera.m */,
 				8C84464019358A4E004F4184 /* PapercutFilter.h */,
 				8CD33EA6198291E8005B0569 /* EditManager.h */,
 				8CD33EA7198291E8005B0569 /* EditManager.m */,
@@ -1713,13 +1708,10 @@
 		8C33EC90197FA7F000A94FED /* filters */ = {
 			isa = PBXGroup;
 			children = (
-				8C4327B51A62B44800AA0226 /* SketchFilter.h */,
-				8C4327B61A62B44800AA0226 /* SketchFilter.m */,
 				8CFC41551939CE82006EFC6B /* YangKeFilter.h */,
 				8CFC41561939CE82006EFC6B /* YangKeFilter.m */,
 				8C33EC91197FAAA800A94FED /* YinKeFilter.h */,
 				8C33EC92197FAAA800A94FED /* YinKeFilter.m */,
-				8C4327BB1A62BAC700AA0226 /* sketchfilter.fsh */,
 			);
 			name = filters;
 			sourceTree = "<group>";
@@ -2073,7 +2065,6 @@
 				8C2E09C81A5058D40042C98B /* stylus_unselected-modern.png in Resources */,
 				8C2E089D1A5057D10042C98B /* nonPremultipliedBlit.fsh in Resources */,
 				8C2E09DD1A5058D40042C98B /* unlock@2x.png in Resources */,
-				8C4327BC1A62BAC700AA0226 /* sketchfilter.fsh in Resources */,
 				8C2E0A011A51B4FA0042C98B /* HueSaturation.xib in Resources */,
 				8C2E088B1A5057D10042C98B /* normal.fsh in Resources */,
 				8C2E09B01A5058D40042C98B /* refresh.png in Resources */,
@@ -2201,7 +2192,6 @@
 				8C2E08351A4B04640042C98B /* WDUnlockView.m in Sources */,
 				8C2E08161A4B04640042C98B /* WDColorWheel.m in Sources */,
 				8C2E07CF1A4B04640042C98B /* WDReplayUndoAnalyzer.m in Sources */,
-				8C4327B71A62B44800AA0226 /* SketchFilter.m in Sources */,
 				8C2E08591A4B06E60042C98B /* WDColorBalanceController.m in Sources */,
 				8C2E07C71A4B04640042C98B /* WDUpdateLayer.m in Sources */,
 				8C2E080F1A4B04640042C98B /* WDColorComparator.m in Sources */,
@@ -2259,7 +2249,7 @@
 				8C2E07B91A4B04640042C98B /* WDChangeOpacity.m in Sources */,
 				8C2E07ED1A4B04640042C98B /* WDStampGenerator.m in Sources */,
 				8C2E08571A4B06E60042C98B /* WDCanvasController.m in Sources */,
-				8C84463C193587A5004F4184 /* PCVideoCamera.m in Sources */,
+				8C84463C193587A5004F4184 /* PapercutVideoCamera.m in Sources */,
 				8C2E07B31A4B04640042C98B /* UIView+Additions.m in Sources */,
 				8C2E081F1A4B04640042C98B /* WDImageView.m in Sources */,
 				8C2E07E21A4B04640042C98B /* WDPath.m in Sources */,

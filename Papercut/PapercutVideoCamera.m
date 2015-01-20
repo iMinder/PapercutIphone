@@ -7,13 +7,14 @@
 //  Copyright (c) 2014年 jackie. All rights reserved.
 //
 
-#import "PCVideoCamera.h"
+#import "PapercutVideoCamera.h"
 #import "YangKeFilter.h"
 #import "YinKeFilter.h"
 #import "ALAssetsLibrary+CustomPhotoAlbum.h"
-#import "SketchFilter.h"
 
-@interface PCVideoCamera()
+#define RADIUS_FACTOR 15
+
+@interface PapercutVideoCamera()
 
 @property (strong, nonatomic, readwrite) GPUImageView *gpuImageView;
 @property (strong, nonatomic, readwrite) GPUImageView *gpuImageView_HD;
@@ -23,13 +24,12 @@
 @property (strong, nonatomic) AVMutableComposition *mutableComposition;
 @property (strong, nonatomic) AVAssetExportSession *assetExportSession;
 @property (strong, nonatomic) ALAssetsLibrary *library;
-@property (strong, nonatomic) SketchFilter *customSketchFilter;
-@property (strong, nonatomic) GPUImageColorDodgeBlendFilter * dodgeFilter;
+@property (strong, nonatomic) UISlider *radiuSlider;
 - (void)forceSwitchToNewFilter:(PCFilterType)newFilterType;
 
 @end
 
-@implementation PCVideoCamera
+@implementation PapercutVideoCamera
 
 - (ALAssetsLibrary *)library
 {
@@ -39,37 +39,10 @@
     return _library;
 }
 
-- (GPUImageColorDodgeBlendFilter*)dodgeFilter
-{
-    if (!_dodgeFilter) {
-        _dodgeFilter = [[GPUImageColorDodgeBlendFilter alloc]init];
-    }
-    return _dodgeFilter;
-}
-- (SketchFilter *)customSketchFilter
-{
-    if (!_customSketchFilter) {
-        _customSketchFilter = [[SketchFilter alloc]init];
-        
-    }
-    return _customSketchFilter;
-}
-
-//- (GPUImageThresholdSketchFilter *)sketchFilter
-//{
-//    if (!_sketchFilter) {
-//        _sketchFilter = [[GPUImageThresholdSketchFilter alloc]init];
-//        [_sketchFilter setThreshold:0.5];
-//        
-//    }
-//    return _sketchFilter;
-//}
-
 - (GPUImageAdaptiveThresholdFilter *)sketchFilter
 {
     if (!_sketchFilter) {
         _sketchFilter = [[GPUImageAdaptiveThresholdFilter alloc]init];
-        //[_sketchFilter setThreshold:0.5];
         
     }
     return _sketchFilter;
@@ -114,7 +87,7 @@
     self.prepareFilterQueue  = dispatch_queue_create("com.papercut.prepareFilterQueue", NULL);
     
     //设置view
-    self.gpuImageView = [[GPUImageView alloc]initWithFrame:CGRectMake(0, 20, 320, 430)];
+    self.gpuImageView = [[GPUImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 440)];
     if (isHighQuality)
     {
         _gpuImageView.layer.contentsScale = 2.0;
@@ -137,7 +110,28 @@
     _lineLastFilter = self.normalFilter;
     [self swithToNewFilter];
     
+    [self configureViews];
+    
     return self;
+}
+
+- (void)configureViews
+{
+    self.radiuSlider = [[UISlider alloc] initWithFrame:CGRectMake(30, 100, 270, 31)];
+    [self.radiuSlider addTarget:self action:@selector(updateRadius:) forControlEvents:UIControlEventValueChanged];
+    self.radiuSlider.center = CGPointMake(SCREEN_WIDTH - 20, self.gpuImageView.center.y);
+    self.radiuSlider.minimumValue = 0.0;
+    self.radiuSlider.maximumValue = 1.0;
+    self.radiuSlider.value = 0.5;
+    self.radiuSlider.transform = CGAffineTransformRotate(self.radiuSlider.transform, M_PI_2);
+    [self updateFilterDepth:self.radiuSlider.value * RADIUS_FACTOR];
+    [self.gpuImageView addSubview:self.radiuSlider];
+    
+}
+
+- (void)updateRadius:(UISlider *)slider
+{
+    [self updateFilterDepth:slider.value * RADIUS_FACTOR];
 }
 
 - (void)swithFilter:(PCFilterType)normalFilterType
@@ -254,7 +248,7 @@
         [self.delegate PCVideCameraWillStartCaptureStillImage:self];
     }
     //开始拍照,注意，传递进去的一定是当前最后一个滤镜的输出，否则一直获取为空
-    __weak PCVideoCamera *weakSelf = self;
+    __weak PapercutVideoCamera *weakSelf = self;
     [self capturePhotoAsImageProcessedUpToFilter:(GPUImageOutput<GPUImageInput> *) _lineFirstFilter
                                  withOrientation:0
                            withCompletionHandler:^(UIImage *processedImage, NSError *error) {
@@ -319,4 +313,22 @@
     retImage = [_lineLastFilter imageFromCurrentFramebuffer];
     return retImage;
 }
+
+#pragma mark - 更新滤镜强度
+- (void)updateFilterDepth:(float)depth
+{
+    self.sketchFilter.blurRadiusInPixels = depth;
+    [self editImage];
+}
+
+#pragma mark - 视图布局显示
+- (void)hideInterfaces
+{
+    [self.radiuSlider setHidden:YES];
+}
+- (void)showInterfaces
+{
+    [self.radiuSlider setHidden:NO];
+}
+
 @end

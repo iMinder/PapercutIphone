@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "GPUImage.h"
-#import "PCVideoCamera.h"
+#import "PapercutVideoCamera.h"
 
 @interface ShowCameraViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate,PCVideoCameraDelegate>
 

@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
-                                <rect key="frame" x="0.0" y="448" width="69" height="32"/>
+                                <rect key="frame" x="17" y="448" width="69" height="32"/>
                                 <state key="normal" title="阳刻">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -42,27 +42,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
-                                <rect key="frame" x="83" y="448" width="69" height="32"/>
+                                <rect key="frame" x="224" y="448" width="69" height="32"/>
                                 <state key="normal" title="阴刻">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="showYinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="aWd-oV-Vez"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwo-Ty-c26">
-                                <rect key="frame" x="167" y="448" width="69" height="32"/>
-                                <state key="normal" title="侧脸肖像">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
-                                <rect key="frame" x="238" y="448" width="69" height="32"/>
-                                <state key="normal" title="原图">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showNormal:" destination="O4V-YF-znb" eventType="touchUpInside" id="8CJ-KT-spI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
@@ -110,16 +95,22 @@
                                     <action selector="usePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="eM0-Sj-rFF"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-Jf-dg9">
-                                <rect key="frame" x="18" y="476" width="273" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
+                                <rect key="frame" x="130" y="449" width="69" height="32"/>
+                                <state key="normal" title="原图">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="updateFilterFromSlider:" destination="O4V-YF-znb" eventType="valueChanged" id="ldf-h8-hQX"/>
+                                    <action selector="showNormal:" destination="O4V-YF-znb" eventType="touchUpInside" id="8CJ-KT-spI"/>
                                 </connections>
-                            </slider>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="albumChooseButton" destination="Nz8-bo-mY4" id="Wpc-aH-bVU"/>
                         <outlet property="backFrontButton" destination="WXU-mk-Kf7" id="DPN-3q-FTS"/>

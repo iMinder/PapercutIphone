@@ -23,7 +23,7 @@ NSString *const kPCYinKeFilterString = SHADER_STRING
      
      vec4 colorTexture = texture2D(inputImageTexture, textureCoordinate);
      
-     float gray = dot(colorTexture.rgb, W);
+     float gray = dot(colorTexture.rgb, W); //进行rgb合成
      
      if (gray < 245.0 / 255.0)
      {

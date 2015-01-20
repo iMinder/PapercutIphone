@@ -10,14 +10,14 @@
 #import "ImageEditViewController.h"
 #import "WDCanvasController.h"
 #import "WDPaintingManager.h"
+#import "UIImage+Resize.h"
 
-@interface ShowCameraViewController()
+@interface ShowCameraViewController()<UIGestureRecognizerDelegate>
 
 //@property (strong, nonatomic)GPUImagestillImageCamera *stillImageCamera;
 @property (strong, nonatomic)GPUImageView *cameraImageView;
-@property (strong, nonatomic)GPUImageStillCamera *stillImageCamera;
 @property (assign, nonatomic)BOOL isBackCamera;
-@property (strong, nonatomic) PCVideoCamera *pcVideoCamera;
+@property (strong, nonatomic) PapercutVideoCamera *pcVideoCamera;
 
 @property (assign, nonatomic)BOOL isPhotoDisplayed;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
@@ -25,11 +25,46 @@
 @property (weak, nonatomic) IBOutlet UIButton *usePhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *backFrontButton;
 
+
+@property (nonatomic) BOOL interfaceHiden;
 - (void)changeButtonState;
 
 @end
 
 @implementation ShowCameraViewController
+
+- (void)configureGuestures
+{
+    UITapGestureRecognizer *oneFingerTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(oneTap:)];
+    oneFingerTap.numberOfTapsRequired = 1;
+    oneFingerTap.delegate = self;
+    [self.view addGestureRecognizer:oneFingerTap];
+    self.interfaceHiden = NO;
+}
+
+- (void)hideInterface
+{
+    //[[self navigationController]setNavigationBarHidden:YES];
+    [self.pcVideoCamera hideInterfaces];
+    self.interfaceHiden = YES;
+}
+- (void)showInterface
+{
+    //[[self navigationController] setNavigationBarHidden:NO];
+    [self.pcVideoCamera showInterfaces];
+    self.interfaceHiden = NO;
+}
+- (void)oneTap:(UITapGestureRecognizer *)gesture
+{
+    if (self.interfaceHiden)
+    {
+        [self showInterface];
+    }
+    else
+    {
+        [self hideInterface];
+    }
+}
 
 - (void)changeButtonState
 {
@@ -67,30 +102,44 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //self.edgesForExtendedLayout = UIRectEdgeAll;
+    [self configureGuestures];
 }
 
 - (void)awakeFromNib
 {
     
     self.navigationItem.hidesBackButton = YES;
+    [[self navigationController] setNavigationBarHidden:YES];
     self.isBackCamera = NO;
     self.isPhotoDisplayed = NO;
     //[self changeCameraBackOrFront:nil];
-    self.pcVideoCamera = [[PCVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront highImageQuality:YES];
+    self.pcVideoCamera = [[PapercutVideoCamera alloc]initWithSessionPreset:AVCaptureSessionPreset640x480 cameraPosition:AVCaptureDevicePositionFront highImageQuality:YES];
     
-//    if ([self.pcVideoCamera.captureSession canSetSessionPreset:AVAssetExportPreset1280x720])
-//    {
-//        [self.pcVideoCamera.captureSession setSessionPreset:AVAssetExportPreset1280x720];
-//    }
+    if ([self.pcVideoCamera.captureSession canSetSessionPreset:AVAssetExportPreset1280x720])
+    {
+        [self.pcVideoCamera.captureSession setSessionPreset:AVAssetExportPreset1280x720];
+    }
     
     //设置以防前置摄像头的偏转，默认是有偏转的
     _pcVideoCamera.delegate = self;
     _pcVideoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     [self.view addSubview:self.pcVideoCamera.gpuImageView];
     
+    
     [_pcVideoCamera startCameraCapture];
     [self.pcVideoCamera rotateCamera];
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self navigationController] setNavigationBarHidden:YES];
 }
 
 /**
@@ -132,6 +181,23 @@
 {
 
     UIImage *rawImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    CGSize imageSize = rawImage.size;
+    
+    if (imageSize.width > imageSize.height) {
+        if (imageSize.width > 1024) {
+            imageSize.height = (imageSize.height / imageSize.width) * 1024;
+            imageSize.width = 1024;
+        }
+    } else {
+        if (imageSize.height > 1024) {
+            imageSize.width = (imageSize.width / imageSize.height) * 1024;
+            imageSize.height = 1024;
+        }
+    }
+    
+    rawImage = [rawImage resizedImage:imageSize interpolationQuality:kCGInterpolationHigh];
+    
     self.pcVideoCamera.rawImage = rawImage;
     [self.pcVideoCamera swithFilter:self.pcVideoCamera.currentFilterType];
     
@@ -168,7 +234,8 @@
         // set the document before setting the editing flag
         canvasController.document = document;
         canvasController.editing = YES;
-        [canvasController insertImageToCavas:[self.pcVideoCamera editImage]];
+        [canvasController insertImageToCavas:[self imageWithRedBorder:
+         [self.pcVideoCamera editImage]]];
     }];
 }
 
@@ -183,18 +250,18 @@
 }
 #pragma mark -- PCVideoCameraDelegate Method
 
-- (void)PCVideCameraWillStartCaptureStillImage:(PCVideoCamera *)videoCamera
+- (void)PCVideCameraWillStartCaptureStillImage:(PapercutVideoCamera *)videoCamera
 {
     _isPhotoDisplayed = YES;
     [self changeButtonState];
 }
 
-- (void)PCVideCameraDidFinishCaptureStillImage:(PCVideoCamera *)videoCamera
+- (void)PCVideCameraDidFinishCaptureStillImage:(PapercutVideoCamera *)videoCamera
 {
     
 }
 
-- (void)PCVideCameraDidSaveCaptureStillImage:(PCVideoCamera *)videoCamera withError:(NSError *)error
+- (void)PCVideCameraDidSaveCaptureStillImage:(PapercutVideoCamera *)videoCamera withError:(NSError *)error
 {
     if (error) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"错误" message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
@@ -206,16 +273,25 @@
     }
 }
 
-- (IBAction)updateFilterFromSlider:(id)sender {
-    switch (self.pcVideoCamera.currentFilterType) {
-        case PC_YANGKE_FILTER:
-        case PC_YINKE_FILTER:
-            //self.pcVideoCamera.sketchFilter.threshold = ((UISlider *)sender).value;
-            self.pcVideoCamera.sketchFilter.blurRadiusInPixels = ((UISlider *)sender).value * 20.0;
-            break;
-        default:
-            break;
-    }
+- (UIImage *)imageWithRedBorder:(UIImage *)source
+{
+    //1 绘制图形上下文
+    CGSize size = source.size;
+    //让其成为当前上下文
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //2 进行stoke
+    CGContextSetRGBStrokeColor(context, 1.0, 0.0, 0.0, 1.0);
+    CGContextSetLineWidth(context, 10);
+    CGContextStrokeRect(context, rect);
+    //CGContextStrokePath(context);
+    
+    //3 获取当前图片
+    UIImage *borderImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return borderImg;
 }
-
 @end
