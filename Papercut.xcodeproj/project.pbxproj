@@ -371,6 +371,9 @@
 		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
 		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC991980ED2800A94FED /* ImageEditViewController.m */; };
+		8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */; };
+		8C46BD461A6E7406000BE6AB /* SoundServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */; };
+		8C46BD481A6E7892000BE6AB /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C46BD471A6E7892000BE6AB /* sound.mp3 */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -941,6 +944,11 @@
 		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
 		8C33EC981980ED2800A94FED /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
 		8C33EC991980ED2800A94FED /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
+		8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPaperCutViewController.h; sourceTree = "<group>"; };
+		8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnPaperCutViewController.m; sourceTree = "<group>"; };
+		8C46BD441A6E7406000BE6AB /* SoundServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundServiceManager.h; sourceTree = "<group>"; };
+		8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundServiceManager.m; sourceTree = "<group>"; };
+		8C46BD471A6E7892000BE6AB /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = Sound/sound.mp3; sourceTree = SOURCE_ROOT; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -986,8 +994,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C2E06891A4AFF860042C98B /* libz.dylib in Frameworks */,
 				8CDF16D81933263500112023 /* AVFoundation.framework in Frameworks */,
+				8C2E06891A4AFF860042C98B /* libz.dylib in Frameworks */,
 				8C2E06871A4AFF690042C98B /* CoreText.framework in Frameworks */,
 				8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */,
 				8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */,
@@ -1060,6 +1068,8 @@
 		8C250CBE1934CAC10089945F /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
+				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
 			);
 			name = Learn;
 			sourceTree = "<group>";
@@ -1725,6 +1735,15 @@
 			name = custom_album;
 			sourceTree = "<group>";
 		};
+		8C46BD431A6E73C4000BE6AB /* SoundService */ = {
+			isa = PBXGroup;
+			children = (
+				8C46BD441A6E7406000BE6AB /* SoundServiceManager.h */,
+				8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */,
+			);
+			name = SoundService;
+			sourceTree = "<group>";
+		};
 		8C82ECFD193235A10055C5E2 = {
 			isa = PBXGroup;
 			children = (
@@ -1769,6 +1788,7 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
+				8C46BD431A6E73C4000BE6AB /* SoundService */,
 				8C2E04691A4AFEF60042C98B /* Brushes */,
 				8C250CB91934CA3A0089945F /* Camera */,
 				8C250CBE1934CAC10089945F /* Learn */,
@@ -1789,6 +1809,7 @@
 		8C82ED10193235A20055C5E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C46BD471A6E7892000BE6AB /* sound.mp3 */,
 				8C82ED11193235A20055C5E2 /* Papercut-Info.plist */,
 				8C82ED12193235A20055C5E2 /* InfoPlist.strings */,
 				8C82ED15193235A20055C5E2 /* main.m */,
@@ -1995,6 +2016,7 @@
 				8C2E09AE1A5058D40042C98B /* redoLandscape.png in Resources */,
 				8C2E09AD1A5058D40042C98B /* redo@2x.png in Resources */,
 				8C2E09DA1A5058D40042C98B /* undoLandscape.png in Resources */,
+				8C46BD481A6E7892000BE6AB /* sound.mp3 in Resources */,
 				8C2E09B61A5058D40042C98B /* shadow_bottom.png in Resources */,
 				8C2E0A001A51B4FA0042C98B /* Export.xib in Resources */,
 				8C2E08931A5057D10042C98B /* brush.fsh in Resources */,
@@ -2190,6 +2212,7 @@
 				8C2E07C01A4B04640042C98B /* WDRedoChange.m in Sources */,
 				8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */,
 				8C2E08351A4B04640042C98B /* WDUnlockView.m in Sources */,
+				8C46BD461A6E7406000BE6AB /* SoundServiceManager.m in Sources */,
 				8C2E08161A4B04640042C98B /* WDColorWheel.m in Sources */,
 				8C2E07CF1A4B04640042C98B /* WDReplayUndoAnalyzer.m in Sources */,
 				8C2E08591A4B06E60042C98B /* WDColorBalanceController.m in Sources */,
@@ -2310,6 +2333,7 @@
 				8C2E08221A4B04640042C98B /* WDLayerCell.m in Sources */,
 				8C2E08171A4B04640042C98B /* WDDragChip.m in Sources */,
 				8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */,
+				8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */,
 				8C2E082A1A4B04640042C98B /* WDPropertyCell.m in Sources */,
 				8C2E08261A4B04640042C98B /* WDModalTitleBar.m in Sources */,
 				8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,

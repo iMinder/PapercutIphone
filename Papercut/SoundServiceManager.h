@@ -10,4 +10,11 @@
 
 @interface SoundServiceManager : NSObject
 
++ (instancetype)sharedInstance;
+
+- (void)playServiceSound;
+- (void)pauseServiceSound;
+- (void)stopeServiceSound;
+- (void)startPlayingSound;
+
 @end
