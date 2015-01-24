@@ -389,6 +389,8 @@
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
 		8C84463C193587A5004F4184 /* PapercutVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PapercutVideoCamera.m */; };
+		8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A01A722DAC003A802C /* PaperToolBar.m */; };
+		8CABB3A41A72A064003A802C /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A31A72A064003A802C /* ToolCell.m */; };
 		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
 		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
 		8CD33EA8198291E8005B0569 /* EditManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA7198291E8005B0569 /* EditManager.m */; };
@@ -971,6 +973,10 @@
 		8C84463A193587A5004F4184 /* PapercutVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutVideoCamera.h; sourceTree = "<group>"; };
 		8C84463B193587A5004F4184 /* PapercutVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutVideoCamera.m; sourceTree = "<group>"; };
 		8C84464019358A4E004F4184 /* PapercutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutFilter.h; sourceTree = "<group>"; };
+		8CABB39F1A722DAC003A802C /* PaperToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperToolBar.h; sourceTree = "<group>"; };
+		8CABB3A01A722DAC003A802C /* PaperToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperToolBar.m; sourceTree = "<group>"; };
+		8CABB3A21A72A063003A802C /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
+		8CABB3A31A72A064003A802C /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
 		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
 		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
 		8CD33EA31981FD80005B0569 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
@@ -1070,6 +1076,10 @@
 			children = (
 				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
 				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
+				8CABB39F1A722DAC003A802C /* PaperToolBar.h */,
+				8CABB3A01A722DAC003A802C /* PaperToolBar.m */,
+				8CABB3A21A72A063003A802C /* ToolCell.h */,
+				8CABB3A31A72A064003A802C /* ToolCell.m */,
 			);
 			name = Learn;
 			sourceTree = "<group>";
@@ -2218,6 +2228,7 @@
 				8C2E08591A4B06E60042C98B /* WDColorBalanceController.m in Sources */,
 				8C2E07C71A4B04640042C98B /* WDUpdateLayer.m in Sources */,
 				8C2E080F1A4B04640042C98B /* WDColorComparator.m in Sources */,
+				8CABB3A41A72A064003A802C /* ToolCell.m in Sources */,
 				8C2E082B1A4B04640042C98B /* WDScrollView.m in Sources */,
 				8C2E085F1A4B06E60042C98B /* WDPaintingSizeController.m in Sources */,
 				8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */,
@@ -2279,6 +2290,7 @@
 				8C2E07D71A4B04640042C98B /* WDBristleGenerator.m in Sources */,
 				8C2E07D91A4B04640042C98B /* WDCirclesGenerator.m in Sources */,
 				8C2E07C21A4B04640042C98B /* WDSimpleDocumentChange.m in Sources */,
+				8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */,
 				8C2E07D31A4B04640042C98B /* WDActiveState.m in Sources */,
 				8C2E07BC1A4B04640042C98B /* WDDocumentChange.m in Sources */,
 				8C2E07C51A4B04640042C98B /* WDTransformLayer.m in Sources */,
@@ -2469,6 +2481,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/framework/**";
 				VALIDATE_PRODUCT = YES;
