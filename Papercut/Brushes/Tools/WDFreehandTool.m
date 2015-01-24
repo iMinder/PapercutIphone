@@ -140,10 +140,10 @@
     
     // see if we've got real pressure
     self.realPressure = NO;
-    if ([recognizer isKindOfClass:[WDPanGestureRecognizer class]]) {
-        UITouch *touch = [recognizer.touches anyObject];
-        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:&realPressure];
-    }
+//    if ([recognizer isKindOfClass:[WDPanGestureRecognizer class]]) {
+//        UITouch *touch = [recognizer.touches anyObject];
+//        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:&realPressure];
+//    }
     
     WDBezierNode *node = [WDBezierNode bezierNodeWithAnchorPoint:[WD3DPoint pointWithX:location.x y:location.y z:pressure]];
     pointsToFit_[0] = node;
@@ -179,11 +179,12 @@
             pressure = WDSineCurve(1.0f - MIN(kSpeedFactor, speed) / kSpeedFactor);
             pressure = 1.0f - pressure;
         }
-    } else {
-        UITouch *touch = [recognizer.touches anyObject];
-        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:nil];
     }
-        
+//    else {
+//        UITouch *touch = [recognizer.touches anyObject];
+//        //pressure = [[WDStylusManager sharedStylusManager] pressureForTouch:touch realPressue:nil];
+//    }
+    
     if (firstEver_) {
         pointsToFit_[0].inPressure = pressure;
         pointsToFit_[0].anchorPressure = pressure;

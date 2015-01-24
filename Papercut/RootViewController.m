@@ -31,13 +31,14 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setToolbarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:NO];
     self.navigationController.hidesBarsOnTap = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self setUp];
+    //[self setUp];
 }
 
 - (void)setUp

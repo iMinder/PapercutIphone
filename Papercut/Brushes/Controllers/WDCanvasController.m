@@ -1059,6 +1059,7 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
+        aBar.backgroundColor = [UIColor redColor];
         
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
@@ -1247,16 +1248,17 @@
     }
 }
 
-- (void) viewWillUnload
-{
-    topBar = nil;
-    bottomBar = nil;
-    
-    self.needsToResetInterfaceMode = YES;
-    
-    // cache the canvas zoom and position so that we can restore it
-    self.canvasSettings = [canvas_ viewSettings];
-}
+//- (void) viewWillUnload
+//{
+//    topBar = nil;
+//    bottomBar = nil;
+//    
+//    self.needsToResetInterfaceMode = YES;
+//    
+//    // cache the canvas zoom and position so that we can restore it
+//    self.canvasSettings = [canvas_ viewSettings];
+//
+//}
 
 - (void) sliderUnlocked:(id)sender
 {
@@ -1299,6 +1301,14 @@
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
 	
+    topBar = nil;
+    bottomBar = nil;
+    
+    self.needsToResetInterfaceMode = YES;
+    
+    // cache the canvas zoom and position so that we can restore it
+    self.canvasSettings = [canvas_ viewSettings];
+
     // if the document has never saved and we go back to the gallery after a memory warning, the browser will be confused
     // because it reloads its view before the document is normally saved (during -viewWillDisappear:)
     [self.document autosaveWithCompletionHandler:nil];
