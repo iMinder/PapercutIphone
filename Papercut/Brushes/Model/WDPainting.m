@@ -617,7 +617,7 @@ NSString *WDActiveLayerChangedNotification = @"WDActiveLayerChangedNotification"
     if (!thumbnail) {
         // OpenGL isn't working, generate a blank image as a placeholder
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, colorSpace, kCGImageAlphaPremultipliedLast);
+        CGContextRef context = CGBitmapContextCreate(NULL, width, height, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast);
         CGContextSetRGBFillColor(context, (CGFloat)0.0, (CGFloat)0.0, (CGFloat)0.0, (CGFloat)1.0 );
         CGImageRef cgImage = CGBitmapContextCreateImage(context);
         CGColorSpaceRelease(colorSpace);

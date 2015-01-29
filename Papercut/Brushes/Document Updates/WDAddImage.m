@@ -34,7 +34,7 @@
 {
     [super updateWithWDDecoder:decoder deep:deep];
     self.imageHash = [decoder decodeStringForKey:@"imageHash"];
-    self.layerIndex = [decoder decodeIntegerForKey:@"index" defaultTo:NSUIntegerMax];
+    self.layerIndex = [decoder decodeIntegerForKey:@"index" defaultTo:(int)NSUIntegerMax];
     self.layerUUID = [decoder decodeStringForKey:@"layer"];
     self.mergeDown = [decoder decodeBooleanForKey:@"mergeDown"];
     self.transform = [decoder decodeTransformForKey:@"transform"];

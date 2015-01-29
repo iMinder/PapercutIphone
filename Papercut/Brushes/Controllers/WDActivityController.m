@@ -38,7 +38,8 @@
 
 - (void) done:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES c];
 }
 
 - (void) loadView
@@ -50,7 +51,7 @@
     table.dataSource = activityManager;
     table.allowsSelection = NO;
     
-    self.contentSizeForViewInPopover = table.frame.size;
+//    self.contentSizeForViewInPopover = table.frame.size;
     self.preferredContentSize = table.frame.size;
     
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) {

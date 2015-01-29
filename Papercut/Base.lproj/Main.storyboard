@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -52,15 +51,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFl-2F-Fdf">
                                         <rect key="frame" x="0.0" y="392" width="320" height="90"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
-                                                <rect key="frame" x="8" y="12" width="66" height="66"/>
-                                                <state key="normal" backgroundImage="yangek">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="yangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="UEO-hQ-gpG"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
                                                 <rect key="frame" x="127" y="12" width="66" height="66"/>
                                                 <state key="normal" backgroundImage="yuantu">
@@ -79,21 +69,25 @@
                                                     <action selector="yinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="Kbw-o0-tLP"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
+                                                <rect key="frame" x="8" y="12" width="66" height="66"/>
+                                                <state key="normal" backgroundImage="yangek">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="yangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="UEO-hQ-gpG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="s1l-my-6pt" firstAttribute="trailing" secondItem="ZFl-2F-Fdf" secondAttribute="trailingMargin" id="Ed2-Nq-SpD"/>
-                                            <constraint firstItem="s1l-my-6pt" firstAttribute="baseline" secondItem="81f-jD-8rR" secondAttribute="baseline" id="NKX-ID-xIu"/>
                                             <constraint firstItem="FZx-nN-b5p" firstAttribute="top" secondItem="ZFl-2F-Fdf" secondAttribute="top" constant="12" id="P3W-Im-fZK"/>
                                             <constraint firstItem="FZx-nN-b5p" firstAttribute="leading" secondItem="ZFl-2F-Fdf" secondAttribute="leadingMargin" id="WR7-ch-otB"/>
-                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="firstBaseline" secondItem="s1l-my-6pt" secondAttribute="firstBaseline" id="b9T-Fs-lWJ"/>
                                             <constraint firstItem="81f-jD-8rR" firstAttribute="centerY" secondItem="ZFl-2F-Fdf" secondAttribute="centerY" id="gFA-yf-T5l"/>
-                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="firstBaseline" secondItem="81f-jD-8rR" secondAttribute="firstBaseline" id="ge4-gB-0TS"/>
                                             <constraint firstItem="FZx-nN-b5p" firstAttribute="top" secondItem="81f-jD-8rR" secondAttribute="top" id="gk8-Pk-yfg"/>
-                                            <constraint firstItem="s1l-my-6pt" firstAttribute="firstBaseline" secondItem="81f-jD-8rR" secondAttribute="firstBaseline" id="k2m-MO-3Jc"/>
                                             <constraint firstItem="81f-jD-8rR" firstAttribute="top" secondItem="s1l-my-6pt" secondAttribute="top" id="lKi-6M-UWN"/>
                                             <constraint firstItem="81f-jD-8rR" firstAttribute="centerX" secondItem="ZFl-2F-Fdf" secondAttribute="centerX" id="sgr-R0-cYm"/>
-                                            <constraint firstItem="s1l-my-6pt" firstAttribute="baseline" secondItem="FZx-nN-b5p" secondAttribute="baseline" id="yUU-ks-vOE"/>
                                             <constraint firstItem="81f-jD-8rR" firstAttribute="baseline" secondItem="FZx-nN-b5p" secondAttribute="baseline" id="yd5-at-tgR"/>
                                         </constraints>
                                     </view>

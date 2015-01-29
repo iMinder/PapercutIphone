@@ -24,7 +24,7 @@
     WDFilePlusData *fpd = [[WDFilePlusData alloc] init];
     fpd.mediaType = mediaType;
     fpd.path = path;
-    fpd.fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil] fileSize];   
+    fpd.fileSize = (NSUInteger)[[[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil] fileSize];
     fpd.plusData = data;
     return fpd;
 }

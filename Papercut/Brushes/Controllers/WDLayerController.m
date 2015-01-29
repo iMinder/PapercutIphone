@@ -400,7 +400,7 @@
         self.layerCell = nil;
         cell.delegate = self;
         
-        [self.layerCell.blendModeButton addTarget:self action:@selector(blendModeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+      //  [self.layerCell.blendModeButton addTarget:self action:@selector(blendModeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     cell.paintingLayer = layer;
@@ -549,7 +549,7 @@
         self.bottomBar.items = [self bottomBarItems];
     }
     
-    self.contentSizeForViewInPopover = self.view.frame.size;
+//    self.contentSizeForViewInPopover = self.view.frame.size;
     self.preferredContentSize = self.view.frame.size;
 }
 

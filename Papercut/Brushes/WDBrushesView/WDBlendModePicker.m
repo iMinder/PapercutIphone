@@ -13,6 +13,7 @@
 #import "WDBlendModePicker.h"
 #import "WDScrollView.h"
 #import "WDUtilities.h"
+#import "NSString+Drawing.h"
 
 const float kScrollViewHeight = 41;
 const float kIndicatorBaseHeight = 48;
@@ -234,7 +235,9 @@ const float kButtonOutset = 10.0f;
     float width, totalWidth = 0.0f;
     
     for (NSString *title in self.titles) {
-        width = [title sizeWithFont:self.font].width;
+        //width = [title sizeWithFont:self.font].width;
+        width = [title sizeWithAttributes:@{NSFontAttributeName:self.font}].width;
+
         totalWidth += width + (kButtonOutset * 2);
     }
     
@@ -249,7 +252,8 @@ const float kButtonOutset = 10.0f;
     
     for (NSString *title in self.titles) {
         button = [UIButton buttonWithType:UIButtonTypeCustom];
-        buttonFrame.size.width = [title sizeWithFont:self.font].width + (kButtonOutset * 2);
+        //buttonFrame.size.width = [title sizeWithFont:self.font].width + (kButtonOutset * 2);
+        buttonFrame.size.width = [title sizeWithAttributes:@{NSFontAttributeName:self.font}].width + (kButtonOutset * 2);
         button.frame = buttonFrame;
         button.titleLabel.font = self.font;
         button.tag = index++;

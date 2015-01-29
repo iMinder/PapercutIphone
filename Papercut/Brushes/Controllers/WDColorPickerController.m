@@ -171,7 +171,7 @@
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
 
-    self.contentSizeForViewInPopover = self.view.frame.size;
+//    self.contentSizeForViewInPopover = self.view.frame.size;
     self.preferredContentSize = self.view.frame.size;
     
     // set up color comparator
