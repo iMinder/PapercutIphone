@@ -17,7 +17,7 @@ typedef enum : NSUInteger {
     PaperToolTypeDecorate,
 } PaperToolType;
 
-@interface LearnPaperCutViewController ()<UIGestureRecognizerDelegate>
+@interface LearnPaperCutViewController ()<UIGestureRecognizerDelegate, PaperToolBarDelegate>
 
 @property (nonatomic)BOOL isColorSet;
 @property (nonatomic)PaperToolBar *paperToolBar;
@@ -37,8 +37,10 @@ typedef enum : NSUInteger {
 
 - (PaperToolBar *)paperToolBar
 {
-    if (!_paperToolBar) {
+    if (!_paperToolBar)
+    {
         _paperToolBar = [PaperToolBar bottomPaperBarWithTool:self.navigationController.toolbar];
+        _paperToolBar.delegate = self;
         [self.view addSubview:_paperToolBar];
     }
     return _paperToolBar;
@@ -136,6 +138,7 @@ typedef enum : NSUInteger {
     //[self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
 }
 
+
 - (void)fold:(UIBarButtonItem *)barItem
 {
     self.currentType = PaperToolTypeFold;
@@ -161,5 +164,11 @@ typedef enum : NSUInteger {
     [self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
 }
 
+
+#pragma mark - PaperToolBarDelegate
+- (void)paperToolBarItemDidSelected:(NSIndexPath *)indexPath
+{
+    
+}
 @end
 

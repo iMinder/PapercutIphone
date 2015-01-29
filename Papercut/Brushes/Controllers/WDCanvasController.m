@@ -9,7 +9,6 @@
 //  Copyright (c) 2009-2013 Steve Sprang
 //
 
-#import <Twitter/Twitter.h>
 #import <MessageUI/MessageUI.h>
 #import "UIImage+Resize.h"
 #import "UIImage+Additions.h"
@@ -42,6 +41,7 @@
 #import "WDUndoChange.h"
 #import "WDUtilities.h"
 #import "WDUnlockView.h"
+#import  "NSString+Drawing.h"
 
 #define RESCALE_REPLAY          0
 #define kNavBarFixedWidth       20
@@ -414,14 +414,14 @@
         
         [menus addObject:[WDMenuItem separatorItem]];
         
-        if (NSClassFromString(@"SLComposeViewController")) {
-            item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Post on Facebook", @"Post on Facebook")
-                                      action:@selector(postOnFacebook:) target:self];
-            [menus addObject:item];
-        }
-        
-        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Tweet", @"Tweet")
-                                  action:@selector(tweetPainting:) target:self];
+//        if (NSClassFromString(@"SLComposeViewController")) {
+//            item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Post on Facebook", @"Post on Facebook")
+//                                      action:@selector(postOnFacebook:) target:self];
+//            [menus addObject:item];
+//        }
+//        
+//        item = [WDMenuItem itemWithTitle:NSLocalizedString(@"Tweet", @"Tweet")
+//                                  action:@selector(tweetPainting:) target:self];
         [menus addObject:item];
         
         [menus addObject:[WDMenuItem separatorItem]];
@@ -440,7 +440,7 @@
     
     UIViewController *controller = [[UIViewController alloc] init];
     controller.view = actionMenu_;
-    controller.contentSizeForViewInPopover = actionMenu_.frame.size;
+//    controller.contentSizeForViewInPopover = actionMenu_.frame.size;
     controller.preferredContentSize = actionMenu_.frame.size;
     
     visibleMenu_ = actionMenu_;
@@ -513,35 +513,13 @@
     
     UIViewController *controller = [[UIViewController alloc] init];
     controller.view = gearMenu_;
-    controller.contentSizeForViewInPopover = gearMenu_.frame.size;
+    //controller.contentSizeForViewInPopover = gearMenu_.frame.size;
     controller.preferredContentSize = gearMenu_.frame.size;
     
     visibleMenu_ = gearMenu_;
     [self validateVisibleMenuItems];
     
     gearMenu_.popover = [self runPopoverWithController:controller from:sender];
-}
-
-- (void) postOnFacebook:(id)sender
-{
-    SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    
-    [facebookSheet addImage:[canvas_.painting imageForCurrentState]];
-    [facebookSheet setInitialText:NSLocalizedString(@"Check out my Brushes painting! http://brushesapp.com",
-                                                    @"Check out my Brushes painting! http://brushesapp.com")];
-    
-    [self presentModalViewController:facebookSheet animated:YES];
-}
-
-- (void) tweetPainting:(id)sender
-{
-    TWTweetComposeViewController *tweetSheet = [[TWTweetComposeViewController alloc] init];
-    
-    [tweetSheet addImage:[canvas_.painting imageForCurrentState]];
-    [tweetSheet setInitialText:NSLocalizedString(@"Check out my Brushes #painting! @brushesapp",
-                                                 @"Check out my Brushes #painting! @brushesapp")];
-    
-    [self presentModalViewController:tweetSheet animated:YES];
 }
 
 - (void) validateMenuItem:(WDMenuItem *)item
@@ -880,10 +858,18 @@
         
         NSString *label = [NSString stringWithFormat:@"%lu", (unsigned long)index];
         
+        NSMutableParagraphStyle *paraStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        paraStyle.lineBreakMode = NSLineBreakByClipping;
+        paraStyle.alignment = NSTextAlignmentCenter;
         [label drawInRect:CGRectOffset(layerBox, 0, 1)
-                 withFont:[UIFont boldSystemFontOfSize:13]
-            lineBreakMode:UILineBreakModeClip
-                alignment:UITextAlignmentCenter];
+           withAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:13],
+                            NSParagraphStyleAttributeName : paraStyle}];
+        
+//        [label drawInRect:CGRectOffset(layerBox, 0, 1)
+//                 withFont:[UIFont boldSystemFontOfSize:13]
+//            lineBreakMode:UILineBreakModeClip
+//                alignment:UITextAlignmentCenter];
+        
     }
 
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();

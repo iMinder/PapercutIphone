@@ -11,6 +11,7 @@
 
 #import "WDBar.h"
 #import "WDUtilities.h"
+#import "NSString+Drawing.h"
 
 const NSUInteger    kWDDefaultBarHeight = 44;
 const NSUInteger    kWDLandscapePhoneBarHeight = 32;
@@ -128,7 +129,9 @@ const float         kWDBarItemShadowOpacity = 0.9f;
     
     if (WDUseModernAppearance()) {
         UIFont  *font = [UIFont systemFontOfSize:17];
-        CGSize  textSize = [string sizeWithFont:font];
+        //CGSize  textSize = [string sizeWithFont:font];
+        CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName:font}];
+                           
         CGSize  size = textSize;
         float   arrowSize = 9, arrowInset = 4;
 
@@ -142,8 +145,8 @@ const float         kWDBarItemShadowOpacity = 0.9f;
         CGPoint origin;
         origin.x = (size.width - textSize.width); // align right
         origin.y = (size.height - textSize.height) / 2.0f; // center vertically
-        [string drawAtPoint:origin withFont:font];
-        
+        //[string drawAtPoint:origin withFont:font];
+        [string drawAtPoint:origin withAttributes:@{NSFontAttributeName : font}];
         // draw back arrow
         CGContextMoveToPoint(ctx, arrowInset + arrowSize, size.height / 2 - arrowSize);
         CGContextAddLineToPoint(ctx, arrowInset, size.height / 2);
@@ -157,7 +160,7 @@ const float         kWDBarItemShadowOpacity = 0.9f;
         UIGraphicsEndImageContext();
     } else {
         UIFont *font = [UIFont boldSystemFontOfSize:(landscape ? 12 : 13)];
-        CGSize textSize = [string sizeWithFont:font];
+        CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName : font}];//[string sizeWithFont:font];
         CGSize size = textSize;
         
         UIImage *backImage = landscape ? [UIImage imageNamed:@"backButtonLandscape.png"] : [UIImage imageNamed:@"backButton.png"];
@@ -176,8 +179,8 @@ const float         kWDBarItemShadowOpacity = 0.9f;
         CGPoint origin;
         origin.x = (size.width - textSize.width) / 2.0f + 2.0f;
         origin.y = (size.height - textSize.height) / 2.0f;
-        [string drawAtPoint:origin withFont:font];
-        
+        //[string drawAtPoint:origin withFont:font];
+        [string drawAtPoint:origin withAttributes:@{NSFontAttributeName : font}];
         result = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     }
@@ -500,8 +503,8 @@ const float         kWDBarItemShadowOpacity = 0.9f;
         label.backgroundColor = nil;
         label.opaque = NO;
         label.textColor = [UIColor whiteColor];
-        label.textAlignment = UITextAlignmentCenter;
-        label.lineBreakMode = UILineBreakModeMiddleTruncation;
+        label.textAlignment = NSTextAlignmentCenter;//UITextAlignmentCenter;
+        label.lineBreakMode = NSLineBreakByTruncatingMiddle;//UILineBreakModeMiddleTruncation;
         label.font = [self portraitFont];
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         

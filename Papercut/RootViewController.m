@@ -10,7 +10,7 @@
 #import "SoundServiceManager.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface RootViewController ()
+@interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
 @property (nonatomic, assign)BOOL kStopPlaySound;
 
@@ -105,4 +105,23 @@
     [self playServiceSound];
 }
 
+#pragma mark - action
+- (IBAction)setting:(UIButton *)sender
+{
+
+    UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:@"设置"
+                                                       delegate:self
+                                              cancelButtonTitle:@"关闭"
+                                         destructiveButtonTitle:@"关闭背景音乐"
+                                              otherButtonTitles:@"意见反馈" ,@"检查更新" ,@"关于我们" ,nil];
+    action.backgroundColor = [UIColor redColor];
+    action.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    
+    [action showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+}
 @end

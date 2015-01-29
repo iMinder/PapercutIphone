@@ -24,7 +24,7 @@
 + (instancetype)sharedInstance
 {
     static dispatch_once_t onceToken;
-    __block SoundServiceManager *manager = nil;
+    static SoundServiceManager *manager = nil;
     dispatch_once(&onceToken, ^{
         manager = [[SoundServiceManager alloc]init];
         

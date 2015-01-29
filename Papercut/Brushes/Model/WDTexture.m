@@ -22,6 +22,7 @@
 
 + (WDTexture *) textureWithCGImage:(CGImageRef)imageRef
 {
+    //临时性改的
     WDTexture *texture = [[WDTexture alloc] initWithCGImage:imageRef forceRGB:YES];
     return texture;
 }

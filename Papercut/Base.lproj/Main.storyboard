@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -35,96 +37,155 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
-                                <rect key="frame" x="17" y="448" width="69" height="32"/>
-                                <state key="normal" title="阳刻">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showYangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="kVj-o1-XLn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
-                                <rect key="frame" x="224" y="448" width="69" height="32"/>
-                                <state key="normal" title="阴刻">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showYinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="aWd-oV-Vez"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
-                                <rect key="frame" x="145" y="506" width="33" height="30"/>
-                                <state key="normal" title="拍照">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shootButtonPressed:" destination="O4V-YF-znb" eventType="touchUpInside" id="kha-CG-jVQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-3L-zgf">
-                                <rect key="frame" x="193" y="506" width="30" height="30"/>
-                                <state key="normal" title="取消">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissModalView:" destination="O4V-YF-znb" eventType="touchUpInside" id="5ca-L1-0lI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz8-bo-mY4">
-                                <rect key="frame" x="26" y="506" width="60" height="30"/>
-                                <state key="normal" title="相册选取">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showImagePickerForPhotoPicker:" destination="O4V-YF-znb" eventType="touchUpInside" id="mmn-Z1-QqU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
-                                <rect key="frame" x="244" y="506" width="45" height="30"/>
-                                <state key="normal" title="前后置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeCameraBackOrFront:" destination="O4V-YF-znb" eventType="touchUpInside" id="Vow-LI-kYv"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KOn-cL-x6X">
-                                <rect key="frame" x="139" y="506" width="46" height="30"/>
-                                <state key="normal" title="使用">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="usePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="eM0-Sj-rFF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
-                                <rect key="frame" x="130" y="449" width="69" height="32"/>
-                                <state key="normal" title="原图">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showNormal:" destination="O4V-YF-znb" eventType="touchUpInside" id="8CJ-KT-spI"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-Gl-z4p" customClass="GPUImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="482"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
+                                        <rect key="frame" x="287" y="30" width="25" height="25"/>
+                                        <state key="normal" backgroundImage="camera_btn_flip">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rotate:" destination="O4V-YF-znb" eventType="touchUpInside" id="EWa-97-Mvy"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFl-2F-Fdf">
+                                        <rect key="frame" x="0.0" y="392" width="320" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
+                                                <rect key="frame" x="8" y="12" width="66" height="66"/>
+                                                <state key="normal" backgroundImage="yangek">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="yangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="UEO-hQ-gpG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81f-jD-8rR">
+                                                <rect key="frame" x="127" y="12" width="66" height="66"/>
+                                                <state key="normal" backgroundImage="yuantu">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="noFilter:" destination="O4V-YF-znb" eventType="touchUpInside" id="vME-MK-JtZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
+                                                <rect key="frame" x="246" y="12" width="66" height="66"/>
+                                                <state key="normal" backgroundImage="yinke">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="yinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="Kbw-o0-tLP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="s1l-my-6pt" firstAttribute="trailing" secondItem="ZFl-2F-Fdf" secondAttribute="trailingMargin" id="Ed2-Nq-SpD"/>
+                                            <constraint firstItem="s1l-my-6pt" firstAttribute="baseline" secondItem="81f-jD-8rR" secondAttribute="baseline" id="NKX-ID-xIu"/>
+                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="top" secondItem="ZFl-2F-Fdf" secondAttribute="top" constant="12" id="P3W-Im-fZK"/>
+                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="leading" secondItem="ZFl-2F-Fdf" secondAttribute="leadingMargin" id="WR7-ch-otB"/>
+                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="firstBaseline" secondItem="s1l-my-6pt" secondAttribute="firstBaseline" id="b9T-Fs-lWJ"/>
+                                            <constraint firstItem="81f-jD-8rR" firstAttribute="centerY" secondItem="ZFl-2F-Fdf" secondAttribute="centerY" id="gFA-yf-T5l"/>
+                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="firstBaseline" secondItem="81f-jD-8rR" secondAttribute="firstBaseline" id="ge4-gB-0TS"/>
+                                            <constraint firstItem="FZx-nN-b5p" firstAttribute="top" secondItem="81f-jD-8rR" secondAttribute="top" id="gk8-Pk-yfg"/>
+                                            <constraint firstItem="s1l-my-6pt" firstAttribute="firstBaseline" secondItem="81f-jD-8rR" secondAttribute="firstBaseline" id="k2m-MO-3Jc"/>
+                                            <constraint firstItem="81f-jD-8rR" firstAttribute="top" secondItem="s1l-my-6pt" secondAttribute="top" id="lKi-6M-UWN"/>
+                                            <constraint firstItem="81f-jD-8rR" firstAttribute="centerX" secondItem="ZFl-2F-Fdf" secondAttribute="centerX" id="sgr-R0-cYm"/>
+                                            <constraint firstItem="s1l-my-6pt" firstAttribute="baseline" secondItem="FZx-nN-b5p" secondAttribute="baseline" id="yUU-ks-vOE"/>
+                                            <constraint firstItem="81f-jD-8rR" firstAttribute="baseline" secondItem="FZx-nN-b5p" secondAttribute="baseline" id="yd5-at-tgR"/>
+                                        </constraints>
+                                    </view>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-dT-h84">
+                                        <rect key="frame" x="198" y="200" width="194" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="190" id="ajg-zR-PHJ"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="sliderValueChange:" destination="O4V-YF-znb" eventType="valueChanged" id="uIz-fb-QHE"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="WXU-mk-Kf7" firstAttribute="trailing" secondItem="ajE-Gl-z4p" secondAttribute="trailingMargin" id="BWG-Ue-BNO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZFl-2F-Fdf" secondAttribute="trailing" id="BcK-Ej-4KB"/>
+                                    <constraint firstAttribute="trailing" secondItem="jMg-dT-h84" secondAttribute="trailing" constant="-70" id="JXj-fZ-Cm2"/>
+                                    <constraint firstItem="WXU-mk-Kf7" firstAttribute="top" secondItem="ajE-Gl-z4p" secondAttribute="top" constant="30" id="Wtw-bY-Ign"/>
+                                    <constraint firstItem="jMg-dT-h84" firstAttribute="top" secondItem="ajE-Gl-z4p" secondAttribute="top" constant="200" id="cMK-5A-JWX"/>
+                                    <constraint firstItem="ZFl-2F-Fdf" firstAttribute="leading" secondItem="ajE-Gl-z4p" secondAttribute="leading" id="g9w-N3-OT5"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZFl-2F-Fdf" secondAttribute="bottom" id="kIe-CF-w5c"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lxa-GJ-8cr">
+                                <rect key="frame" x="0.0" y="482" width="320" height="86"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-3L-zgf">
+                                        <rect key="frame" x="8" y="22" width="30" height="30"/>
+                                        <state key="normal" backgroundImage="btn_cancel">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="O4V-YF-znb" eventType="touchUpInside" id="aai-VQ-2bO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcX-zi-5ir">
+                                        <rect key="frame" x="267" y="22" width="45" height="30"/>
+                                        <state key="normal" backgroundImage="btn_effect_show">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="effectInterfaceChange:" destination="O4V-YF-znb" eventType="touchUpInside" id="ira-eO-5S5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
+                                        <rect key="frame" x="143" y="25" width="35" height="35"/>
+                                        <state key="normal" backgroundImage="btn_camera_take">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="J6r-22-NtA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.54117647058823526" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gqJ-FS-dWH" firstAttribute="centerX" secondItem="Lxa-GJ-8cr" secondAttribute="centerX" id="0ZT-wu-cIf"/>
+                                    <constraint firstItem="4Qh-3L-zgf" firstAttribute="leading" secondItem="Lxa-GJ-8cr" secondAttribute="leadingMargin" id="UZD-ka-AjU"/>
+                                    <constraint firstItem="DcX-zi-5ir" firstAttribute="trailing" secondItem="Lxa-GJ-8cr" secondAttribute="trailingMargin" id="WZe-eJ-Db9"/>
+                                    <constraint firstItem="4Qh-3L-zgf" firstAttribute="top" secondItem="DcX-zi-5ir" secondAttribute="top" id="YKQ-40-Sg5"/>
+                                    <constraint firstAttribute="bottom" secondItem="gqJ-FS-dWH" secondAttribute="bottom" constant="26" id="gRw-r5-ieo"/>
+                                    <constraint firstItem="DcX-zi-5ir" firstAttribute="centerY" secondItem="gqJ-FS-dWH" secondAttribute="centerY" constant="-5.5" id="gjB-xY-g0y"/>
+                                    <constraint firstItem="gqJ-FS-dWH" firstAttribute="top" secondItem="Lxa-GJ-8cr" secondAttribute="top" constant="25" id="yWz-7i-RbY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="leading" secondItem="Lxa-GJ-8cr" secondAttribute="leading" id="2sJ-4U-4Iu"/>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="top" secondItem="ajE-Gl-z4p" secondAttribute="bottom" id="HNB-DD-VOt"/>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="trailing" secondItem="ajE-Gl-z4p" secondAttribute="trailing" id="bTb-cn-oPA"/>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="bottom" secondItem="LwI-KX-dGJ" secondAttribute="top" id="cnl-8D-8MB"/>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="leading" secondItem="nrl-eb-a7C" secondAttribute="leading" id="eeB-vU-9s6"/>
+                            <constraint firstAttribute="trailing" secondItem="Lxa-GJ-8cr" secondAttribute="trailing" id="iS3-M0-XFc"/>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="top" secondItem="exv-Ic-72F" secondAttribute="bottom" id="wQr-Ti-Tug"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="albumChooseButton" destination="Nz8-bo-mY4" id="Wpc-aH-bVU"/>
                         <outlet property="backFrontButton" destination="WXU-mk-Kf7" id="DPN-3q-FTS"/>
+                        <outlet property="cameraView" destination="ajE-Gl-z4p" id="bzY-pK-4pj"/>
+                        <outlet property="filterSlider" destination="jMg-dT-h84" id="WPk-d1-TVO"/>
+                        <outlet property="filterView" destination="ZFl-2F-Fdf" id="XZH-Xb-0kR"/>
                         <outlet property="takePhotoButton" destination="gqJ-FS-dWH" id="9Ez-eg-IJI"/>
-                        <outlet property="usePhotoButton" destination="KOn-cL-x6X" id="ivK-Ae-vOu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="-27"/>
+            <point key="canvasLocation" x="719" y="-58"/>
         </scene>
         <!--妙趣剪纸-->
         <scene sceneID="ZbI-zQ-Ouw">
@@ -166,12 +227,6 @@
                                     <segue destination="NHL-dR-sSg" kind="push" identifier="myalbum" id="csd-cK-5RT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm9-Rj-ceB">
-                                <rect key="frame" x="223" y="495" width="72" height="53"/>
-                                <state key="normal" title="设置">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4je-Sz-QfX">
                                 <rect key="frame" x="169" y="227" width="75" height="53"/>
                                 <state key="normal" title="乐学剪纸">
@@ -179,6 +234,15 @@
                                 </state>
                                 <connections>
                                     <segue destination="1pl-Je-VxP" kind="push" identifier="funlearn" id="Khu-FV-ZDj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm9-Rj-ceB">
+                                <rect key="frame" x="223" y="495" width="72" height="53"/>
+                                <state key="normal" title="设置">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setting:" destination="MIS-lZ-1m2" eventType="touchUpInside" id="8ed-C8-w4e"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -251,6 +315,15 @@
             <point key="canvasLocation" x="719" y="673"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="btn_camera_take" width="35" height="35"/>
+        <image name="btn_cancel" width="30" height="30"/>
+        <image name="btn_effect_show" width="45" height="30"/>
+        <image name="camera_btn_flip" width="25" height="25"/>
+        <image name="yangek" width="66" height="66"/>
+        <image name="yinke" width="66" height="66"/>
+        <image name="yuantu" width="66" height="66"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

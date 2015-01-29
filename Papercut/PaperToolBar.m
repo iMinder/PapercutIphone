@@ -127,6 +127,12 @@ const NSUInteger    kToolItemSize = 30;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"select item at index%d", indexPath.row);
+    
+    if ([self.delegate respondsToSelector:@selector(paperToolBarItemDidSelected:)])
+    {
+        [self.delegate paperToolBarItemDidSelected:indexPath];
+    }
+    
+    NSLog(@"no delegate response to select item");
 }
 @end

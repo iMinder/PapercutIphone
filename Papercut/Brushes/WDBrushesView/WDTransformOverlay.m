@@ -78,6 +78,7 @@
 - (void) cancel:(id)sender
 {
     cancelBlock();
+   
 }
 
 - (void) accept:(id)sender

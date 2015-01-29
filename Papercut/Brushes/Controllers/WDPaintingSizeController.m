@@ -165,7 +165,14 @@ const NSUInteger WDMaximumDimension = 2048;
 
 - (void) cancel:(id)sender
 {
-    [self dismissModalViewControllerAnimated:YES];
+//    if ( SYSTEM_VERSION >=7.0 )
+//    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+//    }
+//    else
+//    {
+//        [self dismissModalViewControllerAnimated:YES];
+//    }
 }
 
 - (void) create:(id)sender
@@ -173,7 +180,8 @@ const NSUInteger WDMaximumDimension = 2048;
     [self commitEdits];
     
     //[self.browserController createNewPainting:CGSizeMake(width, height)];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES];
 }
 
 - (NSArray *) defaultToolbarItems

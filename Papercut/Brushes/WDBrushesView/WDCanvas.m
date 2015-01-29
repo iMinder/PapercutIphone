@@ -1161,7 +1161,7 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
         messageLabel_ = [[WDLabel alloc] initWithFrame:CGRectInset(CGRectMake(0,0,100,40), -8, -8)];
         messageLabel_.textColor = [UIColor whiteColor];
         messageLabel_.font = [UIFont boldSystemFontOfSize:24.0f];
-        messageLabel_.textAlignment = UITextAlignmentCenter;
+        messageLabel_.textAlignment = NSTextAlignmentCenter;//UITextAlignmentCenter;
         messageLabel_.opaque = NO;
         messageLabel_.backgroundColor = nil;
         messageLabel_.alpha = 0;
@@ -1272,7 +1272,7 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
     transformOverlay_.canvas = self;
     
     __unsafe_unretained WDCanvas *canvas = self;
-    transformOverlay_.cancelBlock = ^{ [canvas cancelPhotoPlacement]; };
+    transformOverlay_.cancelBlock = ^{ [canvas.controller.navigationController popViewControllerAnimated:YES];/*[canvas cancelPhotoPlacement];*/ };
     transformOverlay_.acceptBlock = ^{ [canvas placePhoto]; };
     
     [transformOverlay_ addTarget:self action:@selector(photoTransformChanged:)
@@ -1292,6 +1292,7 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
 
 - (void) cancelPhotoPlacement
 {
+    
     if (!self.controller.runningOnPhone) {
         [UIView animateWithDuration:UINavigationControllerHideShowBarDuration
                          animations:^{ transformOverlay_.alpha = 0.0f; }

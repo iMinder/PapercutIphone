@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PaperToolBarDelegate<NSObject>
+
+- (void)paperToolBarItemDidSelected:(NSIndexPath*)indexPath;
+
+@end
+
 @interface PaperToolBar : UIView
 
 @property (nonatomic, strong)NSArray *items;
+@property (nonatomic, weak)id<PaperToolBarDelegate>delegate;
+
 
 + (PaperToolBar *)bottomPaperBarWithTool:(UIToolbar *)toolBar;
 

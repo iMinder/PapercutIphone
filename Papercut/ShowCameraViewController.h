@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "GPUImage.h"
-#import "PapercutVideoCamera.h"
 
-@interface ShowCameraViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate,PCVideoCameraDelegate>
+typedef enum{
+    kPapercutNormalFilter,
+    kPapercutYangKeFilter,
+    kPapercutYinKeFilter,
+} PapercutFilterType;
+
+@interface ShowCameraViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@end
+
+@interface UIImage(RedBoarder)
+
+- (UIImage *)imageWithRedBorder;
 
 @end

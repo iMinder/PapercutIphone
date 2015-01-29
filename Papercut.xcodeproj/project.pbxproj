@@ -370,7 +370,6 @@
 		8C2E0A0C1A51B4FA0042C98B /* Stylus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F81A51B4FA0042C98B /* Stylus.xib */; };
 		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
 		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
-		8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC991980ED2800A94FED /* ImageEditViewController.m */; };
 		8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */; };
 		8C46BD461A6E7406000BE6AB /* SoundServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */; };
 		8C46BD481A6E7892000BE6AB /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C46BD471A6E7892000BE6AB /* sound.mp3 */; };
@@ -388,12 +387,12 @@
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
-		8C84463C193587A5004F4184 /* PapercutVideoCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C84463B193587A5004F4184 /* PapercutVideoCamera.m */; };
+		8C8571881A76943200C64652 /* FlipAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8571871A76943200C64652 /* FlipAnimationManager.m */; };
 		8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A01A722DAC003A802C /* PaperToolBar.m */; };
 		8CABB3A41A72A064003A802C /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A31A72A064003A802C /* ToolCell.m */; };
+		8CAC74561A7A39EC0001377E /* NSString+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC74551A7A39EC0001377E /* NSString+Drawing.m */; };
 		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
 		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
-		8CD33EA8198291E8005B0569 /* EditManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA7198291E8005B0569 /* EditManager.m */; };
 		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
 		8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D31933262700112023 /* CoreVideo.framework */; };
 		8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D51933262F00112023 /* OpenGLES.framework */; };
@@ -944,8 +943,6 @@
 		8C33EC92197FAAA800A94FED /* YinKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YinKeFilter.m; sourceTree = "<group>"; };
 		8C33EC951980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
-		8C33EC981980ED2800A94FED /* ImageEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
-		8C33EC991980ED2800A94FED /* ImageEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
 		8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPaperCutViewController.h; sourceTree = "<group>"; };
 		8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnPaperCutViewController.m; sourceTree = "<group>"; };
 		8C46BD441A6E7406000BE6AB /* SoundServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundServiceManager.h; sourceTree = "<group>"; };
@@ -970,19 +967,18 @@
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
-		8C84463A193587A5004F4184 /* PapercutVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutVideoCamera.h; sourceTree = "<group>"; };
-		8C84463B193587A5004F4184 /* PapercutVideoCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutVideoCamera.m; sourceTree = "<group>"; };
-		8C84464019358A4E004F4184 /* PapercutFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutFilter.h; sourceTree = "<group>"; };
+		8C8571861A76943200C64652 /* FlipAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationManager.h; sourceTree = "<group>"; };
+		8C8571871A76943200C64652 /* FlipAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationManager.m; sourceTree = "<group>"; };
 		8CABB39F1A722DAC003A802C /* PaperToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperToolBar.h; sourceTree = "<group>"; };
 		8CABB3A01A722DAC003A802C /* PaperToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperToolBar.m; sourceTree = "<group>"; };
 		8CABB3A21A72A063003A802C /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
 		8CABB3A31A72A064003A802C /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
+		8CAC74541A7A39EC0001377E /* NSString+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Drawing.h"; sourceTree = "<group>"; };
+		8CAC74551A7A39EC0001377E /* NSString+Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Drawing.m"; sourceTree = "<group>"; };
 		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
 		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
 		8CD33EA31981FD80005B0569 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
 		8CD33EA41981FD80005B0569 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
-		8CD33EA6198291E8005B0569 /* EditManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditManager.h; sourceTree = "<group>"; };
-		8CD33EA7198291E8005B0569 /* EditManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditManager.m; sourceTree = "<group>"; };
 		8CDF16D11933261D00112023 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8CDF16D31933262700112023 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8CDF16D51933262F00112023 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1039,13 +1035,6 @@
 				8C33EC90197FA7F000A94FED /* filters */,
 				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
 				8CDF16E81933305A00112023 /* ShowCameraViewController.m */,
-				8C33EC981980ED2800A94FED /* ImageEditViewController.h */,
-				8C33EC991980ED2800A94FED /* ImageEditViewController.m */,
-				8C84463A193587A5004F4184 /* PapercutVideoCamera.h */,
-				8C84463B193587A5004F4184 /* PapercutVideoCamera.m */,
-				8C84464019358A4E004F4184 /* PapercutFilter.h */,
-				8CD33EA6198291E8005B0569 /* EditManager.h */,
-				8CD33EA7198291E8005B0569 /* EditManager.m */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -1074,6 +1063,7 @@
 		8C250CBE1934CAC10089945F /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				8C8571851A76943200C64652 /* ViewFlipAnimation */,
 				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
 				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
 				8CABB39F1A722DAC003A802C /* PaperToolBar.h */,
@@ -1122,6 +1112,8 @@
 				8C2E06981A4B04640042C98B /* UIImage+Resize.m */,
 				8C2E06991A4B04640042C98B /* UIView+Additions.h */,
 				8C2E069A1A4B04640042C98B /* UIView+Additions.m */,
+				8CAC74541A7A39EC0001377E /* NSString+Drawing.h */,
+				8CAC74551A7A39EC0001377E /* NSString+Drawing.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -1846,6 +1838,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8C8571851A76943200C64652 /* ViewFlipAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				8C8571861A76943200C64652 /* FlipAnimationManager.h */,
+				8C8571871A76943200C64652 /* FlipAnimationManager.m */,
+			);
+			path = ViewFlipAnimation;
+			sourceTree = "<group>";
+		};
 		8CD33E9E1981FD0D005B0569 /* UIImage+vImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2233,6 +2234,7 @@
 				8C2E085F1A4B06E60042C98B /* WDPaintingSizeController.m in Sources */,
 				8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */,
 				8C2E07F91A4B04640042C98B /* WDPSDWriter.m in Sources */,
+				8CAC74561A7A39EC0001377E /* NSString+Drawing.m in Sources */,
 				8C2E07DB1A4B04640042C98B /* WDColorBalance.m in Sources */,
 				8C2E07DF1A4B04640042C98B /* WDMosaicGenerator.m in Sources */,
 				8C2E07F11A4B04640042C98B /* WDXMLElement.m in Sources */,
@@ -2283,7 +2285,6 @@
 				8C2E07B91A4B04640042C98B /* WDChangeOpacity.m in Sources */,
 				8C2E07ED1A4B04640042C98B /* WDStampGenerator.m in Sources */,
 				8C2E08571A4B06E60042C98B /* WDCanvasController.m in Sources */,
-				8C84463C193587A5004F4184 /* PapercutVideoCamera.m in Sources */,
 				8C2E07B31A4B04640042C98B /* UIView+Additions.m in Sources */,
 				8C2E081F1A4B04640042C98B /* WDImageView.m in Sources */,
 				8C2E07E21A4B04640042C98B /* WDPath.m in Sources */,
@@ -2296,7 +2297,6 @@
 				8C2E07C51A4B04640042C98B /* WDTransformLayer.m in Sources */,
 				8C2E08271A4B04640042C98B /* WDPaletteBackgroundView.m in Sources */,
 				8C2E08581A4B06E60042C98B /* WDColorAdjustmentController.m in Sources */,
-				8CD33EA8198291E8005B0569 /* EditManager.m in Sources */,
 				8C2E07C11A4B04640042C98B /* WDReorderLayers.m in Sources */,
 				8C2E07E51A4B04640042C98B /* WDRandom.m in Sources */,
 				8C2E07B01A4B04640042C98B /* UIColor+Additions.m in Sources */,
@@ -2322,6 +2322,7 @@
 				8C2E08181A4B04640042C98B /* WDEtchedLine.m in Sources */,
 				8C2E07E01A4B04640042C98B /* WDPainting.m in Sources */,
 				8C2E07DD1A4B04640042C98B /* WDHueSaturation.m in Sources */,
+				8C8571881A76943200C64652 /* FlipAnimationManager.m in Sources */,
 				8C2E08251A4B04640042C98B /* WDMenuItem.m in Sources */,
 				8C2E085A1A4B06E60042C98B /* WDColorPickerController.m in Sources */,
 				8C2E07F21A4B04640042C98B /* WDZigZagGenerator.m in Sources */,
@@ -2344,7 +2345,6 @@
 				8C82ED16193235A20055C5E2 /* main.m in Sources */,
 				8C2E08221A4B04640042C98B /* WDLayerCell.m in Sources */,
 				8C2E08171A4B04640042C98B /* WDDragChip.m in Sources */,
-				8C33EC9A1980ED2800A94FED /* ImageEditViewController.m in Sources */,
 				8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */,
 				8C2E082A1A4B04640042C98B /* WDPropertyCell.m in Sources */,
 				8C2E08261A4B04640042C98B /* WDModalTitleBar.m in Sources */,

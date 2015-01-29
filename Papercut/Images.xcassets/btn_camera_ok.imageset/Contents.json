@@ -6,7 +6,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "btn_camera_ok_a.png"
     },
     {
       "idiom" : "universal",
