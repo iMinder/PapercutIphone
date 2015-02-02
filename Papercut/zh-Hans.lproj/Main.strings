@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "阳刻"; ObjectID = "G7N-JL-Sji"; */
+"G7N-JL-Sji.text" = "阳刻";
+
+/* Class = "IBUIViewController"; title = "剪纸相机"; ObjectID = "O4V-YF-znb"; */
+"O4V-YF-znb.title" = "剪纸相机";
+
+/* Class = "IBUINavigationItem"; title = "妙趣剪纸"; ObjectID = "VEB-JK-HHX"; */
+"VEB-JK-HHX.title" = "妙趣剪纸";
+
+/* Class = "IBUINavigationItem"; title = "趣玩剪纸"; ObjectID = "ef3-Yb-qFE"; */
+"ef3-Yb-qFE.title" = "趣玩剪纸";
+
+/* Class = "IBUILabel"; text = "阴刻"; ObjectID = "mHV-Uh-0Bd"; */
+"mHV-Uh-0Bd.text" = "阴刻";
+
+/* Class = "IBUINavigationItem"; title = "我的作品"; ObjectID = "rt1-wY-oLg"; */
+"rt1-wY-oLg.title" = "我的作品";
+
+/* Class = "IBUILabel"; text = "教程"; ObjectID = "x77-ib-W09"; */
+"x77-ib-W09.text" = "教程";

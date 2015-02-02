@@ -1,0 +1,402 @@
+/* 
+  Localizable.strings
+  Papercut
+
+  Created by jackie on 15/2/1.
+  Copyright (c) 2015年 jackie. All rights reserved.
+*/
+/* Painting Title Format */
+"%@ @ %d%%" = "%1$@ @ %2$d%%";
+
+/* %d px */
+"%d px" = "%d px";
+
+/* %d Selected */
+"%d Selected" = "%d Selected";
+
+/* A painting with the name “%@” already exists. Please choose a different name. */
+"A painting with the name “%@” already exists. Please choose a different name." = "A painting with the name “%@” already exists. Please choose a different name.";
+
+/* Accept */
+"Accept" = "Accept";
+
+/* Accessories */
+"Accessories" = "Accessories";
+
+/* Activity */
+"Activity" = "Activity";
+
+/* Add Layer */
+"Add Layer" = "Add Layer";
+
+/* Add to Photos */
+"Add to Photos" = "Add to Photos";
+
+/* Angle */
+"Angle" = "Angle";
+
+/* Are you sure you want to unlink your Dropbox account? */
+"Are you sure you want to unlink your Dropbox account?" = "Are you sure you want to unlink your Dropbox account?";
+
+/* Blend Mode: %@ */
+"Blend Mode: %@" = "Blend Mode: %@";
+
+/* Bristle Density */
+"Bristle Density" = "Bristle Density";
+
+/* Bristle Size */
+"Bristle Size" = "Bristle Size";
+
+/* Broken Painting */
+"Broken Painting" = "Broken Painting";
+
+/* Brush */
+"Brush" = "Brush";
+
+/* Brushes */
+"Brushes" = "Brushes";
+
+/* Brushes could not import “%@”. It may be corrupt or in a format that's not supported. */
+"Brushes could not import “%@”. It may be corrupt or in a format that's not supported." = "Brushes could not import “%@”. It may be corrupt or in a format that's not supported.";
+
+/* Brushes could not import “%@”. The resolution is too high for this device. */
+"Brushes could not import “%@”. The resolution is too high for this device." = "Brushes could not import “%@”. The resolution is too high for this device.";
+
+/* Brushes could not import “%@”. There is not enough available memory. */
+"Brushes could not import “%@”. There is not enough available memory." = "Brushes could not import “%@”. There is not enough available memory.";
+
+/* Brushes could not open the requested painting. */
+"Brushes could not open the requested painting." = "Brushes could not open the requested painting.";
+
+/* Brushes Painting:  */
+"Brushes Painting: " = "Brushes Painting: ";
+
+/* Brushes Paintings */
+"Brushes Paintings" = "Brushes Paintings";
+
+/* Cancel
+ Title of Cancel button */
+"Cancel" = "Cancel";
+
+/* Check out my Brushes #painting! @brushesapp */
+"Check out my Brushes #painting! @brushesapp" = "Check out my Brushes #painting! @brushesapp";
+
+/* Check out my Brushes painting! http://brushesapp.com */
+"Check out my Brushes painting! http://brushesapp.com" = "Check out my Brushes painting! http://brushesapp.com";
+
+/* Clear Layer */
+"Clear Layer" = "Clear Layer";
+
+/* Color Balance */
+"Color Balance" = "Color Balance";
+
+/* Color Balance… */
+"Color Balance…" = "Color Balance…";
+
+/* Connected */
+"Connected" = "Connected";
+
+/* Copy to Pasteboard */
+"Copy to Pasteboard" = "Copy to Pasteboard";
+
+/* Could Not Open Painting */
+"Could Not Open Painting" = "Could Not Open Painting";
+
+/* Create */
+"Create" = "Create";
+
+/* Title of Delete button */
+"Delete" = "Delete";
+
+/* Delete %d Paintings */
+"Delete %d Paintings" = "Delete %d Paintings";
+
+/* Delete Layer */
+"Delete Layer" = "Delete Layer";
+
+/* Delete Painting */
+"Delete Painting" = "Delete Painting";
+
+/* Density */
+"Density" = "Density";
+
+/* Desaturate */
+"Desaturate" = "Desaturate";
+
+/* Deviation */
+"Deviation" = "Deviation";
+
+/* Disconnected */
+"Disconnected" = "Disconnected";
+
+/* Done */
+"Done" = "Done";
+
+/* Download Problem */
+"Download Problem" = "Download Problem";
+
+/* Downloading “%@” */
+"Downloading “%@”" = "Downloading “%@”";
+
+/* Drag and pinch to position layer. */
+"Drag and pinch to position layer." = "Drag and pinch to position layer.";
+
+/* Drag and pinch to position photo. */
+"Drag and pinch to position photo." = "Drag and pinch to position photo.";
+
+/* Dropbox */
+"Dropbox" = "Dropbox";
+
+/* Duplicate */
+"Duplicate" = "Duplicate";
+
+/* Duplicate Layer */
+"Duplicate Layer" = "Duplicate Layer";
+
+/* Dynamic Angle */
+"Dynamic Angle" = "Dynamic Angle";
+
+/* Dynamic Intensity */
+"Dynamic Intensity" = "Dynamic Intensity";
+
+/* Dynamic Weight */
+"Dynamic Weight" = "Dynamic Weight";
+
+/* Email */
+"Email" = "Email";
+
+/* Email JPEG */
+"Email JPEG" = "Email JPEG";
+
+/* Email PNG */
+"Email PNG" = "Email PNG";
+
+/* Eraser */
+"Eraser" = "Eraser";
+
+/* Exclusion blending mode */
+"Exclude" = "Exclude";
+
+/* Export */
+"Export" = "Export";
+
+/* Exporting “%@” */
+"Exporting “%@”" = "Exporting “%@”";
+
+/* Fill Layer */
+"Fill Layer" = "Fill Layer";
+
+/* Flip Horizontally */
+"Flip Horizontally" = "Flip Horizontally";
+
+/* Flip Vertically */
+"Flip Vertically" = "Flip Vertically";
+
+/* Gallery */
+"Gallery" = "Gallery";
+
+/* Gallery: %d */
+"Gallery: %d" = "Gallery: %d";
+
+/* Hardness */
+"Hardness" = "Hardness";
+
+/* Hide Layer */
+"Hide Layer" = "Hide Layer";
+
+/* Hue and Saturation */
+"Hue and Saturation" = "Hue and Saturation";
+
+/* Hue and Saturation… */
+"Hue and Saturation…" = "Hue and Saturation…";
+
+/* Import */
+"Import" = "Import";
+
+/* Import %lu */
+"Import %lu" = "Import %lu";
+
+/* Import Problem */
+"Import Problem" = "Import Problem";
+
+/* Importing “%@” */
+"Importing “%@”" = "Importing “%@”";
+
+/* Intensity */
+"Intensity" = "Intensity";
+
+/* Invert Color */
+"Invert Color" = "Invert Color";
+
+/* Jitter */
+"Jitter" = "Jitter";
+
+/* Layer Opacity: %d%% */
+"Layer Opacity: %d%%" = "Layer Opacity: %d%%";
+
+/* Layers */
+"Layers" = "Layers";
+
+/* Loading… */
+"Loading…" = "Loading…";
+
+/* Lock Layer */
+"Lock Layer" = "Lock Layer";
+
+/* Lock Layer Alpha */
+"Lock Layer Alpha" = "Lock Layer Alpha";
+
+/* Merge Down */
+"Merge Down" = "Merge Down";
+
+/* Multiply blending mode */
+"Multiply" = "Multiply";
+
+/* New Painting */
+"New Painting" = "New Painting";
+
+/* New Pen Found */
+"New Pen Found" = "New Pen Found";
+
+/* No */
+"No" = "No";
+
+/* No Stylus */
+"No Stylus" = "No Stylus";
+
+/* Normal blending mode */
+"Normal" = "Normal";
+
+/* Number of Points */
+"Number of Points" = "Number of Points";
+
+/* Number of Sides */
+"Number of Sides" = "Number of Sides";
+
+/* OK */
+"OK" = "OK";
+
+/* Alert text when deleting multiple paintings */
+"Once deleted, these paintings cannot be recovered." = "Once deleted, these paintings cannot be recovered.";
+
+/* Alert text when deleting 1 painting */
+"Once deleted, this painting cannot be recovered." = "Once deleted, this painting cannot be recovered.";
+
+/* Paste Image */
+"Paste Image" = "Paste Image";
+
+/* Photo */
+"Photo" = "Photo";
+
+/* Place Image */
+"Place Image" = "Place Image";
+
+/* Place Photo */
+"Place Photo" = "Place Photo";
+
+/* Pogo Connect */
+"Pogo Connect" = "Pogo Connect";
+
+/* Post on Facebook */
+"Post on Facebook" = "Post on Facebook";
+
+/* Rearrange Layers */
+"Rearrange Layers" = "Rearrange Layers";
+
+/* Redo */
+"Redo" = "Redo";
+
+/* Replay Error */
+"Replay Error" = "Replay Error";
+
+/* Scatter */
+"Scatter" = "Scatter";
+
+/* Screen blending mode */
+"Screen" = "Screen";
+
+/* Select */
+"Select" = "Select";
+
+/* Send to Dropbox */
+"Send to Dropbox" = "Send to Dropbox";
+
+/* Show Layer */
+"Show Layer" = "Show Layer";
+
+/* Simulated Pressure */
+"Simulated Pressure" = "Simulated Pressure";
+
+/* slide to edit */
+"slide to edit" = "slide to edit";
+
+/* Spacing */
+"Spacing" = "Spacing";
+
+/* Splotchiness */
+"Splotchiness" = "Splotchiness";
+
+/* swipe here to paint */
+"swipe here to paint" = "swipe here to paint";
+
+/* The painting name cannot begin with a dot “.”. */
+"The painting name cannot begin with a dot “.”." = "The painting name cannot begin with a dot “.”.";
+
+/* The painting name cannot contain “:” or “/”. */
+"The painting name cannot contain “:” or “/”." = "The painting name cannot contain “:” or “/”.";
+
+/* There was a problem downloading“%@”. Check your network connection and try again. */
+"There was a problem downloading “%@”. Check your network connection and try again." = "There was a problem downloading “%@”. Check your network connection and try again.";
+
+/* There was a problem opening “%@”. */
+"There was a problem opening “%@”." = "There was a problem opening “%@”.";
+
+/* There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update. */
+"There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update." = "There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update.";
+
+/* There was a problem uploading“%@”. Check your network connection and try again. */
+"There was a problem uploading “%@”. Check your network connection and try again." = "There was a problem uploading “%@”. Check your network connection and try again.";
+
+/* Transform */
+"Transform" = "Transform";
+
+/* Transform Layer */
+"Transform Layer" = "Transform Layer";
+
+/* Tweet */
+"Tweet" = "Tweet";
+
+/* Undo */
+"Undo" = "Undo";
+
+/* Title of Unlink button */
+"Unlink" = "Unlink";
+
+/* Unlink Dropbox */
+"Unlink Dropbox" = "Unlink Dropbox";
+
+/* Unlock Layer */
+"Unlock Layer" = "Unlock Layer";
+
+/* Unlock Layer Alpha */
+"Unlock Layer Alpha" = "Unlock Layer Alpha";
+
+/* Upload Problem */
+"Upload Problem" = "Upload Problem";
+
+/* Uploading “%@” */
+"Uploading “%@”" = "Uploading “%@”";
+
+/* Weight */
+"Weight" = "Weight";
+
+/* Width */
+"Width" = "Width";
+
+/* Would you like to start using %@? */
+"Would you like to start using %@?" = "Would you like to start using %@?";
+
+"Back" = "Back";
+
+/* Back to home */
+"Home" = "首页" ;

@@ -58,6 +58,7 @@
 
 - (void) configureNavBar
 {
+    
     UIBarButtonItem *delete = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash
                                                                             target:self
                                                                             action:@selector(deleteBrush:)];
@@ -267,7 +268,7 @@
         CGRect frame = aBar.frame;
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
-        
+        aBar.backgroundColor = [UIColor blackColor];
         [self.view addSubview:aBar];
         self.topBar = aBar;
     }
@@ -283,7 +284,7 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
-        
+        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
     }

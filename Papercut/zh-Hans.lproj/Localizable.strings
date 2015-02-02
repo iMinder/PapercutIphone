@@ -1,0 +1,399 @@
+/* 
+  Localizable.strings
+  Papercut
+
+  Created by jackie on 15/2/1.
+  Copyright (c) 2015年 jackie. All rights reserved.
+*/
+/* Painting Title Format */
+"%@ @ %d%%" = "%1$@ @ %2$d%%";
+
+/* %d px */
+"%d px" = "%d px";
+
+/* %d Selected */
+"%d Selected" = "%d 选中";
+
+/* A painting with the name “%@” already exists. Please choose a different name. */
+"A painting with the name “%@” already exists. Please choose a different name." = "A painting with the name “%@” already exists. Please choose a different name.";
+
+/* Accept */
+"Accept" = "确认";
+
+/* Accessories */
+"Accessories" = "附件";
+
+/* Activity */
+"Activity" = "Activity";
+
+/* Add Layer */
+"Add Layer" = "添加图层";
+
+/* Add to Photos */
+"Add to Photos" = "添加到相册";
+
+/* Angle */
+"Angle" = "角度";
+
+/* Are you sure you want to unlink your Dropbox account? */
+"Are you sure you want to unlink your Dropbox account?" = "Are you sure you want to unlink your Dropbox account?";
+
+/* Blend Mode: %@ */
+"Blend Mode: %@" = "混合模式: %@";
+
+/* Bristle Density */
+"Bristle Density" = "Bristle Density";
+
+/* Bristle Size */
+"Bristle Size" = "Bristle Size";
+
+/* Broken Painting */
+"Broken Painting" = "Broken Painting";
+
+/* Brush */
+"Brush" = "画笔";
+
+/* Brushes */
+"Brushes" = "画笔";
+
+/* Brushes could not import “%@”. It may be corrupt or in a format that's not supported. */
+"Brushes could not import “%@”. It may be corrupt or in a format that's not supported." = "Brushes could not import “%@”. It may be corrupt or in a format that's not supported.";
+
+/* Brushes could not import “%@”. The resolution is too high for this device. */
+"Brushes could not import “%@”. The resolution is too high for this device." = "Brushes could not import “%@”. The resolution is too high for this device.";
+
+/* Brushes could not import “%@”. There is not enough available memory. */
+"Brushes could not import “%@”. There is not enough available memory." = "Brushes could not import “%@”. There is not enough available memory.";
+
+/* Brushes could not open the requested painting. */
+"Brushes could not open the requested painting." = "Brushes could not open the requested painting.";
+
+/* Brushes Painting:  */
+"Brushes Painting: " = "Brushes Painting: ";
+
+/* Brushes Paintings */
+"Brushes Paintings" = "Brushes Paintings";
+
+/* Cancel
+ Title of Cancel button */
+"Cancel" = "取消";
+
+/* Check out my Brushes #painting! @brushesapp */
+"Check out my Brushes #painting! @brushesapp" = "Check out my Brushes #painting! @brushesapp";
+
+/* Check out my Brushes painting! http://brushesapp.com */
+"Check out my Brushes painting! http://brushesapp.com" = "Check out my Brushes painting! http://brushesapp.com";
+
+/* Clear Layer */
+"Clear Layer" = "清除图层";
+
+/* Color Balance */
+"Color Balance" = "色彩平衡";
+
+/* Connected */
+"Connected" = "连接上";
+
+/* Copy to Pasteboard */
+"Copy to Pasteboard" = "复制到剪切板";
+
+/* Could Not Open Painting */
+"Could Not Open Painting" = "无法打开绘图";
+
+/* Create */
+"Create" = "创建";
+
+/* Title of Delete button */
+"Delete" = "删除";
+
+/* Delete %d Paintings */
+"Delete %d Paintings" = "删除 %d 绘画";
+
+/* Delete Layer */
+"Delete Layer" = "删除图层";
+
+/* Delete Painting */
+"Delete Painting" = "删除绘画";
+
+/* Density */
+"Density" = "密度";
+
+/* Desaturate */
+"Desaturate" = "去饱和";
+
+/* Deviation */
+"Deviation" = "偏差";
+
+/* Disconnected */
+"Disconnected" = "断开";
+
+/* Done */
+"Done" = "完成";
+
+/* Download Problem */
+"Download Problem" = "下载问题";
+
+/* Downloading “%@” */
+"Downloading “%@”" = "下载 “%@”";
+
+/* Drag and pinch to position layer. */
+"Drag and pinch to position layer." = "拖拽和捏放改变图层";
+
+/* Drag and pinch to position photo. */
+"Drag and pinch to position photo." = "拖拽和捏放改变图片";
+
+/* Dropbox */
+"Dropbox" = "Dropbox";
+
+/* Duplicate */
+"Duplicate" = "复制";
+
+/* Duplicate Layer */
+"Duplicate Layer" = "动态图层";
+
+/* Dynamic Angle */
+"Dynamic Angle" = "动态角度";
+
+/* Dynamic Intensity */
+"Dynamic Intensity" = "动态亮度";
+
+/* Dynamic Weight */
+"Dynamic Weight" = "动态权重";
+
+/* Email */
+"Email" = "邮件";
+
+/* Email JPEG */
+"Email JPEG" = "电子邮件JPEG";
+
+/* Email PNG */
+"Email PNG" = "电子邮件PNG";
+
+/* Eraser */
+"Eraser" = "橡皮擦";
+
+/* Exclusion blending mode */
+"Exclude" = "排除";
+
+/* Export */
+"Export" = "导出";
+
+/* Exporting “%@” */
+"Exporting “%@”" = "导出 “%@”";
+
+/* Fill Layer */
+"Fill Layer" = "填充图层";
+
+/* Flip Horizontally */
+"Flip Horizontally" = "水平翻转";
+
+/* Flip Vertically */
+"Flip Vertically" = "垂直翻转";
+
+/* Gallery */
+"Gallery" = "作品库";
+
+/* Gallery: %d */
+"Gallery: %d" = "作品: %d";
+
+/* Hardness */
+"Hardness" = "Hardness";
+
+/* Hide Layer */
+"Hide Layer" = "隐藏图层";
+
+/* Hue and Saturation */
+"Hue and Saturation" = "Hue and Saturation";
+
+/* Hue and Saturation… */
+"Hue and Saturation…" = "Hue and Saturation…";
+
+/* Import */
+"Import" = "导入";
+
+/* Import %lu */
+"Import %lu" = "导入 %lu";
+
+/* Import Problem */
+"Import Problem" = "导入问题";
+
+/* Importing “%@” */
+"Importing “%@”" = "导入 “%@”";
+
+/* Intensity */
+"Intensity" = "亮度";
+
+/* Invert Color */
+"Invert Color" = "反色";
+
+/* Jitter */
+"Jitter" = "抖动";
+
+/* Layer Opacity: %d%% */
+"Layer Opacity: %d%%" = "图层透明度: %d%%";
+
+/* Layers */
+"Layers" = "图层";
+
+/* Loading… */
+"Loading…" = "加载中…";
+
+/* Lock Layer */
+"Lock Layer" = "锁定图层";
+
+/* Lock Layer Alpha */
+"Lock Layer Alpha" = "锁定图层透明度";
+
+/* Merge Down */
+"Merge Down" = "合并图层";
+
+/* Multiply blending mode */
+"Multiply" = "复合";
+
+/* New Painting */
+"New Painting" = "新建绘画";
+
+/* New Pen Found */
+"New Pen Found" = "发现新画笔";
+
+/* No */
+"No" = "否";
+
+/* No Stylus */
+"No Stylus" = "No Stylus";
+
+/* Normal blending mode */
+"Normal" = "正常";
+
+/* Number of Points */
+"Number of Points" = "Number of Points";
+
+/* Number of Sides */
+"Number of Sides" = "Number of Sides";
+
+/* OK */
+"OK" = "确定";
+
+/* Alert text when deleting multiple paintings */
+"Once deleted, these paintings cannot be recovered." = "Once deleted, these paintings cannot be recovered.";
+
+/* Alert text when deleting 1 painting */
+"Once deleted, this painting cannot be recovered." = "Once deleted, this painting cannot be recovered.";
+
+/* Paste Image */
+"Paste Image" = "粘贴图片";
+
+/* Photo */
+"Photo" = "图片";
+
+/* Place Image */
+"Place Image" = "添加图片";
+
+/* Place Photo */
+"Place Photo" = "添加图片";
+
+/* Pogo Connect */
+"Pogo Connect" = "Pogo Connect";
+
+/* Post on Facebook */
+"Post on Facebook" = "Post on Facebook";
+
+/* Rearrange Layers */
+"Rearrange Layers" = "Rearrange Layers";
+
+/* Redo */
+"Redo" = "重做";
+
+/* Replay Error */
+"Replay Error" = "播放错误";
+
+/* Scatter */
+"Scatter" = "分散";
+
+/* Screen blending mode */
+"Screen" = "Screen";
+
+/* Select */
+"Select" = "选中";
+
+/* Send to Dropbox */
+"Send to Dropbox" = "Send to Dropbox";
+
+/* Show Layer */
+"Show Layer" = "显示图层";
+
+/* Simulated Pressure */
+"Simulated Pressure" = "Simulated Pressure";
+
+/* slide to edit */
+"slide to edit" = "滑动编辑";
+
+/* Spacing */
+"Spacing" = "间距";
+
+/* Splotchiness */
+"Splotchiness" = "Splotchiness";
+
+/* swipe here to paint */
+"swipe here to paint" = "滑动这里开始绘画";
+
+/* The painting name cannot begin with a dot “.”. */
+"The painting name cannot begin with a dot “.”." = "The painting name cannot begin with a dot “.”.";
+
+/* The painting name cannot contain “:” or “/”. */
+"The painting name cannot contain “:” or “/”." = "The painting name cannot contain “:” or “/”.";
+
+/* There was a problem downloading“%@”. Check your network connection and try again. */
+"There was a problem downloading “%@”. Check your network connection and try again." = "There was a problem downloading “%@”. Check your network connection and try again.";
+
+/* There was a problem opening “%@”. */
+"There was a problem opening “%@”." = "There was a problem opening “%@”.";
+
+/* There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update. */
+"There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update." = "There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update.";
+
+/* There was a problem uploading“%@”. Check your network connection and try again. */
+"There was a problem uploading “%@”. Check your network connection and try again." = "There was a problem uploading “%@”. Check your network connection and try again.";
+
+/* Transform */
+"Transform" = "变换";
+
+/* Transform Layer */
+"Transform Layer" = "变换图层";
+
+/* Tweet */
+"Tweet" = "Tweet";
+
+/* Undo */
+"Undo" = "撤销";
+
+/* Title of Unlink button */
+"Unlink" = "Unlink";
+
+/* Unlink Dropbox */
+"Unlink Dropbox" = "Unlink Dropbox";
+
+/* Unlock Layer */
+"Unlock Layer" = "Unlock Layer";
+
+/* Unlock Layer Alpha */
+"Unlock Layer Alpha" = "解锁图层透明度";
+
+/* Upload Problem */
+"Upload Problem" = "上传问题";
+
+/* Uploading “%@” */
+"Uploading “%@”" = "上传 “%@”";
+
+/* Weight */
+"Weight" = "权重";
+
+/* Width */
+"Width" = "宽度";
+
+/* Would you like to start using %@? */
+"Would you like to start using %@?" = "Would you like to start using %@?";
+
+"Back" = "返回";
+
+/* Back to home */
+"Home" = "首页";

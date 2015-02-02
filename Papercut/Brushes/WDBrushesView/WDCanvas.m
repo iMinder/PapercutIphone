@@ -211,7 +211,7 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
     self.multipleTouchEnabled = YES;
     self.contentMode = UIViewContentModeCenter;
     self.exclusiveTouch = YES;
-    
+    self.opaque = YES;
     [self configureGestures];
     
     return self;

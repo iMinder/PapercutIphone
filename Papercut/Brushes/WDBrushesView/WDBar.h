@@ -34,6 +34,7 @@ typedef enum {
 + (WDBarItem *) flexibleItem;
 + (WDBarItem *) fixedItemWithWidth:(NSUInteger)width;
 + (WDBarItem *) backButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
++ (WDBarItem *) homeButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
 - (void) setImage:(UIImage *)image;
 

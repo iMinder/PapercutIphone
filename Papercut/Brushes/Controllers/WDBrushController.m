@@ -184,6 +184,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
 - (WDBar *) topBar
 {
     if (!topBar) {

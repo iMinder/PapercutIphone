@@ -9,7 +9,8 @@
 #import "RootViewController.h"
 #import "SoundServiceManager.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import <MessageUI/MFMailComposeViewController.h>
+#import "SVProgressHUD.h"
 @interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
 @property (nonatomic, assign)BOOL kStopPlaySound;
@@ -31,8 +32,8 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setToolbarHidden:YES animated:NO];
-    [self.navigationController setNavigationBarHidden:NO];
-    self.navigationController.hidesBarsOnTap = NO;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -41,26 +42,32 @@
     //[self setUp];
 }
 
-- (void)setUp
+- (AVAudioPlayer *)player
 {
-    
-    if (!_player) {
+    if (!_player)
+    {
         NSURL *fileURL = [[NSBundle mainBundle]URLForResource:@"sound" withExtension:@"mp3"];
         if ([[NSFileManager defaultManager]fileExistsAtPath:[fileURL path]])
         {
-            self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
-            self.player.numberOfLoops = -1;
-            self.kStopPlaySound = [[NSUserDefaults standardUserDefaults]boolForKey:@"kStopPlaySound"];
+            _player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
+            _player.numberOfLoops = -1;
             
-            [self.player prepareToPlay];
-            
-            [self playServiceSound];
+            [_player prepareToPlay];
         }
+
     }
+    return _player;
+    
+}
+- (void)setUp
+{
+    kStopPlaySound_ = NO;
+    self.kStopPlaySound = [[NSUserDefaults standardUserDefaults]boolForKey:@"kStopPlaySound"];
 }
 - (void)setKStopPlaySound:(BOOL)kStopPlaySound
 {
-    if (kStopPlaySound_ != kStopPlaySound) {
+    if (kStopPlaySound_ != kStopPlaySound)
+    {
         kStopPlaySound_ = kStopPlaySound;
         [[NSUserDefaults standardUserDefaults] setBool:kStopPlaySound_ forKey:@"kStopPlaySound"];
         [[NSUserDefaults standardUserDefaults]synchronize];
@@ -78,7 +85,8 @@
 #pragma mark - SoundService
 - (void)playServiceSound
 {
-    if (self.player && ![self.player isPlaying] && !kStopPlaySound_) {
+    if (self.player && ![self.player isPlaying] && !kStopPlaySound_)
+    {
         [self.player play];
     }
 }
@@ -90,11 +98,13 @@
     }
 }
 
-- (void)stopeServiceSound
+- (void)stopServiceSound
 {
     self.kStopPlaySound = YES;
-    if (self.player) {
+    if (self.player)
+    {
         [self.player stop];
+        self.player = nil;
     }
 }
 
@@ -105,14 +115,25 @@
     [self playServiceSound];
 }
 
-#pragma mark - action
+- (void)changeSoundService
+{
+    if (kStopPlaySound_)
+    {
+        [self startPlayingSound];
+    }
+    else
+    {
+        [self stopServiceSound];
+    }
+}
+#pragma mark - action sheet
 - (IBAction)setting:(UIButton *)sender
 {
 
     UIActionSheet *action = [[UIActionSheet alloc]initWithTitle:@"设置"
                                                        delegate:self
                                               cancelButtonTitle:@"关闭"
-                                         destructiveButtonTitle:@"关闭背景音乐"
+                                         destructiveButtonTitle:kStopPlaySound_ ? @"打开背景音乐" : @"关闭背景音乐"
                                               otherButtonTitles:@"意见反馈" ,@"检查更新" ,@"关于我们" ,nil];
     action.backgroundColor = [UIColor redColor];
     action.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
@@ -122,6 +143,40 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+    switch (buttonIndex) {
+        case 0:
+        {//关闭背景音乐
+            [self changeSoundService];
+        }
+            break;
+        case 1:
+        {
+            [self emailToDeveloper];
+        }
+            break;
+        case 2:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)emailToDeveloper
+{
+    if ([MFMailComposeViewController canSendMail])
+    {
+        MFMailComposeViewController *emailVC = [[MFMailComposeViewController alloc]init];
+        [self presentViewController:emailVC animated:YES completion:nil];
+    }
+    else
+    {
+        [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
+        [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+        [SVProgressHUD showErrorWithStatus:@"请先设置你的邮箱"];
+        
+    }
 }
 @end

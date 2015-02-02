@@ -2,13 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "camera_btn_flip.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "camera_btn_flip@2x.png"
+      "filename" : "翻转-66.png"
     },
     {
       "idiom" : "universal",

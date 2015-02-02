@@ -45,6 +45,7 @@ typedef enum {
                                                     MFMailComposeViewControllerDelegate, UIPopoverControllerDelegate,
                                                         WDActionSheetDelegate, WDDocumentReplayDelegate, WDActionNameViewDelegate>
 {
+    WDBarItem           *home_;
     WDBarItem           *album_;
     WDBarItem           *undo_;
     WDBarItem           *redo_;

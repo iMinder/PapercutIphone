@@ -31,7 +31,8 @@ NSString *const kPCYinKeFilterString = SHADER_STRING
      }
      else
      {
-         colorTexture = vec4(1.0, 0.0, 0.0,colorTexture.a);
+         //colorTexture = vec4(1.0, 0.0, 0.0,colorTexture.a);
+         colorTexture = vec4(237.0 / 255.0, 0.0, 24.0 / 255.0,colorTexture.a);
      }
      gl_FragColor = colorTexture;
  }

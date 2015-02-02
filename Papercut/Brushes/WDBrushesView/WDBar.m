@@ -130,7 +130,10 @@ const float         kWDBarItemShadowOpacity = 0.9f;
     if (WDUseModernAppearance()) {
         UIFont  *font = [UIFont systemFontOfSize:17];
         //CGSize  textSize = [string sizeWithFont:font];
-        CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName:font}];
+        CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName:font,
+                            
+                                                       NSStrokeColorAttributeName:[UIColor whiteColor]
+                                                    }];
                            
         CGSize  size = textSize;
         float   arrowSize = 9, arrowInset = 4;
@@ -146,7 +149,9 @@ const float         kWDBarItemShadowOpacity = 0.9f;
         origin.x = (size.width - textSize.width); // align right
         origin.y = (size.height - textSize.height) / 2.0f; // center vertically
         //[string drawAtPoint:origin withFont:font];
-        [string drawAtPoint:origin withAttributes:@{NSFontAttributeName : font}];
+        
+        [string drawAtPoint:origin withAttributes:@{NSFontAttributeName : font,
+                                                    NSForegroundColorAttributeName:[UIColor whiteColor]}];
         // draw back arrow
         CGContextMoveToPoint(ctx, arrowInset + arrowSize, size.height / 2 - arrowSize);
         CGContextAddLineToPoint(ctx, arrowInset, size.height / 2);
@@ -186,6 +191,56 @@ const float         kWDBarItemShadowOpacity = 0.9f;
     }
     
     return result;
+}
+
++ (UIImage *)homeButtonWithTitle:(NSString *)string
+{
+    UIImage *result = nil;
+    if (WDUseModernAppearance())
+    {
+        UIFont  *font = [UIFont systemFontOfSize:17];
+        //CGSize  textSize = [string sizeWithFont:font];
+        CGSize textSize = [string sizeWithAttributes:@{NSFontAttributeName:font,
+                                                       NSStrokeColorAttributeName:[UIColor whiteColor]
+                                                       }];
+        CGSize  size = textSize;
+        float   arrowSize = 9, arrowInset = 4;
+        
+        // add some space for the back arrow
+        size.width += 20;
+        
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0f);
+        CGContextRef ctx = UIGraphicsGetCurrentContext();
+        [[UIColor whiteColor] set];
+        
+        // 1. 先画右侧的箭头
+        CGContextMoveToPoint(ctx, size.width - arrowInset - arrowSize, size.height / 2 - arrowSize);
+        CGContextAddLineToPoint(ctx, size.width - arrowInset, size.height / 2);
+        CGContextAddLineToPoint(ctx, size.width - arrowInset - arrowSize, size.height / 2 + arrowSize);
+        CGContextSetLineCap(ctx, kCGLineCapButt);
+        CGContextSetLineJoin(ctx, kCGLineJoinMiter);
+        CGContextSetLineWidth(ctx, 2.5);
+        CGContextStrokePath(ctx);
+        
+        // 2 . 画string
+        CGPoint origin;
+        origin.x = 0; // align right
+        origin.y = (size.height - textSize.height) / 2.0f; // center vertically
+        //[string drawAtPoint:origin withFont:font];
+        
+        [string drawAtPoint:origin withAttributes:@{NSFontAttributeName : font,
+                                                    NSForegroundColorAttributeName:[UIColor whiteColor]}];
+        
+        result = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return result;
+}
+
++ (WDBarItem *) homeButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    return [self barItemWithImage:[self homeButtonWithTitle:title] landscapeImage:nil target:target action:action];
+    
 }
 
 + (WDBarItem *) backButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
@@ -570,11 +625,12 @@ const float         kWDBarItemShadowOpacity = 0.9f;
 
 - (void) addEdge
 {
-    self.backgroundColor = [UIColor colorWithWhite:0.667f alpha:0.667f];
+    self.backgroundColor  = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]];
+    //self.backgroundColor = [UIColor colorWithWhite:0.667f alpha:0.667f];
     //self.backgroundColor = [UIColor colorWithRed:(34.0 / 255) green:(62.0 / 255) blue:(83.0 / 255) alpha:0.5];
     
     // main edge
-    [self addEdge:[UIColor darkGrayColor] offset:1];
+    [self addEdge:[UIColor whiteColor] offset:1];
 }
 
 - (void) setOrientation:(UIInterfaceOrientation)orientation

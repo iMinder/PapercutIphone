@@ -388,9 +388,17 @@
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
 		8C8571881A76943200C64652 /* FlipAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8571871A76943200C64652 /* FlipAnimationManager.m */; };
+		8CAA882B1A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88261A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.m */; };
+		8CAA882C1A7A8BDB00FAC4BA /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA88281A7A8BDB00FAC4BA /* SVProgressHUD.bundle */; };
+		8CAA882D1A7A8BDB00FAC4BA /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA882A1A7A8BDB00FAC4BA /* SVProgressHUD.m */; };
+		8CAA88351A7B36CA00FAC4BA /* PaperCutBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */; };
+		8CAA88381A7B387F00FAC4BA /* PaperCutLearnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */; };
+		8CAA883B1A7B6C0300FAC4BA /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA883A1A7B6C0300FAC4BA /* LineLayout.m */; };
+		8CAA885E1A7F205B00FAC4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA88601A7F205B00FAC4BA /* Localizable.strings */; };
 		8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A01A722DAC003A802C /* PaperToolBar.m */; };
 		8CABB3A41A72A064003A802C /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A31A72A064003A802C /* ToolCell.m */; };
 		8CAC74561A7A39EC0001377E /* NSString+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC74551A7A39EC0001377E /* NSString+Drawing.m */; };
+		8CAC745E1A7A72740001377E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAC745D1A7A72740001377E /* MessageUI.framework */; };
 		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
 		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
 		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
@@ -969,12 +977,30 @@
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
 		8C8571861A76943200C64652 /* FlipAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationManager.h; sourceTree = "<group>"; };
 		8C8571871A76943200C64652 /* FlipAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationManager.m; sourceTree = "<group>"; };
+		8CAA88251A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		8CAA88261A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		8CAA88271A7A8BDB00FAC4BA /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		8CAA88281A7A8BDB00FAC4BA /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8CAA88291A7A8BDB00FAC4BA /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8CAA882A1A7A8BDB00FAC4BA /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8CAA88331A7B36CA00FAC4BA /* PaperCutBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutBrowserController.h; sourceTree = "<group>"; };
+		8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperCutBrowserController.m; sourceTree = "<group>"; };
+		8CAA88361A7B387F00FAC4BA /* PaperCutLearnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutLearnCell.h; sourceTree = "<group>"; };
+		8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperCutLearnCell.m; sourceTree = "<group>"; };
+		8CAA88391A7B6C0300FAC4BA /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		8CAA883A1A7B6C0300FAC4BA /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
+		8CAA885C1A7F203100FAC4BA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		8CAA885D1A7F203100FAC4BA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		8CAA885F1A7F205B00FAC4BA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8CAA88611A7F205E00FAC4BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CAA88621A7F20B400FAC4BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CABB39F1A722DAC003A802C /* PaperToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperToolBar.h; sourceTree = "<group>"; };
 		8CABB3A01A722DAC003A802C /* PaperToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperToolBar.m; sourceTree = "<group>"; };
 		8CABB3A21A72A063003A802C /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
 		8CABB3A31A72A064003A802C /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
 		8CAC74541A7A39EC0001377E /* NSString+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Drawing.h"; sourceTree = "<group>"; };
 		8CAC74551A7A39EC0001377E /* NSString+Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Drawing.m"; sourceTree = "<group>"; };
+		8CAC745D1A7A72740001377E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
 		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
 		8CD33EA31981FD80005B0569 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
@@ -996,6 +1022,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CAC745E1A7A72740001377E /* MessageUI.framework in Frameworks */,
 				8CDF16D81933263500112023 /* AVFoundation.framework in Frameworks */,
 				8C2E06891A4AFF860042C98B /* libz.dylib in Frameworks */,
 				8C2E06871A4AFF690042C98B /* CoreText.framework in Frameworks */,
@@ -1063,13 +1090,12 @@
 		8C250CBE1934CAC10089945F /* Learn */ = {
 			isa = PBXGroup;
 			children = (
-				8C8571851A76943200C64652 /* ViewFlipAnimation */,
-				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
-				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
-				8CABB39F1A722DAC003A802C /* PaperToolBar.h */,
-				8CABB3A01A722DAC003A802C /* PaperToolBar.m */,
-				8CABB3A21A72A063003A802C /* ToolCell.h */,
-				8CABB3A31A72A064003A802C /* ToolCell.m */,
+				8CAA88331A7B36CA00FAC4BA /* PaperCutBrowserController.h */,
+				8CAA88361A7B387F00FAC4BA /* PaperCutLearnCell.h */,
+				8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */,
+				8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */,
+				8CAA88391A7B6C0300FAC4BA /* LineLayout.h */,
+				8CAA883A1A7B6C0300FAC4BA /* LineLayout.m */,
 			);
 			name = Learn;
 			sourceTree = "<group>";
@@ -1768,6 +1794,7 @@
 		8C82ED08193235A20055C5E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8CAC745D1A7A72740001377E /* MessageUI.framework */,
 				8C2E06881A4AFF860042C98B /* libz.dylib */,
 				8C2E06861A4AFF690042C98B /* CoreText.framework */,
 				8C2E06841A4AFF460042C98B /* Accelerate.framework */,
@@ -1790,6 +1817,8 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
+				8CAA88321A7B366100FAC4BA /* Fun */,
+				8CAA88241A7A8BDB00FAC4BA /* SVProgressHUD */,
 				8C46BD431A6E73C4000BE6AB /* SoundService */,
 				8C2E04691A4AFEF60042C98B /* Brushes */,
 				8C250CB91934CA3A0089945F /* Camera */,
@@ -1799,9 +1828,9 @@
 				8C250CBB1934CA670089945F /* Scrawl */,
 				8C82ED18193235A20055C5E2 /* PaperCutAppDelegate.h */,
 				8C82ED19193235A20055C5E2 /* PaperCutAppDelegate.m */,
-				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
 				8C82ED1E193235A20055C5E2 /* RootViewController.h */,
 				8C82ED1F193235A20055C5E2 /* RootViewController.m */,
+				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
 				8C82ED21193235A20055C5E2 /* Images.xcassets */,
 				8C82ED10193235A20055C5E2 /* Supporting Files */,
 			);
@@ -1812,6 +1841,7 @@
 			isa = PBXGroup;
 			children = (
 				8C46BD471A6E7892000BE6AB /* sound.mp3 */,
+				8CAA88601A7F205B00FAC4BA /* Localizable.strings */,
 				8C82ED11193235A20055C5E2 /* Papercut-Info.plist */,
 				8C82ED12193235A20055C5E2 /* InfoPlist.strings */,
 				8C82ED15193235A20055C5E2 /* main.m */,
@@ -1845,6 +1875,33 @@
 				8C8571871A76943200C64652 /* FlipAnimationManager.m */,
 			);
 			path = ViewFlipAnimation;
+			sourceTree = "<group>";
+		};
+		8CAA88241A7A8BDB00FAC4BA /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8CAA88251A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.h */,
+				8CAA88261A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.m */,
+				8CAA88271A7A8BDB00FAC4BA /* SVProgressHUD-Prefix.pch */,
+				8CAA88281A7A8BDB00FAC4BA /* SVProgressHUD.bundle */,
+				8CAA88291A7A8BDB00FAC4BA /* SVProgressHUD.h */,
+				8CAA882A1A7A8BDB00FAC4BA /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = SOURCE_ROOT;
+		};
+		8CAA88321A7B366100FAC4BA /* Fun */ = {
+			isa = PBXGroup;
+			children = (
+				8C8571851A76943200C64652 /* ViewFlipAnimation */,
+				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
+				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
+				8CABB39F1A722DAC003A802C /* PaperToolBar.h */,
+				8CABB3A01A722DAC003A802C /* PaperToolBar.m */,
+				8CABB3A21A72A063003A802C /* ToolCell.h */,
+				8CABB3A31A72A064003A802C /* ToolCell.m */,
+			);
+			name = Fun;
 			sourceTree = "<group>";
 		};
 		8CD33E9E1981FD0D005B0569 /* UIImage+vImage */ = {
@@ -1921,6 +1978,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = jackie;
 				TargetAttributes = {
+					8C82ED05193235A20055C5E2 = {
+						DevelopmentTeam = D8YA462WBM;
+					};
 					8C82ED26193235A20055C5E2 = {
 						TestTargetID = 8C82ED05193235A20055C5E2;
 					};
@@ -1933,6 +1993,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 8C82ECFD193235A10055C5E2;
 			productRefGroup = 8C82ED07193235A20055C5E2 /* Products */;
@@ -2064,6 +2125,7 @@
 				8C2E09C61A5058D40042C98B /* stylus_selected.png in Resources */,
 				8C2E09701A5058D40042C98B /* Default-Landscape.png in Resources */,
 				8C2E097F1A5058D40042C98B /* duplicate-modern.png in Resources */,
+				8CAA882C1A7A8BDB00FAC4BA /* SVProgressHUD.bundle in Resources */,
 				8C2E09A91A5058D40042C98B /* merge~iPhone.png in Resources */,
 				8C2E09751A5058D40042C98B /* dismissLandscape.png in Resources */,
 				8C2E09631A5058D40042C98B /* BlueTooth@2x.png in Resources */,
@@ -2143,6 +2205,7 @@
 				8C2E09541A5058D40042C98B /* album-modern.png in Resources */,
 				8C2E09671A5058D40042C98B /* checkmark-modern.png in Resources */,
 				8C2E08AC1A5058540042C98B /* DocSizes.plist in Resources */,
+				8CAA885E1A7F205B00FAC4BA /* Localizable.strings in Resources */,
 				8C2E09C41A5058D40042C98B /* stylus_selected-modern.png in Resources */,
 				8C2E08841A5057D10042C98B /* colorburn.fsh in Resources */,
 				8C2E09601A5058D40042C98B /* blend_button.png in Resources */,
@@ -2218,6 +2281,7 @@
 				8C2E08051A4B04640042C98B /* WDActionSheet.m in Sources */,
 				8C2E07F71A4B04640042C98B /* WDFilePlusData.m in Sources */,
 				8C2E07D51A4B04640042C98B /* WDBezierSegment.m in Sources */,
+				8CAA88381A7B387F00FAC4BA /* PaperCutLearnCell.m in Sources */,
 				8C2E07BE1A4B04640042C98B /* WDFillColor.m in Sources */,
 				8C2E07B81A4B04640042C98B /* WDChangeHueSaturation.m in Sources */,
 				8C2E07C01A4B04640042C98B /* WDRedoChange.m in Sources */,
@@ -2268,6 +2332,7 @@
 				8C2E08061A4B04640042C98B /* WDBar.m in Sources */,
 				8C2E082F1A4B04640042C98B /* WDSwatches.m in Sources */,
 				8C2E07CA1A4B04640042C98B /* WDDocument.m in Sources */,
+				8CAA883B1A7B6C0300FAC4BA /* LineLayout.m in Sources */,
 				8C2E08281A4B04640042C98B /* WDPanGestureRecognizer.m in Sources */,
 				8C2E08131A4B04640042C98B /* WDColorSquare.m in Sources */,
 				8C2E08531A4B06E60042C98B /* WDActivityController.m in Sources */,
@@ -2316,8 +2381,11 @@
 				8C2E07CB1A4B04640042C98B /* WDDocumentReplay.m in Sources */,
 				8C2E08231A4B04640042C98B /* WDMatrix.m in Sources */,
 				8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */,
+				8CAA882B1A7A8BDB00FAC4BA /* SVIndefiniteAnimatedView.m in Sources */,
+				8CAA88351A7B36CA00FAC4BA /* PaperCutBrowserController.m in Sources */,
 				8C2E08331A4B04640042C98B /* WDTransformOverlay.m in Sources */,
 				8C2E07D61A4B04640042C98B /* WDBlendModes.m in Sources */,
+				8CAA882D1A7A8BDB00FAC4BA /* SVProgressHUD.m in Sources */,
 				8C2E07F51A4B04640042C98B /* WDDictionaryDecoder.m in Sources */,
 				8C2E08181A4B04640042C98B /* WDEtchedLine.m in Sources */,
 				8C2E07E01A4B04640042C98B /* WDPainting.m in Sources */,
@@ -2392,6 +2460,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C82ED13193235A20055C5E2 /* en */,
+				8CAA885D1A7F203100FAC4BA /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -2400,6 +2469,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8C82ED1C193235A20055C5E2 /* Base */,
+				8CAA885C1A7F203100FAC4BA /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2410,6 +2480,16 @@
 				8C82ED32193235A20055C5E2 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8CAA88601A7F205B00FAC4BA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CAA885F1A7F205B00FAC4BA /* zh-Hans */,
+				8CAA88611A7F205E00FAC4BA /* en */,
+				8CAA88621A7F20B400FAC4BA /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

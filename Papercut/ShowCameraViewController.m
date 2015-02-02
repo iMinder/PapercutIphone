@@ -41,6 +41,7 @@ static CGFloat const RadiusFactor = 15;
 @property (assign, nonatomic) GPUImageFilter *lineLastFilter;
 @property (strong, nonatomic) YangKeFilter *yangKeFilter;
 @property (strong, nonatomic) YinKeFilter *yinKeFilter;
+@property (strong, nonatomic) GPUImageMedianFilter *medianFilter;
 
 @property (nonatomic) BOOL interfaceHiden;
 
@@ -95,6 +96,14 @@ static CGFloat const RadiusFactor = 15;
     return _cameraSource;
 }
 
+- (GPUImageMedianFilter *)medianFilter
+{
+    if (!_medianFilter) {
+        _medianFilter = [GPUImageMedianFilter new];
+        
+    }
+    return _medianFilter;
+}
 - (void)setUp
 {
     self.navigationItem.hidesBackButton = YES;
@@ -110,10 +119,11 @@ static CGFloat const RadiusFactor = 15;
     tap.delegate = self;
     tap.numberOfTapsRequired = 1;
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self
-                                                                                           action:@selector(showImagePickerForPhotoPicker:)];
+                                                                                           action:@selector (showImagePickerForPhotoPicker:)];
     [self.cameraView addGestureRecognizer:tap];
     [self.view addGestureRecognizer:longPress];
-
+    [(GPUImageView *)self.cameraView setFillMode:kGPUImageFillModePreserveAspectRatioAndFill];
+    
     //5 .竖直显示slider
     self.filterSlider.transform = CGAffineTransformRotate(self.filterSlider.transform, M_PI_2);
     
@@ -338,11 +348,16 @@ static CGFloat const RadiusFactor = 15;
         [self.normalFilter removeAllTargets];
         [self.sketchFilter removeAllTargets];
         [self.yangKeFilter removeAllTargets];
-        [self.normalFilter addTarget:self.sketchFilter];
+        [self.medianFilter removeAllTargets];
+       // [self.normalFilter addTarget:self.sketchFilter];
+        [self.normalFilter addTarget:self.medianFilter];
+        [self.medianFilter addTarget:self.sketchFilter];
         [self.sketchFilter addTarget:self.yangKeFilter];
+        //[self.yangKeFilter addTarget:self.medianFilter];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.currentSource addTarget:self.normalFilter];
-            [self.yangKeFilter addTarget:(GPUImageView *)self.cameraView];
+            [self.yangKeFilter addTarget: (GPUImageView *)self.cameraView];
+            //[self.medianFilter addTarget:(GPUImageView *)self.cameraView];
             [self processImage];
             sender.enabled = YES;
         });
@@ -395,7 +410,6 @@ static CGFloat const RadiusFactor = 15;
     imagePickerController.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     imagePickerController.allowsEditing = NO;
     imagePickerController.delegate = self;
-    
     [self presentViewController:imagePickerController animated:YES completion:nil];
 }
 

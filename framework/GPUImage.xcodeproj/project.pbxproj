@@ -1420,6 +1420,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = BCF1A32914DDB1EC00852800;
 			productRefGroup = BCF1A33514DDB1EC00852800 /* Products */;

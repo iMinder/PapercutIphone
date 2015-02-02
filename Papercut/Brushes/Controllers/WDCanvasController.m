@@ -89,14 +89,15 @@
 
 - (BOOL) runningOnPhone
 {
-    static BOOL isPhone;
-    static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        isPhone = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone ? YES : NO;
-    });
-    
-    return isPhone;
+//    static BOOL isPhone;
+//    static dispatch_once_t onceToken;
+//    
+//    dispatch_once(&onceToken, ^{
+//        isPhone = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone ? YES : NO;
+//    });
+//    
+//    return isPhone;
+    return YES;
 }
 
 - (void)insertImageToCavas:(UIImage *)image
@@ -894,6 +895,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+//跳转到首页去
+- (void) home:(id)sender
+{
+    [[WDActiveState sharedInstance] resetActiveTool];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 - (void) setEditing:(BOOL)editing animated:(BOOL)animated
 {
     [super setEditing:editing animated:animated];
@@ -935,6 +944,8 @@
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
         
+        //设置topbar 颜色
+        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
         [self.view addSubview:aBar];
         self.topBar = aBar;
     }
@@ -966,6 +977,7 @@
         
         WDBarItem *item = [WDBarItem barItemWithView:button];
         [items addObject:item];
+        [items addObject:[WDBarItem flexibleItem]];
     }
 }
 
@@ -973,23 +985,39 @@
 {
     if (!editingTopBarItems) {
         WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
-        WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
-        WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
-                                         landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
-                                                 target:self
-                                                 action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
+        WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Back", @"Back") target:self action:@selector(goBack:)];
+//        WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
+//                                         landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
+//                                                 target:self
+//                                                 action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
 //        WDBarItem *bluetooth = [WDBarItem barItemWithImage:[UIImage imageNamed:@"BlueTooth.png"]
 //                                            landscapeImage:[UIImage imageNamed:@"BlueToothLandscape.png"]
 //                                                    target:self
 //                                                    action:@selector(showBlueToothPanel:)];
         
-        NSMutableArray *items = [NSMutableArray arrayWithObjects:fixed, backButton, [WDBarItem flexibleItem], nil];
+        undo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"undo.png"]
+                             landscapeImage:[UIImage imageNamed:@"undoLandscape.png"]
+                                     target:self action:@selector(undo:)];
+        
+        redo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"redo.png"]
+                             landscapeImage:[UIImage imageNamed:@"redoLandscape.png"]
+                                     target:self action:@selector(redo:)];
+        
+//        home_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"home_on"]
+//                                     target:self
+//                                     action:@selector(home:)];
+        home_ = [WDBarItem homeButtonWithTitle:NSLocalizedString(@"Home", @"Back to home") target:self action:@selector(home:)];
+        NSMutableArray *items = [NSMutableArray arrayWithObjects:
+                                 fixed, backButton,[WDBarItem flexibleItem],
+                                 undo_, redo_, [WDBarItem flexibleItem],
+                                 home_,
+                                 nil];
         
         if (self.runningOnPhone) {
-            [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
-            
-        
-            [items addObject:[WDBarItem fixedItemWithWidth:15]];
+//            [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
+//            
+//        
+//            [items addObject:[WDBarItem fixedItemWithWidth:15]];
         
         } else {
            
@@ -1002,7 +1030,7 @@
             [items addObject:fixed];
         }
         
-        [items addObject:action];
+       // [items addObject:action];
         
         editingTopBarItems = items;
     }
@@ -1014,27 +1042,29 @@
 
 - (NSArray *) replayTopBarItems
 {
-    WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
-    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
-    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
-                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
-                                             target:self
-                                             action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
-    
-    return @[fixed, backButton, [WDBarItem flexibleItem], action];
+//    WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
+//    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
+//    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
+//                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
+//                                             target:self
+//                                             action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
+//    
+//    return @[fixed, backButton, [WDBarItem flexibleItem], action];
+    return nil;
 }
 
 - (NSArray *) loadingTopBarItems
 {
-    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
-                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
-                                             target:nil
-                                             action:nil];
-    action.enabled = NO;
-    
-    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
-    
-    return @[[WDBarItem fixedItemWithWidth:5], backButton, [WDBarItem flexibleItem], action];
+//    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
+//                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
+//                                             target:nil
+//                                             action:nil];
+//    action.enabled = NO;
+//    
+//    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
+//
+//    return @[[WDBarItem fixedItemWithWidth:5], backButton, [WDBarItem flexibleItem], action];
+    return nil;
 }
 
 - (WDBar *) bottomBar
@@ -1045,7 +1075,8 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
-        aBar.backgroundColor = [UIColor redColor];
+        UIImage * bg = [UIImage imageNamed:@"top_bar"];
+        [aBar setBackgroundColor:[UIColor colorWithPatternImage:bg]];
         
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
@@ -1083,13 +1114,13 @@
 {
     WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
     
-    undo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"undo.png"]
-                         landscapeImage:[UIImage imageNamed:@"undoLandscape.png"]
-                                 target:self action:@selector(undo:)];
-    
-    redo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"redo.png"]             
-                         landscapeImage:[UIImage imageNamed:@"redoLandscape.png"]
-                                 target:self action:@selector(redo:)];
+//    undo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"undo.png"]
+//                         landscapeImage:[UIImage imageNamed:@"undoLandscape.png"]
+//                                 target:self action:@selector(undo:)];
+//    
+//    redo_ = [WDBarItem barItemWithImage:[UIImage imageNamed:@"redo.png"]             
+//                         landscapeImage:[UIImage imageNamed:@"redoLandscape.png"]
+//                                 target:self action:@selector(redo:)];
 
     layer_ = [WDBarItem barItemWithImage:[self layerImage] target:self action:@selector(showLayers:)];
     
@@ -1102,6 +1133,11 @@
                          landscapeImage:[UIImage imageNamed:@"gearLandscape.png"]
                                  target:self
                                  action:self.runningOnPhone ? @selector(showGearSheet:) : @selector(showGearMenu:)];
+    
+    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
+                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
+                                             target:self
+                                             action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
     
     CGRect wellFrame = self.runningOnPhone ? CGRectMake(0, 0, 44, 44) : CGRectMake(0, 0, 66, 44);
     colorWell_ = [[WDColorWell alloc] initWithFrame:wellFrame];
@@ -1124,10 +1160,13 @@
                  colorItem, [WDBarItem flexibleItem],
                  //[WDBarItem flexibleItem],
                  brushItem, [WDBarItem flexibleItem],
-                 undo_, [WDBarItem flexibleItem],
-                 redo_, [WDBarItem flexibleItem],
+//                 undo_, [WDBarItem flexibleItem],
+//                 redo_, [WDBarItem flexibleItem],
                  //gear_, [WDBarItem flexibleItem],
+                // action,[WDBarItem flexibleItem],
                  nil];
+        [self addToolButtons:[WDActiveState sharedInstance].tools toArray:items];
+        [items addObject:action];
     } else {
         items = [NSMutableArray arrayWithObjects:
                  colorItem, [WDBarItem flexibleItem], nil];
@@ -1214,15 +1253,16 @@
     background.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     self.view = background;
     
+//    //整洁背景图片
+//    UIImageView *bg = [[UIImageView alloc]initWithFrame:background.bounds];
+//    [bg setImage:[UIImage imageNamed:@"back_fill"]];
+//    [self.view addSubview:bg];
     if (self.painting) {
         // background painting view
         //动态展示每一次制作过程的画布
         canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         canvas_.painting = self.painting;
         canvas_.controller = self;
-        
-        //[[WDStylusManager sharedStylusManager].pogoManager registerView:canvas_];
-        
         [background addSubview:canvas_];
         
         //设置当前画笔颜色为红色
