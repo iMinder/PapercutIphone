@@ -24,6 +24,7 @@ static CGFloat const RadiusFactor = 15;
 @property (strong, nonatomic) GPUImagePicture *stillImageSource;
 @property (assign, nonatomic) GPUImageOutput *currentSource;
 @property (weak, nonatomic) IBOutlet UIView *filterView;
+@property (weak, nonatomic) IBOutlet UILabel *takePhotoTitle;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (nonatomic, strong) dispatch_queue_t filterQueue;
@@ -212,7 +213,7 @@ static CGFloat const RadiusFactor = 15;
         WDCanvasController *canvasController = [[WDCanvasController alloc] init];
         [self.navigationController pushViewController:canvasController animated:YES];
     
-        CGSize size = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        CGSize size = CGSizeMake(1024, 1024);
         [[WDPaintingManager sharedInstance] createNewPaintingWithSize:size afterSave:^(WDDocument *document) {
             // set the document before setting the editing flag
             canvasController.document = document;
@@ -295,6 +296,7 @@ static CGFloat const RadiusFactor = 15;
     self.takePhotoButton.tag = TakePhotoTag;
     [self.takePhotoButton setBackgroundImage:[UIImage imageNamed:@"btn_camera_take"]
                                     forState:UIControlStateNormal];
+    [self.takePhotoTitle setText:NSLocalizedString(@"拍照", @"拍照")];
     [self.backFrontButton setHidden:NO];
     [self beginFilter];
 }
@@ -310,6 +312,7 @@ static CGFloat const RadiusFactor = 15;
     self.takePhotoButton.tag = UsePhotoTag;
     [self.takePhotoButton setBackgroundImage:[UIImage imageNamed:@"btn_camera_ok"]
                                     forState:UIControlStateNormal];
+    [self.takePhotoTitle setText:NSLocalizedString(@"确认", @"确认")];
     [self.backFrontButton setHidden:YES];
     [self beginFilter];
 }
@@ -348,16 +351,16 @@ static CGFloat const RadiusFactor = 15;
         [self.normalFilter removeAllTargets];
         [self.sketchFilter removeAllTargets];
         [self.yangKeFilter removeAllTargets];
-        [self.medianFilter removeAllTargets];
-       // [self.normalFilter addTarget:self.sketchFilter];
-        [self.normalFilter addTarget:self.medianFilter];
-        [self.medianFilter addTarget:self.sketchFilter];
+        //[self.medianFilter removeAllTargets];
+        [self.normalFilter addTarget:self.sketchFilter];
+        //[self.normalFilter addTarget:self.medianFilter];
+       // [self.medianFilter addTarget:self.sketchFilter];
         [self.sketchFilter addTarget:self.yangKeFilter];
-        //[self.yangKeFilter addTarget:self.medianFilter];
+        [self.yangKeFilter addTarget:self.medianFilter];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.currentSource addTarget:self.normalFilter];
-            [self.yangKeFilter addTarget: (GPUImageView *)self.cameraView];
-            //[self.medianFilter addTarget:(GPUImageView *)self.cameraView];
+            //[self.yangKeFilter addTarget: (GPUImageView *)self.cameraView];
+            [self.medianFilter addTarget:(GPUImageView *)self.cameraView];
             [self processImage];
             sender.enabled = YES;
         });

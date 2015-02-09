@@ -8,11 +8,17 @@
 
 #import "PaperCutBrowserController.h"
 #import "PaperCutLearnCell.h"
-#import "LineLayout.h"
 #import "UIDeviceHardware.h"
+#import "HeaderView.h"
+#import "UIImageView+WebCache.h"
+
+#define iPhone6 @"iPhone7,2"
+#define iPhone6Plus @"iPhone7,1"
 
 @interface PaperCutBrowserController()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSString *version;
+@property (nonatomic, strong) NSArray *items;
 
 @end
 
@@ -34,9 +40,9 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    LineLayout *layout = [LineLayout new];
-    [self.collectionView setCollectionViewLayout:layout];
+
 }
+
 #pragma mark  - setup
 - (void)setUp
 {
@@ -47,22 +53,74 @@
 //    NSBundle *mainBundle = [NSBundle mainBundle];
 //    UINib *nib = [UINib nibWithNibName:@"learnCell" bundle:mainBundle];
 //    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"learnCell"];
+    self.version = [UIDeviceHardware platform];
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
+    [layout setSectionInset:[self Inset]];
     
-
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"Learn" ofType:@"plist"];
+    if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
+        self.items = [NSArray arrayWithContentsOfFile:path];
+    }
 }
 
+- (UIEdgeInsets)Inset
+{
+    if ([_version isEqualToString:iPhone6])
+    {
+        //显示两排
+        return UIEdgeInsetsMake(15, 30, 15, 30);
+    }
+    if ([_version isEqualToString:iPhone6Plus]) {
+        //显示三排
+        return UIEdgeInsetsMake(15, 10, 15, 10);
+    }
+    //显示两排
+    return UIEdgeInsetsMake(15,15,15,15);
+}
 
 #pragma mark UICollectionViewController DataSource
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return [self.items count];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 30;
+    NSDictionary *dic = [self.items objectAtIndex:section];
+    NSArray *arr = [dic valueForKey:[dic allKeys][0]];
+    return [arr count];
 }
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath
+{
+    HeaderView  *view = (HeaderView *)[self.collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader  withReuseIdentifier:@"headerId" forIndexPath:indexPath];
+    if ([[self.items objectAtIndex:indexPath.row] isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dic = self.items[indexPath.row];
+        view.title.text = [[dic allKeys] firstObject];
+    }
+    return  view;
+}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PaperCutLearnCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"learnCell" forIndexPath:indexPath];
-    //[cell setBackgroundColor:[UIColor blueColor]];
+    
+    if ([[self.items objectAtIndex:indexPath.section] isKindOfClass:[NSDictionary class]])
+    {
+     
+        NSDictionary *dic = self.items[indexPath.section];
+        if ([dic[[dic allKeys][0]] isKindOfClass:[NSArray class]]) {
+            NSArray *arr = dic[[dic allKeys][0]];
+            NSDictionary *item = arr[indexPath.row];
+           // cell.title.text = item[@"title"];
+            NSURL *imgURL = [NSURL URLWithString:item[@"thumbnail"]];
+            [cell.thumbnail sd_setImageWithURL:imgURL placeholderImage:[UIImage imageNamed:@"main_works_off"]];
+        }
+    }
     return cell;
 }
 

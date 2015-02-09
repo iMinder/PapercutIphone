@@ -9,8 +9,7 @@
 #import "LineLayout.h"
 #import "UIDeviceHardware.h"
 
-#define iPhone6 @"iPhone7,2"
-#define iPhone6Plus @"iPhone7,1"
+
 
 
 #define ITEM_WIDTH 100
@@ -29,28 +28,29 @@
 {
     self = [super init];
     if (self) {
-        self.itemSize = CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
-        self.scrollDirection = UICollectionViewScrollDirectionVertical;
-        self.minimumLineSpacing = 10;
-        self.minimumInteritemSpacing = 10;
-        self.version = [UIDeviceHardware platform];
+        [self setUp];
     }
     return self;
 }
 
-- (UIEdgeInsets)sectionInset
+- (id) initWithCoder:(NSCoder *)aDecoder
 {
-    if ([_version isEqualToString:iPhone6])
-    {
-        //显示两排
-        return UIEdgeInsetsMake(30, 30, 30, 30);
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self setUp];
     }
-    if ([_version isEqualToString:iPhone6Plus]) {
-        //显示三排
-        return UIEdgeInsetsMake(30, 10, 30, 10);
-    }
-    //显示两排
-    return UIEdgeInsetsMake(30, 30, 30,30);
+    return self;
 }
+- (void)setUp
+{
+    self.itemSize = CGSizeMake(ITEM_WIDTH, ITEM_HEIGHT);
+    self.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.minimumLineSpacing = 10;
+    self.minimumInteritemSpacing = 10;
+    self.version = [UIDeviceHardware platform];
+    self.sectionInset = [self Inset];
+}
+
+
 
 @end

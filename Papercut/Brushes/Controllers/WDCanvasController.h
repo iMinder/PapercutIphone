@@ -124,5 +124,6 @@ typedef enum {
 
 //追加替换image
 - (void)insertImageToCavas:(UIImage *)image;
+
 @end
 

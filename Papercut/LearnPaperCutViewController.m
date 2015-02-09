@@ -30,10 +30,11 @@ typedef enum : NSUInteger {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //[self configureGuestures];
-    [self.navigationController setToolbarHidden:NO];
+    
     self.currentType = PaperToolTypeNone;
     //self.navigationController.hidesBarsOnTap = YES;
 }
+
 
 - (PaperToolBar *)paperToolBar
 {
@@ -55,10 +56,17 @@ typedef enum : NSUInteger {
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setToolbarHidden:NO];
+    [super viewDidAppear:animated];
+    
+}
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

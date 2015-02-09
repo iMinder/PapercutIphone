@@ -589,6 +589,7 @@
         brushController.delegate = self;
 
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:brushController];
+        [navController.navigationBar setBarTintColor:[UIColor blackColor]];
         self.brushController = navController;
     }
     
@@ -775,6 +776,7 @@
     if ([self.painting.undoManager canUndo]) {
         changeDocument(self.painting, [WDUndoChange undoChange]);
     }
+
 }
 
 //重做
@@ -1256,11 +1258,13 @@
 //    //整洁背景图片
 //    UIImageView *bg = [[UIImageView alloc]initWithFrame:background.bounds];
 //    [bg setImage:[UIImage imageNamed:@"back_fill"]];
-//    [self.view addSubview:bg];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]]];
+    //[self.view addSubview:bg];
     if (self.painting) {
         // background painting view
         //动态展示每一次制作过程的画布
-        canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        //canvas_ = [[WDCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        canvas_ = [[WDCanvas alloc] initWithFrame:CGRectMake(0, 50, 320, 320)];
         canvas_.painting = self.painting;
         canvas_.controller = self;
         [background addSubview:canvas_];

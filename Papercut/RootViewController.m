@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SVProgressHUD.h"
+
 @interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
 @property (nonatomic, assign)BOOL kStopPlaySound;
@@ -33,12 +34,18 @@
     [super viewWillAppear:animated];
     [self.navigationController setToolbarHidden:YES animated:NO];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     //[self setUp];
 }
 
@@ -173,8 +180,6 @@
     }
     else
     {
-        [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
-        [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
         [SVProgressHUD showErrorWithStatus:@"请先设置你的邮箱"];
         
     }

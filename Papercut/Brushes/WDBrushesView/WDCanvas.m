@@ -602,6 +602,7 @@ NSString *WDGestureEndedNotification = @"WDGestureEnded";
     WDCheckGLError();
     
     self.dirtyRect = CGRectZero;
+
 }
 
 - (void) drawWhiteBackground:(GLfloat *)proj
