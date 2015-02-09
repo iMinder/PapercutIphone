@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhC-ZM-26G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679" y="-623.5"/>
+            <point key="canvasLocation" x="728" y="-572"/>
         </scene>
         <!--剪纸相机-->
         <scene sceneID="CQG-A8-MEh">
@@ -132,14 +132,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shadow_off" translatesAutoresizingMaskIntoConstraints="NO" id="2HN-WA-GKG">
-                                <rect key="frame" x="-5" y="510" width="331" height="60"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-Gl-z4p" customClass="GPUImageView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="512"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lxa-GJ-8cr">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-3L-zgf">
-                                        <rect key="frame" x="16" y="14" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
+                                        <rect key="frame" x="20" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Q9O-sK-EsS"/>
+                                            <constraint firstAttribute="height" constant="30" id="WI7-Am-5Op"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="yangke_on1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="UEO-hQ-gpG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
+                                        <rect key="frame" x="145" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="hh0-bA-g4T"/>
+                                            <constraint firstAttribute="height" constant="30" id="oTv-Qk-g0Y"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="btn_camera_take">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="takePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="J6r-22-NtA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
+                                        <rect key="frame" x="270" y="10" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="JgX-Ri-ffC"/>
+                                            <constraint firstAttribute="width" constant="30" id="ZXl-0C-NjY"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="yinke_on1">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="Kbw-o0-tLP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98058280109999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="gqJ-FS-dWH" firstAttribute="centerX" secondItem="Lxa-GJ-8cr" secondAttribute="centerX" id="5Va-9E-6ia"/>
+                                    <constraint firstAttribute="height" constant="50" id="Rar-2V-nQD"/>
+                                    <constraint firstItem="FZx-nN-b5p" firstAttribute="leading" secondItem="Lxa-GJ-8cr" secondAttribute="leading" constant="20" id="UQP-DA-ACj"/>
+                                    <constraint firstItem="gqJ-FS-dWH" firstAttribute="centerY" secondItem="Lxa-GJ-8cr" secondAttribute="centerY" id="a8T-hE-RQg"/>
+                                    <constraint firstAttribute="trailing" secondItem="s1l-my-6pt" secondAttribute="trailing" constant="20" id="ank-p4-WH2"/>
+                                    <constraint firstItem="FZx-nN-b5p" firstAttribute="centerY" secondItem="gqJ-FS-dWH" secondAttribute="centerY" id="hMp-Op-Rh3"/>
+                                    <constraint firstItem="s1l-my-6pt" firstAttribute="centerY" secondItem="gqJ-FS-dWH" secondAttribute="centerY" id="ilo-yN-D6w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-Gl-z4p" customClass="GPUImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-3L-zgf">
+                                        <rect key="frame" x="20" y="16" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3KP-sR-M9N"/>
+                                            <constraint firstAttribute="width" constant="30" id="9gZ-Ag-pCM"/>
+                                        </constraints>
                                         <state key="normal" backgroundImage="btn_arrow_left_a">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -147,8 +202,11 @@
                                             <action selector="back:" destination="O4V-YF-znb" eventType="touchUpInside" id="aai-VQ-2bO"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-dT-h84">
-                                        <rect key="frame" x="176" y="241" width="231" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jMg-dT-h84">
+                                        <rect key="frame" x="176" y="244" width="231" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="227" id="7La-cQ-Aob"/>
+                                        </constraints>
                                         <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" red="0.98058280109999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" red="0.98058280109999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -156,8 +214,12 @@
                                             <action selector="sliderValueChange:" destination="O4V-YF-znb" eventType="valueChanged" id="uIz-fb-QHE"/>
                                         </connections>
                                     </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
-                                        <rect key="frame" x="276" y="14" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-mk-Kf7">
+                                        <rect key="frame" x="265" y="13" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="27y-gc-u5r"/>
+                                            <constraint firstAttribute="width" constant="35" id="Jht-QH-BJA"/>
+                                        </constraints>
                                         <state key="normal" backgroundImage="camera_btn_flip">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -166,43 +228,27 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lxa-GJ-8cr">
-                                <rect key="frame" x="-5" y="511" width="320" height="59"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZx-nN-b5p">
-                                        <rect key="frame" x="30" y="13" width="30" height="30"/>
-                                        <state key="normal" backgroundImage="yangke_on1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="yangke:" destination="O4V-YF-znb" eventType="touchUpInside" id="UEO-hQ-gpG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-my-6pt">
-                                        <rect key="frame" x="272" y="13" width="30" height="30"/>
-                                        <state key="normal" backgroundImage="yinke_on1">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="yinke:" destination="O4V-YF-znb" eventType="touchUpInside" id="Kbw-o0-tLP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqJ-FS-dWH">
-                                        <rect key="frame" x="150" y="13" width="30" height="30"/>
-                                        <state key="normal" backgroundImage="btn_camera_take">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="takePhoto:" destination="O4V-YF-znb" eventType="touchUpInside" id="J6r-22-NtA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="jMg-dT-h84" secondAttribute="centerY" id="8Rf-j3-sh6"/>
+                                    <constraint firstItem="4Qh-3L-zgf" firstAttribute="top" secondItem="ajE-Gl-z4p" secondAttribute="top" constant="16" id="L18-a8-g8O"/>
+                                    <constraint firstItem="4Qh-3L-zgf" firstAttribute="centerY" secondItem="WXU-mk-Kf7" secondAttribute="centerY" constant="0.5" id="MYD-6A-73A"/>
+                                    <constraint firstAttribute="trailing" secondItem="jMg-dT-h84" secondAttribute="trailing" constant="-85" id="Ohv-1c-RN7"/>
+                                    <constraint firstAttribute="trailing" secondItem="WXU-mk-Kf7" secondAttribute="trailing" constant="20" id="R3i-xl-BWa"/>
+                                    <constraint firstItem="4Qh-3L-zgf" firstAttribute="leading" secondItem="ajE-Gl-z4p" secondAttribute="leading" constant="20" id="cm1-VE-6Dg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="top" secondItem="ajE-Gl-z4p" secondAttribute="bottom" id="HFj-c1-iUC"/>
+                            <constraint firstAttribute="trailing" secondItem="Lxa-GJ-8cr" secondAttribute="trailing" id="Qu2-N7-e9Q"/>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="bottom" secondItem="LwI-KX-dGJ" secondAttribute="top" id="cNV-uP-XzU"/>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="leading" secondItem="Lxa-GJ-8cr" secondAttribute="leading" id="cWf-bz-mPe"/>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="trailing" secondItem="Lxa-GJ-8cr" secondAttribute="trailing" id="fOV-4e-Pe6"/>
+                            <constraint firstItem="Lxa-GJ-8cr" firstAttribute="leading" secondItem="nrl-eb-a7C" secondAttribute="leading" id="uy1-Kn-Rqo"/>
+                            <constraint firstItem="ajE-Gl-z4p" firstAttribute="top" secondItem="exv-Ic-72F" secondAttribute="bottom" id="xTV-Ub-TtD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Sii-Gr-Pg0"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -217,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="47"/>
+            <point key="canvasLocation" x="420" y="55"/>
         </scene>
         <!--妙趣剪纸-->
         <scene sceneID="ZbI-zQ-Ouw">
@@ -385,7 +431,6 @@
         <image name="main_free_off" width="300" height="300"/>
         <image name="main_learn_off" width="300" height="300"/>
         <image name="main_works_off" width="300" height="300"/>
-        <image name="shadow_off" width="240" height="94"/>
         <image name="top_bar" width="1" height="44"/>
         <image name="yangke_on1" width="40" height="40"/>
         <image name="yinke_on1" width="40" height="40"/>

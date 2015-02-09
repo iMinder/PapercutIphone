@@ -46,7 +46,7 @@
 {
     [super viewDidAppear:animated];
     
-    //[self setUp];
+    [self setUp];
 }
 
 - (AVAudioPlayer *)player
@@ -68,8 +68,8 @@
 }
 - (void)setUp
 {
-    kStopPlaySound_ = NO;
     self.kStopPlaySound = [[NSUserDefaults standardUserDefaults]boolForKey:@"kStopPlaySound"];
+    [self playServiceSound];
 }
 - (void)setKStopPlaySound:(BOOL)kStopPlaySound
 {
@@ -85,9 +85,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    if (kStopPlaySound_ == YES)
+    {
+        self.player = nil;
+    }
 }
-
-
 
 #pragma mark - SoundService
 - (void)playServiceSound

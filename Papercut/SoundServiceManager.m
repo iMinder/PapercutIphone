@@ -35,15 +35,12 @@
 - (AVAudioPlayer *)player
 {
     if (!_player) {
-        
-//        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"mp3"];
         self.fileURL = [[NSBundle mainBundle]URLForResource:@"sound" withExtension:@"mp3"];
         if ([[NSFileManager defaultManager]fileExistsAtPath:[self.fileURL path]])
         {
             _player = [[AVAudioPlayer alloc] initWithContentsOfURL:self.fileURL fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
             _player.numberOfLoops = -1;
             _player.volume = 1.0;
-            _player.delegate = self;
             self.kStopPlaySound = YES;
             [_player prepareToPlay];
         }
@@ -82,10 +79,4 @@
     [self playServiceSound];
 }
 
-#pragma mark - Audio Delegate
-- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player
-                                 error:(NSError *)error
-{
-    NSLog(@"decode error %@", error);
-}
 @end
