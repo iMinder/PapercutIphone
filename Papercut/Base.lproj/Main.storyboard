@@ -82,12 +82,9 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC4-96-554">
                                             <rect key="frame" x="73" y="0.0" width="103" height="25"/>
                                             <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_bar" translatesAutoresizingMaskIntoConstraints="NO" id="yH7-5L-lGr">
-                                            <rect key="frame" x="0.0" y="1" width="248" height="25"/>
-                                        </imageView>
                                     </subviews>
                                     <connections>
                                         <outlet property="title" destination="uC4-96-554" id="bd5-C7-Mp7"/>
@@ -431,7 +428,6 @@
         <image name="main_free_off" width="300" height="300"/>
         <image name="main_learn_off" width="300" height="300"/>
         <image name="main_works_off" width="300" height="300"/>
-        <image name="top_bar" width="1" height="44"/>
         <image name="yangke_on1" width="40" height="40"/>
         <image name="yinke_on1" width="40" height="40"/>
     </resources>

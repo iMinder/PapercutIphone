@@ -213,7 +213,7 @@ static CGFloat const RadiusFactor = 15;
         WDCanvasController *canvasController = [[WDCanvasController alloc] init];
         [self.navigationController pushViewController:canvasController animated:YES];
     
-        CGSize size = CGSizeMake(1024, 1024);
+        CGSize size = CGSizeMake(480, 640);
         [[WDPaintingManager sharedInstance] createNewPaintingWithSize:size afterSave:^(WDDocument *document) {
             // set the document before setting the editing flag
             canvasController.document = document;

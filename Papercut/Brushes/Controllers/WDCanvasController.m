@@ -1252,14 +1252,15 @@
 {    
     UIView *background = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     background.opaque = YES;
-    background.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+    UIImage *image = [UIImage imageNamed:@"back_fill"];
+    background.backgroundColor = [UIColor colorWithPatternImage:image]; //[UIColor colorWithWhite:0.95 alpha:1];
     self.view = background;
     
-//    //整洁背景图片
+    //整洁背景图片
 //    UIImageView *bg = [[UIImageView alloc]initWithFrame:background.bounds];
 //    [bg setImage:[UIImage imageNamed:@"back_fill"]];
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]]];
-    //[self.view addSubview:bg];
+//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]]];
+//    [self.view addSubview:bg];
     if (self.painting) {
         // background painting view
         //动态展示每一次制作过程的画布
@@ -1644,8 +1645,13 @@
                 }
                 canvas_.painting = self.painting;
             } else {
-                canvas_ = [[WDCanvas alloc] initWithFrame:self.view.bounds];
+                canvas_ = [[WDCanvas alloc] init];
+                
+                CGFloat scale = [UIApplication sharedApplication].keyWindow.contentScaleFactor;
+                
                 canvas_.painting = self.painting;
+                canvas_.frame = CGRectMake(0, 0, self.painting.dimensions.width / 2, self.painting.dimensions.height / 2);
+                canvas_.sharpCenter = self.view.sharpCenter;
                 canvas_.controller = self;
 
                 //[[WDStylusManager sharedStylusManager].pogoManager registerView:canvas_];

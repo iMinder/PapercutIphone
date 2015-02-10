@@ -47,16 +47,9 @@
 - (void)setUp
 {
     self.collectionView.backgroundColor = [UIColor clearColor];
-//    LineLayout *layout = [LineLayout new];
-//    [self.collectionView setCollectionViewLayout:layout];
-   // [self.collectionView registerClass:[PaperCutLearnCell class] forCellWithReuseIdentifier:@"cellId"];
-//    NSBundle *mainBundle = [NSBundle mainBundle];
-//    UINib *nib = [UINib nibWithNibName:@"learnCell" bundle:mainBundle];
-//    [self.collectionView registerNib:nib forCellWithReuseIdentifier:@"learnCell"];
     self.version = [UIDeviceHardware platform];
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     [layout setSectionInset:[self Inset]];
-    
     NSString *path = [[NSBundle mainBundle]pathForResource:@"Learn" ofType:@"plist"];
     if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
         self.items = [NSArray arrayWithContentsOfFile:path];
