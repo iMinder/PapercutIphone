@@ -8,27 +8,25 @@
 
 #import "PaperToolBar.h"
 #import "ToolCell.h"
+NSString *const CELL_ID = @"MY_CELL";
 
-const NSUInteger    kPaperDefaultBarHeight = 50;
-const NSUInteger    kLandsdcapePhoneBarHeight = 32;
-const float         kBarItemShadowOpacity = 0.9f;
-const NSTimeInterval kPaperAnimatedDuration = 0.3;
-const NSUInteger    kToolItemSize = 30;
+static const NSUInteger    kPaperDefaultBarHeight = 50;
+//static const NSUInteger    kLandsdcapePhoneBarHeight = 32;
+//static const float         kBarItemShadowOpacity = 0.9f;
+static const NSTimeInterval kPaperAnimatedDuration = 0.3;
+static const NSUInteger    kToolItemSize = 30;
 
-@interface PaperToolBar()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-
-@property (nonatomic, strong) UICollectionView *collectionView;
+@interface PaperToolBar()
 
 @end
 
 @implementation PaperToolBar
 
-+(PaperToolBar *)bottomPaperBarWithTool:(UIToolbar *)toolBar
++ (PaperToolBar *)bottomPaperBarWithTool:(UIToolbar *)toolBar
 {
     CGFloat toolY = toolBar.frame.origin.y;
-    
     PaperToolBar *paperToolbar = [[PaperToolBar alloc]initWithFrame:CGRectMake(0, toolY, SCREEN_WIDTH, kPaperDefaultBarHeight)];
-    
+
     return paperToolbar;
 }
 
@@ -47,13 +45,12 @@ const NSUInteger    kToolItemSize = 30;
         self.collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:flowLayout];
         [self addSubview:_collectionView];
         self.collectionView.backgroundColor = [UIColor clearColor];
-        self.collectionView.delegate = self;
-        self.collectionView.dataSource = self;
-        [self.collectionView registerClass:[ToolCell class] forCellWithReuseIdentifier:@"MY_CELL"];
+        [self.collectionView registerClass:[ToolCell class] forCellWithReuseIdentifier:CELL_ID];
         self.hidden = YES;
     }
     return self;
 }
+
 
 - (void)hideToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb
 {
@@ -93,46 +90,5 @@ const NSUInteger    kToolItemSize = 30;
         [self hideToolBar:YES fromToolBar:tb];
     }
 
-}
-
-- (void)setItems:(NSArray *)items
-{
-    if (items == _items) {
-        return;
-    }
-    _items = items;
-    [self.collectionView reloadData];
-    
-}
-#pragma mark - UICollectionView
-
-- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
-{
-    return [self.items count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
-{
-    ToolCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"MY_CELL" forIndexPath:indexPath];
-    id path = [self.items objectAtIndex:indexPath.row];
-    if ([path isKindOfClass:[NSString class]])
-    {
-        UIImage *image = [UIImage imageNamed:path];
-        [cell.imageView setImage:image];
-    }
-    return cell;
-}
-
-#pragma mark UICollectionView DataSource
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if ([self.delegate respondsToSelector:@selector(paperToolBarItemDidSelected:)])
-    {
-        [self.delegate paperToolBarItemDidSelected:indexPath];
-    }
-    
-    NSLog(@"no delegate response to select item");
 }
 @end

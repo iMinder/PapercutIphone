@@ -37,12 +37,6 @@
     [super viewWillAppear:animated];
 }
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-
-}
-
 #pragma mark  - setup
 - (void)setUp
 {

@@ -8,21 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol PaperToolBarDelegate<NSObject>
-
-- (void)paperToolBarItemDidSelected:(NSIndexPath*)indexPath;
-
-@end
-
+extern NSString * const CELL_ID;
 @interface PaperToolBar : UIView
 
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong)NSArray *items;
-@property (nonatomic, weak)id<PaperToolBarDelegate>delegate;
-
 
 + (PaperToolBar *)bottomPaperBarWithTool:(UIToolbar *)toolBar;
 
-- (void)hideToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb;
-- (void)showToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb;
+- (void)hideToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb ;
+- (void)showToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb ;
 
 @end

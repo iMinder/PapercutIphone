@@ -115,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhC-ZM-26G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="-572"/>
+            <point key="canvasLocation" x="730" y="-569"/>
         </scene>
         <!--剪纸相机-->
         <scene sceneID="CQG-A8-MEh">
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DN-DU-h1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="-1210"/>
+            <point key="canvasLocation" x="621" y="-1296"/>
         </scene>
         <!--我的作品-->
         <scene sceneID="cqg-tV-Rdq">

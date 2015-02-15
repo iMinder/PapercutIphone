@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToolCell : UICollectionViewCell
+@interface ToolCell :UITableViewCell
 
-@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *tool;
+
 
 @end

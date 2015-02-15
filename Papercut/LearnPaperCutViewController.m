@@ -10,6 +10,13 @@
 #import "WDColorPickerController.h"
 #import "WDColor.h"
 #import "PaperToolBar.h"
+#import "ToolCell.h"
+
+static const NSUInteger    kPaperDefaultBarHeight = 200;
+//static const NSUInteger    kLandsdcapePhoneBarHeight = 32;
+//static const float         kBarItemShadowOpacity = 0.9f;
+static const NSTimeInterval kPaperAnimatedDuration = 0.3;
+static const NSUInteger    kToolItemSize = 30;
 
 typedef enum : NSUInteger {
     PaperToolTypeNone,
@@ -17,11 +24,14 @@ typedef enum : NSUInteger {
     PaperToolTypeDecorate,
 } PaperToolType;
 
-@interface LearnPaperCutViewController ()<UIGestureRecognizerDelegate, PaperToolBarDelegate>
+@interface LearnPaperCutViewController ()<UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic)BOOL isColorSet;
 @property (nonatomic)PaperToolBar *paperToolBar;
 @property (nonatomic)PaperToolType currentType;
+@property (nonatomic, strong) UICollectionView *toolView;
+@property (nonatomic, strong) NSArray *items;
+
 @end
 
 @implementation LearnPaperCutViewController
@@ -32,41 +42,69 @@ typedef enum : NSUInteger {
     //[self configureGuestures];
     
     self.currentType = PaperToolTypeNone;
-    //self.navigationController.hidesBarsOnTap = YES;
-}
-
-
-- (PaperToolBar *)paperToolBar
-{
-    if (!_paperToolBar)
-    {
-        _paperToolBar = [PaperToolBar bottomPaperBarWithTool:self.navigationController.toolbar];
-        _paperToolBar.delegate = self;
-        [self.view addSubview:_paperToolBar];
-    }
-    return _paperToolBar;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    self.paperToolBar = nil;
+    NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
+    self.items = items;
+    
+   [self setUp];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setToolbarHidden:NO];
     [super viewWillAppear:animated];
-
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController setToolbarHidden:NO];
-    [super viewDidAppear:animated];
+- (void)setUp {
+
+    
+//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+//    flowLayout.itemSize = CGSizeMake(kToolItemSize, kToolItemSize);
+//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
+//    flowLayout.minimumLineSpacing = 44;
+//    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//    
+//    CGRect frame = CGRectMake(0, self.navigationController.toolbar.frame.origin.y, SCREEN_WIDTH, kPaperDefaultBarHeight);
+//    self.toolView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:flowLayout];
+//    self.toolView.backgroundColor = [UIColor redColor];
+//    NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
+//    self.items = items;
+//    
+//    self.toolView.dataSource = self;
+//    self.toolView.delegate = self;
+//  
+//    self.toolView.hidden = YES;
+//    
+//    [self.toolView registerClass:[ToolCell class] forCellWithReuseIdentifier:@"my_cell"];
+//    [self.view insertSubview:self.toolView belowSubview:self.navigationController.toolbar];
+    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 44, SCREEN_WIDTH)];
+    table.dataSource = self;
+    table.delegate = self;
+    
+    table.backgroundColor = [UIColor redColor];
+    table.transform = CGAffineTransformRotate(table.transform, - M_PI_2);
+    table.center = CGPointMake(self.view.center.x, table.center.y);
+    [self.view addSubview:table];
+    [table registerClass:[ToolCell class] forCellReuseIdentifier:@"my_cell"];
+    
     
 }
+
+#pragma mark UITableView method
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.items count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ToolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"my_cell"];
+    [cell.imageView setImage:[UIImage imageNamed:@"stylus_selected"]];
+    return cell;
+    
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -163,8 +201,10 @@ typedef enum : NSUInteger {
 {
     self.currentType = PaperToolTypeFold;
     NSArray *items = @[@"gear",@"new",@"add",@"add"];
-    self.paperToolBar.items = items;
-    [self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
+    self.items  = items;
+    [self.toolView reloadData];
+    [self showToolBar:YES fromToolBar:self.navigationController.toolbar];
+    
 }
 - (void)undo
 {
@@ -180,15 +220,71 @@ typedef enum : NSUInteger {
 {
     self.currentType = PaperToolTypeDecorate;
     NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
-    self.paperToolBar.items = items;
-    [self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
+    self.items = items;
+    [self showToolBar:YES fromToolBar:self.navigationController.toolbar];
 }
 
+#pragma mark UICollectionViewController Delegate
 
-#pragma mark - PaperToolBarDelegate
-- (void)paperToolBarItemDidSelected:(NSIndexPath *)indexPath
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+//{
+//    return  [self.items count];
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    ToolCell *cell = [self.toolView dequeueReusableCellWithReuseIdentifier:@"my_cell" forIndexPath:indexPath];
+//    [cell.imageView setImage:[UIImage imageNamed:self.items[indexPath.row]]];
+//    return cell;
+//}
+//
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSLog(@"select item at indext %d",indexPath.row);
+//}
+//
+#pragma mark - ToolView interface change
+
+- (void)hideToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb
 {
     
+    if (!self.toolView.hidden)
+    {
+        tb.userInteractionEnabled = NO;
+        self.view.userInteractionEnabled = NO;
+        
+        [UIView animateWithDuration:kPaperAnimatedDuration animations:^{
+            self.toolView.center = CGPointMake(self.toolView.center.x, self.toolView.center.y + kPaperDefaultBarHeight);
+        } completion:^(BOOL finished) {
+            self.toolView.hidden = YES;
+            tb.userInteractionEnabled = YES;
+            self.view.userInteractionEnabled = YES;
+        }];
+    }
+    
 }
+
+- (void)showToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb
+{
+    if (self.toolView.hidden)
+    {
+        tb.userInteractionEnabled = NO;
+        self.view.userInteractionEnabled = NO;
+        
+        [UIView animateWithDuration:kPaperAnimatedDuration animations:^{
+            self.toolView.center = CGPointMake(self.toolView.center.x, self.toolView.center.y - kPaperDefaultBarHeight);
+        } completion:^(BOOL finished) {
+            tb.userInteractionEnabled = YES;
+            self.view.userInteractionEnabled = YES;
+            self.toolView.hidden = NO;
+        }];
+    }
+    else
+    {
+        [self hideToolBar:YES fromToolBar:tb];
+    }
+    
+}
+
 @end
 
