@@ -8,6 +8,7 @@
 
 #import "PaperCutAppDelegate.h"
 #import "SoundServiceManager.h"
+#import "SVProgressHUD.h"
 
 #define RGBA(r,g,b,a) [UIColor \
                         colorWithRed:r \
@@ -20,12 +21,13 @@
 - (void)setup
 {
   
-   // [[UIToolbar appearance]setBarTintColor:RGBA(249,246,147,1.0)];
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     
-    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
 
-    [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bar"] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+   [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+
+//    [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bar"] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
    // [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"world_blank"] forBarMetrics:UIBarMetricsDefault];
     //[[UIToolbar appearance]setTintColor:[UIColor whiteColor]];
     //设置navigation 里面的字体颜色
@@ -35,10 +37,11 @@
     
     [[UINavigationBar appearance]setTitleTextAttributes:attributes];
     
-    //设置返回按钮的颜色
-//    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class] ,nil]setTitleTextAttributes:attributes forState:UIControlStateNormal];
     [[UIToolbar appearance] setTintColor:[UIColor whiteColor]];
-
+    [[SVProgressHUD appearance] setHudBackgroundColor:[UIColor blackColor]];
+    [[SVProgressHUD appearance] setHudForegroundColor:[UIColor whiteColor]];
+    [[SVProgressHUD  appearance] setHudErrorImage:[UIImage imageNamed:@"error"]];
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

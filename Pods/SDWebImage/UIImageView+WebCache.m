@@ -127,6 +127,28 @@ static char imageURLKey;
     [self sd_cancelImageLoadOperationWithKey:@"UIImageViewAnimationImages"];
 }
 
+- (void)sd_downloadImagesWithURLs:(NSArray *)arrayOfURLs
+{
+    [self sd_cancelCurrentAnimationImagesLoad];
+    __weak UIImageView *wself = self;
+    
+    NSMutableArray *operationsArray = [[NSMutableArray alloc] init];
+    
+    for (NSURL *logoImageURL in arrayOfURLs) {
+        id <SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadImageWithURL:logoImageURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            if (!wself) return;
+            dispatch_main_sync_safe(^{
+                __strong UIImageView *sself = wself;
+                if (sself && image) {
+                    NSLog(@"down load images success");
+                }
+            });
+        }];
+        [operationsArray addObject:operation];
+    }
+    
+    [self sd_setImageLoadOperation:[NSArray arrayWithArray:operationsArray] forKey:@"UIImageViewAnimationImages"];
+}
 @end
 
 

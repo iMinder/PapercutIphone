@@ -16,7 +16,7 @@ static const NSUInteger    kPaperDefaultBarHeight = 200;
 //static const NSUInteger    kLandsdcapePhoneBarHeight = 32;
 //static const float         kBarItemShadowOpacity = 0.9f;
 static const NSTimeInterval kPaperAnimatedDuration = 0.3;
-static const NSUInteger    kToolItemSize = 30;
+//static const NSUInteger    kToolItemSize = 30;
 
 typedef enum : NSUInteger {
     PaperToolTypeNone,
@@ -53,6 +53,8 @@ typedef enum : NSUInteger {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self.navigationController setToolbarHidden:NO];
     [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
+    
 }
 
 - (void)setUp {

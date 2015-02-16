@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0707811A90D2A700CC3CF1 /* LearnCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0707801A90D2A700CC3CF1 /* LearnCollectionCell.m */; };
+		8C0707841A91597400CC3CF1 /* LearnPaperPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0707831A91597400CC3CF1 /* LearnPaperPopViewController.m */; };
+		8C2431D11A91B68200B2CE50 /* LearnDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C2431D01A91B68200B2CE50 /* LearnDetail.plist */; };
 		8C2E06811A4AFF2E0042C98B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06801A4AFF2E0042C98B /* AudioToolbox.framework */; };
 		8C2E06831A4AFF3A0042C98B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06821A4AFF3A0042C98B /* MobileCoreServices.framework */; };
 		8C2E06851A4AFF460042C98B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2E06841A4AFF460042C98B /* Accelerate.framework */; };
@@ -485,6 +488,11 @@
 /* Begin PBXFileReference section */
 		23C8C9F41242218DBB6799D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7334EE418BB8C61E9180104A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8C07077F1A90D2A700CC3CF1 /* LearnCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnCollectionCell.h; sourceTree = "<group>"; };
+		8C0707801A90D2A700CC3CF1 /* LearnCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnCollectionCell.m; sourceTree = "<group>"; };
+		8C0707821A91597400CC3CF1 /* LearnPaperPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPaperPopViewController.h; sourceTree = "<group>"; };
+		8C0707831A91597400CC3CF1 /* LearnPaperPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnPaperPopViewController.m; sourceTree = "<group>"; };
+		8C2431D01A91B68200B2CE50 /* LearnDetail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LearnDetail.plist; sourceTree = "<group>"; };
 		8C2E06801A4AFF2E0042C98B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8C2E06821A4AFF3A0042C98B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8C2E06841A4AFF460042C98B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -1237,14 +1245,19 @@
 			isa = PBXGroup;
 			children = (
 				8CAA88331A7B36CA00FAC4BA /* PaperCutBrowserController.h */,
+				8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */,
 				8CAA88361A7B387F00FAC4BA /* PaperCutLearnCell.h */,
 				8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */,
-				8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */,
+				8C07077F1A90D2A700CC3CF1 /* LearnCollectionCell.h */,
+				8C0707801A90D2A700CC3CF1 /* LearnCollectionCell.m */,
 				8CAA88971A83AA4100FAC4BA /* PapercutHttpAPIClient.h */,
 				8CAA88981A83AA4100FAC4BA /* PapercutHttpAPIClient.m */,
 				8CAA88AC1A83B3EE00FAC4BA /* Learn.plist */,
+				8C2431D01A91B68200B2CE50 /* LearnDetail.plist */,
 				8CAA895B1A84B26200FAC4BA /* HeaderView.h */,
 				8CAA895C1A84B26200FAC4BA /* HeaderView.m */,
+				8C0707821A91597400CC3CF1 /* LearnPaperPopViewController.h */,
+				8C0707831A91597400CC3CF1 /* LearnPaperPopViewController.m */,
 			);
 			name = Learn;
 			sourceTree = "<group>";
@@ -2488,6 +2501,7 @@
 				8C2E098C1A5058D40042C98B /* export_photoshop_icon.png in Resources */,
 				8C2E09E31A5058D40042C98B /* visible@2x.png in Resources */,
 				8C2E095B1A5058D40042C98B /* backButton@2x.png in Resources */,
+				8C2431D11A91B68200B2CE50 /* LearnDetail.plist in Resources */,
 				8C2E09D71A5058D40042C98B /* trash@2x.png in Resources */,
 				8C2E09721A5058D40042C98B /* Default.png in Resources */,
 				8C2E09531A5058D40042C98B /* add.png in Resources */,
@@ -2713,6 +2727,7 @@
 				8CAA89551A84900000FAC4BA /* UIAlertView+AFNetworking.m in Sources */,
 				8C2E07B61A4B04640042C98B /* WDAddPath.m in Sources */,
 				8CAA894C1A84900000FAC4BA /* UIImage+GIF.m in Sources */,
+				8C0707811A90D2A700CC3CF1 /* LearnCollectionCell.m in Sources */,
 				8C2E07B21A4B04640042C98B /* UIImage+Resize.m in Sources */,
 				8C2E07C81A4B04640042C98B /* WDActivity.m in Sources */,
 				8C2E07F61A4B04640042C98B /* WDFileData.m in Sources */,
@@ -2745,6 +2760,7 @@
 				8C2E07C11A4B04640042C98B /* WDReorderLayers.m in Sources */,
 				8C2E07E51A4B04640042C98B /* WDRandom.m in Sources */,
 				8C2E07B01A4B04640042C98B /* UIColor+Additions.m in Sources */,
+				8C0707841A91597400CC3CF1 /* LearnPaperPopViewController.m in Sources */,
 				8CAA89311A84900000FAC4BA /* AFURLRequestSerialization.m in Sources */,
 				8C2E07E91A4B04640042C98B /* WDSpiralGenerator.m in Sources */,
 				8C2E081E1A4B04640042C98B /* WDImageButton.m in Sources */,

@@ -1647,8 +1647,6 @@
             } else {
                 canvas_ = [[WDCanvas alloc] init];
                 
-                CGFloat scale = [UIApplication sharedApplication].keyWindow.contentScaleFactor;
-                
                 canvas_.painting = self.painting;
                 canvas_.frame = CGRectMake(0, 0, self.painting.dimensions.width / 2, self.painting.dimensions.height / 2);
                 canvas_.sharpCenter = self.view.sharpCenter;

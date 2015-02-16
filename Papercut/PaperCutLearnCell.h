@@ -8,9 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PaperCutLearnCell : UICollectionViewCell
+typedef void(^SelectBlock)(NSInteger index);
 
-@property (weak, nonatomic) IBOutlet UIImageView *thumbnail;
-@property (weak, nonatomic) IBOutlet UILabel *title;
+@interface PaperCutLearnCell :UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
+
+
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, weak) IBOutlet UILabel *name;
+@property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, copy) SelectBlock selectBlock;
 
 @end
+

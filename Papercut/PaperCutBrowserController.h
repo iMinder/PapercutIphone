@@ -8,5 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PaperCutBrowserController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface PaperCutBrowserController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @end

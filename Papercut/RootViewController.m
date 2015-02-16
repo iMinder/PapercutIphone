@@ -94,7 +94,7 @@
 #pragma mark - SoundService
 - (void)playServiceSound
 {
-    if (self.player && ![self.player isPlaying] && !kStopPlaySound_)
+    if (!kStopPlaySound_ && self.player && ![self.player isPlaying])
     {
         [self.player play];
     }

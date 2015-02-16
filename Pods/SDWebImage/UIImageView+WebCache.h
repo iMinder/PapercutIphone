@@ -176,6 +176,12 @@
 
 - (void)sd_cancelCurrentAnimationImagesLoad;
 
+/**
+ *  Download an array of images 
+ *  @param arrayOfURLS an array of NSURL
+ */
+- (void)sd_downloadImagesWithURLs:(NSArray *)arrayOfURLs;
+
 @end
 
 

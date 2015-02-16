@@ -106,6 +106,67 @@
 		</array>
 	</dict>
 	<dict>
+		<key>十二生肖</key>
+		<array>
+			<dict>
+				<key>title</key>
+				<string>鸡</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Chicken_10/10.png</string>
+				<key>id</key>
+				<integer>9</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>狗</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Dog_14/14.png</string>
+				<key>id</key>
+				<integer>10</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>马</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Horse_7/7.png</string>
+				<key>id</key>
+				<integer>11</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>猴子</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Monkey_14/14.png</string>
+				<key>id</key>
+				<integer>12</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>猪</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Pig_16/16.png</string>
+				<key>id</key>
+				<integer>13</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>兔子</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Rabbit_12/12.png</string>
+				<key>id</key>
+				<integer>14</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>老虎</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/Tiger_14/14.png</string>
+				<key>id</key>
+				<integer>15</integer>
+			</dict>
+		</array>
+	</dict>
+	<dict>
 		<key>字</key>
 		<array>
 			<dict>
@@ -131,6 +192,14 @@
 				<string>http://papercut.jd-app.com/learn/DoubleXi3_11/11.png</string>
 				<key>id</key>
 				<integer>21</integer>
+			</dict>
+			<dict>
+				<key>title</key>
+				<string>鸳鸯</string>
+				<key>thumbnail</key>
+				<string>http://papercut.jd-app.com/learn/YuanYang_11/11.png</string>
+				<key>id</key>
+				<integer>22</integer>
 			</dict>
 		</array>
 	</dict>
