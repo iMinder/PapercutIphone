@@ -14,6 +14,7 @@
 #import "PaperCutAppDelegate.h"
 #import "WDCanvasController.h"
 #import "WDDocument.h"
+#import "WDActiveState.h"
 
 @interface ScrawlViewController ()<WDGridViewDataSource,UIScrollViewDelegate, WDThumbnailViewDelegate, UIActionSheetDelegate>
 
@@ -53,6 +54,38 @@
                                              selector:@selector(didEnterBackground:)
                                                  name:UIApplicationDidEnterBackgroundNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(paintingStartedSaving:)
+                                                 name:WDDocumentStartedSavingNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(paintingFinishedSaving:)
+                                                 name:WDDocumentFinishedSavingNotification
+                                               object:nil];
+}
+
+- (void) paintingStartedSaving:(NSNotification *)aNotification
+{
+    if (!savingPaintings) {
+        savingPaintings = [NSMutableSet set];
+    }
+    WDDocument *doc = (WDDocument *)aNotification.object;
+    NSArray *paintings = [[WDPaintingManager sharedInstance] paintingNames];
+    WDThumbnailView *thumbview = (WDThumbnailView *) [gridView visibleCellForIndex:[paintings indexOfObject:doc.displayName]];
+    [savingPaintings addObject:doc.displayName];
+    [thumbview startActivity];
+}
+
+- (void) paintingFinishedSaving:(NSNotification *)aNotification
+{
+    WDDocument *doc = (WDDocument *)aNotification.object;
+    NSArray *paintings = [[WDPaintingManager sharedInstance] paintingNames];
+    WDThumbnailView *thumbview = (WDThumbnailView *) [gridView visibleCellForIndex:[paintings indexOfObject:doc.displayName]];
+    [thumbview updateThumbnail:doc.thumbnail];
+    [savingPaintings removeObject:doc.displayName];
+    [thumbview stopActivity];
 }
 
 - (void)buildDefaultNavBar
@@ -224,6 +257,29 @@
     [self setUp];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [WDActiveState sharedInstance];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
+    NSUInteger currentCenteredIndex = [gridView approximateIndexOfCenter];
+    if (centeredIndex != 0 && centeredIndex != currentCenteredIndex) {
+        [self.gridView centerIndex:centeredIndex];
+    }
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+   
+    centeredIndex = [gridView approximateIndexOfCenter];
+    
+}
+
+
 - (void)setUp
 {
     [self.navigationController setNavigationBarHidden:NO];
@@ -265,6 +321,7 @@
     thumbview.tag = index;
     thumbview.action = @selector(tappedOnPainting:);
     // selectedPaintings_ should be empty if we're not editing
+    [savingPaintings containsObject:thumbview.filename] ? [thumbview startActivity] : [thumbview stopActivity];
     thumbview.selected = [selectedPaintings_ containsObject:thumbview.filename] ? YES : NO;
     
     return thumbview;

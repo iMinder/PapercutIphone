@@ -1687,6 +1687,7 @@
     // this will write a JPEG
     UIImageWriteToSavedPhotosAlbum(image, self, nil, NULL);    
 
+    [self.canvas showMessage:@"已经添加到相册"];
     // this will write a PNG
     //NSData *pngData = UIImagePNGRepresentation(image);
     //UIImage *pngImage = [UIImage imageWithData:pngData];

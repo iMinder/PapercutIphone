@@ -17,6 +17,10 @@
     
     UIActionSheet *deleteSheet_;
     
+    NSUInteger centeredIndex;
+    
+    NSMutableSet *savingPaintings;
+    
 }
 
 @end

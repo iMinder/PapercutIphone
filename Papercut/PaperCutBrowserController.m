@@ -138,7 +138,14 @@
     if ([[self.items objectAtIndex:indexPath.row] isKindOfClass:[NSDictionary class]])
     {
         NSDictionary *dic = self.items[indexPath.row];
-        cell.name.text = [[dic allKeys]firstObject];
+       
+        UIFont *font = [UIFont fontWithName:@"FZJZJW--GB1-0" size:25];
+        
+        NSDictionary *attributes = @{NSFontAttributeName : font};
+        
+        cell.name.attributedText = [[NSAttributedString alloc] initWithString:[[dic allKeys]firstObject] attributes:attributes];
+        
+        //cell.name.text = [[dic allKeys]firstObject];
         if ([dic[[dic allKeys][0]] isKindOfClass:[NSArray class]]) {
             NSArray *arr = dic[[dic allKeys][0]];
             cell.items = arr;

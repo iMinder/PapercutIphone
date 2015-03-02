@@ -334,7 +334,7 @@
 "Splotchiness" = "Splotchiness";
 
 /* swipe here to paint */
-"swipe here to paint" = "滑动这里开始绘画";
+"swipe here to paint" = "滑动这里开始编辑";
 
 /* The painting name cannot begin with a dot “.”. */
 "The painting name cannot begin with a dot “.”." = "The painting name cannot begin with a dot “.”.";
