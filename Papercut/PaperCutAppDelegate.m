@@ -11,7 +11,7 @@
 #import "SVProgressHUD.h"
 
 #define RGBA(r,g,b,a) [UIColor \
-                        colorWithRed:r \
+                        colorWithRed:r\
                         green:g \
                         blue:b  \
                         alpha:a]
@@ -22,11 +22,14 @@
 {
   
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
-    
+   
+    //设置背景色
 //    [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"top_bar"] forBarMetrics:UIBarMetricsDefault];
 
-   [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setBarTintColor:RGBA(216.0/255.0, 0, 23.0/255.0, 1.0)];
 
+    [[UIToolbar appearance] setBarTintColor:RGBA(216.0/255.0, 0, 23.0/255.0, 1.0)];
+    
 //    [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bar"] forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
    // [[UINavigationBar appearance]setBackgroundImage:[UIImage imageNamed:@"world_blank"] forBarMetrics:UIBarMetricsDefault];
     //[[UIToolbar appearance]setTintColor:[UIColor whiteColor]];

@@ -274,10 +274,10 @@
 "OK" = "确定";
 
 /* Alert text when deleting multiple paintings */
-"Once deleted, these paintings cannot be recovered." = "Once deleted, these paintings cannot be recovered.";
+"Once deleted, these paintings cannot be recovered." = "一旦删除，这些作品将无法恢复.";
 
 /* Alert text when deleting 1 painting */
-"Once deleted, this painting cannot be recovered." = "Once deleted, this painting cannot be recovered.";
+"Once deleted, this painting cannot be recovered." = "一旦删除，这件作品将无法恢复.";
 
 /* Paste Image */
 "Paste Image" = "粘贴图片";
@@ -346,7 +346,7 @@
 "There was a problem downloading “%@”. Check your network connection and try again." = "There was a problem downloading “%@”. Check your network connection and try again.";
 
 /* There was a problem opening “%@”. */
-"There was a problem opening “%@”." = "There was a problem opening “%@”.";
+"There was a problem opening “%@”." = "打开“%@” 出现问题.";
 
 /* There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update. */
 "There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update." = "There was a problem replaying this painting. It may have been created with a newer version of Brushes. Check the App Store for an update.";

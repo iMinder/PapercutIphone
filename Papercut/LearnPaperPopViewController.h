@@ -12,5 +12,6 @@
 
 @property (nonatomic, copy)NSArray *items;
 @property (assign) NSInteger index;
+@property (nonatomic, strong) NSString *name;
 
 @end

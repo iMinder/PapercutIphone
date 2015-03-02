@@ -625,11 +625,12 @@ const float         kWDBarItemShadowOpacity = 0.9f;
 
 - (void) addEdge
 {
-    self.backgroundColor  = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]];
+//    self.backgroundColor  = [UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]];
     //self.backgroundColor = [UIColor colorWithWhite:0.667f alpha:0.667f];
     //self.backgroundColor = [UIColor colorWithRed:(34.0 / 255) green:(62.0 / 255) blue:(83.0 / 255) alpha:0.5];
     
     // main edge
+    self.backgroundColor = [UIColor colorWithRed:216.0 / 255.0 green:0 blue:23.0 / 255.0 alpha:1.0];
     [self addEdge:[UIColor whiteColor] offset:1];
 }
 

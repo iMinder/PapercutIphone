@@ -41,8 +41,8 @@
     if (self.selectBlock) {
         NSDictionary *item = self.items[indexPath.row];
         NSInteger index = [item[@"id"] integerValue];
-        self.selectBlock(index);
+        NSString *name = item[@"title"];
+        self.selectBlock(name,index);
     }
-    NSLog(@"no select item at index");
 }
 @end

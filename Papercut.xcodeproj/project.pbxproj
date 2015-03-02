@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0058861A9241A600A65DDD /* ScrawlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0058851A9241A600A65DDD /* ScrawlViewController.m */; };
 		8C0707811A90D2A700CC3CF1 /* LearnCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0707801A90D2A700CC3CF1 /* LearnCollectionCell.m */; };
 		8C0707841A91597400CC3CF1 /* LearnPaperPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0707831A91597400CC3CF1 /* LearnPaperPopViewController.m */; };
 		8C2431D11A91B68200B2CE50 /* LearnDetail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C2431D01A91B68200B2CE50 /* LearnDetail.plist */; };
@@ -449,8 +450,6 @@
 		8CABB3A41A72A064003A802C /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A31A72A064003A802C /* ToolCell.m */; };
 		8CAC74561A7A39EC0001377E /* NSString+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC74551A7A39EC0001377E /* NSString+Drawing.m */; };
 		8CAC745E1A7A72740001377E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAC745D1A7A72740001377E /* MessageUI.framework */; };
-		8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */; };
-		8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CD33EA41981FD80005B0569 /* UIImage+Blend.m */; };
 		8CDF16D21933261D00112023 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D11933261D00112023 /* CoreMedia.framework */; };
 		8CDF16D41933262700112023 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D31933262700112023 /* CoreVideo.framework */; };
 		8CDF16D61933262F00112023 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16D51933262F00112023 /* OpenGLES.framework */; };
@@ -488,6 +487,8 @@
 /* Begin PBXFileReference section */
 		23C8C9F41242218DBB6799D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7334EE418BB8C61E9180104A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8C0058841A9241A600A65DDD /* ScrawlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrawlViewController.h; sourceTree = "<group>"; };
+		8C0058851A9241A600A65DDD /* ScrawlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrawlViewController.m; sourceTree = "<group>"; };
 		8C07077F1A90D2A700CC3CF1 /* LearnCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnCollectionCell.h; sourceTree = "<group>"; };
 		8C0707801A90D2A700CC3CF1 /* LearnCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnCollectionCell.m; sourceTree = "<group>"; };
 		8C0707821A91597400CC3CF1 /* LearnPaperPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPaperPopViewController.h; sourceTree = "<group>"; };
@@ -1155,10 +1156,6 @@
 		8CAC74541A7A39EC0001377E /* NSString+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Drawing.h"; sourceTree = "<group>"; };
 		8CAC74551A7A39EC0001377E /* NSString+Drawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Drawing.m"; sourceTree = "<group>"; };
 		8CAC745D1A7A72740001377E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+vImage.h"; sourceTree = "<group>"; };
-		8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+vImage.m"; sourceTree = "<group>"; };
-		8CD33EA31981FD80005B0569 /* UIImage+Blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blend.h"; sourceTree = "<group>"; };
-		8CD33EA41981FD80005B0569 /* UIImage+Blend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blend.m"; sourceTree = "<group>"; };
 		8CDF16D11933261D00112023 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		8CDF16D31933262700112023 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8CDF16D51933262F00112023 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1210,8 +1207,6 @@
 		8C250CB91934CA3A0089945F /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				8CD33EA21981FD80005B0569 /* UIImage+blend */,
-				8CD33E9E1981FD0D005B0569 /* UIImage+vImage */,
 				8C33EC941980B23B00A94FED /* custom_album */,
 				8C33EC90197FA7F000A94FED /* filters */,
 				8CDF16E71933305A00112023 /* ShowCameraViewController.h */,
@@ -1223,6 +1218,8 @@
 		8C250CBB1934CA670089945F /* Scrawl */ = {
 			isa = PBXGroup;
 			children = (
+				8C0058841A9241A600A65DDD /* ScrawlViewController.h */,
+				8C0058851A9241A600A65DDD /* ScrawlViewController.m */,
 			);
 			name = Scrawl;
 			sourceTree = "<group>";
@@ -2257,24 +2254,6 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
-		8CD33E9E1981FD0D005B0569 /* UIImage+vImage */ = {
-			isa = PBXGroup;
-			children = (
-				8CD33E9F1981FD0D005B0569 /* UIImage+vImage.h */,
-				8CD33EA01981FD0D005B0569 /* UIImage+vImage.m */,
-			);
-			path = "UIImage+vImage";
-			sourceTree = "<group>";
-		};
-		8CD33EA21981FD80005B0569 /* UIImage+blend */ = {
-			isa = PBXGroup;
-			children = (
-				8CD33EA31981FD80005B0569 /* UIImage+Blend.h */,
-				8CD33EA41981FD80005B0569 /* UIImage+Blend.m */,
-			);
-			path = "UIImage+blend";
-			sourceTree = "<group>";
-		};
 		8CDF16F51933328600112023 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2663,7 +2642,6 @@
 				8CABB3A41A72A064003A802C /* ToolCell.m in Sources */,
 				8C2E082B1A4B04640042C98B /* WDScrollView.m in Sources */,
 				8C2E085F1A4B06E60042C98B /* WDPaintingSizeController.m in Sources */,
-				8CD33EA51981FD80005B0569 /* UIImage+Blend.m in Sources */,
 				8CAA89321A84900000FAC4BA /* AFURLResponseSerialization.m in Sources */,
 				8CAA892F1A84900000FAC4BA /* AFSecurityPolicy.m in Sources */,
 				8C2E07F91A4B04640042C98B /* WDPSDWriter.m in Sources */,
@@ -2754,6 +2732,7 @@
 				8C2E07BC1A4B04640042C98B /* WDDocumentChange.m in Sources */,
 				8C2E07C51A4B04640042C98B /* WDTransformLayer.m in Sources */,
 				8CAA89541A84900000FAC4BA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				8C0058861A9241A600A65DDD /* ScrawlViewController.m in Sources */,
 				8C2E08271A4B04640042C98B /* WDPaletteBackgroundView.m in Sources */,
 				8C2E08581A4B06E60042C98B /* WDColorAdjustmentController.m in Sources */,
 				8CAA895A1A84900000FAC4BA /* UIWebView+AFNetworking.m in Sources */,
@@ -2778,7 +2757,6 @@
 				8C2E08081A4B04640042C98B /* WDBlendModePicker.m in Sources */,
 				8C2E07CB1A4B04640042C98B /* WDDocumentReplay.m in Sources */,
 				8C2E08231A4B04640042C98B /* WDMatrix.m in Sources */,
-				8CD33EA11981FD0D005B0569 /* UIImage+vImage.m in Sources */,
 				8CAA88351A7B36CA00FAC4BA /* PaperCutBrowserController.m in Sources */,
 				8C2E08331A4B04640042C98B /* WDTransformOverlay.m in Sources */,
 				8C2E07D61A4B04640042C98B /* WDBlendModes.m in Sources */,

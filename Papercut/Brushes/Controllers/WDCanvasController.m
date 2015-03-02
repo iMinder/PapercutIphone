@@ -947,7 +947,8 @@
         aBar.frame = frame;
         
         //设置topbar 颜色
-        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
+//        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
+         [aBar setBackgroundColor:[UIColor colorWithRed:216.0 / 255.0 green:0 blue:23.0 / 255.0 alpha:1.0]];
         [self.view addSubview:aBar];
         self.topBar = aBar;
     }
@@ -983,6 +984,7 @@
     }
 }
 
+//编辑时显示的内容
 - (NSArray *) editingTopBarItems
 {
     if (!editingTopBarItems) {
@@ -1044,14 +1046,14 @@
 
 - (NSArray *) replayTopBarItems
 {
-//    WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
-//    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
-//    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
-//                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
-//                                             target:self
-//                                             action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
-//    
-//    return @[fixed, backButton, [WDBarItem flexibleItem], action];
+    WDBarItem *fixed = [WDBarItem fixedItemWithWidth:5];
+    WDBarItem *backButton = [WDBarItem backButtonWithTitle:NSLocalizedString(@"Gallery", @"Gallery") target:self action:@selector(goBack:)];
+    WDBarItem *action = [WDBarItem barItemWithImage:[UIImage relevantImageNamed:@"action.png"]
+                                     landscapeImage:[UIImage relevantImageNamed:@"actionLandscape.png"]
+                                             target:self
+                                             action:self.runningOnPhone ? @selector(showActionSheet:) : @selector(showActionMenu:)];
+    
+    return @[fixed, backButton, [WDBarItem flexibleItem], action];
     return nil;
 }
 
@@ -1077,9 +1079,9 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
-        UIImage * bg = [UIImage imageNamed:@"top_bar"];
-        [aBar setBackgroundColor:[UIColor colorWithPatternImage:bg]];
-        
+//        UIImage * bg = [UIImage imageNamed:@"top_bar"];
+//        [aBar setBackgroundColor:[UIColor colorWithPatternImage:bg]];
+        [aBar setBackgroundColor:[UIColor colorWithRed:216.0 / 255.0 green:0 blue:23.0 / 255.0 alpha:1.0]];
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
         
@@ -1256,11 +1258,6 @@
     background.backgroundColor = [UIColor colorWithPatternImage:image]; //[UIColor colorWithWhite:0.95 alpha:1];
     self.view = background;
     
-    //整洁背景图片
-//    UIImageView *bg = [[UIImageView alloc]initWithFrame:background.bounds];
-//    [bg setImage:[UIImage imageNamed:@"back_fill"]];
-//    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]]];
-//    [self.view addSubview:bg];
     if (self.painting) {
         // background painting view
         //动态展示每一次制作过程的画布
@@ -1648,7 +1645,7 @@
                 canvas_ = [[WDCanvas alloc] init];
                 
                 canvas_.painting = self.painting;
-                canvas_.frame = CGRectMake(0, 0, self.painting.dimensions.width / 2, self.painting.dimensions.height / 2);
+                canvas_.frame = CGRectMake(0, 0, self.painting.dimensions.width / 2 * 1.3, self.painting.dimensions.height / 2 * 1.3);
                 canvas_.sharpCenter = self.view.sharpCenter;
                 canvas_.controller = self;
 

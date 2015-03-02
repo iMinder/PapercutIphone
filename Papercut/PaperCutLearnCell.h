@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^SelectBlock)(NSInteger index);
+typedef void(^SelectBlock)(NSString *name, NSInteger index);
 
 @interface PaperCutLearnCell :UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 

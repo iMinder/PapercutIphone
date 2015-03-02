@@ -284,7 +284,7 @@
         frame.origin.y  = CGRectGetHeight(self.view.bounds) - CGRectGetHeight(aBar.frame);
         frame.size.width = CGRectGetWidth(self.view.bounds);
         aBar.frame = frame;
-        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
+//        [aBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"top_bar"]]];
         [self.view addSubview:aBar];
         self.bottomBar = aBar;
     }

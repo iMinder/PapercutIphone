@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoS-8N-nEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-280" y="-232"/>
+            <point key="canvasLocation" x="-804" y="-656"/>
         </scene>
         <!--Paper Cut Browser Controller-->
         <scene sceneID="CvI-8c-4dG">
@@ -42,6 +42,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="173" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-ZF-a0K">
                                 <rect key="frame" x="37" y="96" width="246" height="440"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_ID" rowHeight="173" id="bqD-pZ-qfY" customClass="PaperCutLearnCell">
                                         <rect key="frame" x="0.0" y="0.0" width="246" height="44"/>
@@ -150,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhC-ZM-26G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="537" y="-656"/>
+            <point key="canvasLocation" x="425" y="-688"/>
         </scene>
         <!--Learn Paper Pop View Controller-->
         <scene sceneID="2fL-eb-OW7">
@@ -176,17 +177,88 @@
                                 </items>
                                 <color key="barTintColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cut_line" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-mL-pg8">
+                                <rect key="frame" x="123" y="307" width="100" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="Kin-gt-icW"/>
+                                    <constraint firstAttribute="width" constant="100" id="LW4-Rw-sYh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="裁剪" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKQ-kd-vTY">
+                                <rect key="frame" x="238" y="298" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fold_line" translatesAutoresizingMaskIntoConstraints="NO" id="eTa-X8-9tL">
+                                <rect key="frame" x="294" y="307" width="100" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="7LK-hE-iWP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="折叠" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWO-Z6-KVn">
+                                <rect key="frame" x="411" y="298" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFl-l1-Rs4">
+                                <rect key="frame" x="512" y="139" width="40" height="41"/>
+                                <state key="normal" backgroundImage="learn_next_off">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="next:" destination="3MI-oG-dWE" eventType="touchUpInside" id="gKY-04-bfs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euV-Ps-Be0">
+                                <rect key="frame" x="16" y="139" width="40" height="41"/>
+                                <state key="normal" backgroundImage="learn_back_off">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previous:" destination="3MI-oG-dWE" eventType="touchUpInside" id="us1-QD-Nio"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZ4-ct-KbG">
+                                <rect key="frame" x="216" y="11" width="137" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="137" id="aLB-fK-ODa"/>
+                                    <constraint firstAttribute="height" constant="21" id="gvo-Xq-DZK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="a1E-Bm-76Z">
+                                <rect key="frame" x="188" y="12" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="las-5o-gPk" secondAttribute="trailing" id="2br-rN-BiV"/>
                             <constraint firstItem="las-5o-gPk" firstAttribute="leading" secondItem="ivb-n6-j6H" secondAttribute="leading" id="B61-wN-qbx"/>
+                            <constraint firstItem="hwg-mL-pg8" firstAttribute="leading" secondItem="ivb-n6-j6H" secondAttribute="leading" constant="123" id="BfK-0y-Ivb"/>
+                            <constraint firstItem="las-5o-gPk" firstAttribute="centerX" secondItem="XZ4-ct-KbG" secondAttribute="centerX" constant="-0.5" id="Cy8-8o-QpI"/>
+                            <constraint firstItem="eTa-X8-9tL" firstAttribute="leading" secondItem="zKQ-kd-vTY" secondAttribute="trailing" constant="22" id="ENU-gR-WWs"/>
+                            <constraint firstItem="zGE-aW-mRe" firstAttribute="top" secondItem="zKQ-kd-vTY" secondAttribute="bottom" constant="1" id="KGf-U2-iIB"/>
+                            <constraint firstItem="zGE-aW-mRe" firstAttribute="top" secondItem="hwg-mL-pg8" secondAttribute="bottom" constant="9" id="Ngv-0R-a2y"/>
+                            <constraint firstItem="XZ4-ct-KbG" firstAttribute="leading" secondItem="a1E-Bm-76Z" secondAttribute="trailing" constant="8" id="PSa-RL-BsG"/>
+                            <constraint firstItem="a1E-Bm-76Z" firstAttribute="centerY" secondItem="XZ4-ct-KbG" secondAttribute="centerY" id="QwT-qg-uTV"/>
                             <constraint firstItem="las-5o-gPk" firstAttribute="top" secondItem="wYp-Tl-JBK" secondAttribute="bottom" id="R9T-BZ-bfF"/>
+                            <constraint firstItem="las-5o-gPk" firstAttribute="centerY" secondItem="XZ4-ct-KbG" secondAttribute="centerY" constant="0.5" id="WXn-yz-08o"/>
+                            <constraint firstItem="zKQ-kd-vTY" firstAttribute="leading" secondItem="hwg-mL-pg8" secondAttribute="trailing" constant="15" id="X0d-EY-tS3"/>
+                            <constraint firstItem="IWO-Z6-KVn" firstAttribute="leading" secondItem="eTa-X8-9tL" secondAttribute="trailing" constant="17" id="bJB-aG-DEr"/>
+                            <constraint firstItem="eTa-X8-9tL" firstAttribute="top" secondItem="hwg-mL-pg8" secondAttribute="top" id="dNZ-XX-LHx"/>
+                            <constraint firstItem="hwg-mL-pg8" firstAttribute="bottom" secondItem="eTa-X8-9tL" secondAttribute="bottom" id="gWE-2v-kay"/>
+                            <constraint firstItem="zKQ-kd-vTY" firstAttribute="baseline" secondItem="IWO-Z6-KVn" secondAttribute="baseline" id="vkA-S5-yZq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="indicator" destination="a1E-Bm-76Z" id="BLP-CS-fnT"/>
+                        <outlet property="infoLabel" destination="XZ4-ct-KbG" id="bTM-ul-mdm"/>
                         <outlet property="toolBar" destination="las-5o-gPk" id="GJK-3i-PxM"/>
                     </connections>
                 </viewController>
@@ -202,7 +274,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1176" y="-656"/>
+            <point key="canvasLocation" x="1199" y="-733"/>
         </scene>
         <!--剪纸相机-->
         <scene sceneID="CQG-A8-MEh">
@@ -259,7 +331,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.98058280109999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gqJ-FS-dWH" firstAttribute="centerX" secondItem="Lxa-GJ-8cr" secondAttribute="centerX" id="5Va-9E-6ia"/>
                                     <constraint firstAttribute="height" constant="50" id="Rar-2V-nQD"/>
@@ -347,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gQ-qe-fdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="420" y="55"/>
+            <point key="canvasLocation" x="451" y="59"/>
         </scene>
         <!--妙趣剪纸-->
         <scene sceneID="ZbI-zQ-Ouw">
@@ -462,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CG-RM-kUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="-739"/>
+            <point key="canvasLocation" x="-289" y="-583"/>
         </scene>
         <!--趣玩剪纸-->
         <scene sceneID="PC3-bq-7qI">
@@ -481,12 +553,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DN-DU-h1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="-1296"/>
+            <point key="canvasLocation" x="469" y="-1364"/>
         </scene>
         <!--我的作品-->
         <scene sceneID="cqg-tV-Rdq">
             <objects>
-                <viewController id="NHL-dR-sSg" sceneMemberID="viewController">
+                <viewController id="NHL-dR-sSg" customClass="ScrawlViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DLP-Up-cOm"/>
                         <viewControllerLayoutGuide type="bottom" id="YDK-RD-tr3"/>
@@ -494,6 +566,11 @@
                     <view key="view" contentMode="scaleToFill" id="02y-c9-pyh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_fill" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-B8-0NF">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的作品" id="rt1-wY-oLg"/>
@@ -501,16 +578,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4A-M9-MSE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="673"/>
+            <point key="canvasLocation" x="168" y="702"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back_fill" width="450" height="800"/>
         <image name="btn_arrow_left_a" width="30" height="30"/>
         <image name="btn_camera_take" width="33" height="33"/>
         <image name="btn_setting" width="50" height="50"/>
         <image name="camera_btn_flip" width="66" height="66"/>
+        <image name="cut_line" width="1126" height="15"/>
+        <image name="fold_line" width="1126" height="15"/>
         <image name="learn_back_flower" width="252" height="400"/>
+        <image name="learn_back_off" width="40" height="41"/>
         <image name="learn_bg" width="300" height="300"/>
+        <image name="learn_next_off" width="40" height="41"/>
         <image name="main_background" width="618" height="979"/>
         <image name="main_camera_off" width="300" height="300"/>
         <image name="main_free_off" width="300" height="300"/>

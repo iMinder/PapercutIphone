@@ -351,11 +351,13 @@ static CGFloat const RadiusFactor = 15;
         [self.normalFilter removeAllTargets];
         [self.sketchFilter removeAllTargets];
         [self.yangKeFilter removeAllTargets];
-        //[self.medianFilter removeAllTargets];
+        [self.medianFilter removeAllTargets];
         [self.normalFilter addTarget:self.sketchFilter];
         //[self.normalFilter addTarget:self.medianFilter];
        // [self.medianFilter addTarget:self.sketchFilter];
+        //[self.sketchFilter addTarget:self.medianFilter];
         [self.sketchFilter addTarget:self.yangKeFilter];
+       // [self.medianFilter addTarget:<#(id<GPUImageInput>)#>]
         [self.yangKeFilter addTarget:self.medianFilter];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.currentSource addTarget:self.normalFilter];
@@ -375,11 +377,17 @@ static CGFloat const RadiusFactor = 15;
         [self.normalFilter removeAllTargets];
         [self.sketchFilter removeAllTargets];
         [self.yinKeFilter removeAllTargets];
+        [self.medianFilter removeAllTargets];
+        
         [self.normalFilter addTarget:self.sketchFilter];
         [self.sketchFilter addTarget:self.yinKeFilter];
+        [self.yinKeFilter addTarget:self.medianFilter];
+        //[self.medianFilter addTarget:self.yinKeFilter];
+       // [self.sketchFilter addTarget:self.yinKeFilter];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.currentSource addTarget:self.normalFilter];
-            [self.yinKeFilter addTarget:(GPUImageView *)self.cameraView];
+            [self.medianFilter addTarget:(GPUImageView *)self.cameraView];
+            //[self.yinKeFilter addTarget:(GPUImageView *)self.cameraView];
             [self processImage];
             [sender setEnabled:YES];
         });

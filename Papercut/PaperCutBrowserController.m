@@ -142,9 +142,12 @@
         if ([dic[[dic allKeys][0]] isKindOfClass:[NSArray class]]) {
             NSArray *arr = dic[[dic allKeys][0]];
             cell.items = arr;
-            cell.selectBlock = ^(NSInteger index){
-                [self performSegueWithIdentifier:@"learn_pop_segue" sender:[NSNumber numberWithInteger:index]];
-            
+            cell.selectBlock = ^(NSString *name,NSInteger index){
+                NSDictionary *dic = @{@"title": name,
+                                    @"index" : @(index)};
+                
+                [self performSegueWithIdentifier:@"learn_pop_segue" sender:dic];
+                
             };
 
         }
@@ -160,9 +163,10 @@
         if ([segue.destinationViewController isKindOfClass:[LearnPaperPopViewController class]]) {
             LearnPaperPopViewController *vc = (LearnPaperPopViewController *)segue.destinationViewController;
             
-            vc.index = [(NSNumber *)sender integerValue];
-            
-            
+            NSDictionary *dic = (NSDictionary *)sender;
+            vc.index = [dic[@"index"] integerValue];
+            vc.name = dic [@"title"];
+                       
         }
     }
 }

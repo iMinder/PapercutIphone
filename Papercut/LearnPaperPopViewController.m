@@ -8,12 +8,13 @@
 
 #import "LearnPaperPopViewController.h"
 #import "UIImageView+WebCache.h"
-#import "SVProgressHUD.h"
 
 @interface LearnPaperPopViewController()
 @property (weak, nonatomic)  UIImageView *show;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, weak)IBOutlet UIActivityIndicatorView *indicator;
+@property (nonatomic, weak) IBOutlet UILabel *infoLabel;
 
 @end
 @implementation LearnPaperPopViewController
@@ -35,23 +36,20 @@
     [self setUp];
 }
 
-- (void)dealloc
+- (void)viewWillDisappear:(BOOL)animated
 {
-    [SVProgressHUD dismiss];
-
+    [super viewWillDisappear:animated];
 }
 
 - (void)setUp
 {
-    
     // 1.添加imageview
     CGRect frame = CGRectMake(0,  self.toolBar.frame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.toolBar.frame.size.height);
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:frame];
     [imgView setImage:[UIImage imageNamed:@"blank_page_h"]];
-    [self.view addSubview:imgView];
-  
+    [self.view insertSubview:imgView atIndex:0];
     //2 . 添加显示imageview
-    UIImageView *showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 250)];
+    UIImageView *showImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 245)];
     showImgView.center  = imgView.center;
     [showImgView setImage:[UIImage imageNamed:@"1"]];
     [self.view addSubview:showImgView];
@@ -74,7 +72,7 @@
     if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
         NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
         if (dic) {
-            NSString *key = [NSString stringWithFormat:@"%d", _index];
+            NSString *key = [NSString stringWithFormat:@"%ld", (long)_index];
             self.items = [dic objectForKey:key];
             if (self.items) {
                 NSMutableArray *urls = [NSMutableArray new];
@@ -85,6 +83,7 @@
             }
         }
     }
+    [self showCurrentImage];
 }
 
 #pragma mark - Prefere Land
@@ -106,27 +105,71 @@
                                                       completion:nil];
     
 }
-- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
+
+- (void)showCurrentImage
+{
+    [self.indicator startAnimating];
+    self.infoLabel.text = @"努力加载中...";
+    
+    NSURL *url = [NSURL URLWithString:self.items[_currentIndex]];
+    __weak typeof(self) weakSelf = self;
+    [self.show sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+           
+            [weakSelf.show setImage:image];
+            [weakSelf.indicator stopAnimating];
+            self.infoLabel.text = [NSString stringWithFormat:@"%@ %d / %d",self.name, _currentIndex + 1, [self.items count]];
+            
+        }
+    }];
+}
+
+- (void)nextOne
+{
+    [self checkItems];
+    _currentIndex =  (_currentIndex + 1) % self.items.count;
+    [self showCurrentImage];
+}
+
+- (void)checkItems
+{
     if ([self.items count ] == 0 ) {
-        [SVProgressHUD showErrorWithStatus:@"没有可显示的教程"];
+        self.infoLabel.text = @"没有可显示的数据...";
         return;
     }
+}
+
+- (void)prvious_
+{
+    [self checkItems];
+    if (self.currentIndex == 0) {
+        _currentIndex = [self.items count] - 1;
+        
+    }else
+    {
+        self.currentIndex --;
+    }
+    [self showCurrentImage];
+}
+
+- (IBAction)next:(id)sender
+{
+    [self nextOne];
+}
+
+- (IBAction)previous:(id)sender
+{
+    [self prvious_];
+}
+
+- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
     if (sender.direction == UISwipeGestureRecognizerDirectionLeft) {
        //下一个
-        self.currentIndex =  (self.currentIndex + 1) % self.items.count;
-        [SVProgressHUD showWithStatus:@"加载中..."];
-        NSURL *url = [NSURL URLWithString:self.items[_currentIndex]];
-        __weak typeof(self) weakSelf = self;
-        [self.show sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            if (image) {
-                [SVProgressHUD dismiss];
-                [weakSelf.show setImage:image];
-            }
-        }];
+        [self nextOne];
         
     }
     else if(sender.direction == UISwipeGestureRecognizerDirectionRight){
-        NSLog(@"privous");
+        [self prvious_];
     }
 }
 
