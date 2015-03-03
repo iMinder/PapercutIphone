@@ -378,6 +378,7 @@
 		8C46BD461A6E7406000BE6AB /* SoundServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */; };
 		8C46BD481A6E7892000BE6AB /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C46BD471A6E7892000BE6AB /* sound.mp3 */; };
 		8C62C2F01AA4B35A00AE2E08 /* fang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C62C2EF1AA4B35A00AE2E08 /* fang.ttf */; };
+		8C62C2F31AA607F600AE2E08 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C2F21AA607F600AE2E08 /* GuideViewController.m */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -1016,6 +1017,8 @@
 		8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundServiceManager.m; sourceTree = "<group>"; };
 		8C46BD471A6E7892000BE6AB /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = Sound/sound.mp3; sourceTree = SOURCE_ROOT; };
 		8C62C2EF1AA4B35A00AE2E08 /* fang.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = fang.ttf; path = Sound/fang.ttf; sourceTree = SOURCE_ROOT; };
+		8C62C2F11AA607F600AE2E08 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
+		8C62C2F21AA607F600AE2E08 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2002,6 +2005,8 @@
 				8C82ED1E193235A20055C5E2 /* RootViewController.h */,
 				8C82ED1F193235A20055C5E2 /* RootViewController.m */,
 				8C82ED1B193235A20055C5E2 /* Main.storyboard */,
+				8C62C2F11AA607F600AE2E08 /* GuideViewController.h */,
+				8C62C2F21AA607F600AE2E08 /* GuideViewController.m */,
 				8C82ED21193235A20055C5E2 /* Images.xcassets */,
 				8C82ED10193235A20055C5E2 /* Supporting Files */,
 			);
@@ -2809,6 +2814,7 @@
 				8C82ED16193235A20055C5E2 /* main.m in Sources */,
 				8C2E08221A4B04640042C98B /* WDLayerCell.m in Sources */,
 				8C2E08171A4B04640042C98B /* WDDragChip.m in Sources */,
+				8C62C2F31AA607F600AE2E08 /* GuideViewController.m in Sources */,
 				8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */,
 				8C2E082A1A4B04640042C98B /* WDPropertyCell.m in Sources */,
 				8C2E08261A4B04640042C98B /* WDModalTitleBar.m in Sources */,

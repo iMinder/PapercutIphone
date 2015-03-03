@@ -464,7 +464,16 @@
                                             <segue destination="O4V-YF-znb" kind="push" identifier="cameraIdentifier" id="Slp-bU-Ydu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Hq-OM8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4je-Sz-QfX">
+                                        <rect key="frame" x="136" y="32" width="100" height="100"/>
+                                        <state key="normal" backgroundImage="main_learn_off">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Reg-Rk-RPA" kind="push" id="j6r-QV-ay7"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Hq-OM8">
                                         <rect key="frame" x="14" y="32" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="XMi-W3-Xow"/>
@@ -475,16 +484,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="pzn-wR-6rz" kind="push" identifier="papercut" id="phf-oq-dJx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4je-Sz-QfX">
-                                        <rect key="frame" x="136" y="32" width="100" height="100"/>
-                                        <state key="normal" backgroundImage="main_learn_off">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Reg-Rk-RPA" kind="push" id="j6r-QV-ay7"/>
+                                            <action selector="doNothing:" destination="MIS-lZ-1m2" eventType="touchUpInside" id="pfp-WM-RQl"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -561,6 +561,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5DN-DU-h1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="469" y="-1364"/>
+        </scene>
+        <!--Guide View Controller-->
+        <scene sceneID="dco-X5-0Mx">
+            <objects>
+                <viewController storyboardIdentifier="guideVC" id="sO0-aj-d3g" customClass="GuideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wEq-bz-5nv"/>
+                        <viewControllerLayoutGuide type="bottom" id="P0d-AS-pAE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IVe-Vl-II2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZk-iP-adT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="sO0-aj-d3g" id="lra-Bv-Kjr"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="b7F-Ro-P7v">
+                                <rect key="frame" x="141" y="523" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="b7F-Ro-P7v" id="yNR-av-gj6"/>
+                        <outlet property="scrollView" destination="cZk-iP-adT" id="hv4-Xb-AM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJT-1M-qZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-373" y="307"/>
         </scene>
         <!--我的作品-->
         <scene sceneID="cqg-tV-Rdq">

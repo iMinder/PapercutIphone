@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SVProgressHUD.h"
+#import "GuideViewController.h"
 
 @interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
@@ -42,6 +43,10 @@
 //            NSLog(@"    Font name: %@", [fontNames objectAtIndex:indFont]);
 //        }  
 //    }
+    
+}
+- (IBAction)doNothing:(UIButton *)sender {
+    [SVProgressHUD showSuccessWithStatus:@"期待下一个版本哟"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,6 +58,7 @@
     
 }
 
+
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
@@ -62,6 +68,14 @@
     [super viewDidAppear:animated];
     
     [self setUp];
+    
+    BOOL firstShow = [[NSUserDefaults standardUserDefaults] boolForKey:@"FirstShow"];
+    if (!firstShow) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        GuideViewController *guide = [sb instantiateViewControllerWithIdentifier:@"guideVC"];
+        [self presentViewController:guide animated:YES completion:nil];
+        
+    }
 }
 
 - (AVAudioPlayer *)player
