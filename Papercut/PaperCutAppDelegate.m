@@ -84,6 +84,8 @@
 {
     // Override point for customization after application launch.
     [self setup];
+    
+    [self umengTrack];
     return YES;
 }
 							
