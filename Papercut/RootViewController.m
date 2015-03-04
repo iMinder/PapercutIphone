@@ -12,6 +12,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "SVProgressHUD.h"
 #import "GuideViewController.h"
+#import "UMFeedback.h"
 
 @interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
@@ -189,7 +190,9 @@
             break;
         case 1:
         {
-            [self emailToDeveloper];
+            //[self emailToDeveloper];
+            [self presentViewController:[UMFeedback feedbackModalViewController] animated:YES completion:nil];
+            
         }
             break;
         case 2:

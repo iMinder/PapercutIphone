@@ -15,6 +15,7 @@
 #import "WDCanvasController.h"
 #import "WDDocument.h"
 #import "WDActiveState.h"
+#import "MobClick.h"
 
 @interface ScrawlViewController ()<WDGridViewDataSource,UIScrollViewDelegate, WDThumbnailViewDelegate, UIActionSheetDelegate>
 
@@ -269,6 +270,8 @@
         [self.gridView centerIndex:centeredIndex];
     }
     
+    [MobClick beginLogPageView:@"我的作品"];
+    [MobClick endEvent:@"MainPage_4"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -276,7 +279,7 @@
     [super viewWillDisappear:animated];
    
     centeredIndex = [gridView approximateIndexOfCenter];
-    
+    [MobClick endLogPageView:@"我的作品"];
 }
 
 

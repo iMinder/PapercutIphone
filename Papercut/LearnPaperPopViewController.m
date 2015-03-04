@@ -8,6 +8,7 @@
 
 #import "LearnPaperPopViewController.h"
 #import "UIImageView+WebCache.h"
+#import "MobClick.h"
 
 @interface LearnPaperPopViewController()
 @property (weak, nonatomic)  UIImageView *show;
@@ -28,6 +29,8 @@
 {
     [super viewWillAppear:animated];
     
+    [MobClick beginLogPageView:@"剪纸教程详细页"];
+    [MobClick beginEvent:@"MainPage_2_Detail" label:self.name];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -39,6 +42,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"剪纸教程详细页"];
+    [MobClick endEvent:@"MainPage_2_Detail" label:self.name];
 }
 
 - (void)setUp
@@ -118,7 +123,7 @@
            
             [weakSelf.show setImage:image];
             [weakSelf.indicator stopAnimating];
-            self.infoLabel.text = [NSString stringWithFormat:@"%@ %d / %d",self.name, _currentIndex + 1, [self.items count]];
+            self.infoLabel.text = [NSString stringWithFormat:@"%@ %ld / %lu",self.name, _currentIndex + 1, (unsigned long)[self.items count]];
             
         }
     }];

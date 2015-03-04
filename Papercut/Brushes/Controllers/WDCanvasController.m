@@ -42,6 +42,7 @@
 #import "WDUtilities.h"
 #import "WDUnlockView.h"
 #import  "NSString+Drawing.h"
+#import "MobClick.h"
 
 #define RESCALE_REPLAY          0
 #define kNavBarFixedWidth       20
@@ -594,6 +595,9 @@
     }
     
     [self showController:self.brushController fromBarButtonItem:sender animated:YES];
+    
+    [MobClick event:@"WorldEdit_pen"];
+    
 }
 
 - (void) showColorPicker:(id)sender
@@ -776,7 +780,7 @@
     if ([self.painting.undoManager canUndo]) {
         changeDocument(self.painting, [WDUndoChange undoChange]);
     }
-
+    [MobClick event:@"WorldEdit_undo"];
 }
 
 //重做
@@ -785,6 +789,7 @@
     if ([self.painting.undoManager canRedo]) {
         changeDocument(self.painting, [WDRedoChange redoChange]);
     }
+    [MobClick event:@"WorldEdit_redo"];
 }
 
 #pragma mark -

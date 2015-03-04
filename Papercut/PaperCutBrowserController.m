@@ -12,6 +12,8 @@
 #import "HeaderView.h"
 #import "UIImageView+WebCache.h"
 #import "LearnPaperPopViewController.h"
+#import "MobClick.h"
+
 #define iPhone6 @"iPhone7,2"
 #define iPhone6Plus @"iPhone7,1"
 
@@ -37,8 +39,23 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
+    
+    [MobClick beginLogPageView:@"乐学剪纸"];
+    [MobClick event:@"MainPage_2"];
+    
 }
 
+- (void)dealloc
+{
+    [MobClick endEvent:@"MainPage_2"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [MobClick endLogPageView:@"乐学剪纸"];
+}
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleDefault;
@@ -173,7 +190,8 @@
             NSDictionary *dic = (NSDictionary *)sender;
             vc.index = [dic[@"index"] integerValue];
             vc.name = dic [@"title"];
-                       
+            
+            [MobClick event:@"Course_1"];
         }
     }
 }

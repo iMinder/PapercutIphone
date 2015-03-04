@@ -32,6 +32,7 @@
 #import "WDZigZagGenerator.h"
 #import "WDSplatGenerator.h"
 #import "WDSplotchGenerator.h"
+#import "MobClick.h"
 
 NSString *WDActiveToolDidChange = @"WDActiveToolDidChange";
 NSString *WDActivePaintColorDidChange = @"WDActivePaintColorDidChange";
@@ -228,8 +229,10 @@ static NSString *WDSwatchKey = @"WDSwatchKey";
     } else {
         if (self.eraseMode) {
             b = eraseBrush = paintBrush;
+            [MobClick event:@"WorldEdit_eraser"];
         } else {
             b = paintBrush = eraseBrush;
+            [MobClick event:@"WorldEdit_pen"];
         }
         [[NSNotificationCenter defaultCenter] postNotificationName:WDActiveBrushDidChange object:nil userInfo:nil];
     }

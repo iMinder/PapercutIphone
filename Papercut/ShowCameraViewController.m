@@ -12,6 +12,7 @@
 #import "UIImage+Resize.h"
 #import "YangKeFilter.h"
 #import "YinKeFilter.h"
+#import "MobClick.h"
 
 static CGFloat const RadiusFactor = 15;
 #define TakePhotoTag 0
@@ -145,6 +146,14 @@ static CGFloat const RadiusFactor = 15;
 {
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
+    [MobClick beginLogPageView:@"剪纸相机"];
+    [MobClick event:@"MainPage_3"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"剪纸相机"];
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -226,6 +235,8 @@ static CGFloat const RadiusFactor = 15;
             image = [image imageWithRedBorder];
             [canvasController insertImageToCavas:image];
         }];
+        
+        [MobClick event:@"WorldEffect_ok"];
     }
 }
 
@@ -357,7 +368,7 @@ static CGFloat const RadiusFactor = 15;
        // [self.medianFilter addTarget:self.sketchFilter];
         //[self.sketchFilter addTarget:self.medianFilter];
         [self.sketchFilter addTarget:self.yangKeFilter];
-       // [self.medianFilter addTarget:<#(id<GPUImageInput>)#>]
+       // [self.medianFilter addTarget:]
         [self.yangKeFilter addTarget:self.medianFilter];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.currentSource addTarget:self.normalFilter];
@@ -367,6 +378,8 @@ static CGFloat const RadiusFactor = 15;
             sender.enabled = YES;
         });
     });
+    [MobClick event:@"WorldEffect_1"];
+    
 }
 
 - (IBAction)yinke:(UIButton *)sender
@@ -392,6 +405,8 @@ static CGFloat const RadiusFactor = 15;
             [sender setEnabled:YES];
         });
     });
+    [MobClick event:@"WorldEffect_3"];
+    
 }
 
 - (IBAction)noFilter:(UIButton *)sender
@@ -422,6 +437,9 @@ static CGFloat const RadiusFactor = 15;
     imagePickerController.allowsEditing = NO;
     imagePickerController.delegate = self;
     [self presentViewController:imagePickerController animated:YES completion:nil];
+    
+    [MobClick event:@"World_gallery"];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

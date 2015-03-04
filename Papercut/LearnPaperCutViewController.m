@@ -11,6 +11,7 @@
 #import "WDColor.h"
 #import "PaperToolBar.h"
 #import "ToolCell.h"
+#import "MobClick.h"
 
 static const NSUInteger    kPaperDefaultBarHeight = 200;
 //static const NSUInteger    kLandsdcapePhoneBarHeight = 32;
@@ -54,9 +55,15 @@ typedef enum : NSUInteger {
     [self.navigationController setToolbarHidden:NO];
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
-    
+    [MobClick beginLogPageView:@"乐学剪纸"];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"乐学剪纸"];
+    
+}
 - (void)setUp {
 
     

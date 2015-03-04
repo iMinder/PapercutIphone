@@ -11,6 +11,7 @@
 
 #import "WDEraserTool.h"
 
+
 @implementation WDEraserTool
 
 - (NSString *) iconName
@@ -32,7 +33,7 @@
     }
     
     self.eraseMode = YES;
-
+    
     return self;
 }
 
