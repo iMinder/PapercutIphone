@@ -11,6 +11,7 @@
 #import "SVProgressHUD.h"
 #import "MobClick.h"
 #import "UMFeedback.h"
+//#import "UMSocial.h"
 
 #define RGBA(r,g,b,a) [UIColor \
                         colorWithRed:r\
@@ -18,7 +19,7 @@
                         blue:b  \
                         alpha:a]
 
-#define UMENG_APPKEY @"54f6461efd98c5bb2700026d"
+
 
 @implementation PaperCutAppDelegate
 
@@ -43,6 +44,10 @@
     
     //反馈注册
     [UMFeedback setAppkey:UMENG_APPKEY];
+    
+    //分享key
+    //[UMSocialData setAppKey:UMENG_APPKEY];
+    
     
 }
 

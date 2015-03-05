@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LearnPaperPopViewController : UIViewController
+@class LearnModel;
 
-@property (nonatomic, copy)NSArray *items;
+@interface LearnPaperPopViewController : UIViewController
+{
+    NSMutableArray *items;
+}
+@property (nonatomic, strong) LearnModel *learnItem;
 @property (assign) NSInteger index;
 @property (nonatomic, strong) NSString *name;
 

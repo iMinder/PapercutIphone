@@ -40,10 +40,11 @@ typedef enum {
 @class WDPainting;
 @class WDProgressView;
 @class WDUnlockView;
-
+@protocol UMSocialUIDelegate;
 @interface WDCanvasController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
                                                     MFMailComposeViewControllerDelegate, UIPopoverControllerDelegate,
-                                                        WDActionSheetDelegate, WDDocumentReplayDelegate, WDActionNameViewDelegate>
+                                                        WDActionSheetDelegate, WDDocumentReplayDelegate, WDActionNameViewDelegate,
+                                                            UMSocialUIDelegate>
 {
     WDBarItem           *home_;
     WDBarItem           *album_;

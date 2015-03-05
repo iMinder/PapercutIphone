@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "LearnPaperPopViewController.h"
 #import "MobClick.h"
+#import "PapercutLearn.h"
 
 #define iPhone6 @"iPhone7,2"
 #define iPhone6Plus @"iPhone7,1"
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSString *version;
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) PapercutLearn *jsonItems;
 
 @end
 
@@ -67,7 +69,7 @@
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor clearColor];
     
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Learn" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"LearnResult" ofType:@"plist"];
     if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
         self.items = [NSArray arrayWithContentsOfFile:path];
     }
@@ -151,31 +153,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PaperCutLearnCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell_ID"];
+   
+    PapercutLearn *jsonItem = [[PapercutLearn alloc] initWithDictionary:self.items [indexPath.row] error:nil];
     
-    if ([[self.items objectAtIndex:indexPath.row] isKindOfClass:[NSDictionary class]])
-    {
-        NSDictionary *dic = self.items[indexPath.row];
-       
-        UIFont *font = [UIFont fontWithName:@"FZJZJW--GB1-0" size:25];
+    UIFont *font = [UIFont fontWithName:@"FZJZJW--GB1-0" size:25];
         
-        NSDictionary *attributes = @{NSFontAttributeName : font};
+    NSDictionary *attributes = @{NSFontAttributeName : font};
         
-        cell.name.attributedText = [[NSAttributedString alloc] initWithString:[[dic allKeys]firstObject] attributes:attributes];
-        
-        //cell.name.text = [[dic allKeys]firstObject];
-        if ([dic[[dic allKeys][0]] isKindOfClass:[NSArray class]]) {
-            NSArray *arr = dic[[dic allKeys][0]];
-            cell.items = arr;
-            cell.selectBlock = ^(NSString *name,NSInteger index){
-                NSDictionary *dic = @{@"title": name,
-                                    @"index" : @(index)};
+    cell.name.attributedText = [[NSAttributedString alloc] initWithString:jsonItem.group_title attributes:attributes];
+    cell.items = jsonItem.items;
+    
+    cell.selectBlock = ^(LearnModel *item){
+           [self performSegueWithIdentifier:@"learn_pop_segue" sender:item];
                 
-                [self performSegueWithIdentifier:@"learn_pop_segue" sender:dic];
-                
-            };
+        };
 
-        }
-    }
     return cell;
 }
 
@@ -186,11 +178,7 @@
     if ([segue.identifier isEqualToString:@"learn_pop_segue"]) {
         if ([segue.destinationViewController isKindOfClass:[LearnPaperPopViewController class]]) {
             LearnPaperPopViewController *vc = (LearnPaperPopViewController *)segue.destinationViewController;
-            
-            NSDictionary *dic = (NSDictionary *)sender;
-            vc.index = [dic[@"index"] integerValue];
-            vc.name = dic [@"title"];
-            
+            vc.learnItem = (LearnModel *)sender;
             [MobClick event:@"Course_1"];
         }
     }

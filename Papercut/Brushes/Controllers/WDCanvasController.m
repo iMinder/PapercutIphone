@@ -43,6 +43,7 @@
 #import "WDUnlockView.h"
 #import  "NSString+Drawing.h"
 #import "MobClick.h"
+//#import "UMSocial.h"
 
 #define RESCALE_REPLAY          0
 #define kNavBarFixedWidth       20
@@ -70,18 +71,18 @@
 @synthesize replayScale;
 @synthesize wasPlayingBeforeRotation;
 
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-//    
-//    if (!self) {
-//        return nil;
-//    }
-//    
-//    [self setWantsFullScreenLayout:YES];
-//    
-//    return self;
-//}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
+    if (!self) {
+        return nil;
+    }
+    
+    //[self setWantsFullScreenLayout:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
+    return self;
+}
 
 - (WDPainting *) painting
 {
@@ -345,6 +346,11 @@
     
     shareSheet.delegate = self;
     [shareSheet.sheet showInView:self.view];
+//    UIImage *image = [canvas_.painting image];
+//    NSArray *names = @[UMShareToSina,UMShareToQQ,UMShareToQzone, UMShareToWechatFavorite,UMShareToWechatSession, UMShareToWechatTimeline,UMShareToDouban,UMShareToSms,UMShareToEmail];
+//    [UMSocialSnsService presentSnsIconSheetView:self
+//                                         appKey:UMENG_APPKEY
+//                                      shareText:@"妙趣剪纸，制作属于自己的剪纸作品" shareImage:image shareToSnsNames:names delegate:self];
 }
 
 - (void) showGearSheet:(id)sender
@@ -1719,6 +1725,7 @@
     
     [self presentViewController:picker animated:YES completion:nil];
 }
+
 
 - (BOOL) canPasteImage
 {

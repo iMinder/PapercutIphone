@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LearnModel;
+@protocol LearnModel;
 
-typedef void(^SelectBlock)(NSString *name, NSInteger index);
+typedef void(^SelectBlock)(LearnModel *item);
 
 @interface PaperCutLearnCell :UITableViewCell<UICollectionViewDelegate,UICollectionViewDataSource>
 
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray<LearnModel> *items;
 @property (nonatomic, weak) IBOutlet UILabel *name;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, copy) SelectBlock selectBlock;

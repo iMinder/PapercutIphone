@@ -9,6 +9,7 @@
 #import "PaperCutLearnCell.h"
 #import "LearnCollectionCell.h"
 #import "UIImageView+WebCache.h"
+#import "PapercutLearn.h"
 
 @implementation PaperCutLearnCell
 
@@ -30,8 +31,9 @@
 {
     LearnCollectionCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
     
-    NSDictionary *item = self.items[indexPath.row];
-    NSURL *imgURL = [NSURL URLWithString:item[@"thumbnail"]];
+    LearnModel *item =self.items[indexPath.row];
+    NSString *urlPath = [NSString stringWithFormat:@"%@%d.png",item.base_url,item.count];
+    NSURL *imgURL = [NSURL URLWithString:urlPath];
     [cell.thumbnail sd_setImageWithURL:imgURL placeholderImage:[UIImage imageNamed:@"yinke"]];
     return cell;
 }
@@ -39,10 +41,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.selectBlock) {
-        NSDictionary *item = self.items[indexPath.row];
-        NSInteger index = [item[@"id"] integerValue];
-        NSString *name = item[@"title"];
-        self.selectBlock(name,index);
+       LearnModel *item =self.items[indexPath.row];
+        self.selectBlock(item);
     }
 }
 @end

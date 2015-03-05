@@ -13,6 +13,7 @@
 #import "SVProgressHUD.h"
 #import "GuideViewController.h"
 #import "UMFeedback.h"
+#import "AboutRootViewController.h"
 
 @interface RootViewController ()<UIActionSheetDelegate>
 @property (nonatomic, strong)AVAudioPlayer *player;
@@ -86,7 +87,7 @@
         NSURL *fileURL = [[NSBundle mainBundle]URLForResource:@"sound" withExtension:@"mp3"];
         if ([[NSFileManager defaultManager]fileExistsAtPath:[fileURL path]])
         {
-            _player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL fileTypeHint:AVFileTypeMPEGLayer3 error:nil];
+            _player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
             _player.numberOfLoops = -1;
             
             [_player prepareToPlay];
@@ -173,7 +174,7 @@
                                                        delegate:self
                                               cancelButtonTitle:@"关闭"
                                          destructiveButtonTitle:kStopPlaySound_ ? @"打开背景音乐" : @"关闭背景音乐"
-                                              otherButtonTitles:@"意见反馈" ,@"检查更新" ,@"关于我们" ,nil];
+                                              otherButtonTitles:@"意见反馈" ,@"关于我们" ,nil];
     action.backgroundColor = [UIColor redColor];
     action.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     
@@ -197,6 +198,13 @@
             break;
         case 2:
         {
+           //关于我们
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            
+            AboutRootViewController *about = [sb instantiateViewControllerWithIdentifier:@"about"];
+            
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:about];
+            [self presentViewController:nav animated:YES completion:nil];
             
         }
             break;

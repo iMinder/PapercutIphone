@@ -9,6 +9,7 @@
 #import "LearnPaperPopViewController.h"
 #import "UIImageView+WebCache.h"
 #import "MobClick.h"
+#import "PapercutLearn.h"
 
 @interface LearnPaperPopViewController()
 @property (weak, nonatomic)  UIImageView *show;
@@ -16,6 +17,7 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, weak)IBOutlet UIActivityIndicatorView *indicator;
 @property (nonatomic, weak) IBOutlet UILabel *infoLabel;
+@property (nonatomic, strong) NSMutableArray *items;
 
 @end
 @implementation LearnPaperPopViewController
@@ -73,21 +75,13 @@
     [self.view addGestureRecognizer:swipeRight];
     
    // 4 .加载资源
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"LearnDetail" ofType:@"plist"];
-    if ([[NSFileManager defaultManager]fileExistsAtPath:path]) {
-        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-        if (dic) {
-            NSString *key = [NSString stringWithFormat:@"%ld", (long)_index];
-            self.items = [dic objectForKey:key];
-            if (self.items) {
-                NSMutableArray *urls = [NSMutableArray new];
-                [self.items enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
-                    [urls addObject:[NSURL URLWithString:obj]];
-                }];
-                 [imgView sd_downloadImagesWithURLs:urls];
-            }
-        }
+    self.items = [NSMutableArray new];
+    for (int i = 1; i <= self.learnItem.count; i++) {
+        NSString *imgPath = [NSString stringWithFormat:@"%@%d.png", self.learnItem.base_url, i] ;
+        [_items addObject:[NSURL URLWithString:imgPath]];
     }
+
+    [imgView sd_downloadImagesWithURLs:_items];
     [self showCurrentImage];
 }
 
@@ -116,14 +110,13 @@
     [self.indicator startAnimating];
     self.infoLabel.text = @"努力加载中...";
     
-    NSURL *url = [NSURL URLWithString:self.items[_currentIndex]];
+    NSURL *url = self.items[_currentIndex];
     __weak typeof(self) weakSelf = self;
     [self.show sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image) {
-           
             [weakSelf.show setImage:image];
             [weakSelf.indicator stopAnimating];
-            self.infoLabel.text = [NSString stringWithFormat:@"%@ %ld / %lu",self.name, _currentIndex + 1, (unsigned long)[self.items count]];
+            self.infoLabel.text = [NSString stringWithFormat:@"%@ %d / %d",self.learnItem.title,(int) _currentIndex + 1, (int)[self.items count]];
             
         }
     }];

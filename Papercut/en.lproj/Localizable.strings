@@ -399,4 +399,7 @@
 "Back" = "Back";
 
 /* Back to home */
-"Home" = "首页" ;
+"Home" = "Home" ;
+
+/* About Us */
+"About Us" = "About Us";

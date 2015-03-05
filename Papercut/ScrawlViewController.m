@@ -256,15 +256,16 @@
 {
     [super viewDidLoad];
     [self setUp];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [WDActiveState sharedInstance];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    
+    //if (self.navigationController.navigationBarHidden) {
+       [self.navigationController setNavigationBarHidden:NO animated:NO];
+    //}
     NSUInteger currentCenteredIndex = [gridView approximateIndexOfCenter];
     if (centeredIndex != 0 && centeredIndex != currentCenteredIndex) {
         [self.gridView centerIndex:centeredIndex];
@@ -278,6 +279,7 @@
 {
     [super viewWillDisappear:animated];
    
+    
     centeredIndex = [gridView approximateIndexOfCenter];
     [MobClick endLogPageView:@"我的作品"];
 }
