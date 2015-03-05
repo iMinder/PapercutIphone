@@ -14,7 +14,7 @@
 @implementation PaperCutLearnCell
 
 
-- (void)setItems:(NSArray *)newItems
+- (void)setItems:(NSArray<LearnModel> *)newItems
 {
     _items = newItems;
     [self.collectionView reloadData];

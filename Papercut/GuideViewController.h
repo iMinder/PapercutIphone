@@ -11,5 +11,5 @@
 @interface GuideViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic)  UIPageControl *pageControl;
 @end

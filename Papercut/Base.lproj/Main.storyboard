@@ -473,7 +473,7 @@
                                             <segue destination="Reg-Rk-RPA" kind="push" id="j6r-QV-ay7"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Hq-OM8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5D-Hq-OM8">
                                         <rect key="frame" x="14" y="32" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="XMi-W3-Xow"/>
@@ -541,7 +541,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7CG-RM-kUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-289" y="-583"/>
+            <point key="canvasLocation" x="-420" y="-644"/>
         </scene>
         <!--趣玩剪纸-->
         <scene sceneID="PC3-bq-7qI">
@@ -574,27 +574,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZk-iP-adT">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZk-iP-adT">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="sO0-aj-d3g" id="lra-Bv-Kjr"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="b7F-Ro-P7v">
-                                <rect key="frame" x="141" y="523" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cZk-iP-adT" firstAttribute="top" secondItem="IVe-Vl-II2" secondAttribute="top" id="d65-G6-H1n"/>
+                            <constraint firstItem="cZk-iP-adT" firstAttribute="bottom" secondItem="P0d-AS-pAE" secondAttribute="top" id="ebK-aT-j1B"/>
+                            <constraint firstItem="cZk-iP-adT" firstAttribute="leading" secondItem="IVe-Vl-II2" secondAttribute="leading" id="ggw-q5-hMM"/>
+                            <constraint firstAttribute="trailing" secondItem="cZk-iP-adT" secondAttribute="trailing" id="k5g-EA-Lcm"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="pageControl" destination="b7F-Ro-P7v" id="yNR-av-gj6"/>
                         <outlet property="scrollView" destination="cZk-iP-adT" id="hv4-Xb-AM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJT-1M-qZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-373" y="307"/>
+            <point key="canvasLocation" x="-534" y="223"/>
         </scene>
         <!--About Root View Controller-->
         <scene sceneID="ywE-xm-lLR">

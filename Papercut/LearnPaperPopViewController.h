@@ -11,9 +11,7 @@
 @class LearnModel;
 
 @interface LearnPaperPopViewController : UIViewController
-{
-    NSMutableArray *items;
-}
+
 @property (nonatomic, strong) LearnModel *learnItem;
 @property (assign) NSInteger index;
 @property (nonatomic, strong) NSString *name;

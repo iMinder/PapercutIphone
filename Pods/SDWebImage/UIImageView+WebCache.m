@@ -140,7 +140,7 @@ static char imageURLKey;
             dispatch_main_sync_safe(^{
                 __strong UIImageView *sself = wself;
                 if (sself && image) {
-                    NSLog(@"down load images success");
+                   // NSLog(@"down load images success");
                 }
             });
         }];

@@ -17,13 +17,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setUp];
+    //[self setUp];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setUp];
 }
 
 - (void)setUp
 {
-
+    self.scrollView.frame = self.view.bounds;
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 0, 40, 37)];
+    self.pageControl.currentPage = 0;
+    self.pageControl.numberOfPages = 4;
+    self.pageControl.center = CGPointMake(self.view.center.x, self.view.bounds.size.height - 40);
+    [self.pageControl setTintColor:[UIColor blackColor]];
+    
+    [self.view addSubview:self.pageControl];
     for (int i = 1; i < 5; i++) {
         NSString *imagePath = [NSString stringWithFormat:@"guide_%d%d", i,i];
         UIImage *image = [UIImage imageNamed:imagePath];
