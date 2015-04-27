@@ -373,7 +373,6 @@
 		8C2E0A0C1A51B4FA0042C98B /* Stylus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C2E09F81A51B4FA0042C98B /* Stylus.xib */; };
 		8C33EC93197FAAA800A94FED /* YinKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC92197FAAA800A94FED /* YinKeFilter.m */; };
 		8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
-		8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */; };
 		8C46BD461A6E7406000BE6AB /* SoundServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */; };
 		8C46BD481A6E7892000BE6AB /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8C46BD471A6E7892000BE6AB /* sound.mp3 */; };
 		8C62C2F01AA4B35A00AE2E08 /* fang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C62C2EF1AA4B35A00AE2E08 /* fang.ttf */; };
@@ -398,6 +397,8 @@
 		8C62C3821AA6AFEF00AE2E08 /* PapercutLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3811AA6AFEF00AE2E08 /* PapercutLearn.m */; };
 		8C62C3851AA6B51D00AE2E08 /* LearnResult.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */; };
 		8C62C3B21AA7E0A500AE2E08 /* AboutRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */; };
+		8C6A2AD51AA9AF6B00A5C1B5 /* PapercutCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */; };
+		8C7B80421AA8C00100E09517 /* LearnPapercutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
 		8C82ED0C193235A20055C5E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */; };
 		8C82ED0E193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
@@ -466,7 +467,6 @@
 		8CAA89591A84900000FAC4BA /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA89281A84900000FAC4BA /* UIRefreshControl+AFNetworking.m */; };
 		8CAA895A1A84900000FAC4BA /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA892A1A84900000FAC4BA /* UIWebView+AFNetworking.m */; };
 		8CAA895D1A84B26200FAC4BA /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA895C1A84B26200FAC4BA /* HeaderView.m */; };
-		8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A01A722DAC003A802C /* PaperToolBar.m */; };
 		8CABB3A41A72A064003A802C /* ToolCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CABB3A31A72A064003A802C /* ToolCell.m */; };
 		8CAC74561A7A39EC0001377E /* NSString+Drawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC74551A7A39EC0001377E /* NSString+Drawing.m */; };
 		8CAC745E1A7A72740001377E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAC745D1A7A72740001377E /* MessageUI.framework */; };
@@ -1028,8 +1028,6 @@
 		8C33EC92197FAAA800A94FED /* YinKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YinKeFilter.m; sourceTree = "<group>"; };
 		8C33EC951980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALAssetsLibrary+CustomPhotoAlbum.h"; sourceTree = "<group>"; };
 		8C33EC961980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALAssetsLibrary+CustomPhotoAlbum.m"; sourceTree = "<group>"; };
-		8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPaperCutViewController.h; sourceTree = "<group>"; };
-		8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnPaperCutViewController.m; sourceTree = "<group>"; };
 		8C46BD441A6E7406000BE6AB /* SoundServiceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundServiceManager.h; sourceTree = "<group>"; };
 		8C46BD451A6E7406000BE6AB /* SoundServiceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundServiceManager.m; sourceTree = "<group>"; };
 		8C46BD471A6E7892000BE6AB /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = Sound/sound.mp3; sourceTree = SOURCE_ROOT; };
@@ -1063,6 +1061,10 @@
 		8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LearnResult.plist; sourceTree = "<group>"; };
 		8C62C3B01AA7E0A500AE2E08 /* AboutRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRootViewController.h; sourceTree = "<group>"; };
 		8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRootViewController.m; sourceTree = "<group>"; };
+		8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutCanvas.h; sourceTree = "<group>"; };
+		8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutCanvas.m; sourceTree = "<group>"; };
+		8C7B80401AA8C00100E09517 /* LearnPapercutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPapercutViewController.h; sourceTree = "<group>"; };
+		8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnPapercutViewController.m; sourceTree = "<group>"; };
 		8C82ED06193235A20055C5E2 /* Papercut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Papercut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C82ED09193235A20055C5E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8C82ED0B193235A20055C5E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1197,8 +1199,6 @@
 		8CAA892A1A84900000FAC4BA /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		8CAA895B1A84B26200FAC4BA /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		8CAA895C1A84B26200FAC4BA /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
-		8CABB39F1A722DAC003A802C /* PaperToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperToolBar.h; sourceTree = "<group>"; };
-		8CABB3A01A722DAC003A802C /* PaperToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperToolBar.m; sourceTree = "<group>"; };
 		8CABB3A21A72A063003A802C /* ToolCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolCell.h; sourceTree = "<group>"; };
 		8CABB3A31A72A064003A802C /* ToolCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolCell.m; sourceTree = "<group>"; };
 		8CAC74541A7A39EC0001377E /* NSString+Drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Drawing.h"; sourceTree = "<group>"; };
@@ -2051,12 +2051,12 @@
 				8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */,
 			);
 			name = About;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8C82ECFD193235A10055C5E2 = {
 			isa = PBXGroup;
 			children = (
-				8C62C3AF1AA7E08200AE2E08 /* About */,
 				8C82ED0F193235A20055C5E2 /* Papercut */,
 				8C82ED2E193235A20055C5E2 /* PapercutTests */,
 				8C82ED08193235A20055C5E2 /* Frameworks */,
@@ -2100,6 +2100,7 @@
 		8C82ED0F193235A20055C5E2 /* Papercut */ = {
 			isa = PBXGroup;
 			children = (
+				8C62C3AF1AA7E08200AE2E08 /* About */,
 				8C62C2F81AA6822A00AE2E08 /* umeng */,
 				8C62C2EB1AA4B34100AE2E08 /* resource */,
 				8CAA88BA1A84900000FAC4BA /* Pods */,
@@ -2166,12 +2167,12 @@
 			isa = PBXGroup;
 			children = (
 				8C8571851A76943200C64652 /* ViewFlipAnimation */,
-				8C46BD3D1A6E07D7000BE6AB /* LearnPaperCutViewController.h */,
-				8C46BD3E1A6E07D7000BE6AB /* LearnPaperCutViewController.m */,
-				8CABB39F1A722DAC003A802C /* PaperToolBar.h */,
-				8CABB3A01A722DAC003A802C /* PaperToolBar.m */,
 				8CABB3A21A72A063003A802C /* ToolCell.h */,
 				8CABB3A31A72A064003A802C /* ToolCell.m */,
+				8C7B80401AA8C00100E09517 /* LearnPapercutViewController.h */,
+				8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */,
+				8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */,
+				8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */,
 			);
 			name = Fun;
 			sourceTree = "<group>";
@@ -2767,6 +2768,7 @@
 				8C2E07D51A4B04640042C98B /* WDBezierSegment.m in Sources */,
 				8CAA89531A84900000FAC4BA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				8CAA88381A7B387F00FAC4BA /* PaperCutLearnCell.m in Sources */,
+				8C6A2AD51AA9AF6B00A5C1B5 /* PapercutCanvas.m in Sources */,
 				8C2E07BE1A4B04640042C98B /* WDFillColor.m in Sources */,
 				8C2E07B81A4B04640042C98B /* WDChangeHueSaturation.m in Sources */,
 				8C2E07C01A4B04640042C98B /* WDRedoChange.m in Sources */,
@@ -2867,7 +2869,6 @@
 				8C2E07D91A4B04640042C98B /* WDCirclesGenerator.m in Sources */,
 				8CAA89411A84900000FAC4BA /* JSONKeyMapper.m in Sources */,
 				8C2E07C21A4B04640042C98B /* WDSimpleDocumentChange.m in Sources */,
-				8CABB3A11A722DAC003A802C /* PaperToolBar.m in Sources */,
 				8C2E07D31A4B04640042C98B /* WDActiveState.m in Sources */,
 				8CAA89501A84900000FAC4BA /* UIView+WebCacheOperation.m in Sources */,
 				8C2E07BC1A4B04640042C98B /* WDDocumentChange.m in Sources */,
@@ -2939,7 +2940,6 @@
 				8C2E08221A4B04640042C98B /* WDLayerCell.m in Sources */,
 				8C2E08171A4B04640042C98B /* WDDragChip.m in Sources */,
 				8C62C2F31AA607F600AE2E08 /* GuideViewController.m in Sources */,
-				8C46BD3F1A6E07D7000BE6AB /* LearnPaperCutViewController.m in Sources */,
 				8C2E082A1A4B04640042C98B /* WDPropertyCell.m in Sources */,
 				8C2E08261A4B04640042C98B /* WDModalTitleBar.m in Sources */,
 				8C33EC971980B24D00A94FED /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */,
@@ -2947,6 +2947,7 @@
 				8CAA893D1A84900000FAC4BA /* NSArray+JSONModel.m in Sources */,
 				8CAA89331A84900000FAC4BA /* AFURLSessionManager.m in Sources */,
 				8C2E08561A4B06E60042C98B /* WDBrushesController.m in Sources */,
+				8C7B80421AA8C00100E09517 /* LearnPapercutViewController.m in Sources */,
 				8C2E07EB1A4B04640042C98B /* WDSplotchGenerator.m in Sources */,
 				8C2E07B71A4B04640042C98B /* WDChangeColorBalance.m in Sources */,
 				8C2E080A1A4B04640042C98B /* WDBrushCell.m in Sources */,

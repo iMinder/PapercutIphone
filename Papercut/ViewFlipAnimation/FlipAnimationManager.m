@@ -15,7 +15,7 @@ static const CGFloat kNPViewCollapserM34 = -1.0f / 2000.0f;
 static const NSTimeInterval kAnimationDuration = 0.4;
 static const CGFloat stepSize = 0.01;
 
-#define POINT(x,y) CGPointMake(x,y)
+
 
 @interface FlipAnimationManager ()
 
@@ -67,10 +67,14 @@ static const CGFloat stepSize = 0.01;
 {
     [self.timer invalidate];
     self.timer = nil;
+    CALayer *layer = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self.rotateLayer]];
+    [self.overlayView removeFromSuperview];
+    self.staticLayer = nil;
+    self.rotateLayer = nil;
     //调用block
     if (self.completionBlock)
     {
-        self.completionBlock(YES,self.viewToFlip);
+        self.completionBlock(YES,self.viewToFlip, layer);
     }
 }
 
@@ -81,6 +85,7 @@ static const CGFloat stepSize = 0.01;
     
     if ([self finished])
     {
+        
         [self stop];
     }
     CGFloat amount = _descending ? 1.0 - _currentProgress : _currentProgress;
@@ -157,20 +162,30 @@ static const CGFloat stepSize = 0.01;
     CAShapeLayer *mask2 = [CAShapeLayer new];
     mask2.frame = self.rotateLayer.bounds;
     [mask2 setPath:[self pathForType:_flipType isStatic:NO].CGPath];
+    mask2.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]].CGColor;
+    
     self.rotateLayer.mask = mask2;
     [self.overlayView.layer addSublayer:self.rotateLayer];
+    
 
 }
 
 - (UIImage *)viewContextImage
 {
-    CGFloat scale = [UIScreen mainScreen].scale;
-    UIGraphicsBeginImageContextWithOptions(self.viewToFlip.frame.size, 1.0,scale);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [self.viewToFlip.layer renderInContext:context];
+    //CGFloat scale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(self.viewToFlip.frame.size, YES, 0);
+    //CGContextRef context = UIGraphicsGetCurrentContext();
+  
+    UIView *snap = [self.viewToFlip snapshotViewAfterScreenUpdates:YES];
+    //获取当前view的快照
+//    [self.viewToFlip drawViewHierarchyInRect:self.viewToFlip.bounds afterScreenUpdates:YES];
+    [snap drawViewHierarchyInRect:snap.bounds afterScreenUpdates:YES];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return viewImage;
+    //返回之前对图片进行处理，如果是黑色，变成透明
+    
 }
 
 - (UIBezierPath *)pathForType:(FlipAnimationType)type isStatic:(BOOL)isStatic

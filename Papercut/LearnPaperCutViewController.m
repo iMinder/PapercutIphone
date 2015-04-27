@@ -1,299 +1,265 @@
 //
-//  LearnPaperCutViewController.m
+//  LearnPapercutViewController.m
 //  Papercut
 //
-//  Created by jackie on 15/1/20.
+//  Created by jackie on 15/3/6.
 //  Copyright (c) 2015年 jackie. All rights reserved.
 //
 
-#import "LearnPaperCutViewController.h"
-#import "WDColorPickerController.h"
-#import "WDColor.h"
-#import "PaperToolBar.h"
-#import "ToolCell.h"
-#import "MobClick.h"
+#import "LearnPapercutViewController.h"
+#import "PapercutCanvas.h"
+#import "ViewFlipAnimation/FlipAnimationManager.h"
 
-static const NSUInteger    kPaperDefaultBarHeight = 200;
-//static const NSUInteger    kLandsdcapePhoneBarHeight = 32;
-//static const float         kBarItemShadowOpacity = 0.9f;
-static const NSTimeInterval kPaperAnimatedDuration = 0.3;
-//static const NSUInteger    kToolItemSize = 30;
+@interface LearnPapercutViewController ()
 
-typedef enum : NSUInteger {
-    PaperToolTypeNone,
-    PaperToolTypeFold,
-    PaperToolTypeDecorate,
-} PaperToolType;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) PapercutCanvas *canvas;
+@property (weak, nonatomic) IBOutlet UILabel *tips;
+@property (weak, nonatomic) IBOutlet UIButton *preview;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *undo;
 
-@interface LearnPaperCutViewController ()<UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *redo;
 
-@property (nonatomic)BOOL isColorSet;
-@property (nonatomic)PaperToolBar *paperToolBar;
-@property (nonatomic)PaperToolType currentType;
-@property (nonatomic, strong) UICollectionView *toolView;
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, assign) NSArray *currentItems;
+@property (nonatomic, strong) NSArray *folds;
+@property (nonatomic, strong) NSArray *decorates;
+@property (nonatomic, strong) NSMutableArray *redos;
+@property (nonatomic, strong) NSMutableArray *undos;
 
 @end
 
-@implementation LearnPaperCutViewController
+@implementation LearnPapercutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //[self configureGuestures];
+    [self setup];
+}
+
+- (void)setup
+{
+    _folds = @[@"fold_1" ,
+                @"fold_2",
+                @"fold_3" ,
+               @"fold_4" ];
     
-    self.currentType = PaperToolTypeNone;
-    NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
-    self.items = items;
+    NSMutableArray *items = [NSMutableArray new];
     
-   [self setUp];
+    for (int i = 1; i < 24 ; i++) {
+        NSString *name = [NSString stringWithFormat:@"ele%d_on", i];
+        [items addObject:name];
+    }
+    self.decorates = items;
+    self.currentItems = _decorates;
+    _undos = [NSMutableArray new];
+    _redos = [NSMutableArray new];
+    [self createNewCanvas];
+}
+
+- (void)setCurrentItems:(NSArray *)currentItems
+{
+    if (_currentItems == currentItems) {
+        return;
+    }
+    _currentItems = currentItems;
+    [self.collectionView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    [self.navigationController setToolbarHidden:NO];
     [super viewWillAppear:animated];
-    [self setNeedsStatusBarAppearanceUpdate];
-    [MobClick beginLogPageView:@"乐学剪纸"];
+    //[self setNeedsStatusBarAppearanceUpdate];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+#pragma mark UIColloctionView
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    [super viewWillDisappear:animated];
-    [MobClick endLogPageView:@"乐学剪纸"];
-    
-}
-- (void)setUp {
-
-    
-//    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-//    flowLayout.itemSize = CGSizeMake(kToolItemSize, kToolItemSize);
-//    flowLayout.sectionInset = UIEdgeInsetsMake(0, 20, 0, 20);
-//    flowLayout.minimumLineSpacing = 44;
-//    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-//    
-//    CGRect frame = CGRectMake(0, self.navigationController.toolbar.frame.origin.y, SCREEN_WIDTH, kPaperDefaultBarHeight);
-//    self.toolView = [[UICollectionView alloc] initWithFrame:frame collectionViewLayout:flowLayout];
-//    self.toolView.backgroundColor = [UIColor redColor];
-//    NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
-//    self.items = items;
-//    
-//    self.toolView.dataSource = self;
-//    self.toolView.delegate = self;
-//  
-//    self.toolView.hidden = YES;
-//    
-//    [self.toolView registerClass:[ToolCell class] forCellWithReuseIdentifier:@"my_cell"];
-//    [self.view insertSubview:self.toolView belowSubview:self.navigationController.toolbar];
-    UITableView *table = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, 44, SCREEN_WIDTH)];
-    table.dataSource = self;
-    table.delegate = self;
-    
-    table.backgroundColor = [UIColor redColor];
-    table.transform = CGAffineTransformRotate(table.transform, - M_PI_2);
-    table.center = CGPointMake(self.view.center.x, table.center.y);
-    [self.view addSubview:table];
-    [table registerClass:[ToolCell class] forCellReuseIdentifier:@"my_cell"];
-    
-    
+    return [self.currentItems count];
 }
 
-#pragma mark UITableView method
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [self.items count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ToolCell *cell = [tableView dequeueReusableCellWithIdentifier:@"my_cell"];
-    [cell.imageView setImage:[UIImage imageNamed:@"stylus_selected"]];
+    UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"cell_ID" forIndexPath:indexPath];
+    UIButton *item = (UIButton *)[cell.contentView viewWithTag:10];
+    [item setBackgroundImage:[UIImage imageNamed:_currentItems[indexPath.row]] forState:UIControlStateNormal];
+    
+//    UIImageView *imageview = (UIImageView*)[cell.contentView viewWithTag:10];
+//    [imageview setImage:[UIImage imageNamed:_currentItems[indexPath.row]]];
+    
     return cell;
+}
+- (IBAction)itemTapped:(UIButton *)sender {
+    CGPoint location = [sender convertPoint:sender.center toView:self.collectionView];
     
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:location];
+    //[self interfaceChange];
+    //NSLog(@"select item at index %d", indexPath.row);
+    [self performAction:indexPath.row];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle
+
+- (void)performAction:(NSInteger)index
 {
-    return UIStatusBarStyleLightContent;
-}
-
-#pragma mark interface update
-
-//- (void)configureGuestures
-//{
-//    UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(changeInterface:)];
-//    oneTap.delegate = self;
-//    oneTap.numberOfTapsRequired = 1;
-//    [self.view addGestureRecognizer:oneTap];
-//}
-
-- (void)showColorPicker
-{
-    if (!self.isColorSet)
-    {
-        self.isColorSet = YES;
-        WDColorPickerController *colorPicker = [[WDColorPickerController alloc] initWithNibName:@"ColorPicker~iphone5" bundle:nil];
-        [colorPicker setInitialColor:[WDColor redColor]];
-        [self presentViewController:colorPicker animated:YES completion:nil];
-
+    switch (currentOperationMode) {
+        case PCOperationModeFold:
+        {
+            FlipAnimationType type = (FlipAnimationType)index;
+            
+            [self foldViewWithType:type];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
-- (NSArray *)toolbarItems
+- (void)foldViewWithType:(FlipAnimationType)type
 {
-    //设置toolbar
-    UIBarButtonItem *newOne = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"new"] style:UIBarButtonItemStylePlain target:self action:@selector(createNewOne:)];
-    UIBarButtonItem *foldItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"gear"] style:UIBarButtonItemStylePlain target:self action:@selector(fold:)];
-    UIBarButtonItem *undo = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"undo"] style:UIBarButtonItemStylePlain target:self action:@selector(undo)];
-    UIBarButtonItem *redo = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"redo"] style:UIBarButtonItemStylePlain target:self action:@selector(redo)];
-    UIBarButtonItem *cutItem =[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"gear"] style:UIBarButtonItemStylePlain target:self action:nil];
-    UIBarButtonItem *decorateItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"gear"] style:UIBarButtonItemStylePlain target:self action:@selector(decorate:)];
-    
-    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
-    return  @[newOne,spaceItem,
-                          foldItem,spaceItem,
-                          undo,spaceItem,
-                          redo,spaceItem,
-                          cutItem,spaceItem,
-                          decorateItem];
-}
-
-//- (void)showInterface
-//{
-//    // 只有在工具栏隐藏的情况下才隐藏bars
-////    if (self.paperToolBar.hidden)
-////    {
-////        [self.navigationController setNavigationBarHidden:NO animated:YES];
-////        //[self.navigationController setToolbarHidden:NO animated:YES];
-////    }
-//
-//    [self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
-//}
-//
-//- (void)hideInterface
-//{
-//    //1 .如果工具栏显示，就隐藏工具栏
-////    if (self.paperToolBar.hidden)
-////    {
-////        [self.navigationController setNavigationBarHidden:YES animated:YES];
-////       // [self.navigationController setToolbarHidden:YES animated:YES];
-////    }
-////    else
-////    {
-//        [self.paperToolBar hideToolBar:YES fromToolBar:self.navigationController.toolbar];
-//  //  }
-//}
-//
-//- (void)changeInterface:(UITapGestureRecognizer *)guesture
-//{
-//    if (self.navigationController.navigationBarHidden)
-//    {
-//        [self showInterface];
-//    }
-//    else
-//    {
-//        [self hideInterface];
-//    }
-//}
-
-#pragma mark ToolBar Selector
-- (void)createNewOne:(UIBarButtonItem *)barItem
-{
-    //[self.paperToolBar showToolBar:YES fromToolBar:self.navigationController.toolbar];
-}
-
-
-- (void)fold:(UIBarButtonItem *)barItem
-{
-    self.currentType = PaperToolTypeFold;
-    NSArray *items = @[@"gear",@"new",@"add",@"add"];
-    self.items  = items;
-    [self.toolView reloadData];
-    [self showToolBar:YES fromToolBar:self.navigationController.toolbar];
-    
-}
-- (void)undo
-{
-    
-}
-
-- (void)redo
-{
-    
-}
-
-- (void)decorate:(UIBarButtonItem *)barItem
-{
-    self.currentType = PaperToolTypeDecorate;
-    NSArray *items = @[@"add",@"add",@"add",@"add",@"add",@"add",@"add",@"add"];
-    self.items = items;
-    [self showToolBar:YES fromToolBar:self.navigationController.toolbar];
-}
-
-#pragma mark UICollectionViewController Delegate
-
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-//{
-//    return  [self.items count];
-//}
-//
-//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    ToolCell *cell = [self.toolView dequeueReusableCellWithReuseIdentifier:@"my_cell" forIndexPath:indexPath];
-//    [cell.imageView setImage:[UIImage imageNamed:self.items[indexPath.row]]];
-//    return cell;
-//}
-//
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    NSLog(@"select item at indext %d",indexPath.row);
-//}
-//
-#pragma mark - ToolView interface change
-
-- (void)hideToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb
-{
-    
-    if (!self.toolView.hidden)
-    {
-        tb.userInteractionEnabled = NO;
-        self.view.userInteractionEnabled = NO;
+    //执行各种折叠动作
+    [[FlipAnimationManager sharedInstance] startAnimation:_canvas Type:type Descending:NO Completion:^(BOOL finished, UIView *flipView, CALayer *layer) {
+        //折叠完成，只显示折叠后的部分
         
-        [UIView animateWithDuration:kPaperAnimatedDuration animations:^{
-            self.toolView.center = CGPointMake(self.toolView.center.x, self.toolView.center.y + kPaperDefaultBarHeight);
-        } completion:^(BOOL finished) {
-            self.toolView.hidden = YES;
-            tb.userInteractionEnabled = YES;
-            self.view.userInteractionEnabled = YES;
-        }];
-    }
+        _canvas = [[PapercutCanvas alloc] initWithFrame:flipView.frame];
+        _canvas.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]];
+        [_undos addObject:flipView];
+        [flipView removeFromSuperview];
+        [_canvas.layer addSublayer:layer];
+        [self.view addSubview:_canvas];
+    }];
+        
+}
+#pragma mark - interface change
+- (void)undoStatusDidChange:(id)sender
+{
+    _undo.enabled = [self canUndo];
+    _redo.enabled = [self canRedo];
+}
+- (IBAction)tapped:(UITapGestureRecognizer *)sender
+{
+    [self interfaceChange];
+}
+- (void)interfaceChange
+{
+    self.collectionView.hidden = !self.collectionView.hidden;
+}
+
+#pragma mark - Operation
+
+- (void)createNewCanvas
+{
+    //绘制canvas
+    CGFloat width = SCREEN_WIDTH;
+    CGFloat height = self.collectionView.frame.origin.y - self.preview.frame.origin.y;
+    
+    CGFloat dismention = MIN(width, height) - 10;
+    
+    _canvas = [[PapercutCanvas alloc] initWithFrame:CGRectMake(0, 0, dismention, dismention)];
+    //_canvas.backgroundColor = [UIColor redColor];
+
+    _canvas.center = self.view.center;
+    [self.view insertSubview:_canvas atIndex:[self.view.subviews count] ];
+    
+//    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ele3_on"]];
+//    imageView.center = _canvas.center;
+//    [_canvas addSubview:imageView];
+    _canvas.backgroundColor = [UIColor clearColor];
+    _canvas.layer.backgroundColor = [UIColor clearColor].CGColor;
+
+    CGFloat wid = CGRectGetWidth(_canvas.bounds);
+    CGFloat heig = CGRectGetHeight(_canvas.bounds);
+    UIBezierPath *path = [UIBezierPath new];
+    [path moveToPoint:POINT(0, 0)];
+    [path addLineToPoint:POINT(wid, 0)];
+    [path addLineToPoint:POINT(0, heig)];
+    [path closePath];
+//    _canvas.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]];
+//    //_canvas.strokeColor = [UIColor greenColor];
+//    _canvas.path = path;
+    _canvas.path = path;//[UIBezierPath bezierPathWithRect:_canvas.bounds];
+    _canvas.fillColor = [UIColor redColor];
+    
+    
     
 }
 
-- (void)showToolBar:(BOOL)animated fromToolBar:(UIToolbar *)tb
+- (IBAction)create:(id)sender
 {
-    if (self.toolView.hidden)
-    {
-        tb.userInteractionEnabled = NO;
-        self.view.userInteractionEnabled = NO;
-        
-        [UIView animateWithDuration:kPaperAnimatedDuration animations:^{
-            self.toolView.center = CGPointMake(self.toolView.center.x, self.toolView.center.y - kPaperDefaultBarHeight);
-        } completion:^(BOOL finished) {
-            tb.userInteractionEnabled = YES;
-            self.view.userInteractionEnabled = YES;
-            self.toolView.hidden = NO;
-        }];
-    }
-    else
-    {
-        [self hideToolBar:YES fromToolBar:tb];
-    }
+    //清空
     
+}
+
+- (IBAction)fold:(id)sender
+{
+    //[self interfaceChange];
+    self.currentItems = _folds;
+    
+    currentOperationMode = PCOperationModeFold;
+    self.collectionView.hidden = NO;
+}
+
+- (IBAction)decorate:(id)sender
+{
+    //[self interfaceChange];
+    self.currentItems = _decorates;
+    currentOperationMode = PCOPerationModeDecorate;
+    self.collectionView.hidden = NO;
+    
+}
+
+- (BOOL)canRedo
+{
+    return [self.redos count] > 0;
+}
+
+- (BOOL)canUndo
+{
+    return [self.undos count] > 0;
+}
+
+- (IBAction)undo:(id)sender
+{
+    if ([self canUndo])
+    {
+        [self undo_];
+    }
+}
+
+- (void)undo_{
+    [_redos addObject:_canvas];
+    [_canvas removeFromSuperview];
+    _canvas = [_undos lastObject];
+    _canvas.hidden = NO;
+    [_undos removeLastObject];
+    [self.view addSubview:_canvas];
+}
+- (IBAction)redo:(id)sender
+{
+    if ([self canRedo])
+    {
+        [self redo_];
+    }
+}
+- (void)redo_
+{
+    [_undos addObject:_canvas];
+    [_canvas removeFromSuperview];
+    _canvas = [_redos lastObject];
+    [_redos removeLastObject];
+    [self.view addSubview:_canvas];
+}
+- (IBAction)caijian:(id)sender
+{
+    currentOperationMode = PCOperationModeCaijian;
+    
+}
+- (IBAction)colorPicker:(UIButton *)sender {
+    
+}
+
+- (IBAction)preview:(UIButton *)sender {
 }
 
 @end
-

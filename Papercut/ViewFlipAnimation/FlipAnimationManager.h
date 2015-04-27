@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define POINT(x,y) CGPointMake(x,y)
+
 typedef enum : NSUInteger{
-    FlipAnimationHorizonally,
-    FlipAnimationVertically,
-    FlipRightBottomFoldAnimation,
-    FlipRightTopFoldAnimation
+    FlipAnimationVertically = 0,
+    FlipAnimationHorizonally = 1,
+    FlipRightBottomFoldAnimation = 2,
+    FlipRightTopFoldAnimation = 3,
 } FlipAnimationType;
 
-typedef void (^CompletionBlock)(BOOL finished, UIView *flipView);
+typedef void (^CompletionBlock)(BOOL finished, UIView *flipViewi , CALayer *foldLayer);
 
 @interface FlipAnimationManager : NSObject
 

@@ -16,8 +16,9 @@
 #import "AboutRootViewController.h"
 
 @interface RootViewController ()<UIActionSheetDelegate>
-@property (nonatomic, strong)AVAudioPlayer *player;
-@property (nonatomic, assign)BOOL kStopPlaySound;
+
+@property (nonatomic, strong) AVAudioPlayer  *player;
+@property (nonatomic, assign) BOOL           kStopPlaySound;
 
 @end
 

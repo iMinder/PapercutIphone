@@ -24,6 +24,147 @@
             </objects>
             <point key="canvasLocation" x="-804" y="-656"/>
         </scene>
+        <!--Learn Papercut View Controller-->
+        <scene sceneID="16l-Jj-O7p">
+            <objects>
+                <viewController id="4WK-6n-TR6" customClass="LearnPapercutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NhJ-d1-q9h"/>
+                        <viewControllerLayoutGuide type="bottom" id="PNh-A0-eQB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1FB-AT-g30">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back_fill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-S9-Koq">
+                                <rect key="frame" x="0.0" y="0.0" width="339" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mN6-6s-AbO" appends="YES" id="rBW-86-UPb"/>
+                                </connections>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZoD-ld-SgP">
+                                <rect key="frame" x="0.0" y="472" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hT8-pZ-FpQ">
+                                    <size key="itemSize" width="40" height="37"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="2" maxX="10" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_ID" id="7J3-Um-qIY">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-jP-M7d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="itemTapped:" destination="4WK-6n-TR6" eventType="touchUpInside" id="Tm4-d5-vI7"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="4WK-6n-TR6" id="Vaf-wx-7OP"/>
+                                    <outlet property="delegate" destination="4WK-6n-TR6" id="Kld-wM-ocp"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMi-vs-FUu">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem image="new-1" id="Qc7-sY-VH6">
+                                        <connections>
+                                            <action selector="create:" destination="4WK-6n-TR6" id="NJ8-0t-y0G"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9gr-GE-ItP"/>
+                                    <barButtonItem image="zhedie" id="vz5-ys-4jL">
+                                        <connections>
+                                            <action selector="fold:" destination="4WK-6n-TR6" id="6Hf-ZY-3qi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Flf-dq-Ecw"/>
+                                    <barButtonItem image="undo.png" id="3sK-VP-M0T">
+                                        <connections>
+                                            <action selector="undo:" destination="4WK-6n-TR6" id="96T-pD-Che"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nkx-yg-dfR"/>
+                                    <barButtonItem image="redo.png" id="ynK-pn-jai">
+                                        <connections>
+                                            <action selector="redo:" destination="4WK-6n-TR6" id="6Ca-0k-kdL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ylJ-4i-Ot4"/>
+                                    <barButtonItem image="caijian" id="q37-v8-5Vr">
+                                        <connections>
+                                            <action selector="caijian:" destination="4WK-6n-TR6" id="uuJ-YT-KoY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qcb-0i-ZQo"/>
+                                    <barButtonItem image="zhuangshi" id="MYI-C4-stx">
+                                        <connections>
+                                            <action selector="decorate:" destination="4WK-6n-TR6" id="SzU-13-ZqD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfd-2Q-T29">
+                                <rect key="frame" x="260" y="78" width="44" height="44"/>
+                                <state key="normal" title="预览" backgroundImage="preview">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="preview:" destination="4WK-6n-TR6" eventType="touchUpInside" id="ghZ-0l-Q7H"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="多次折叠效果更好哟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKy-d9-VKg">
+                                <rect key="frame" x="12" y="71" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNV-ZQ-d3s">
+                                <rect key="frame" x="16" y="85" width="30" height="30"/>
+                                <state key="normal" backgroundImage="color_setting">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="colorPicker:" destination="4WK-6n-TR6" eventType="touchUpInside" id="sBY-lk-QZ2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eQz-9m-KEU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ZoD-ld-SgP" id="zED-N3-Y1L"/>
+                        <outlet property="preview" destination="jfd-2Q-T29" id="EeT-sr-Lha"/>
+                        <outlet property="redo" destination="ynK-pn-jai" id="bRF-09-bex"/>
+                        <outlet property="tips" destination="OKy-d9-VKg" id="vs2-kj-YPD"/>
+                        <outlet property="undo" destination="3sK-VP-M0T" id="Igt-wh-Iij"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQx-DY-IiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mN6-6s-AbO">
+                    <connections>
+                        <action selector="tapped:" destination="4WK-6n-TR6" id="VnG-Ca-8Ii"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="108" y="-1354"/>
+        </scene>
         <!--Paper Cut Browser Controller-->
         <scene sceneID="CvI-8c-4dG">
             <objects>
@@ -484,7 +625,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="doNothing:" destination="MIS-lZ-1m2" eventType="touchUpInside" id="pfp-WM-RQl"/>
+                                            <segue destination="4WK-6n-TR6" kind="push" id="jcT-TA-If6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -543,25 +684,6 @@
             </objects>
             <point key="canvasLocation" x="-420" y="-644"/>
         </scene>
-        <!--趣玩剪纸-->
-        <scene sceneID="PC3-bq-7qI">
-            <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="pzn-wR-6rz" customClass="LearnPaperCutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xpO-8W-QG1"/>
-                        <viewControllerLayoutGuide type="bottom" id="IAH-F1-0Si"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qdz-hw-YSu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="趣玩剪纸" id="ef3-Yb-qFE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5DN-DU-h1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="469" y="-1364"/>
-        </scene>
         <!--Guide View Controller-->
         <scene sceneID="dco-X5-0Mx">
             <objects>
@@ -574,8 +696,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZk-iP-adT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZk-iP-adT">
+                                <rect key="frame" x="-9" y="0.0" width="320" height="568"/>
                                 <connections>
                                     <outlet property="delegate" destination="sO0-aj-d3g" id="lra-Bv-Kjr"/>
                                 </connections>
@@ -961,7 +1083,9 @@ UI设计：
         <image name="btn_arrow_left_a" width="30" height="30"/>
         <image name="btn_camera_take" width="33" height="33"/>
         <image name="btn_setting" width="50" height="50"/>
+        <image name="caijian" width="22" height="22"/>
         <image name="camera_btn_flip" width="66" height="66"/>
+        <image name="color_setting" width="60" height="60"/>
         <image name="cut_line" width="1126" height="15"/>
         <image name="fold_line" width="1126" height="15"/>
         <image name="learn_back_flower" width="252" height="400"/>
@@ -973,8 +1097,14 @@ UI设计：
         <image name="main_free_off" width="300" height="300"/>
         <image name="main_learn_off" width="300" height="300"/>
         <image name="main_works_off" width="300" height="300"/>
+        <image name="new-1" width="22" height="22"/>
+        <image name="preview" width="66" height="66"/>
+        <image name="redo.png" width="24" height="26"/>
+        <image name="undo.png" width="24" height="26"/>
         <image name="yangke_on1" width="40" height="40"/>
         <image name="yinke_on1" width="40" height="40"/>
+        <image name="zhedie" width="22" height="22"/>
+        <image name="zhuangshi" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

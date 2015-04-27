@@ -40,12 +40,14 @@
 - (void) documentChanged:(NSNotification *)notification
 {
     if (notification.object == document_.painting) {
+        
         //动画效果
         id<WDDocumentChange> change = (notification.userInfo)[@"change"];
         [change beginAnimation:document_.painting];
         if (![change applyToPaintingAnimated:document_.painting step:1 of:1 undoable:YES]) {
             WDLog(@"ERROR: Synchronizer change failed: %@", change);
         }
+        //结束执行时调用的函数
         [change endAnimation:document_.painting];
     }
 }
