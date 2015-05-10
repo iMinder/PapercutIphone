@@ -10,12 +10,12 @@
 
 #define POINT(x,y) CGPointMake(x,y)
 
-typedef enum : NSUInteger{
-    FlipAnimationVertically = 0,
-    FlipAnimationHorizonally = 1,
-    FlipRightBottomFoldAnimation = 2,
-    FlipRightTopFoldAnimation = 3,
-} FlipAnimationType;
+typedef NS_ENUM(NSUInteger, FlipAnimationType){
+    FlipAnimationVertically,
+    FlipAnimationHorizonally ,
+    FlipRightBottomFoldAnimation ,
+    FlipRightTopFoldAnimation ,
+} ;
 
 typedef void (^CompletionBlock)(BOOL finished, UIView *flipViewi , CALayer *foldLayer);
 

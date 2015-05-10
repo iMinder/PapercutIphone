@@ -8,17 +8,16 @@
 
 #import "LearnPapercutViewController.h"
 #import "PapercutCanvas.h"
-#import "ViewFlipAnimation/FlipAnimationManager.h"
+#import "UIView+Animation.h"
 
 @interface LearnPapercutViewController ()
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic, strong) PapercutCanvas *canvas;
-@property (weak, nonatomic) IBOutlet UILabel *tips;
-@property (weak, nonatomic) IBOutlet UIButton *preview;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *undo;
-
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *redo;
+@property (weak, nonatomic)   IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) UIView *canvas;
+@property (weak, nonatomic)   IBOutlet UILabel *tips;
+@property (weak, nonatomic)   IBOutlet UIButton *preview;
+@property (weak, nonatomic)   IBOutlet UIBarButtonItem *undo;
+@property (weak, nonatomic)   IBOutlet UIBarButtonItem *redo;
 
 @property (nonatomic, assign) NSArray *currentItems;
 @property (nonatomic, strong) NSArray *folds;
@@ -104,9 +103,7 @@
     switch (currentOperationMode) {
         case PCOperationModeFold:
         {
-            FlipAnimationType type = (FlipAnimationType)index;
-            
-            [self foldViewWithType:type];
+            [self foldViewWithType:index];
         }
             break;
             
@@ -115,21 +112,34 @@
     }
 }
 
-- (void)foldViewWithType:(FlipAnimationType)type
+- (void)foldViewWithType:(NSInteger)type
 {
+    [_canvas animationWithType:type];
     //执行各种折叠动作
-    [[FlipAnimationManager sharedInstance] startAnimation:_canvas Type:type Descending:NO Completion:^(BOOL finished, UIView *flipView, CALayer *layer) {
-        //折叠完成，只显示折叠后的部分
-        
-        _canvas = [[PapercutCanvas alloc] initWithFrame:flipView.frame];
-        _canvas.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]];
-        [_undos addObject:flipView];
-        [flipView removeFromSuperview];
-        [_canvas.layer addSublayer:layer];
-        [self.view addSubview:_canvas];
-    }];
-        
+//    [[FlipAnimationManager sharedInstance] startAnimation:_canvas Type:type Descending:NO Completion:^(BOOL finished, UIView *flipView, CALayer *layer) {
+//        //折叠完成，只显示折叠后的部分
+//        
+////        _canvas = [[PapercutCanvas alloc] initWithFrame:flipView.frame];
+////        _canvas.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]];
+////        [_undos addObject:flipView];
+////        [flipView removeFromSuperview];
+////        [_canvas.layer addSublayer:layer];
+////        [self.view addSubview:_canvas];
+//    }];
+    
 }
+
+- (void)animationDidStart:(CAAnimation *)anim
+{
+    NSLog(@"did start");
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    NSLog(@"did end");
+}
+
+
 #pragma mark - interface change
 - (void)undoStatusDidChange:(id)sender
 {
@@ -155,33 +165,33 @@
     
     CGFloat dismention = MIN(width, height) - 10;
     
-    _canvas = [[PapercutCanvas alloc] initWithFrame:CGRectMake(0, 0, dismention, dismention)];
+    _canvas = [[UIView alloc] initWithFrame:CGRectMake(0, 0, dismention, dismention)];//[[PapercutCanvas alloc] initWithFrame:CGRectMake(0, 0, dismention, dismention)];
     //_canvas.backgroundColor = [UIColor redColor];
 
     _canvas.center = self.view.center;
-    [self.view insertSubview:_canvas atIndex:[self.view.subviews count] ];
+    [self.view insertSubview:_canvas atIndex:[self.view.subviews count]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"styleLandscape"]];
+    [_canvas addSubview:imageView];
+    
     
 //    
 //    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ele3_on"]];
 //    imageView.center = _canvas.center;
 //    [_canvas addSubview:imageView];
-    _canvas.backgroundColor = [UIColor clearColor];
-    _canvas.layer.backgroundColor = [UIColor clearColor].CGColor;
 
-    CGFloat wid = CGRectGetWidth(_canvas.bounds);
-    CGFloat heig = CGRectGetHeight(_canvas.bounds);
-    UIBezierPath *path = [UIBezierPath new];
-    [path moveToPoint:POINT(0, 0)];
-    [path addLineToPoint:POINT(wid, 0)];
-    [path addLineToPoint:POINT(0, heig)];
-    [path closePath];
+    _canvas.backgroundColor = [UIColor redColor];
+//    CGFloat wid = CGRectGetWidth(_canvas.bounds);
+//    CGFloat heig = CGRectGetHeight(_canvas.bounds);
+//    UIBezierPath *path = [UIBezierPath new];
+//    [path moveToPoint:POINT(0, 0)];
+//    [path addLineToPoint:POINT(wid, 0)];
+//    [path addLineToPoint:POINT(0, heig)];
+//    [path closePath];
 //    _canvas.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"back_fill"]];
 //    //_canvas.strokeColor = [UIColor greenColor];
 //    _canvas.path = path;
-    _canvas.path = path;//[UIBezierPath bezierPathWithRect:_canvas.bounds];
-    _canvas.fillColor = [UIColor redColor];
-    
-    
+   //_canvas.path = [UIBezierPath bezierPathWithRect:_canvas.bounds];
+   // _canvas.fillColor = [UIColor redColor];
     
 }
 

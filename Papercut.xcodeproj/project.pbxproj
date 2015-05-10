@@ -397,6 +397,7 @@
 		8C62C3821AA6AFEF00AE2E08 /* PapercutLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3811AA6AFEF00AE2E08 /* PapercutLearn.m */; };
 		8C62C3851AA6B51D00AE2E08 /* LearnResult.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */; };
 		8C62C3B21AA7E0A500AE2E08 /* AboutRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */; };
+		8C675D4B1AFB44A70056A55A /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C675D4A1AFB44A70056A55A /* UIView+Animation.m */; };
 		8C6A2AD51AA9AF6B00A5C1B5 /* PapercutCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */; };
 		8C7B80421AA8C00100E09517 /* LearnPapercutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
@@ -412,7 +413,6 @@
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
-		8C8571881A76943200C64652 /* FlipAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8571871A76943200C64652 /* FlipAnimationManager.m */; };
 		8CAA88351A7B36CA00FAC4BA /* PaperCutBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */; };
 		8CAA88381A7B387F00FAC4BA /* PaperCutLearnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */; };
 		8CAA885E1A7F205B00FAC4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA88601A7F205B00FAC4BA /* Localizable.strings */; };
@@ -1061,6 +1061,8 @@
 		8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LearnResult.plist; sourceTree = "<group>"; };
 		8C62C3B01AA7E0A500AE2E08 /* AboutRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRootViewController.h; sourceTree = "<group>"; };
 		8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRootViewController.m; sourceTree = "<group>"; };
+		8C675D491AFB44A70056A55A /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
+		8C675D4A1AFB44A70056A55A /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutCanvas.h; sourceTree = "<group>"; };
 		8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutCanvas.m; sourceTree = "<group>"; };
 		8C7B80401AA8C00100E09517 /* LearnPapercutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPapercutViewController.h; sourceTree = "<group>"; };
@@ -1083,8 +1085,6 @@
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
-		8C8571861A76943200C64652 /* FlipAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipAnimationManager.h; sourceTree = "<group>"; };
-		8C8571871A76943200C64652 /* FlipAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipAnimationManager.m; sourceTree = "<group>"; };
 		8CAA88331A7B36CA00FAC4BA /* PaperCutBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutBrowserController.h; sourceTree = "<group>"; };
 		8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperCutBrowserController.m; sourceTree = "<group>"; };
 		8CAA88361A7B387F00FAC4BA /* PaperCutLearnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutLearnCell.h; sourceTree = "<group>"; };
@@ -2157,8 +2157,8 @@
 		8C8571851A76943200C64652 /* ViewFlipAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				8C8571861A76943200C64652 /* FlipAnimationManager.h */,
-				8C8571871A76943200C64652 /* FlipAnimationManager.m */,
+				8C675D491AFB44A70056A55A /* UIView+Animation.h */,
+				8C675D4A1AFB44A70056A55A /* UIView+Animation.m */,
 			);
 			path = ViewFlipAnimation;
 			sourceTree = "<group>";
@@ -2910,7 +2910,6 @@
 				8C2E07E01A4B04640042C98B /* WDPainting.m in Sources */,
 				8CAA894D1A84900000FAC4BA /* UIImage+MultiFormat.m in Sources */,
 				8C2E07DD1A4B04640042C98B /* WDHueSaturation.m in Sources */,
-				8C8571881A76943200C64652 /* FlipAnimationManager.m in Sources */,
 				8C2E08251A4B04640042C98B /* WDMenuItem.m in Sources */,
 				8C2E085A1A4B06E60042C98B /* WDColorPickerController.m in Sources */,
 				8C2E07F21A4B04640042C98B /* WDZigZagGenerator.m in Sources */,
@@ -2954,6 +2953,7 @@
 				8C2E07CC1A4B04640042C98B /* WDEmail.m in Sources */,
 				8C2E08201A4B04640042C98B /* WDInsetView.m in Sources */,
 				8C2E081D1A4B04640042C98B /* WDHueShifter.m in Sources */,
+				8C675D4B1AFB44A70056A55A /* UIView+Animation.m in Sources */,
 				8C2E081C1A4B04640042C98B /* WDGridView.m in Sources */,
 				8C2E08311A4B04640042C98B /* WDThumbnailView.m in Sources */,
 				8C2E07E31A4B04640042C98B /* WDPolygonGenerator.m in Sources */,

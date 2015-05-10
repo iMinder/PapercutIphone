@@ -100,13 +100,45 @@ static const CGFloat stepSize = 0.01;
     self.flipType = type;
     _currentProgress = 0.0;
     [self refreshOverlay];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:kAnimationDuration  / (1.0 / stepSize)
-                                                  target:self
-                                                selector:@selector(timeTick)
-                                                userInfo:nil repeats:YES];
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
+    
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = 1 / -2000;
+    //_canvas.layer.transform = transform;
+    animation.values = @[
+                         [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 0 * M_PI / 2, 1, 1, 0)],
+                         [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 1 * M_PI /2, 1, 1, 0)],
+                         [NSValue valueWithCATransform3D:CATransform3DRotate(transform, 2 * M_PI / 2, 1, 1, 0)]
+                         ];
+    animation.duration =  1.5;
+    animation.delegate = self;
+    animation.autoreverses = NO;
+    [self.rotateLayer addAnimation:animation forKey:@"rotateCavans"];
+    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:kAnimationDuration  / (1.0 / stepSize)
+//                                                  target:self
+//                                                selector:@selector(timeTick)
+//                                                userInfo:nil repeats:YES];
 
 }
 
+- (void)animationDidStart:(CAAnimation *)anim
+{
+    NSLog(@"animation start");
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    CALayer *layer = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self.rotateLayer]];
+    [self.overlayView removeFromSuperview];
+    self.staticLayer = nil;
+    self.rotateLayer = nil;
+    
+    if (self.completionBlock) {
+        self.completionBlock(YES, self.viewToFlip, layer);
+    }
+}
 
 - (UIView *)view
 {
@@ -167,7 +199,6 @@ static const CGFloat stepSize = 0.01;
     self.rotateLayer.mask = mask2;
     [self.overlayView.layer addSublayer:self.rotateLayer];
     
-
 }
 
 - (UIImage *)viewContextImage
@@ -176,11 +207,12 @@ static const CGFloat stepSize = 0.01;
     UIGraphicsBeginImageContextWithOptions(self.viewToFlip.frame.size, YES, 0);
     //CGContextRef context = UIGraphicsGetCurrentContext();
   
-    UIView *snap = [self.viewToFlip snapshotViewAfterScreenUpdates:YES];
+    //UIView *snap = [self.viewToFlip snapshotViewAfterScreenUpdates:YES];
     //获取当前view的快照
-//    [self.viewToFlip drawViewHierarchyInRect:self.viewToFlip.bounds afterScreenUpdates:YES];
-    [snap drawViewHierarchyInRect:snap.bounds afterScreenUpdates:YES];
+   [self.viewToFlip drawViewHierarchyInRect:self.viewToFlip.bounds afterScreenUpdates:YES];
+    //[snap drawViewHierarchyInRect:snap.bounds afterScreenUpdates:YES];
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, NULL);
     UIGraphicsEndImageContext();
     
     return viewImage;
@@ -288,6 +320,7 @@ static const CGFloat stepSize = 0.01;
             foldTransform = CATransform3DRotate(foldTransform, rotationAngle, -1.0f, 1.0f, 0.0f);
             break;
     }
+    
     self.rotateLayer.transform = foldTransform;
 }
 
