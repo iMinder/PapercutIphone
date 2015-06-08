@@ -397,7 +397,6 @@
 		8C62C3821AA6AFEF00AE2E08 /* PapercutLearn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3811AA6AFEF00AE2E08 /* PapercutLearn.m */; };
 		8C62C3851AA6B51D00AE2E08 /* LearnResult.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */; };
 		8C62C3B21AA7E0A500AE2E08 /* AboutRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */; };
-		8C675D4B1AFB44A70056A55A /* UIView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C675D4A1AFB44A70056A55A /* UIView+Animation.m */; };
 		8C6A2AD51AA9AF6B00A5C1B5 /* PapercutCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */; };
 		8C7B80421AA8C00100E09517 /* LearnPapercutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */; };
 		8C82ED0A193235A20055C5E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED09193235A20055C5E2 /* Foundation.framework */; };
@@ -478,6 +477,7 @@
 		8CDF16E91933305A00112023 /* ShowCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDF16E81933305A00112023 /* ShowCameraViewController.m */; };
 		8CDF16FE193332AE00112023 /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF16FB1933328700112023 /* libGPUImage.a */; };
 		8CFC41571939CE82006EFC6B /* YangKeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC41561939CE82006EFC6B /* YangKeFilter.m */; };
+		8CFFA77D1B16184700BBC6CA /* PCTransformOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFFA77C1B16184700BBC6CA /* PCTransformOverlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1061,8 +1061,6 @@
 		8C62C3841AA6B51D00AE2E08 /* LearnResult.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LearnResult.plist; sourceTree = "<group>"; };
 		8C62C3B01AA7E0A500AE2E08 /* AboutRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutRootViewController.h; sourceTree = "<group>"; };
 		8C62C3B11AA7E0A500AE2E08 /* AboutRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutRootViewController.m; sourceTree = "<group>"; };
-		8C675D491AFB44A70056A55A /* UIView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Animation.h"; sourceTree = "<group>"; };
-		8C675D4A1AFB44A70056A55A /* UIView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Animation.m"; sourceTree = "<group>"; };
 		8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PapercutCanvas.h; sourceTree = "<group>"; };
 		8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PapercutCanvas.m; sourceTree = "<group>"; };
 		8C7B80401AA8C00100E09517 /* LearnPapercutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnPapercutViewController.h; sourceTree = "<group>"; };
@@ -1214,6 +1212,8 @@
 		8CDF16F41933328600112023 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		8CFC41551939CE82006EFC6B /* YangKeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YangKeFilter.h; sourceTree = "<group>"; };
 		8CFC41561939CE82006EFC6B /* YangKeFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YangKeFilter.m; sourceTree = "<group>"; };
+		8CFFA77B1B16184700BBC6CA /* PCTransformOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCTransformOverlay.h; path = ViewFlipAnimation/PCTransformOverlay.h; sourceTree = "<group>"; };
+		8CFFA77C1B16184700BBC6CA /* PCTransformOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCTransformOverlay.m; path = ViewFlipAnimation/PCTransformOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2157,8 +2157,6 @@
 		8C8571851A76943200C64652 /* ViewFlipAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				8C675D491AFB44A70056A55A /* UIView+Animation.h */,
-				8C675D4A1AFB44A70056A55A /* UIView+Animation.m */,
 			);
 			path = ViewFlipAnimation;
 			sourceTree = "<group>";
@@ -2173,6 +2171,8 @@
 				8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */,
 				8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */,
 				8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */,
+				8CFFA77B1B16184700BBC6CA /* PCTransformOverlay.h */,
+				8CFFA77C1B16184700BBC6CA /* PCTransformOverlay.m */,
 			);
 			name = Fun;
 			sourceTree = "<group>";
@@ -2798,6 +2798,7 @@
 				8C2E08111A4B04640042C98B /* WDColorSlider.m in Sources */,
 				8CAA893A1A84900000FAC4BA /* JSONModelArray.m in Sources */,
 				8C2E07BB1A4B04640042C98B /* WDDeleteLayer.m in Sources */,
+				8CFFA77D1B16184700BBC6CA /* PCTransformOverlay.m in Sources */,
 				8C2E08091A4B04640042C98B /* WDBlockingView.m in Sources */,
 				8C2E080E1A4B04640042C98B /* WDCellSelectionView.m in Sources */,
 				8CAA89371A84900000FAC4BA /* FMDatabaseQueue.m in Sources */,
@@ -2953,7 +2954,6 @@
 				8C2E07CC1A4B04640042C98B /* WDEmail.m in Sources */,
 				8C2E08201A4B04640042C98B /* WDInsetView.m in Sources */,
 				8C2E081D1A4B04640042C98B /* WDHueShifter.m in Sources */,
-				8C675D4B1AFB44A70056A55A /* UIView+Animation.m in Sources */,
 				8C2E081C1A4B04640042C98B /* WDGridView.m in Sources */,
 				8C2E08311A4B04640042C98B /* WDThumbnailView.m in Sources */,
 				8C2E07E31A4B04640042C98B /* WDPolygonGenerator.m in Sources */,

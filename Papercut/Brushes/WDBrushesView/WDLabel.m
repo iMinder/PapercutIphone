@@ -30,7 +30,7 @@
     [[UIColor whiteColor] set];
     path.lineWidth = 2;
     [path stroke];
-     
+    
     [super drawRect:rect];
 }
 

@@ -1,23 +1,19 @@
 //
-//  WDTransformOverlay.m
-//  Brushes
+//  PCTransformOverlay.m
+//  Papercut
 //
-//  This Source Code Form is subject to the terms of the Mozilla Public
-//  License, v. 2.0. If a copy of the MPL was not distributed with this
-//  file, You can obtain one at http://mozilla.org/MPL/2.0/.
-//
-//  Copyright (c) 2010-2013 Steve Sprang
+//  Created by jackie on 15/5/27.
+//  Copyright (c) 2015年 jackie. All rights reserved.
 //
 
-#import "WDCanvas.h"
-#import "WDPainting.h"
-#import "WDTransformOverlay.h"
+#import "PCTransformOverlay.h"
 #import "WDUtilities.h"
+#import "PapercutCanvas.h"
 
 #define kRotationSnapTolerance (1.0f)
 #define kControlOffset 64
 
-@implementation WDTransformOverlay
+@implementation PCTransformOverlay
 
 @synthesize canvas;
 @synthesize cancelBlock;
@@ -70,7 +66,7 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
-            shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     return YES;
 }
@@ -78,7 +74,6 @@
 - (void) cancel:(id)sender
 {
     cancelBlock();
-   
 }
 
 - (void) accept:(id)sender
@@ -98,7 +93,7 @@
     self.backgroundColor = nil;
     self.clearsContextBeforeDrawing = YES;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-
+    
     transform_ = CGAffineTransformIdentity;
     
     [self createGestureRecognizers];
@@ -107,7 +102,7 @@
 
 - (CGAffineTransform) configureInitialPhotoTransform
 {
-    CGSize      paintingSize = canvas.painting.dimensions;
+    CGSize      paintingSize = canvas.dimensions;
     CGSize      photoSize = canvas.photo.size;
     CGPoint     paintingCenter = CGPointMake(paintingSize.width / 2, paintingSize.height / 2);
     CGPoint     photoCenter = CGPointMake(photoSize.width / 2, photoSize.height / 2);
@@ -119,7 +114,7 @@
     return transform_;
 }
 
-- (float) cleanAngle:(float)angle 
+- (float) cleanAngle:(float)angle
 {
     float   degrees = angle * (180.0f / M_PI);
     BOOL    correct = YES;
@@ -172,12 +167,13 @@
 }
 
 - (void) updateTransform:(id)obj
-{   
+{
     [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 - (void) delayedUpdateTransform
-{   
+{
+    //取消之前的runloop 中的请求，重新发送新的请求
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
     [self performSelector:@selector(updateTransform:) withObject:nil afterDelay:0.0f];
 }
@@ -203,7 +199,7 @@
         initialScale_ = [(UIPinchGestureRecognizer *)sender scale];
         return;
     }
-   
+    
     float scale = [(UIPinchGestureRecognizer *)sender scale];
     float newScale = scale / initialScale_;
     
@@ -241,7 +237,7 @@
         tX = CGAffineTransformTranslate(tX, pivot.x, pivot.y);
         tX = CGAffineTransformRotate(tX, angle);
         tX = CGAffineTransformTranslate(tX, -pivot.x, -pivot.y);
-
+        
         transform_ = CGAffineTransformConcat(transform_, tX);
         [self delayedUpdateTransform];
         
@@ -264,12 +260,12 @@
 - (NSArray *) toolbarItems
 {
     UIBarButtonItem *flipHorizontally = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Flip Horizontally", @"Flip Horizontally")
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target:self action:@selector(flipHorizontally:)];
-                               
+                                                                         style:UIBarButtonItemStyleBordered
+                                                                        target:self action:@selector(flipHorizontally:)];
+    
     UIBarButtonItem *flipVertically = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Flip Vertically", @"Flip Vertically")
-                                                               style:UIBarButtonItemStyleBordered
-                                                              target:self action:@selector(flipVertically:)];
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self action:@selector(flipVertically:)];
     
     UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                               target:nil action:nil];
@@ -333,11 +329,11 @@
 {
     [super layoutSubviews];
     
-    [self buildNavBar];
-    
-    if (showToolbar) {
-        [self buildToolbar];
-    }
+//    [self buildNavBar];
+//    
+//    if (showToolbar) {
+//        [self buildToolbar];
+//    }
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -345,5 +341,7 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 }
+
+
 
 @end

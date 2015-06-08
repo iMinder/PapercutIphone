@@ -13,7 +13,8 @@ typedef enum : NSUInteger {
     PCOperationModeCreate,
     PCOperationModeFold,
     PCOperationModeCaijian,
-    PCOPerationModeDecorate
+    PCOPerationModeDecorate,
+    PCOperationModePreview
 } PCOperationMode;
 
 @interface LearnPapercutViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
@@ -21,5 +22,8 @@ typedef enum : NSUInteger {
     PCOperationMode currentOperationMode;
 }
 
+//show message infomation
+- (void)showMessage:(NSString *)message;
+- (void) showMessage:(NSString *)message autoHide:(BOOL)autoHide position:(CGPoint)position duration:(float)duration;
 
 @end
