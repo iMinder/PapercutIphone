@@ -49,7 +49,6 @@
     view.backgroundColor = [WDActiveState sharedInstance].paintColor.UIColor;
     _currentView = view;
     self.shapeType = STQquare;
-    
     [self addSubview:_currentView];
     
 }
@@ -190,6 +189,32 @@
         }
     }];
     [CATransaction commit];
+}
+
+- (void)addImageView:(UIImageView *)imgView
+{
+    CGPoint positon = CGPointZero;
+    switch (_shapeType) {
+        case STQquare:
+        case STRectangle1:
+        case STRectangle2:
+            positon = WDCenterOfRect(_currentView.bounds);
+            break;
+        case STLeftBottomTriangle:
+            positon = CGPointMake(CGRectGetWidth(imgView.bounds), CGRectGetHeight(_currentView.bounds) - CGRectGetHeight(imgView.bounds));
+            break;
+        case STLeftTopTriangle:
+            positon = CGPointMake(CGRectGetWidth(imgView.bounds), CGRectGetHeight(imgView.bounds));
+            break;
+        case STLeftToRightTriangle:
+            positon = CGPointMake(CGRectGetWidth(imgView.bounds), CGRectGetHeight(_currentView.bounds) / 2);
+            break;
+        default:
+            break;
+    }
+    
+    imgView.center = positon;
+    [_currentView addSubview:imgView];
 }
 
 - (UIBezierPath *)pathForType:(AnimationType)type isStatic:(BOOL)isStatic

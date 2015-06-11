@@ -20,6 +20,8 @@ typedef enum : NSUInteger {
 @interface LearnPapercutViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     PCOperationMode currentOperationMode;
+    UIPanGestureRecognizer *canvasPanGesture;
+    
 }
 
 //show message infomation

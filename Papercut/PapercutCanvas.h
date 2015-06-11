@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, ShapeType)
 
 - (BOOL)PC_canTransformToType:(AnimationType) animationType;
 - (void)PC_animationWithType:(AnimationType)type ;
-
+- (void)addImageView:(UIImageView *)imgView;
 - (CGPoint) convertPointToDocument:(CGPoint)pt;
 
 @end

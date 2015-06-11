@@ -412,6 +412,7 @@
 		8C82ED2B193235A20055C5E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C82ED0D193235A20055C5E2 /* UIKit.framework */; };
 		8C82ED33193235A20055C5E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C82ED31193235A20055C5E2 /* InfoPlist.strings */; };
 		8C82ED35193235A20055C5E2 /* PapercutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C82ED34193235A20055C5E2 /* PapercutTests.m */; };
+		8C9A646E1B2892E0001E1AEB /* PaintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9A646D1B2892E0001E1AEB /* PaintView.m */; };
 		8CAA88351A7B36CA00FAC4BA /* PaperCutBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */; };
 		8CAA88381A7B387F00FAC4BA /* PaperCutLearnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAA88371A7B387F00FAC4BA /* PaperCutLearnCell.m */; };
 		8CAA885E1A7F205B00FAC4BA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CAA88601A7F205B00FAC4BA /* Localizable.strings */; };
@@ -1083,6 +1084,8 @@
 		8C82ED30193235A20055C5E2 /* PapercutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PapercutTests-Info.plist"; sourceTree = "<group>"; };
 		8C82ED32193235A20055C5E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C82ED34193235A20055C5E2 /* PapercutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PapercutTests.m; sourceTree = "<group>"; };
+		8C9A646C1B2892E0001E1AEB /* PaintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintView.h; sourceTree = "<group>"; };
+		8C9A646D1B2892E0001E1AEB /* PaintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintView.m; sourceTree = "<group>"; };
 		8CAA88331A7B36CA00FAC4BA /* PaperCutBrowserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutBrowserController.h; sourceTree = "<group>"; };
 		8CAA88341A7B36CA00FAC4BA /* PaperCutBrowserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaperCutBrowserController.m; sourceTree = "<group>"; };
 		8CAA88361A7B387F00FAC4BA /* PaperCutLearnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaperCutLearnCell.h; sourceTree = "<group>"; };
@@ -2171,6 +2174,8 @@
 				8C7B80411AA8C00100E09517 /* LearnPapercutViewController.m */,
 				8C6A2AD31AA9AF6B00A5C1B5 /* PapercutCanvas.h */,
 				8C6A2AD41AA9AF6B00A5C1B5 /* PapercutCanvas.m */,
+				8C9A646C1B2892E0001E1AEB /* PaintView.h */,
+				8C9A646D1B2892E0001E1AEB /* PaintView.m */,
 				8CFFA77B1B16184700BBC6CA /* PCTransformOverlay.h */,
 				8CFFA77C1B16184700BBC6CA /* PCTransformOverlay.m */,
 			);
@@ -2878,6 +2883,7 @@
 				8C0058861A9241A600A65DDD /* ScrawlViewController.m in Sources */,
 				8C2E08271A4B04640042C98B /* WDPaletteBackgroundView.m in Sources */,
 				8C2E08581A4B06E60042C98B /* WDColorAdjustmentController.m in Sources */,
+				8C9A646E1B2892E0001E1AEB /* PaintView.m in Sources */,
 				8CAA895A1A84900000FAC4BA /* UIWebView+AFNetworking.m in Sources */,
 				8C2E07C11A4B04640042C98B /* WDReorderLayers.m in Sources */,
 				8C2E07E51A4B04640042C98B /* WDRandom.m in Sources */,

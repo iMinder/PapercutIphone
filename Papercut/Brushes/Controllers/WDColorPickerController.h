@@ -20,6 +20,11 @@
 @class WDColorSlider;
 @class WDMatrix;
 
+@protocol WDColorChangeDidChangeProtocol <NSObject>
+@optional
+- (void)colorDidChange;
+@end
+
 @interface WDColorPickerController : UIViewController <WDSwatchesDelegate>
 
 @property (nonatomic) WDColor *color;

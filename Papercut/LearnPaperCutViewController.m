@@ -11,6 +11,9 @@
 #import "WDLabel.h"
 #import "WDUtilities.h"
 #import "UIView+Additions.h"
+#import "PaintView.h"
+#import "WDColorPickerController.h"
+#import "WDActiveState.h"
 
 #define kMessageFadeDelay           0.5
 #define kMinimumMessageWidth        80
@@ -18,7 +21,8 @@
 #define kMaxFoldDepth               6
 #define kPreviewTag                 1000
 
-@interface LearnPapercutViewController () <PapercutCanvasAnimationDelegate, UIGestureRecognizerDelegate>
+@interface LearnPapercutViewController () <PapercutCanvasAnimationDelegate, UIGestureRecognizerDelegate, WDColorChangeDidChangeProtocol ,UIAlertViewDelegate >
+
 
 @property (weak, nonatomic)   IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) PapercutCanvas *canvas;
@@ -50,6 +54,7 @@
     BOOL isPreview;
     PapercutCanvas *preview;
     NSUndoManager *undoManager;
+    WDColorPickerController *colorPickerController;
     
 }
 
@@ -87,8 +92,8 @@
     _redos = [NSMutableArray new];
     _subViews = [NSMutableDictionary new];
     undoManager = [NSUndoManager new];
+    //[self colorPicker:nil];
     [self createNewCanvas];
-    [self configureGestures];
 }
 
 - (void)configureGestures
@@ -129,6 +134,9 @@
 
 - (void)handlerPangesture:(UIPanGestureRecognizer *)gestureRecognizer
 {
+    if (currentOperationMode == PCOperationModeCaijian) {
+        return;
+    }
     UIView *piece = [gestureRecognizer view];
     
     [self adjustAnchorPointForGestureRecognizer:gestureRecognizer];
@@ -176,9 +184,19 @@
     [self performAction:indexPath.row];
 }
 
+- (NSInteger)foldCount
+{
+    NSInteger count = 0;
+    for (id temp in _undos){
+        if ([temp isMemberOfClass:[PapercutCanvas class]]) {
+            count++;
+        }
+    }
+    return count;
+}
 - (void)foldViewWithType:(NSInteger)type
 {
-    if ([_undos count] > kMaxFoldDepth) {
+    if ([self foldCount ] > kMaxFoldDepth) {
         [self showMessage:@"折叠次数太多了"];
         return;
     }
@@ -197,7 +215,11 @@
     panGesture.maximumNumberOfTouches = 1;
     panGesture.delegate = self;
     [view addGestureRecognizer:panGesture];
+    if ([view isMemberOfClass:[PapercutCanvas class]]) {
+        canvasPanGesture = panGesture;
+    }
 }
+
 
 - (void)decorateCanvas:(NSInteger) index
 {
@@ -210,10 +232,10 @@
     [self configurePanGestureFor:imageView];
    
     //配置ImageView的位置信息
-    imageView.sharpCenter = CGPointMake(CGRectGetWidth(_canvas.bounds) / 2, CGRectGetHeight(_canvas.bounds) / 2);
-    [_canvas.currentView addSubview:imageView];
     
+    [_canvas addImageView:imageView];
     decorateView_ = imageView;
+    [self addUndoObject:decorateView_];
 }
 
 - (void)performAction:(NSInteger)index
@@ -228,12 +250,14 @@
         {
             [self decorateCanvas:index];
         }
+            break;
+        case PCOperationModeCaijian:
+            [self caijian:nil];
+            break;
         default:
             break;
     }
 }
-
-
 
 - (void)animationDidStart:(CAAnimation *)anim
 {
@@ -281,6 +305,11 @@
     _canvas.delegate = self;
     [workView addSubview:_canvas];
     [self configurePanGestureFor:_canvas];
+    
+    [_undos removeAllObjects];
+    [_redos removeAllObjects];
+   
+    [self configureGestures];
     //[self.view insertSubview:_canvas atIndex:[self.view.subviews count]];
     //[self.view addSubview:_canvas];
 }
@@ -288,9 +317,17 @@
 - (IBAction)create:(id)sender
 {
     //清空
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"提示", @"提示")
+message:NSLocalizedString(@"放弃当前作品?","放弃当前作品?") delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"取消")  otherButtonTitles:NSLocalizedString(@"确认", @"确认"), nil];
+    [alert show];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self colorPicker:nil];
+    }
+}
 - (IBAction)fold:(id)sender
 {
     //[self interfaceChange];
@@ -312,6 +349,13 @@
     currentOperationMode = PCOPerationModeDecorate;
     self.collectionView.hidden = NO;
     
+}
+
+#pragma mark undo redo
+- (void)addUndoObject:(id)view
+{
+    [self.redos removeAllObjects];
+    [self.undos addObject:view];
 }
 
 - (BOOL)canRedo
@@ -340,12 +384,20 @@
 }
 
 - (void)undo_{
-    [_redos addObject:_canvas];
-    [_canvas removeFromSuperview];
-    _canvas = [_undos lastObject];
-    _canvas.hidden = NO;
+    //根据当前操作来决定如何进行undo和redo
+    id lastView = [_undos lastObject];
+    if ([lastView isMemberOfClass:[PapercutCanvas class]]) {
+        //undo最后一步是一个折叠操作
+        [_redos addObject:_canvas];
+        [_canvas removeFromSuperview];
+        _canvas = lastView;
+        _canvas.hidden = NO;
+        [workView addSubview:_canvas];
+    } else {
+        [_redos addObject:lastView];
+        [lastView removeFromSuperview];
+    }
     [_undos removeLastObject];
-    [workView addSubview:_canvas];
 }
 
 - (IBAction)redo:(id)sender
@@ -364,11 +416,26 @@
 
 - (void)redo_
 {
-    [_undos addObject:_canvas];
-    [_canvas removeFromSuperview];
-    _canvas = [_redos lastObject];
+    //根据_redos的内容来执行下一步操作
+    id previous = [_redos lastObject];
+    if ([previous isMemberOfClass:[PapercutCanvas class]]) {
+        [_undos addObject:_canvas];
+        [_canvas removeFromSuperview];
+        _canvas = previous;
+        [workView addSubview:_canvas];
+    } else {
+        [_undos addObject:previous];
+       // [decorateView_ removeFromSuperview];
+        //decorateView_ = previous;
+        [_canvas.currentView addSubview:previous];
+    }
+    
     [_redos removeLastObject];
-    [workView addSubview:_canvas];
+//    [_undos addObject:_canvas];
+//    [_canvas removeFromSuperview];
+//    _canvas = [_redos lastObject];
+//    [_redos removeLastObject];
+//    [workView addSubview:_canvas];
 }
 
 - (IBAction)caijian:(id)sender
@@ -379,11 +446,44 @@
     }
     currentOperationMode = PCOperationModeCaijian;
     
+    PaintView *paintView = [[PaintView alloc] initWithCanvas:_canvas];
+    paintView.backgroundColor  = [UIColor clearColor];
+    
+    [_canvas removeGestureRecognizer:canvasPanGesture];
+    [_canvas.currentView addSubview:paintView];
+    
+    //追加通知消息
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(caijianDone:) name:PaintViewCaiJianDoneNotification object:nil];
+}
+
+- (void)caijianDone:(NSNotification *)notification
+{
+    //裁减完成
+    PaintView *paintView = notification.object;
+    paintView.userInteractionEnabled = NO;
+    [self addUndoObject:paintView];
+    //从裁减模式退出来
 }
 - (IBAction)colorPicker:(UIButton *)sender {
+   //颜色选取器
+    if (!colorPickerController) {
+        colorPickerController = [[WDColorPickerController alloc]
+                                 initWithNibName:@"ColorPicker~iphone5" bundle:nil];
+    }
+    colorPickerController.delegate = self;
+    [colorPickerController setInitialColor:[WDActiveState sharedInstance].paintColor];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:colorPickerController];
+    [self presentViewController:navController animated:YES completion:nil];
     
 }
 
+- (void)colorDidChange
+{
+    //改变当前
+    [self createNewCanvas];
+    
+}
 #pragma mark - inline call
 
 - (CATransform3D) transformForType:(AnimationType)type
@@ -498,14 +598,20 @@
         currentOperationMode  = PCOperationModePreview;
        [sender setTitle:@"取消预览" forState:UIControlStateNormal];
         
-        if ([_undos count] == 0) {
+        if ([self foldCount] == 0) {
             return ;
         }
         
         PapercutCanvas *current = _canvas;
         NSInteger depth = [_undos count] - 1;
         while (depth >= 0) {
-            preview = _undos[depth--];
+             id temp = _undos[depth--];
+            
+            //不是PapercutCanvas
+            if (![temp isMemberOfClass:[PapercutCanvas class]]) {
+                continue;
+            }
+            preview = temp;
             BOOL haveSubview = NO;
             UIView *transformView = [[UIView alloc] initWithFrame:preview.bounds];
             transformView.tag = kPreviewTag;
@@ -523,6 +629,10 @@
                     haveSubview = YES;
                     [transformView addSubview:view];
                 } else if ([view isKindOfClass:[UIImageView class]]) {
+                    haveSubview = YES;
+                    [subviews addObject:view];
+                    [transformView addSubview:view];
+                } else if( [view isMemberOfClass:[PaintView class]]) {
                     haveSubview = YES;
                     [subviews addObject:view];
                     [transformView addSubview:view];
@@ -546,7 +656,11 @@
         currentOperationMode = PCOperationModeNone;
         [sender setTitle:@"预览" forState:UIControlStateNormal];
         //移除预览多加载的那些项;
-        for ( PapercutCanvas *canvas in _undos) {
+        for ( id temp in _undos) {
+            if (![temp isMemberOfClass:[PapercutCanvas class]]) {
+                continue;
+            }
+            PapercutCanvas *canvas = temp;
             for (UIView *added in canvas.currentView.subviews) {
                 if (added.tag == kPreviewTag) {
                     [added removeFromSuperview];
@@ -588,8 +702,7 @@
 
 - (void)animationDidStop:(PapercutCanvas *)newCanvas
 {
-    [self.redos removeAllObjects];
-    [self.undos addObject:_canvas];
+    [self addUndoObject:_canvas];
     [_canvas removeFromSuperview];
     [_canvas.layer setMask:nil];
     [workView addSubview:newCanvas];

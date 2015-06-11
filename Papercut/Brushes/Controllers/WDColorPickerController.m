@@ -36,6 +36,10 @@
 
 - (IBAction)dismiss:(id)sender
 {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(colorDidChange)]) {
+        [self.delegate colorDidChange];
+    }
+    
     [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
 }
 
