@@ -14,6 +14,7 @@
 #import "PaintView.h"
 #import "WDColorPickerController.h"
 #import "WDActiveState.h"
+#import "WDPaintingManager.h"
 
 #define kMessageFadeDelay           0.5
 #define kMinimumMessageWidth        80
@@ -75,6 +76,8 @@
 
 - (void)setup
 {
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
+    self.navigationItem.rightBarButtonItem = rightBarItem;
     _folds = @[@"fold_1" ,
                 @"fold_2",
                 @"fold_3" ,
@@ -94,6 +97,41 @@
     undoManager = [NSUndoManager new];
     //[self colorPicker:nil];
     [self createNewCanvas];
+}
+
+- (UIImage *)snapshot:(UIView *)view
+{
+//    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0);
+//    //[view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+//    [view.layer drawInContext:UIGraphicsGetCurrentContext()];
+//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return image;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(view.frame.size.width, view.frame.size.height));
+    [view.layer.presentationLayer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return viewImage;
+}
+
+- (void)done:(UIBarButtonItem *)rightBarItem
+{
+    if (currentOperationMode != PCOperationModePreview) {
+       [self preview:self.previewButton];
+    }
+    
+    //开始保存当前preview到作品集里面
+    if (preview) {
+        UIImage *image = [self snapshot:preview.currentView];
+    
+     //保存到UIDocument路径下
+        [[WDPaintingManager sharedInstance] createNewPaintingWithImage:image];
+        [self showMessage:@"保存成功"];
+    }
+    
+    
 }
 
 - (void)configureGestures
@@ -300,6 +338,10 @@
         workView.sharpCenter = self.view.center;
         workView.clipsToBounds = YES;
         [self.view addSubview:workView];
+    }
+    if (_canvas) {
+        [_canvas removeFromSuperview];
+        _canvas = nil;
     }
     _canvas = [[PapercutCanvas alloc] initWithFrame:CGRectMake(0, 0, dismension, dismension)];
     _canvas.delegate = self;
@@ -617,12 +659,6 @@ message:NSLocalizedString(@"放弃当前作品?","放弃当前作品?") delegate
             transformView.tag = kPreviewTag;
             //思路：获取每一次的subViews,将其加入到一个temp view里，然后放到它之前的view，依次向前递推，实现最终的预览效果
             //只有存在装饰或者
-//            if ([current.currentView.subviews count] > 1) {
-//                haveSubview = YES;
-//            }
-//            
-//            UIView *snapshot = [current snapshotViewAfterScreenUpdates:NO];
-//            [transformView addSubview:snapshot];
             NSMutableArray *subviews = [NSMutableArray new];
             for (UIView *view in current.currentView.subviews) {
                 if (view.tag == kPreviewTag) {
@@ -650,6 +686,8 @@ message:NSLocalizedString(@"放弃当前作品?","放弃当前作品?") delegate
         }
         //先移除_canvas
         [_canvas removeFromSuperview];
+        UIView *view = preview.currentView;
+        
         [workView addSubview:preview];
         
     } else {
@@ -688,7 +726,6 @@ message:NSLocalizedString(@"放弃当前作品?","放弃当前作品?") delegate
             [preview removeFromSuperview];
             [workView addSubview:_canvas];
         }
-        
     }
 
 }
